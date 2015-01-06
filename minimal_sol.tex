@@ -1,1 +1,74 @@
 \section{minimal solutionの存在と性質}
+
+\begin{lem}
+ \begin{enumerate}[1.]
+  \item $H_0^1(\Omega)$の原点の近傍$U$があって、
+        $\lambda_0 > 0$があって、$0 < \lambda \leq \lambda_0$に対し、
+        \ref{eq:prob_main}は$U$における唯一の弱解
+        $u_\lambda$をもつ。また、
+        \[
+        \left\| u_\lambda
+        \right\|_{H^1_0(\Omega)} \to 0 \ \ (\lambda \searrow 0)
+        \]
+        となる。
+  \item さらに、$f \in C^\alpha(\bar{\Omega})$を仮定する。
+        このとき、1.~の$u_\lambda$は、$u_\lambda \in
+        C^{2+\alpha}(\Omega)$を
+        みたし、
+        \[
+        \left\| u_\lambda
+        \right\|_{C^{2+\alpha}(\Omega)} \to 0 \ \ (\lambda \searrow 0)
+        \]
+        となる。
+ \end{enumerate}
+\end{lem}
+
+\begin{proof}
+ \begin{enumerate}[1.]
+  \item $\Phi \colon [0,\infty) \times H^1_0 (\Omega) \to H^{-1}(\Omega)$を
+        \begin{equation}
+         \Phi (\lambda, u) = -\Delta u + au - b (u_{+})^p - \lambda f
+          \label{eq:def_of_Phi}
+        \end{equation}
+        とする。$\Phi$の$u$についてのフレッシェ微分は、
+        $w \in H^1_0(\Omega)$とすると、
+        \[
+         \Phi_u (\lambda, u) \colon w \mapsto -\Delta w + aw - b p(u_+)^{p-1} w
+        \]
+        となる。とくに、
+        \[
+         \Phi_u (0, 0) w = -\Delta w + aw 
+        \]
+        である。$a > -\kappa_1$により、$\Phi_u(0,0) \colon
+        H^1_0(\Omega) \to H^{-1} (\Omega)$は可逆である。ゆえに、
+        陰関数定理より、$\lambda_0 > 0$があって、
+        $H_0^1(\Omega)$の原点の近傍$U$があって、
+        $0 < \lambda \leq \lambda_0$に対し、$u_\lambda \in U$が
+        ただ$1$つあって、$\Phi(\lambda, u_\lambda) = 0$、かつ、
+        $\lim_{\lambda \searrow 0} \left\| u_\lambda \right\|_{H^1_0(\Omega)} =
+        0$となる。つまり、$u_\lambda$は、
+        \begin{align}
+         \left\{
+         \begin{aligned}
+           -\Delta u + a u &= b (u_+)^p + \lambda f  & &\text{in}~ \Omega,  \\
+           u &= 0 & &\text{on}~ \partial\Omega
+         \end{aligned}
+         \right. \label{eq:prob_lem_ifthm}
+        \end{align}
+        の弱解である。
+        ここで$b (u_+)^p + \lambda f \geq 0$であり、$a > -\kappa_1$で
+        あるから、強最大値原理により、$u_\lambda > 0 ~\text{in}~
+        \Omega$となる。よって、$u_\lambda$は\ref{eq:prob_main}の
+        $U$における唯一の弱解である。
+  \item $f \in C^\alpha(\bar{\Omega})$のとき、
+        $\Phi \colon [0,\infty) \times C^{2+\alpha} (\bar{\Omega})
+        \to C^\alpha(\bar{\Omega})$を、\eqref{eq:def_of_Phi}で定義する。
+        以下、1.~の証明と同様にすると、
+        $u_\lambda \in
+        C^{2+\alpha}(\Omega)$と
+        $\left\| u_\lambda
+        \right\|_{C^{2+\alpha}(\Omega)} \to 0 \ \ (\lambda \searrow
+        0)$
+        が示される。\qedhere
+ \end{enumerate}
+\end{proof}
