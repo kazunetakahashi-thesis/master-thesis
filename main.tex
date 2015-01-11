@@ -1,5 +1,5 @@
-%#BIBTEX pbibtex main
 %master-thesis
+%#BIBTEX pbibtex main
 \documentclass{jsarticle}
 
 \title{Semilinear elliptic equations with a critical Sobolev exponent and a non-homogeneous term}
@@ -8,6 +8,7 @@
 
 \usepackage{geometry}
 \geometry{a4paper,left=15mm,right=15mm,top=20mm,bottom=15mm}
+\addtolength{\textheight}{-10mm}
 
 \usepackage{relsize}
 \usepackage{url}
@@ -15,22 +16,25 @@
 \addtolength{\labelsep}{0mm}
 \addtolength{\listparindent}{0mm}
 
+\usepackage{mathtools}
+\usepackage{cases}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead[{\textit{\thepage}}]{\leftmark}
+\lhead{}
 \chead{}
-\rhead[\rightmark]{{\textit{\thepage}}}
+\rhead{\rightmark}
 \lfoot{}
-\cfoot{}
+\cfoot{{\textit{\thepage}}}
 \rfoot{}
 \fancypagestyle{plainhead}{
-\lhead[{\textit{\thepage}}]{}
+\lhead{\leftmark}
 \chead{}
-\rhead[]{{\textit{\thepage}}}
+\rhead{}
 }
 \fancypagestyle{plainfoot}{
 \lfoot{}
-\cfoot{}
+\cfoot{{\textit{\thepage}}}
 \rfoot{}
 }
 \renewcommand{\headrulewidth}{0pt}
@@ -92,16 +96,15 @@
 \renewcommand{\bar}[1]{\overline{#1}}
 \renewcommand{\vec}[1]{\overrightarrow{#1}}
 
-\usepackage{makeidx}
-\makeindex
-
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
 
-\renewcommand{\ae}{~\mathrm{a.e.}~}
+\renewcommand{\ae}{\text{a.\,e.}~}
+\newcommand{\tin}{\text{in}~}
+\newcommand{\ton}{\text{on}~}
 \newcommand{\supp}{\operatorname{supp}} 
 
 \renewcommand{\bibname}{参考文献}
@@ -114,6 +117,7 @@
 \input{intro}
 
 \input{minimal_sol}
+\input{second_sol}
 
 \appendix
 
