@@ -4,13 +4,16 @@
 minimal solution について取り扱う。
 まずは minimal solution を定義する。
 
-\begin{defn}
+\begin{nota}
  $\lambda > 0$に対し、
  \[
    S_\lambda = \{ u \in H_0^1(\Omega) \mid u \text{は
  \ref{eq:prob_main} の弱解である}\}
  \]
- と定める。$\underline{u}_\lambda \in S_\lambda$が{\bf minimal solution} で
+ と定める。
+\end{nota}
+\begin{defn}
+ $\underline{u}_\lambda \in S_\lambda$が{\bf minimal solution} で
  あるとは、任意の$u \in S_\lambda$に対し、
  \[
   \underline{u}_\lambda \leq u ~\tin \Omega
@@ -102,7 +105,7 @@ $\lambda > 0$が十分小さいときに、\ref{eq:prob_main}が
 以下では基本的に、1.~の結果を使用し、弱解の枠組みで進行していく。
 2.~の結果は、\S~\ref{sec:sym}で使用する。
 
-続いては、ある
+続いて、ある
 $\lambda = \hat{\lambda}$で\ref{eq:prob_main}が
 優解をもつときに、$0 < \lambda \leq \hat{\lambda}$で
 minimal solution の存在が従うことを示す。
@@ -200,16 +203,10 @@ minimal solution の存在が従うことを示す。
  注意した。また左辺について、
  \begin{equation}
   (\text{左辺}) \geq \int_\Omega \left( \lvert Du_{n+1} \rvert^2 + \kappa
-   \lvert u_{n+1} \rvert^2 \right) dx \label{eq:u_n+1_left}
+   \lvert u_{n+1} \rvert^2 \right) dx = \| u_{n+1} \|_{H_0^1(\Omega)}
+  \label{eq:u_n+1_left}
  \end{equation}
- もわかる。ここで
- $w \in H_0^1(\Omega)$に対し、
- \[
-  \left\| w \right\|_\kappa = \int_\Omega \left( \lvert Dw \rvert^2 +
- \kappa \lvert w \rvert^2 \right) dx
- \]
- と定めると、$\kappa > -\kappa_1$およびポアンカレの不等式により、
- $\left\| \cdot \right\|_\kappa$は$\left\| \cdot
+ もわかる。$\left\| \cdot \right\|_\kappa$は$\left\| \cdot
  \right\|_{H_0^1(\Omega)}$
  と同値なノルムである。従って、\eqref{eq:u_n+1_right}および
  \eqref{eq:u_n+1_left}より、$\{u_n\}$は$H_0^1(\Omega)$の有界列である。
@@ -263,7 +260,7 @@ minimal solution の存在が従うことを示す。
 
 補題~\ref{lem:minimal_itt}から、次の事実が従う。
 
-\begin{lem}
+\begin{lem} \label{lem:minimal_va}
  \begin{enumerate}[1.]
   \item $\lambda_0 > 0$があって、$S_{\lambda_0} \neq \emptyset$とする。
         このとき、$0 < \lambda < \lambda_0$に対し、
@@ -383,4 +380,60 @@ minimal solution の存在が従うことを示す。
         の唯一の弱解であった。したがってこのことは
         $u_\lambda = \underline{u}_\lambda$を示している。 \qedhere
  \end{enumerate}
+\end{proof}
+
+補題~\ref{lem:imp}により、$\lambda > 0$があって、
+\ref{eq:prob_main}の解が存在する。
+補題~\ref{lem:minimal_va}により、
+\ref{eq:prob_main}の解が存在する$\lambda$が見つかれば、
+それより小さい$\lambda$については、\ref{eq:prob_main}の解が存在する。
+そこで、\ref{eq:prob_main}の解が存在する$\lambda$が
+どこまで大きくなるのかを調べる。そのために次の記号を置く。
+
+\begin{nota}
+ $\bar{\lambda} = \sup \{ \lambda \geq 0 \mid S_\lambda \neq \emptyset
+ \}$と定める。
+\end{nota}
+
+ここから先は、$\bar{\lambda} < \infty$を示すことを目標に議論を進める。
+その準備として、$\lambda > 0$によらない$H_0^1(\Omega)$の元$g_0$を用意する。
+$g_0 \in H_0^1(\Omega)$を
+\begin{align}
+ \left\{
+ \begin{aligned}
+    -\Delta g_0 + a g_0 
+  &= f  & &\tin \Omega,  \\
+  g_0 &= 0 & &\ton \partial\Omega
+ \end{aligned}
+ \right. \label{eq:g_0}
+\end{align}
+の唯一の弱解と定める。$g_0$について、次の補題を示す。
+
+\begin{lem}
+ 固有値問題
+ \[
+  -\Delta \phi + a \phi = \mu b (g_0)^{p-1}\phi ~\tin \Omega, \ \
+ \phi \in H_0^1(\Omega)
+ \]
+ の第$1$固有値を$\mu_1$とする。このとき、$\mu_1 > 0$である。
+ また、$\mu_1$に付随する固有関数$\phi_1$のうち、
+ $\phi_1 > 0 ~\tin \Omega$を
+ みたすものがある。
+\end{lem}
+
+\begin{proof}
+ $\mu_1$はレーリッヒ商により、
+ \begin{equation}
+  \mu_1 = \inf_{\psi \in H_0^1(\Omega), \psi \not\equiv 0}
+   \frac{\displaystyle \int_\Omega \left( \left\| D \psi \right\|^2 + a \psi^2
+                     \right) dx}{\displaystyle \int_\Omega b (g_0)^{p-1} \psi^2 dx}
+   \label{eq:g_0_lin_mu_1}
+ \end{equation}
+ と特徴付けられる。また、\eqref{eq:g_0_lin_mu_1}の右辺の下限を
+ 達成する関数$\phi \in H_0^1(\Omega)$があるとすれば、$\phi$が$\mu_1$に
+ 付随する固有関数である。
+
+ \eqref{eq:g_0_lin_mu_1}より、$H_0^1(\Omega)$の点列$\{ \psi_n \}$
+ があって、
+ \qedhere
 \end{proof}
