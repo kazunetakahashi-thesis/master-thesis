@@ -416,7 +416,7 @@ $g_0 \in H_0^1(\Omega)$を
 \end{align}
 の唯一の弱解と定める。$g_0$について、次の補題を示す。
 
-\begin{lem}
+\begin{lem} \label{lem:g_0}
  固有値問題
  \[
   -\Delta \phi + a \phi = \mu b (g_0)^{p-1}\phi ~\tin \Omega, \ \
@@ -442,5 +442,160 @@ $g_0 \in H_0^1(\Omega)$を
 
  \eqref{eq:g_0_lin_mu_1}より、$H_0^1(\Omega)$の点列$\{ \psi_n \}$
  があって、
+ \begin{equation}
+  \int_\Omega b(g_0)^{p-1} \psi_n^2 dx = 1 \label{eq:g_0_seq_psi_1}
+ \end{equation}
+ かつ、
+ \begin{equation}
+  \int_\Omega \left( \left| D\psi_n \right|^2 + a \psi_n^2 \right) dx
+   \searrow \mu_1 \label{eq:g_0_seq_psi_2}
+ \end{equation}
+ となる。$a > \kappa$であるから、\eqref{eq:g_0_seq_psi_2}の左辺は
+ $\left\| \psi_n \right\|_\kappa^2$以下である。
+ $\left\| \cdot \right\|_\kappa$は
+ $\left\| \cdot \right\|_{H_0^1(\Omega)}$と同値なノルムであるから、
+ $\{ \psi_n \}$は$H_0^1(\Omega)$の有界列である。
+ 
+ ゆえに、必要ならば部分列をとることにより、
+ $phi_1 \in H_0^1(\Omega)$があって、$n \to \infty$とすると、
+ \begin{align}
+  \psi_n \xrightharpoonup{ \mbox{ ~ } } \phi_1 & \ \ \text{weakly~} \tin
+  H_0^1(\Omega), \label{eq:psi_n_weakly} \\
+  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \tin L^q(\Omega) \notag \ \
+   (q < p+1), \label{eq:psi_n_L^q} \\
+  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \ae \tin \Omega 
+    \notag
+ \end{align}
+ となる。\eqref{eq:psi_n_weakly}より、
+ \[
+  \liminf_{n \to \infty} \left\| \psi_n \right\|_{H_0^1(\Omega)}
+ \geq \left\| \phi_1 \right\|_{H_0^1(\Omega)}
+ \]
+ であるから、\label{eq:psi_n_L^q}と合わせて、 
+ \[
+  \mu_1 \geq \int_\Omega \left( \left| D\phi_1 \right|^2 + a\phi_1^2
+ \right) dx
+ \]
+ となる。また、$g_0 \in L^{p+1}(\Omega)$より、$b (g_0)^{p-1} \in
+ L^{N/2} (\Omega)$より、
+ \[
+  \int_\Omega b(g_0)^{p-1} \psi_n^2 dx \xrightarrow{n \to \infty}
+ \int_{\Omega} b(g_0)^{p-1} \phi_1^2 dx
+ \]
+ となる。以上より、
+ \begin{equation}
+  \mu_1 \geq \frac{\displaystyle \int_\Omega \left( \left| D\phi_1 \right|^2 + a\phi_1^2
+  \right) dx}{\displaystyle \int_{\Omega} b(g_0)^{p-1} \phi_1^2 dx} \label{eq:g_0_ineq}
+ \end{equation}
+ となる。\eqref{eq:g_0_lin_mu_1}により、\eqref{eq:g_0_ineq}の不等号は
+ 実際には等号が成立する。すなわち、\eqref{eq:g_0_lin_mu_1}の右辺の下限は
+ $\phi_1 \in H_0^1(\Omega)$により達成される。よって$\mu_1 > 0$である。
+ 
+ \eqref{eq:g_0_lin_mu_1}の右辺の形から、
+ $\phi_1$が\eqref{eq:g_0_lin_mu_1}の右辺の下限を達成するならば、
+ $\left| \phi_1 \right|$も下限を達成する。
+ すなわち、$\phi_1 \geq 0 ~\tin \Omega$となる第$1$固有関数がある。
+ この$\phi_1$について、
+ \[
+  - \Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} \geq 0 ~\tin \Omega
+ \]
+ であるから、強最大値原理により、$\phi_1 > 0 ~\tin \Omega$となる。
  \qedhere
+\end{proof}
+
+$g_0$を用いて、次の補題を証明する。
+
+\begin{lem}
+ $0 < \bar{\lambda} < \infty$である。
+\end{lem}
+
+\begin{proof}
+補題~\ref{lem:imp}により、$\lambda_0 > 0$があって、$0 < \lambda <
+ \lambda_0$に対して、\ref{eq:prob_main}の解が存在する。
+ゆえに$\bar{\lambda} > 0$である。
+そこで、$\bar{\lambda} < \infty$を示せば証明が完了する。
+
+$\lambda > 0$は、$S_\lambda \neq \emptyset$をみたすものとする。
+$u \in S_\lambda$とし、$v = u - \lambda g_0$とする。
+このとき、
+\[
+ -\Delta v + av = bu^p \geq 0
+\]
+であるから、強最大値原理より、$v > 0 ~\tin \Omega$である。
+つまり、$u > \lambda g_0 ~\tin \Omega$が従う。
+よって、
+\begin{equation}
+ - \Delta u + au \geq bu^p \geq b \lambda^{p-1} (g_0)^{p-1} u ~\tin
+  \Omega \label{eq:lambda_infty_g_0} 
+\end{equation}
+である。一方、補題~\ref{lem:g_0}により、$\mu_1 > 0$、
+$\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
+があって、
+\begin{equation}
+ -\Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} \phi_1 ~\tin \Omega 
+  \label{eq:lambda_infty_phi_1} 
+\end{equation}
+となる。そこで、
+ $\text{\eqref{eq:lambda_infty_g_0}} \times \phi_1 - 
+ \text{\eqref{eq:lambda_infty_phi_1}} \times u $を$\Omega$
+ 上積分すると、
+ \[
+  0 \geq (\lambda^{p-1} - \mu_1) \int_\Omega b(g_0)^{p-1} u \phi_1 dx
+ \]
+ となる。ここで、$b \geq 0 ~\tin \Omega$、
+ $b \not \equiv 0$、$g_0, u, \phi_1 > \tin \Omega$であるから、
+ 右辺の積分は正である。ゆえに、$\lambda^{p-1} - \mu_1 \leq 0$である。
+ つまり、$\lambda \leq \mu_1^{1/(p-1)}$となる。
+ $\lambda > 0$は$S_\lambda \neq \emptyset$をみたす任意の正の数
+ であるから、$\bar{\lambda} \leq \mu_1 ^{1/(p-1)} < \infty$が従う。
+ \qedhere
+\end{proof}
+
+\begin{proof}[定理~\ref{thm:minimal_solution}]
+ 
+\end{proof}
+
+\subsection{minimal solutionに関する線形化固有値問題}
+
+\ref{eq:prob_main}の minimal solution についての
+線形化固有値問題
+\begin{equation}
+ -\Delta \phi + a \phi = \mu p b (\underline{u}_\lambda)^{p-1} \phi
+  \tin \Omega, \ \ \phi \in H_0^1(\Omega) \label{eq:lin_prob_min_sol}
+\end{equation}
+を考察する。特に第$1$固有値、第$1$固有関数について論ずる。
+
+\begin{lem}
+ $0 < \lambda < \bar{\lambda}$とする。\ref{eq:prob_main}の
+ minimal solution $\underline{u}_\lambda \in S_\lambda$ に関する
+ 線形化固有値問題\eqref{eq:lin_prob_min_sol}の
+ 第$1$固有値を$\mu_1$とする。このとき、以下が成立する。
+ \begin{enumerate}[1.]
+  \item $\mu_1 > 0$である。
+        また、$\mu_1$に付随する固有関数$\phi_1$のうち、
+        $\phi_1 > 0 ~\tin \Omega$を
+        みたすものがある。
+  \item 任意の$\psi \in H_0^1(\Omega)$に対し、
+        \begin{equation}
+         \int_\Omega \left( \left\| D\psi \right\|^2 + a\psi^2 \right)
+          dx \geq \mu_1 \int_\Omega pb(\underline{u}_\lambda)^{p-1}
+          \psi^2 dx \label{eq:lin_prob_min_sol_mu_1}
+        \end{equation}
+        が成立する。
+ \end{enumerate}
+\end{lem}
+
+\begin{proof}
+ \begin{enumerate}[1.]
+  \item 補題~\ref{lem:g_0}と同様である。
+  \item $\mu_1$のレーリッヒ商による特徴付け
+        \[
+         \mu_1 = \inf_{\psi \in H_0^1(\Omega), \psi \not \equiv 0} 
+        \frac{\displaystyle \int_\Omega 
+        \left( \left\| D\psi \right\|^2 + a\psi^2 \right)
+          dx }{\displaystyle \int_\Omega pb(\underline{u}_\lambda)^{p-1}
+          \psi^2 dx }
+        \]
+        から\eqref{eq:lin_prob_min_sol_mu_1}が成立する。
+ \end{enumerate}
 \end{proof}

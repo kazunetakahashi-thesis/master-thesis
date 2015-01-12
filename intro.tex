@@ -19,12 +19,16 @@ $\lambda \geq 0$をパラメータとする。以下の方程式を考察する�
  \right. \tag*{$(\star)_\lambda$} \label{eq:prob_main}
 \end{align}
 
+\begin{thm} \label{thm:minimal_solution}
+ \ref{eq:prob_main}には minimal solution が存在する。
+\end{thm}
+
 \subsection{記号}
 
 $w \in H_0^1(\Omega)$に対し、
 \[
- \left\| w \right\|_\kappa = \int_\Omega \left( \lvert Dw \rvert^2 +
- \kappa \lvert w \rvert^2 \right) dx
+ \left\| w \right\|_\kappa = \left(\int_\Omega \left( \lvert Dw \rvert^2 +
+ \kappa \lvert w \rvert^2 \right) dx\right)^{1/2}
 \]
 と定める。$\kappa > -\kappa_1$、$\Omega$が有界領域で
 あることにより、ポアンカレの不等式から
@@ -34,7 +38,7 @@ $\left\| \cdot \right\|_\kappa$は$\left\| \cdot
 
 $w \in H_0^1(\Omega)$に対し、
 \[
- \left\| w \right\| = \int_\Omega \lvert Dw \rvert^2 dx
+ \left\| w \right\| = \left(\int_\Omega \lvert Dw \rvert^2 dx\right)^{1/2}
 \]
 と定める。やはりポアンカレの不等式から
 $\left\| \cdot \right\|$は$\left\| \cdot
