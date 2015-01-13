@@ -20,11 +20,30 @@ $\lambda \geq 0$をパラメータとする。以下の方程式を考察する�
 \end{align}
 
 \begin{thm} \label{thm:minimal_solution}
- \ref{eq:prob_main}には minimal solution が存在する。
+ \ref{eq:prob_main} には minimal solution が存在する。
+\end{thm}
+
+\begin{thm} \label{thm:extremal_solution}
+ \ref{eq:prob_main} には extremal solution が存在する。
+ また、\ref{eq:prob_main} の 
+ extremal solution は、$\lambda = \bar{\lambda}$における
+ \ref{eq:prob_main} の
+ minimal solution に限る。
 \end{thm}
 
 \subsection{記号}
 
+$1 \leq q \leq \infty$についての
+ルベーグ空間を$L^q(\Omega)$と表記する。
+ソボレフ空間$W^{1, 2}(\Omega)$を$H^1(\Omega)$と表記する。
+$\partial \Omega$のトレースの意味で$u |_{\partial \Omega} = 0$が成立
+する$u \in H^1(\Omega)$全体を$H_0^1(\Omega)$と表記する。
+$k \in \N$、$0 < \alpha < 1$について、$k+\alpha$階の
+ヘルダー空間を$C^{k + \alpha}(\Omega)$と表記する。
+
+ノルム空間$X$のノルムを$\dnorm_X$と表記する。
+ノルム空間$X$の双対空間を$X^*$と表記する。
+$H_0^1(\Omega)^*$を$H^{-1}(\Omega)$と表記する。
 $w \in H_0^1(\Omega)$に対し、
 \[
  \left\| w \right\|_\kappa = \left(\int_\Omega \left( \lvert Dw \rvert^2 +
@@ -33,8 +52,7 @@ $w \in H_0^1(\Omega)$に対し、
 と定める。$\kappa > -\kappa_1$、$\Omega$が有界領域で
 あることにより、ポアンカレの不等式から
 $\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムであることが従う。
-
+と同値なノルムであることが従う。また、
 $w \in H_0^1(\Omega)$に対し、
 \[
  \left\| w \right\| = \left(\int_\Omega \lvert Dw \rvert^2 dx\right)^{1/2}
