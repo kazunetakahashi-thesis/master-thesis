@@ -8,7 +8,7 @@ minimal solution について取り扱う。
 \begin{nota}
  $\lambda > 0$に対し、
  \[
-   S_\lambda = \{ u \in H_0^1(\Omega) \mid u \text{は
+ S_\lambda = \{ u \in H_0^1(\Omega) \mid u \text{は
  \ref{eq:prob_main} の弱解である}\}
  \]
  と定める。
@@ -21,37 +21,35 @@ minimal solution について取り扱う。
  \]
  が成立することをいう。
 \end{defn}
+\begin{nota}
+ \ref{eq:prob_main}の minimal solution を $\underline{u}_\lambda$ と表記する。
+\end{nota}
 
-以下では、\ref{eq:prob_main}の minimal solution を
-$\underline{u}_\lambda$
-と表記する。
-
-\subsection{$H_0^1(\Omega)$の原点付近での様子}
+\subsection{$H_0^1(\Omega)$の原点付近における様子}
 
 minimal solution を調べる第一歩として、
 $\lambda > 0$が十分小さいときに、\ref{eq:prob_main}が
-弱解を持つことを、陰関数定理より示す。
+弱解を持つことを、陰関数定理を用いて示す。
 
 \begin{lem} \label{lem:imp}
  \begin{enumerate}[1.]
-  \item $H_0^1(\Omega)$の原点の近傍$U$があって、
-        $\lambda_0 > 0$があって、$0 < \lambda \leq \lambda_0$に対し、
-        \ref{eq:prob_main}は$U$における唯一の弱解
-        $u_\lambda$をもつ。また、
+  \item $H_0^1(\Omega)$の原点の近傍$U$と
+        $\lambda_0 > 0$が存在して、$0 < \lambda \leq \lambda_0$に対し、
+        \ref{eq:prob_main}は$U$内の唯一の弱解
+        $u_\lambda$をもつ。また、次が成立する。
         \[
         \left\| u_\lambda
-        \right\|_{H^1_0(\Omega)} \to 0 \ \ (\lambda \searrow 0)
+        \right\|_{H^1_0(\Omega)} \to 0 \ \ (\lambda \searrow 0).
         \]
-        となる。
   \item さらに、$f \in C^\alpha(\bar{\Omega})$を仮定する。
-        このとき、1.~の$u_\lambda$は、$u_\lambda \in
+        このとき、1.~の弱解$u_\lambda$は、$u_\lambda \in
         C^{2+\alpha}(\Omega)$を
-        みたし、
+        みたし、次が成立する。
         \[
         \left\| u_\lambda
-        \right\|_{C^{2+\alpha}(\Omega)} \to 0 \ \ (\lambda \searrow 0)
+        \right\|_{C^{2+\alpha}(\Omega)} \to 0 \ \ 
+        (\lambda \searrow 0).
         \]
-        となる。
  \end{enumerate}
 \end{lem}
 
@@ -63,34 +61,39 @@ $\lambda > 0$が十分小さいときに、\ref{eq:prob_main}が
           \label{eq:def_of_Phi}
         \end{equation}
         とする。$\Phi$の$u$についてのフレッシェ微分は、
-        $w \in H^1_0(\Omega)$とすると、
+        $w \in H^1_0(\Omega)$とすると、次が成立する。
         \[
-         \Phi_u (\lambda, u) \colon w \mapsto -\Delta w + aw - b p(u_+)^{p-1} w
+         \Phi_u (\lambda, u) \colon w \mapsto -\Delta w + aw - b p(u_+)^{p-1} w.
         \]
-        となる。とくに、
+        特に、次が成立する。
         \[
-         \Phi_u (0, 0) w = -\Delta w + aw 
+         \Phi_u (0, 0) w = -\Delta w + aw.
         \]
-        である。$a > -\kappa_1$により、$\Phi_u(0,0) \colon
+        $a > -\kappa_1$により、$\Phi_u(0,0) \colon
         H^1_0(\Omega) \to H^{-1} (\Omega)$は可逆である。ゆえに、
-        陰関数定理より、$\lambda_0 > 0$があって、
-        $H_0^1(\Omega)$の原点の近傍$U$があって、
-        $0 < \lambda \leq \lambda_0$に対し、$u_\lambda \in U$が
-        ただ$1$つあって、$\Phi(\lambda, u_\lambda) = 0$、かつ、
-        $\lim_{\lambda \searrow 0} \left\| u_\lambda \right\|_{H^1_0(\Omega)} =
-        0$となる。つまり、$u_\lambda$は、
+        陰関数定理より、$\lambda_0 > 0$と
+        $H_0^1(\Omega)$の原点の近傍$U$が存在して、
+        $0 < \lambda \leq \lambda_0$に対し、
+        $\Phi(\lambda, u_\lambda) = 0$をみたす
+        $u_\lambda \in U$が
+        唯一つ存在し、次をみたす。
+        \[\lim_{\lambda \searrow 0} \left\| u_\lambda
+        \right\|_{H^1_0(\Omega)} 
+        = 0. \]
+        つまり、$u_\lambda$は、
         \begin{align}
          \left\{
          \begin{aligned}
-           -\Delta u + a u &= b (u_+)^p + \lambda f  & &\tin \Omega,  \\
-           u &= 0 & &\ton \partial\Omega
+          -\Delta u + a u &= b (u_+)^p + \lambda f  & &\tin \Omega,  \\
+          u &= 0 & &\ton \partial\Omega
          \end{aligned}
          \right. \label{eq:prob_lem_ifthm}
         \end{align}
         の弱解である。
         ここで$b (u_+)^p + \lambda f \geq 0$であり、$a > -\kappa_1$で
         あるから、強最大値原理により、$u_\lambda > 0 ~\tin
-        \Omega$となる。よって、$u_\lambda$は\ref{eq:prob_main}の
+        \Omega$が成立する。
+        よって、$u_\lambda$は\ref{eq:prob_main}の
         $U$における唯一の弱解である。
   \item $f \in C^\alpha(\bar{\Omega})$のとき、
         $\Phi \colon [0,\infty) \times C^{2+\alpha} (\bar{\Omega})
@@ -105,7 +108,7 @@ $\lambda > 0$が十分小さいときに、\ref{eq:prob_main}が
  \end{enumerate}
 \end{proof}
 
-以下では基本的に、1.~の結果を使用し、弱解の枠組みで進行していく。
+以下では基本的に、1.~の結果を使用し、弱解の枠組みで議論する。
 2.~の結果は、\S~\ref{sec:sym}で使用する。
 
 \subsection{優解との関係}
@@ -113,23 +116,29 @@ $\lambda > 0$が十分小さいときに、\ref{eq:prob_main}が
 続いて、ある
 $\lambda = \hat{\lambda}$で\ref{eq:prob_main}が
 優解をもつときに、$0 < \lambda \leq \hat{\lambda}$で
-minimal solution の存在が従うことを示す。
+minimal solution が存在することを示す。
 
 \begin{lem} \label{lem:minimal_itt}
- $\hat{\lambda} > 0$とする。$\hat{u} \in H_0^1(\Omega)$があって、
- $\hat{u} > 0 ~\tin \Omega$かつ
- \[
-  \Delta \hat{u} + a\hat{u} \geq b \hat{u}^p + \hat{\lambda}f
- \tin \Omega
- \]
- をみたすとする。このとき、$\lambda \in (0,\hat{\lambda} ]$
+ $\hat{\lambda} > 0$とする。
+ 以下をみたす$\hat{u} \in H_0^1(\Omega)$が存在すると仮定する。
+\begin{align}
+ \left\{
+ \begin{aligned}
+  \Delta \hat{u} + a\hat{u} &\geq b \hat{u}^p + \hat{\lambda}f  &
+  &\tin \Omega,  \\
+  \hat{u} &> 0 & &\tin \Omega
+ \end{aligned}
+ \right. \label{eq:prob_lem_ifthm}
+\end{align}
+ このとき、$\lambda \in (0,\hat{\lambda} ]$
  に対し、\ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$
  が存在する。
- また、$\underline{u}_\lambda < \hat{u} \tin \Omega$となる。
+ また、$\underline{u}_\lambda < \hat{u} ~\tin \Omega$
+ が成立する。
 \end{lem}
 
 \begin{proof}
- $H_0^1(\Omega)$の点列$\{ \underline{u}_n \}$を、次の通りに
+ $H_0^1(\Omega)$の点列$\{ u_n \}_{n=0}^\infty$を、次の通りに
  帰納的に定める。$u_0 \equiv 0$とする。$u_n$が
  定まっているときに、線形方程式
   \begin{align}
@@ -155,55 +164,61 @@ minimal solution の存在が従うことを示す。
  $
  である。$b \in L^\infty(\Omega)$、$f \in H^{-1}(\Omega)$より、
  $b u_n^p + \lambda f \in H^{-1}(\Omega)$である。
- $a > -\kappa_1$と合わせて、\eqref{eq:u_n+1}には確かに
+ $a > -\kappa_1$と合わせて、\eqref{eq:u_n+1}には
  唯一の弱解が存在する。
 
- ここで、次の事実を、$n$についての数学的帰納法で証明する。
+ ここで、次の事実を、$n$についての数学的帰納法を用いて証明する。
  \begin{equation}
-  0 = u_0 < u_1 < \dots < u_n < \hat{u} ~\tin \Omega \label{eq:u_n_ind}
+  0 = u_0 < u_1 < \dots < u_n < \hat{u} ~\tin \Omega. \label{eq:u_n_ind}
  \end{equation}
 
- $n = 0$のときは、$\hat{u} > 0 ~\tin \Omega$により成立する。
- $n \in \N$とする。$n$での\eqref{eq:u_n_ind}の成立を仮定し、
- $n+1$での成立を示す。
+ $n = 0$のときは、$\hat{u} > 0 ~\tin \Omega$であることから、
+ \eqref{eq:u_n_ind}が成立する。
+ $n \in \N$とする。$n$における\eqref{eq:u_n_ind}の成立を仮定し、
+ $n+1$における\eqref{eq:u_n_ind}の成立を示す。
  \begin{align*}
   -\Delta u_{n+1} + a u_{n+1} &= b u_n^p + \lambda f, \\
   -\Delta u_{n} + a u_{n} &= b u_{n-1}^p + \lambda f
  \end{align*}
- の両辺を引くと、
+ の両辺を引くと、次が成立する。
  \[
-  -\Delta (u_{n+1} - u_n) + a(u_{n+1} - u_n) = b(u_n^p - u_{n-1}^p)
+  -\Delta (u_{n+1} - u_n) + a(u_{n+1} - u_n) 
+ = b(u_n^p - u_{n-1}^p).
  \]
- となる。右辺は仮定により$0$以上である。
+ 右辺は仮定により$0$以上である。
  ゆえに強最大値原理より、$u_{n+1} > u_n ~\tin\Omega$である。
  また、
  \begin{align*}
-  -\Delta \hat{u} + a \hat{u} &= b \hat{u}^p + \lambda f, \\
+  -\Delta \hat{u} + a \hat{u} &> b \hat{u}^p + \lambda f, \\
   -\Delta u_{n+1} + a u_{n+1} &= b u_{n}^p + \lambda f
  \end{align*}
  の両辺を引いて同様にすると、$\hat{u} > u_{n+1} ~\tin\Omega$
  も従う。以上により、\eqref{eq:u_n_ind}は$n+1$でも正しい。
- 数学的帰納法により、$n \in \N$での\eqref{eq:u_n_ind}の成立が示された。
+ 数学的帰納法により、任意の$n \in \N$について
+ \eqref{eq:u_n_ind}の成立が示された。
 
- 続いて、$\{u_n\}$が$H_0^1(\Omega)$での有界列であることを示す。
- $u_{n+1}$は\eqref{eq:u_n+1}の弱解であるから、$\psi \in H_0^1(\Omega)$
- に対し、
+ 続いて、$\{u_n\}$が$H_0^1(\Omega)$における
+ 有界列であることを示す。
+ $u_{n+1}$は\eqref{eq:u_n+1}の弱解であるから、
+ $\psi \in H_0^1(\Omega)$
+ に対し、次をみたす。
  \begin{equation}
   \int_\Omega (Du_{n+1} \cdot D\psi + a u_{n+1} \psi) dx 
    = \int_\Omega bu_n^p \psi dx + \lambda \int_\Omega f\psi dx
    \label{eq:u_n+1_weaksol}
  \end{equation}
- となる。$\psi = u_{n+1}$とすると、
+ $\psi = u_{n+1}$とすると、次が成立する。
  \[
- \int_\Omega (\lvert Du_{n+1} \rvert^2  + a \lvert u_{n+1} \rvert^2) dx 
- = \int_\Omega bu_n^p u_{n+1} dx + \lambda \int_\Omega f u_{n+1} dx
+ \int_\Omega (\lvert Du_{n+1} \rvert^2 
+ + a \lvert u_{n+1} \rvert^2) dx 
+ = \int_\Omega bu_n^p u_{n+1} dx 
+ + \lambda \int_\Omega f u_{n+1} dx.
  \]
- となる。ここで、右辺は、
+ ここで、右辺は、次の通りに評価される。
  \begin{equation}
   (\text{右辺}) \leq \int_\Omega b\hat{u}^{p+1} dx + \lambda
-   \int_\Omega f \hat{u} dx < \infty \label{eq:u_n+1_right}
+   \int_\Omega f \hat{u} dx < \infty. \label{eq:u_n+1_right}
  \end{equation}
- と評価される。
  ここで$\hat{u} \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$に
  注意した。また左辺について、
  \begin{equation}
@@ -211,55 +226,58 @@ minimal solution の存在が従うことを示す。
    \lvert u_{n+1} \rvert^2 \right) dx = \| u_{n+1} \|_{H_0^1(\Omega)}
   \label{eq:u_n+1_left}
  \end{equation}
- もわかる。$\left\| \cdot \right\|_\kappa$は$\left\| \cdot
- \right\|_{H_0^1(\Omega)}$
+ もわかる。$\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
  と同値なノルムである。従って、\eqref{eq:u_n+1_right}および
- \eqref{eq:u_n+1_left}より、$\{u_n\}$は$H_0^1(\Omega)$の有界列である。
+ \eqref{eq:u_n+1_left}より、
+ $\{u_n\}$は$H_0^1(\Omega)$の有界列である。
 
  ゆえに、必要ならば部分列をとることにより、
- $u \in H_0^1(\Omega)$があって、$n \to \infty$とすると、
+ $u \in H_0^1(\Omega)$が存在して、$n \to \infty$とすると、
+ 以下が成立する。
  \begin{align}
   u_n \xrightharpoonup{ \mbox{ ~ } } u & \ \ \text{weakly~} \tin
   H_0^1(\Omega), \label{eq:minimal_u_n_weakly} \\
   u_n \xrightarrow{ \mbox{ ~ } } u & \ \ \tin L^q(\Omega) \notag \ \
    (q < p+1), \\
-  u_n \xrightarrow{ \mbox{ ~ } } u & \ \ \ae \tin \Omega 
+  u_n \xrightarrow{ \mbox{ ~ } } u & \ \ \ae \tin \Omega. 
     \label{eq:minimal_u_n_ae}
  \end{align}
- となる。ここで$u$が\ref{eq:prob_main}の弱解であることを示す。
+ ここで$u$が\ref{eq:prob_main}の弱解であることを示す。
  \eqref{eq:u_n+1_weaksol}で$n \to \infty$とすることを試みる。
- \eqref{eq:minimal_u_n_weakly}により、
+ \eqref{eq:minimal_u_n_weakly}により、次が成立する。
  \[
  \int_\Omega (Du_{n+1} \cdot D\psi + a u_{n+1} \psi) dx
  \xrightarrow{n \to \infty}
- \int_\Omega (Du \cdot D\psi + a u \psi) dx
+ \int_\Omega (Du \cdot D\psi + a u \psi) dx.
  \]
- となる。また、\eqref{eq:minimal_u_n_ae}と
+ また、\eqref{eq:minimal_u_n_ae}と
  \[
   \left\lvert bu_n \psi \right\rvert \leq b \hat{u}^p \lvert\psi\rvert \ \ \ae
  \tin \Omega
  \]
  の右辺は可積分であること
  ($\hat{u}, \psi \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$からわかる)より、
- 優収束定理から、
+ 優収束定理から、次を得る。
  \[
  \int_\Omega bu_n^p \psi dx \xrightarrow{n \to \infty} 
- \int_\Omega bu^p \psi dx
+ \int_\Omega bu^p \psi dx.
  \]
- となる。したがって、\eqref{eq:u_n+1_weaksol}で$n \to \infty$とすると、
+ したがって、\eqref{eq:u_n+1_weaksol}で$n \to \infty$とすると、
+ 次を得る。
  \begin{equation}
   \int_\Omega (Du \cdot D\psi + a u \psi) dx 
-   = \int_\Omega bu^p \psi dx + \lambda \int_\Omega f\psi dx
+   = \int_\Omega bu^p \psi dx + \lambda \int_\Omega f\psi dx.
    \label{eq:minimal_u_weaksol}
  \end{equation}
- を得る。$\psi \in H_0^1(\Omega)$は任意であるから、
+ $\psi \in H_0^1(\Omega)$は任意であるから、
  $u \in H_0^1(\Omega)$は\ref{eq:prob_main}の弱解である。
  
- 最後に、$u$は\ref{eq:prob_main}のminimal solutionであることを示す。
+ 最後に、$u$は
+ \ref{eq:prob_main}のminimal solutionであることを示す。
  $\tilde{u} \in H_0^1(\Omega)$を\ref{eq:prob_main}の弱解とする。
  このとき、\eqref{eq:u_n_ind}と同様の議論により、
- $\tilde{u} > u_n \tin \Omega$が数学的帰納法で示される。
- $n \to \infty$として、$\tilde{u} \geq u \tin \Omega$となる。
+ $\tilde{u} > u_n ~\tin \Omega$が数学的帰納法で示される。
+ $n \to \infty$として、$\tilde{u} \geq u ~\tin \Omega$となる。
  よって$u$は\ref{eq:prob_main}のminimal solutionである。\qedhere
 \end{proof}
 
@@ -267,12 +285,13 @@ minimal solution の存在が従うことを示す。
 
 \begin{lem} \label{lem:minimal_va}
  \begin{enumerate}[1.]
-  \item $\lambda_0 > 0$があって、$S_{\lambda_0} \neq \emptyset$とする。
+  \item $\lambda_0 > 0$が存在して、$S_{\lambda_0} \neq \emptyset$とする。
         このとき、$0 < \lambda < \lambda_0$に対し、
         $S_\lambda \neq \emptyset$となる。
   \item $\lambda > 0$とする。$S_\lambda \neq \emptyset$ならば、
-        \ref{eq:prob_main}には minimal solution $\underline{u}_\lambda
-        \in S_\lambda$がある。
+        \ref{eq:prob_main}に
+        は minimal solution $\underline{u}_\lambda
+        \in S_\lambda$が存在する。
   \item $0 < \lambda_1 < \lambda_2$とする。$S_{\lambda_1} \neq
         \emptyset$、
         $S_{\lambda_2} \neq \emptyset$ならば、
@@ -281,7 +300,7 @@ minimal solution の存在が従うことを示す。
         $\underline{u}_{\lambda_1} < \underline{u}_{\lambda_2} ~\tin
         \Omega$が成立する。
   \item 補題~\ref{lem:imp}における\ref{eq:prob_main}の弱解を
-        $u_\lambda$yとする。このとき、$u_\lambda =
+        $u_\lambda$とする。このとき、$u_\lambda =
         \underline{u}_\lambda$である。
  \end{enumerate}
 \end{lem}
@@ -289,16 +308,18 @@ minimal solution の存在が従うことを示す。
 \begin{proof}
  \begin{enumerate}
   \item $u_{\lambda_0} \in S_{\lambda_0}$とする。$\hat{u} =
-        u_{\lambda_0}$として
-        補題~\ref{lem:minimal_itt}を適用すると結論を得る。
+        u_{\lambda_0}$とし
+        補題~\ref{lem:minimal_itt}を適用すると結論が得られる。
   \item $u_{\lambda} \in S_{\lambda}$とする。$\hat{u} =
         u_{\lambda}$として
-        補題~\ref{lem:minimal_itt}を適用すると、\ref{eq:prob_main}の
-        minimal solution $\underline{u}_\lambda$を得る。
+        補題~\ref{lem:minimal_itt}を適用すると、
+        \ref{eq:prob_main}の
+        minimal solution $\underline{u}_\lambda$が得られる。
   \item $\hat{u} = \underline{u}_{\lambda_2}$として、
         補題~\ref{lem:minimal_itt}
-        \eqref{eq:u_n_ind}を適用すると、$\underline{u}_{\lambda_1} \leq
-        \underline{u}_{\lambda_2} \tin \Omega$を得る。
+        \eqref{eq:u_n_ind}を適用すると、
+        $\underline{u}_{\lambda_1} \leq
+        \underline{u}_{\lambda_2} ~\tin \Omega$が得られる。
         \begin{align*}
          -\Delta \underline{u}_{\lambda_1} + a
          \underline{u}_{\lambda_1} 
@@ -307,51 +328,52 @@ minimal solution の存在が従うことを示す。
          \underline{u}_{\lambda_2} 
          &= b \underline{u}_{\lambda_2}^p + \lambda_2 f
         \end{align*}
-        の両辺を引くと、
+        の両辺を引くと、次が成立する。
         \[
          -\Delta (\underline{u}_{\lambda_2} - \underline{u}_{\lambda_1}) + a
          (\underline{u}_{\lambda_2} - \underline{u}_{\lambda_1} )
          = b (\underline{u}_{\lambda_2}^p -
-        \underline{u}_{\lambda_2}) + (\lambda_2 - \lambda_1) f
+        \underline{u}_{\lambda_2}) + (\lambda_2 - \lambda_1) f.
         \]
-        を得る。右辺が$0$以上であること、および、
+        右辺が$0$以上であること、および、
         $a > -\kappa_1$により、強最大値原理を用いると、
         $\underline{u}_{\lambda_1} <
         \underline{u}_{\lambda_2} ~\tin \Omega$が従う。
-  \item $u_\lambda \in S_\lambda$より、$S_\lambda \neq \empty$である。
+  \item $u_\lambda \in S_\lambda$より、
+        $S_\lambda \neq \emptyset$である。
         したがって、2.~より、\ref{eq:prob_main}は minimal solution
         $\underline{u}_\lambda$をもつ。よって、
         \eqref{eq:minimal_u_weaksol}
-        で$u = \psi = \underline{u}_\lambda$とすると、
+        で$u = \psi = \underline{u}_\lambda$とおくと、
+        以下が得られる。
         \begin{equation}
          \int_\Omega \left( \lvert D\underline{u}_\lambda \rvert^2 + a
                       \lvert \underline{u}_\lambda \rvert^2 \right) dx 
           = \int_\Omega b\underline{u}_\lambda^p dx 
-          + \lambda \int_\Omega f \underline{u}_\lambda dx
+          + \lambda \int_\Omega f \underline{u}_\lambda dx.
           \label{eq:minimal_inp_same_weak}
         \end{equation}
-        を得る。
-        
         ここで、
-        minimal solution の$H_0^1(\Omega)$ノルムが、$\lambda \searrow
+        minimal solution の
+        $H_0^1(\Omega)$ノルムが、$\lambda \searrow
         0$のとき、$0$に収束することを示す。
         \begin{align*}
          (\text{\eqref{eq:minimal_inp_same_weak}の左辺}) \geq 
          \int_\Omega \left( \lvert
          D\underline{u}_\lambda
          \rvert^2 +
-         \kappa \lvert \underline{u}_\lambda \rvert^2 \right) dx = C
-         \left\| u \right\|_{H_0^1(\Omega)}
+         \kappa \lvert \underline{u}_\lambda \rvert^2 \right) dx 
+         \geq C
+         \left\| \underline{u}_\lambda \right\|_{H_0^1(\Omega)}^2.
         \end{align*}
-        である。中辺は$\| \underline{u}_\lambda \|_\kappa$であり、
-        $\left\| \cdot
-        \right\|_{\kappa}$は
-        $\left\| \cdot
-        \right\|_{H_0^1(\Omega)}$と同値であるから、
-        $C > 0$は$\left\| \cdot
-        \right\|_{H_0^1(\Omega)}$の中身によらない定数であることに
+        中辺は$\| \underline{u}_\lambda \|_\kappa^2$であり、
+        $\dnorm_{\kappa}$は
+        $\dnorm_{H_0^1(\Omega)}$と同値であるから、
+        $C > 0$は$\dnorm_{H_0^1(\Omega)}$の
+        中身によらない定数であることに
         注意されたい。
-        また、$\underline{u}_\lambda \leq u_\lambda ~\tin \Omega$より、
+        また、
+        $\underline{u}_\lambda \leq u_\lambda ~\tin \Omega$より、
         \begin{align*}
          (\text{\eqref{eq:minimal_inp_same_weak}の右辺})
          &\leq \int_\Omega b \underline{u}_\lambda^{p+1}
@@ -360,28 +382,31 @@ minimal solution の存在が従うことを示す。
          u_\lambda \right\|_{L^{p+1}(\Omega)}^{p+1} +
          \lambda \left\| f \right\|_{H^{-1}(\Omega)} \left\|
          u_\lambda \right\|_{L^2(\Omega)} \\
-         & C^\prime \left\|
+         &\leq C^\prime \left\|
          u_\lambda \right\|_{H_0^1(\Omega)}^{p+1} +
-         C^{\prime\prime} \left\| u_\lambda \right\|_{H_0^1(\Omega)}
+         C^{\prime\prime} \left\| u_\lambda
+         \right\|_{H_0^1(\Omega)}
         \end{align*}
-        である。ここで、$C^\prime, C^{\prime\prime} > 0$は、$\left\| \cdot
-        \right\|_{H_0^1(\Omega)}$の中身によらない定数である。以上より、
+        である。ここで、$C^\prime, C^{\prime\prime} > 0$は、
+        $\dnorm_{H_0^1(\Omega)}$の中身によらない定数である。
+        以上より、以下が成立する。
         \[
          C
         \left\| u \right\|_{H_0^1(\Omega)} \leq 
         C^\prime \left\|
         u_\lambda \right\|_{H_0^1(\Omega)}^{p+1} +
-        C^{\prime\prime} \left\| u_\lambda \right\|_{H_0^1(\Omega)}
+        C^{\prime\prime}
+        \left\| u_\lambda \right\|_{H_0^1(\Omega)}.
         \]
-        となる。
         補題~\ref{lem:imp}より、$\lambda \searrow 0$のとき、
-        $\left\| u_\lambda \right\|_{H_0^1(\Omega)} \searrow 0$となる。
+        $\left\| u_\lambda \right\|_{H_0^1(\Omega)} \searrow 0$
+        が成立する。
         ゆえに、$\left\| \underline{u}_\lambda
         \right\|_{H_0^1(\Omega)}
         \searrow 0$となる。
-
         再び補題~\ref{lem:imp}によると、
-        $\lambda > 0$が十分小さいとき、$u_\lambda$は\ref{eq:prob_main}
+        $\lambda > 0$が十分小さいとき、
+        $u_\lambda$は\ref{eq:prob_main}
         の唯一の弱解であった。したがってこのことは
         $u_\lambda = \underline{u}_\lambda$を示している。 \qedhere
  \end{enumerate}
@@ -389,7 +414,7 @@ minimal solution の存在が従うことを示す。
 
 \subsection{解が存在する$\lambda$の有界性}
 
-補題~\ref{lem:imp}により、$\lambda > 0$があって、
+補題~\ref{lem:imp}により、$\lambda > 0$が存在して、
 \ref{eq:prob_main}の解が存在する。
 補題~\ref{lem:minimal_va}により、
 \ref{eq:prob_main}の解が存在する$\lambda$が見つかれば、
@@ -432,8 +457,10 @@ $g_0 \in H_0^1(\Omega)$を
  $\mu_1$はレーリッヒ商により、
  \begin{equation}
   \mu_1 = \inf_{\psi \in H_0^1(\Omega), \psi \not\equiv 0}
-   \frac{\displaystyle \int_\Omega \left( \left\| D \psi \right\|^2 + a \psi^2
-                     \right) dx}{\displaystyle \int_\Omega b (g_0)^{p-1} \psi^2 dx}
+   \frac{\displaystyle \int_\Omega 
+   \left( \lvert D \psi \rvert^2 + a
+    \lvert \psi \rvert^2
+   \right) dx}{\displaystyle \int_\Omega b (g_0)^{p-1} \psi^2 dx}
    \label{eq:g_0_lin_mu_1}
  \end{equation}
  と特徴付けられる。また、\eqref{eq:g_0_lin_mu_1}の右辺の下限を
@@ -441,55 +468,61 @@ $g_0 \in H_0^1(\Omega)$を
  付随する固有関数である。
 
  \eqref{eq:g_0_lin_mu_1}より、$H_0^1(\Omega)$の点列$\{ \psi_n \}$
- があって、
- \begin{equation}
-  \int_\Omega b(g_0)^{p-1} \psi_n^2 dx = 1 \label{eq:g_0_seq_psi_1}
- \end{equation}
- かつ、
- \begin{equation}
-  \int_\Omega \left( \left| D\psi_n \right|^2 + a \psi_n^2 \right) dx
-   \searrow \mu_1 \label{eq:g_0_seq_psi_2}
- \end{equation}
- となる。$a > \kappa$であるから、\eqref{eq:g_0_seq_psi_2}の左辺は
+ が存在し、以下が成立する。
+ \begin{align}
+  \int_\Omega b(g_0)^{p-1} \psi_n^2 dx &= 1, \label{eq:g_0_seq_psi_1} \\
+  \int_\Omega \left( \lvert D\psi_n \rvert^2 
+  + a \lvert \psi_n \rvert^2 \right) dx
+  & \searrow \mu_1. \label{eq:g_0_seq_psi_2}
+ \end{align}
+ $a > \kappa$であるから、\eqref{eq:g_0_seq_psi_2}の左辺は
  $\left\| \psi_n \right\|_\kappa^2$以下である。
- $\left\| \cdot \right\|_\kappa$は
- $\left\| \cdot \right\|_{H_0^1(\Omega)}$と同値なノルムであるから、
+ $\dnorm_\kappa$は
+ $\dnorm_{H_0^1(\Omega)}$と同値なノルムであるから、
  $\{ \psi_n \}$は$H_0^1(\Omega)$の有界列である。
  
  ゆえに、必要ならば部分列をとることにより、
- $phi_1 \in H_0^1(\Omega)$があって、$n \to \infty$とすると、
+ $\phi_1 \in H_0^1(\Omega)$が存在して、$n \to \infty$とすると、
+ 以下が成立する。
  \begin{align}
   \psi_n \xrightharpoonup{ \mbox{ ~ } } \phi_1 & \ \ \text{weakly~} \tin
   H_0^1(\Omega), \label{eq:psi_n_weakly} \\
-  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \tin L^q(\Omega) \notag \ \
+  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \tin L^q(\Omega) \ \
    (q < p+1), \label{eq:psi_n_L^q} \\
-  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \ae \tin \Omega 
+  \psi_n \xrightarrow{ \mbox{ ~ } } \phi_1 & \ \ \ae \tin \Omega. 
     \notag
  \end{align}
- となる。\eqref{eq:psi_n_weakly}より、
+ \eqref{eq:psi_n_weakly}より、$H_0^1(\Omega)$ノルムの
+ 弱下半連続性により、
  \[
   \liminf_{n \to \infty} \left\| \psi_n \right\|_{H_0^1(\Omega)}
  \geq \left\| \phi_1 \right\|_{H_0^1(\Omega)}
  \]
- であるから、\label{eq:psi_n_L^q}と合わせて、 
+ である。ゆえに、\ref{eq:psi_n_L^q}と合わせて、以下が成立する。
  \[
-  \mu_1 \geq \int_\Omega \left( \left| D\phi_1 \right|^2 + a\phi_1^2
+  \mu_1 \geq \int_\Omega \left( \lvert D\phi_1 \rvert^2 + a \lvert
+ \phi_1 \rvert^2
  \right) dx
  \]
- となる。また、$g_0 \in L^{p+1}(\Omega)$より、$b (g_0)^{p-1} \in
- L^{N/2} (\Omega)$より、
+ また、$g_0 \in L^{p+1}(\Omega)$より、$b (g_0)^{p-1} \in
+ L^{N/2} (\Omega)$より、以下が成立する。
  \[
-  \int_\Omega b(g_0)^{p-1} \psi_n^2 dx \xrightarrow{n \to \infty}
- \int_{\Omega} b(g_0)^{p-1} \phi_1^2 dx
+ \int_\Omega b(g_0)^{p-1} \psi_n^2 dx \xrightarrow{n \to \infty}
+ \int_{\Omega} b(g_0)^{p-1} \phi_1^2 dx.
  \]
- となる。以上より、
+ 以上より、次が成立する。
  \begin{equation}
-  \mu_1 \geq \frac{\displaystyle \int_\Omega \left( \left| D\phi_1 \right|^2 + a\phi_1^2
-  \right) dx}{\displaystyle \int_{\Omega} b(g_0)^{p-1} \phi_1^2 dx} \label{eq:g_0_ineq}
+  \mu_1 \geq \frac{\displaystyle \int_\Omega 
+   \left( \lvert D\phi_1 \rvert^2 + a \lvert \phi_1 \rvert^2
+   \right) dx}{\displaystyle \int_{\Omega} b(g_0)^{p-1} 
+   \phi_1^2 dx}. \label{eq:g_0_ineq}
  \end{equation}
- となる。\eqref{eq:g_0_lin_mu_1}により、\eqref{eq:g_0_ineq}の不等号は
- 実際には等号が成立する。すなわち、\eqref{eq:g_0_lin_mu_1}の右辺の下限は
- $\phi_1 \in H_0^1(\Omega)$により達成される。よって$\mu_1 > 0$である。
+ \eqref{eq:g_0_lin_mu_1}により、
+ \eqref{eq:g_0_ineq}の不等号は
+ 実際には等号が成立する。すなわち、
+ \eqref{eq:g_0_lin_mu_1}の右辺の下限は
+ $\phi_1 \in H_0^1(\Omega)$により達成される。
+ よって$\mu_1 > 0$である。
  
  \eqref{eq:g_0_lin_mu_1}の右辺の形から、
  $\phi_1$が\eqref{eq:g_0_lin_mu_1}の右辺の下限を達成するならば、
@@ -497,7 +530,8 @@ $g_0 \in H_0^1(\Omega)$を
  すなわち、$\phi_1 \geq 0 ~\tin \Omega$となる第$1$固有関数がある。
  この$\phi_1$について、
  \[
-  - \Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} \geq 0 ~\tin \Omega
+  - \Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} 
+ \phi_1 \geq 0 ~\tin \Omega
  \]
  であるから、強最大値原理により、$\phi_1 > 0 ~\tin \Omega$となる。
  \qedhere
@@ -510,7 +544,7 @@ $g_0$を用いて、次の補題を証明する。
 \end{lem}
 
 \begin{proof}
-補題~\ref{lem:imp}により、$\lambda_0 > 0$があって、$0 < \lambda <
+補題~\ref{lem:imp}により、$\lambda_0 > 0$が存在して、$0 < \lambda <
  \lambda_0$に対して、\ref{eq:prob_main}の解が存在する。
 ゆえに$\bar{\lambda} > 0$である。
 そこで、$\bar{\lambda} < \infty$を示せば証明が完了する。
@@ -523,27 +557,27 @@ $u \in S_\lambda$とし、$v = u - \lambda g_0$とする。
 \]
 であるから、強最大値原理より、$v > 0 ~\tin \Omega$である。
 つまり、$u > \lambda g_0 ~\tin \Omega$が従う。
-よって、
+よって、以下が成立する。
 \begin{equation}
  - \Delta u + au \geq bu^p \geq b \lambda^{p-1} (g_0)^{p-1} u ~\tin
-  \Omega \label{eq:lambda_infty_g_0} 
+  \Omega. \label{eq:lambda_infty_g_0} 
 \end{equation}
-である。一方、補題~\ref{lem:g_0}により、$\mu_1 > 0$、
+一方、補題~\ref{lem:g_0}により、$\mu_1 > 0$、
 $\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
-があって、
+が存在して、以下が成立する。
 \begin{equation}
- -\Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} \phi_1 ~\tin \Omega 
+ -\Delta \phi_1 + a \phi_1 = \mu_1 b (g_0)^{p-1} \phi_1 ~\tin \Omega. 
   \label{eq:lambda_infty_phi_1} 
 \end{equation}
-となる。そこで、
+ そこで、
  $\text{\eqref{eq:lambda_infty_g_0}} \times \phi_1 - 
  \text{\eqref{eq:lambda_infty_phi_1}} \times u $を$\Omega$
- 上積分すると、
+ 上積分すると、以下が成立する。
  \[
   0 \geq (\lambda^{p-1} - \mu_1) \int_\Omega b(g_0)^{p-1} u \phi_1 dx
  \]
- となる。ここで、$b \geq 0 ~\tin \Omega$、
- $b \not \equiv 0$、$g_0, u, \phi_1 > \tin \Omega$であるから、
+ ここで、$b \geq 0 ~\tin \Omega$、
+ $b \not \equiv 0$、$g_0, u, \phi_1 > 0 ~\tin \Omega$であるから、
  右辺の積分は正である。ゆえに、$\lambda^{p-1} - \mu_1 \leq 0$である。
  つまり、$\lambda \leq \mu_1^{1/(p-1)}$となる。
  $\lambda > 0$は$S_\lambda \neq \emptyset$をみたす任意の正の数
@@ -561,7 +595,7 @@ $\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
 線形化固有値問題
 \begin{equation}
  -\Delta \phi + a \phi = \mu p b (\underline{u}_\lambda)^{p-1} \phi
-  \tin \Omega, \ \ \phi \in H_0^1(\Omega) \label{eq:lin_prob_min_sol}
+  ~\tin \Omega, \ \ \phi \in H_0^1(\Omega) \label{eq:lin_prob_min_sol}
 \end{equation}
 を考察する。特に第$1$固有値、第$1$固有関数について論ずる。
 
@@ -577,7 +611,8 @@ $\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
         みたすものがある。
   \item 任意の$\psi \in H_0^1(\Omega)$に対し、
         \begin{equation}
-         \int_\Omega \left( \left\| D\psi \right\|^2 + a\psi^2 \right)
+         \int_\Omega \left( \lvert D\psi \rvert^2 + a \lvert \psi
+                      \rvert^2 \right)
           dx \geq \mu_1 \int_\Omega pb(\underline{u}_\lambda)^{p-1}
           \psi^2 dx \label{eq:lin_prob_min_sol_mu_1}
         \end{equation}
@@ -592,10 +627,28 @@ $\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
         \[
          \mu_1 = \inf_{\psi \in H_0^1(\Omega), \psi \not \equiv 0} 
         \frac{\displaystyle \int_\Omega 
-        \left( \left\| D\psi \right\|^2 + a\psi^2 \right)
+        \left( \left\lvert D\psi \right\rvert^2 + a\lvert\psi\rvert^2 \right)
           dx }{\displaystyle \int_\Omega pb(\underline{u}_\lambda)^{p-1}
           \psi^2 dx }
         \]
         から\eqref{eq:lin_prob_min_sol_mu_1}が成立する。
  \end{enumerate}
+\end{proof}
+
+\begin{nota}
+ \ref{eq:prob_main}の
+ minimal solution に関する
+ 線形化固有値問題\eqref{eq:lin_prob_min_sol}の第$1$固有値を
+ $\mu_1(\lambda)$とかく。
+\end{nota}
+
+\begin{lem}
+ $0 < \lambda < \bar{\lambda}$とする。このとき、$\mu_1(\lambda) > 1$で
+ ある。
+\end{lem}
+
+\begin{proof}
+ $\hat{\lambda}$を$0 < \lambda < \hat{\lambda} < \bar{\lambda}$を
+ みたすものとする。$z = \underline{u}_{\hat{\lambda}} -
+ \underline{u}_\lambda$とおく。補題~\ref{lem:minimal_va}.3 より、
 \end{proof}
