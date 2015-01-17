@@ -13,11 +13,14 @@
 \usepackage{relsize}
 \usepackage{url}
 \usepackage{enumerate}
-\addtolength{\labelsep}{0mm}
-\addtolength{\listparindent}{0mm}
+\addtolength{\labelsep}{1zw}
+\newcommand{\sage}{
+\addtolength{\itemindent}{1zw}
+\addtolength{\parindent}{1zw}}
 
 \usepackage{mathtools}
 \usepackage{cases}
+\usepackage{ulinej}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -127,6 +130,8 @@
 
 \input{minimal_sol}
 \input{second_sol}
+\input{second_sol2}
+\input{nonex}
 
 \appendix
 

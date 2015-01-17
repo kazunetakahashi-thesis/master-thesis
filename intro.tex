@@ -6,7 +6,7 @@ $p = (N+2)/(N-2)$とする。$f \in H^{-1}(\Omega)$は、$f \geq 0$、
 $f \not \equiv 0$をみたすとする。
 $a, b \in L^\infty(\Omega)$とする。
 $\kappa_1$を$-\Delta$の$\Omega$におけるディリクレ条件下での
-第$1$固有値とする。$\kappa > - \kappa_1$があって、$a \geq \kappa$
+第$1$固有値とする。$\kappa > - \kappa_1$が存在して、$a \geq \kappa$
 となると仮定する。また、$b \geq 0$、$b \not \equiv 0$と仮定する。
 $\lambda \geq 0$をパラメータとする。以下の方程式を考察する。
 \begin{align}
@@ -16,7 +16,7 @@ $\lambda \geq 0$をパラメータとする。以下の方程式を考察する�
   u &> 0 & &\text{in~} \Omega, \\
   u &= 0 & &\text{on~} \partial\Omega
  \end{aligned}
- \right. \tag*{$(\star)_\lambda$} \label{eq:prob_main}
+ \right. \tag*{$(\spadesuit)_\lambda$} \label{eq:prob_main}
 \end{align}
 
 \begin{thm} \label{thm:minimal_solution}
@@ -25,10 +25,38 @@ $\lambda \geq 0$をパラメータとする。以下の方程式を考察する�
 
 \begin{thm} \label{thm:extremal_solution}
  \ref{eq:prob_main} には extremal solution が存在する。
- また、\ref{eq:prob_main} の 
+ とくに、$\lambda = \bar{\lambda}$における
+ \ref{eq:prob_main} の
+ minimal solution が存在する。
+ また、$b > 0 ~\tin \Omega$ならば、\ref{eq:prob_main} の 
  extremal solution は、$\lambda = \bar{\lambda}$における
  \ref{eq:prob_main} の
  minimal solution に限る。
+\end{thm}
+
+\begin{thm} \label{thm:second_solution}
+ $0 < \lambda < \bar{\lambda}$とする。$b$は$\Omega$上の
+ ある点$p$で最大値$M_1 = \left\| b \right\|_{L^\infty}(\Omega) > 0$を
+ 達成するものと仮定する。$r_0 > 0$が存在し、
+ $\{ \lvert x - p \rvert < 2r_0 \} \subset \Omega$、かつ、
+ $\{ \lvert x - p \rvert < r_0 \}$上
+ \begin{align*}
+  b(x) &= M_1 - M_2 \lvert x-p \rvert^q,  \\
+  a(x) &= m_1 + m_2 \lvert x-p \rvert^{q^\prime}
+ \end{align*}
+ であると仮定する。ここで$q, q^\prime > 0$、
+ $M_2 > 0$、$m_1 > \kappa$、$m_2 \neq 0$は
+ 定数である。さらに、以下の(i) -- (iv)の
+ いずれかの成立を仮定する。
+ \begin{enumerate}[(i)]
+  \item $m_1 < 0$、かつ、$N \geq 3$。
+  \item $m_1 > 0$、かつ、$N = 3, 4, 5$。
+  \item $m_1 = 0$、かつ、$m_2 < 0$、かつ、$N \geq 3$。
+  \item $m_1 = 0$、かつ、$m_2 > 0$、かつ、$3 \leq N < 6 + 2q^\prime$。
+ \end{enumerate}
+ このとき、\ref{eq:prob_main}は、minimal solution
+ $\underline{u}_\lambda$
+ 以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$をもつ。
 \end{thm}
 
 \subsection{記号}
@@ -39,23 +67,27 @@ $\lambda \geq 0$をパラメータとする。以下の方程式を考察する�
 する$u \in H^1(\Omega)$全体を$H_0^1(\Omega)$と表記する。
 ヘルダー空間を$C^{k + \alpha}(\Omega)$ ($k \in \N$、$0 < \alpha < 1$)
 と表記する。
+コンパクト台を持つ$\Omega$上の$C^\infty$級関数全体を
+$C^\infty_c (\Omega)$と表記する。
 
 ノルム空間$X$のノルムを$\dnorm_X$と表記する。
 ノルム空間$X$の双対空間を$X^*$と表記する。
 $H_0^1(\Omega)^*$を$H^{-1}(\Omega)$と表記する。
-$w \in H_0^1(\Omega)$に対し、
+$f \in H^{-1}$の$u \in H_0^1(\Omega)$への作用を$\langle f, u \rangle$
+と表記する。
+$H_0^1(\Omega)$上のノルム$\dnorm_{\kappa}$を、$w \in H_0^1(\Omega)$に対し、
 \[
  \left\| w \right\|_\kappa = \left(\int_\Omega \left( \lvert Dw \rvert^2 +
- \kappa \lvert w \rvert^2 \right) dx\right)^{1/2}
+ \kappa w ^2 \right) dx\right)^{1/2}
 \]
 と定める。$\kappa > -\kappa_1$、$\Omega$が有界領域で
 あることにより、ポアンカレの不等式から
 $\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムであることが従う。また、
-$w \in H_0^1(\Omega)$に対し、
+と同値なノルムである。また、
+$H_0^1(\Omega)$上のノルム$\dnorm$を、$w \in H_0^1(\Omega)$に対し、
 \[
  \left\| w \right\| = \left(\int_\Omega \lvert Dw \rvert^2 dx\right)^{1/2}
 \]
 と定める。やはりポアンカレの不等式から
 $\dnorm$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムであることが従う。
+と同値なノルムであることがしたがう。

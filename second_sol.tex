@@ -1,2 +1,103 @@
 %#!platex main.tex
-\section{$N \geq 6$かつ$\lambda > 0$が小さい場合} \label{sec:sym}
+\section{second solutionの存在 1 --- 命題~\ref{prop:second_1}の証明}
+
+本節と次節で、定理~\ref{thm:second_solution}を証明する。
+本節と次節を通し、$0 < \lambda < \bar{\lambda}$とする。
+
+\ref{eq:prob_main}の minimal solution 以外の解
+$\bar{u}_\lambda$を見出すために、
+以下の方程式\ref{eq:prob_sec}を考察する。
+\begin{align}
+ \left\{
+ \begin{aligned}
+   -\Delta v + a v &= b \left( (v + \underline{u}_\lambda)^p - (\underline{u}_\lambda)^p \right)
+  & &\text{in~} \Omega, \\
+  v &> 0 & &\text{in~} \Omega, \\
+  v &= 0 & &\text{on~} \partial\Omega
+ \end{aligned}
+ \right. \tag*{$(\heartsuit)_\lambda$} \label{eq:prob_sec}
+\end{align}
+
+方程式\ref{eq:prob_sec}を考察するために、以下の記号をおく。
+
+\begin{nota}
+ \begin{enumerate}[1.]
+  \item $\R \times \R \times \Omega$を定義域とする実数値関数$g, G$を
+        以下の通りに定める。
+        \begin{align}
+         g(t, s, x) &= b(x) \left( (t_+ + s)^p - s^p \right) a t_+, 
+         \label{eq:def_g} \\
+         G(t, s, x) &= \int_0^{t_+} g(t, s, x) dt
+         \notag \\
+         &= b(x) \left( \frac{1}{p+1} (t_+ + s)^{p+1} - \frac{1}{p+1}
+         s^{p+1} - s^p t_+ \right) - \frac{1}{2} a(x) t_+^2.
+         \label{eq:def_G}
+        \end{align}
+        $g(v, \underline{u}_\lambda, x)$を$g(v, \underline{u}_\lambda
+        )$と表記する。
+        $G(v,\underline{u}_\lambda, x)$を$G(v, \underline{u}_\lambda
+        )$と表記する。
+  \item $I_{\lambda} \colon H_0^1(\Omega) \to \R$を以下の通りに定める。
+        \begin{equation}
+         I_\lambda (v) = \frac{1}{2} \int_\Omega \lvert Dv \rvert^2 dx
+          - \int_\Omega G(v, \underline{u}_\lambda) dx. \label{eq:def_I}
+        \end{equation}
+ \end{enumerate}
+\end{nota}
+
+\ref{eq:prob_sec}の考察を始める前に、
+\ref{eq:prob_main}と\ref{eq:prob_sec}の関係、および、
+\ref{eq:prob_sec}と$I_\lambda$の関係を明らかにする。
+
+\begin{lem}
+ \begin{enumerate}[1.]
+  \item 以下の(1), (2)は同値である。
+        \begin{enumerate}[(1)]
+         \item \ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$
+               以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$が存在する。
+         \item \ref{eq:prob_sec}の
+               弱解$v \in H_0^1(\Omega)$が存在する。
+        \end{enumerate}
+  \item $v \in H_0^1(\Omega)$は
+        \eqref{eq:def_I}で定まる$I_\lambda$の臨界点であると仮定する。
+        このとき、$v$は\ref{eq:prob_sec}の弱解である。
+ \end{enumerate}
+\end{lem}
+
+ここで次の記号を置く。
+
+\begin{nota} \label{nota:S_def}
+ $V \subset \R^N$を領域とする。
+ \begin{equation}
+  S = \inf_{u \in H^1_0(V), u \not \equiv 0}
+ \frac{\left\| Du \right\|_{L^2(V)}^2}{\left\| u
+                                       \right\|_{L^{p+1}(V)}^2}  
+ \label{eq:S_def}
+ \end{equation}
+ と定める。
+\end{nota}
+
+$S$は$V$には依存しないことが知られている。
+
+次の2つの命題を証明することにより、
+定理~\ref{thm:second_solution}を証明する。
+
+\begin{prop} \label{prop:second_1}
+ $0 < \lambda < \bar{\lambda}$とする。
+ $v \geq 0 ~\tin \Omega$、$v_0 \not \equiv 0$、かつ、
+ \begin{equation}
+  \sup_{t > 0} I_\lambda (tv_0) < = \frac{1}{NM^{(n-2)/2}} S^{N/2} 
+   \label{eq:ineq_S}
+ \end{equation}
+ をみたす$v_0 \in H_0^1(\Omega)$が存在することを仮定する。
+ このとき、\ref{eq:prob_sec}の弱解$v \in H_0^1(\Omega)$が存在する。
+\end{prop}
+
+\begin{prop} \label{prop:second_2}
+ 定理~\ref{thm:second_solution}の仮定のもとで、$v_0 \geq 0 ~\tin
+ \Omega$、$v_0 \not \equiv 0$、および、\eqref{eq:ineq_S}をみたす
+ $v_0 \in H_0^1(\Omega)$が存在する。
+\end{prop}
+
+命題~\ref{prop:second_1}の証明は本節、
+命題~\ref{prop:second_2}の証明は次節でおこなう。

@@ -1,0 +1,88 @@
+%#!platex main.tex
+\section{second solutionの存在 2 --- 命題~\ref{prop:second_2}の証明}
+
+本節では、命題~\ref{prop:second_2}を証明する。
+本節を通し、定理~\ref{thm:second_solution}の仮定をおく。
+必要ならば$\Omega$を平行移動することにより、$p = 0$としてよい。
+以降$p = 0$とする。
+
+\subsection{タレンティー関数の考察}
+
+本小節では、命題~\ref{prop:second_2}の証明の鍵となる
+タレンティー関数を考察する。
+命題~\ref{prop:second_2}の$v_0$は、タレンティー関数を
+加工することにより得られる。そこで本小節では、
+次小節で必要となる具体的計算を実行する。
+
+まずは、タレンティー関数を定義する。
+\begin{defn}
+ {\bf タレンティー関数}$U \colon \R^N \to \R$を
+ \[
+   U(x) = \frac{1}{(1 + \lvert x \rvert^2)^{(N-2)/2}}
+ \]
+ と定める。
+\end{defn}
+
+$U$について、
+以下の事実が知られている。
+
+\begin{lem}
+ タレンティー関数$U$について、次式が成立する。
+ \begin{equation}
+  S = \frac{\left\| DU \right\|_{L^2(\R^N)}^2}
+   {\left\| U \right\|_{L^{p+1}(\R^N)}^2}. 
+   \label{eq:S_ach}
+ \end{equation}
+ すなわち、\eqref{eq:S_def}の右辺の下限は、$V = \R^N$のとき、
+ $U$により達成される。
+\end{lem}
+
+$\Omega$上の cut off function $\eta$を、
+$\eta \in C^\infty_c (\Omega)$、$0 \leq \eta \leq 1 ~\tin
+\Omega$、
+$\{ \lvert x \rvert \leq r_0 \}$上$\eta \equiv 1$、
+$\{ \lvert x \rvert \geq 2r_0 \}$上$\eta \equiv 0$となるものとする。
+$\epsilon > 0$とする。
+$\Omega$上の関数$u_\epsilon$を
+\[
+ u_\epsilon (x) = \frac{\eta(x)}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}}
+\]
+と定める。\cite{MR709644}~より、次式が成立する。
+\begin{equation}
+ \left\| Du_\epsilon \right\|_{L^2(\Omega)}^2 
+  = \left\| DU \right\|_{L^2(\Omega)}^2 \epsilon^{-(N-2)/2} + O(1).
+  \label{eq:Duepsilon}
+\end{equation}
+
+次に、$\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2$
+を考察する。
+\[
+ \int_\Omega b u_{\epsilon}^{p+1} dx
+ = \int_\Omega \frac{b(x) \eta(x)^{p+1}}{(\epsilon + \lvert x
+ \rvert^2)^N} dx 
+ = O(1) + \int_{ \{ \lvert x \rvert < r_0 \} } 
+ \frac{b(x)}{(\epsilon + \lvert x
+ \rvert^2)^N} dx.
+\]
+最左辺の積分を$I$とおく。ここで$q$と$N$の大小により
+場合分けをする。
+
+\ulinej{{$q < N$}のとき}：変数変換により、
+\[
+ I = \int_{ \{ \lvert x \rvert < r_0 \} } 
+ \frac{M_1 - M_2 \lvert x \rvert^q}{(\epsilon + \lvert x
+ \rvert^2)^N} dx
+ = \frac{M_1}{\epsilon^{N/2}} \int_{ \left\{ \lvert x \rvert <
+ \frac{r_0}{\sqrt{\epsilon}} \right\}} \frac{1}{(1 + \lvert x
+ \rvert^2)^N}
+ - \frac{M_2}{\epsilon^{(N-q)/2}} \int_{ \left\{ \lvert x \rvert <
+ \frac{r_0}{\sqrt{\epsilon}} \right\}}
+ \frac{ \lvert x \rvert^q}{(1 + \lvert x
+ \rvert^2)^N}
+\]
+である。第$1$項の積分を$I_1(\epsilon)$、第$2$項の積分を$I_2(\epsilon)$
+とおく。$\epsilon \searrow 0$のとき、
+$I_1(\epsilon) \to \left\| U \right\|_{L^{p+1}(\Omega)}^{p+1}$である。
+$q < N$であるから、$I_2(\epsilon)$は有限の値に収束する。
+
+\subsection{命題~\ref{prop:second_2}の証明}

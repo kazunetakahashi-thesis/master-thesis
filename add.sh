@@ -1,1 +1,1 @@
-git add main.tex main.pdf intro.tex minimal_sol.tex second_sol.tex ref.tex ref.bib
+git add main.tex main.pdf intro.tex minimal_sol.tex second_sol.tex ref.tex ref.bib second_sol2.tex nonex.tex add.sh
