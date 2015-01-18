@@ -37,20 +37,26 @@ $U$について、
  $U$により達成される。
 \end{lem}
 
+\begin{nota}
 $\Omega$上の cut off function $\eta$を、
 $\eta \in C^\infty_c (\Omega)$、$0 \leq \eta \leq 1 ~\tin
 \Omega$、
 $\{ \lvert x \rvert \leq r_0 \}$上$\eta \equiv 1$、
 $\{ \lvert x \rvert \geq 2r_0 \}$上$\eta \equiv 0$となるものとする。
 $\epsilon > 0$とする。
-$\Omega$上の関数$u_\epsilon$を
-\[
- u_\epsilon (x) = \frac{\eta(x)}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}}
-\]
-と定める。\cite{MR709644}~より、次式が成立する。
+$\Omega$上の関数$u_\epsilon, v_\epsilon$を、
+\begin{align*}
+ u_\epsilon (x) &= \frac{\eta(x)}{(\epsilon + \lvert x
+ \rvert^2)^{(N-2)/2}}, \\
+ v_\epsilon (x) &= \frac{u_\epsilon(x)}{\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}}  
+\end{align*}
+と定める。
+\end{nota}
+
+さて、\cite{MR709644}~の p.~444 より、次式が成立する。
 \begin{equation}
  \left\| Du_\epsilon \right\|_{L^2(\Omega)}^2 
-  = \left\| DU \right\|_{L^2(\Omega)}^2 \epsilon^{-(N-2)/2} + O(1).
+  = \left\| DU \right\|_{L^2(\R^N)}^2 \epsilon^{-(N-2)/2} + O(1).
   \label{eq:Duepsilon}
 \end{equation}
 
@@ -73,16 +79,156 @@ $\Omega$上の関数$u_\epsilon$を
  \frac{M_1 - M_2 \lvert x \rvert^q}{(\epsilon + \lvert x
  \rvert^2)^N} dx
  = \frac{M_1}{\epsilon^{N/2}} \int_{ \left\{ \lvert x \rvert <
- \frac{r_0}{\sqrt{\epsilon}} \right\}} \frac{1}{(1 + \lvert x
- \rvert^2)^N}
+ r_0/\sqrt{\epsilon} \right\}} \frac{1}{(1 + \lvert x
+ \rvert^2)^N}dx
  - \frac{M_2}{\epsilon^{(N-q)/2}} \int_{ \left\{ \lvert x \rvert <
- \frac{r_0}{\sqrt{\epsilon}} \right\}}
+ r_0/\sqrt{\epsilon} \right\}}
  \frac{ \lvert x \rvert^q}{(1 + \lvert x
- \rvert^2)^N}
+ \rvert^2)^N}dx
 \]
 である。第$1$項の積分を$I_1(\epsilon)$、第$2$項の積分を$I_2(\epsilon)$
 とおく。$\epsilon \searrow 0$のとき、
 $I_1(\epsilon) \to \left\| U \right\|_{L^{p+1}(\Omega)}^{p+1}$である。
 $q < N$であるから、$I_2(\epsilon)$は有限の値に収束する。
+\[
+ \left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2 = 
+ \frac{M_1^{2/(p+1)}}{\epsilon^{(N-2)/2}} I_1(\epsilon)^{1/(p+1)} 
+ - \frac{M_2^{2/(p+1)}}{\epsilon^{(N-2)(N-q)/2N}}
+ I_2(\epsilon)^{1/(p+1)} + O(1)
+\]
+であるから、\eqref{eq:Duepsilon}および\eqref{eq:S_ach}より、
+\begin{equation}
+ \lim_{\epsilon \searrow 0} 
+  \frac{\left\| Du_\epsilon
+        \right\|_{L^2(\Omega)}^2}
+  {\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2}
+  = \frac{\left\| DU \right\|_{L^2(\R^N)}^2}{M_1^{2/(p+1)} 
+  \left\| U \right\|_{L^{p+1}(\R^N)}^2} = \frac{S}{M_1^{2/(p+1)}}
+  \label{eq:vepsilon_S}
+\end{equation}
+と計算される。すなわち、次式がしたがう。
+\begin{equation}
+ \left\| v_\epsilon \right\|^2 = \left\| Dv_\epsilon
+                                 \right\|^2_{L^2(\Omega)} 
+ = \frac{S}{M^{2/(p+1)}} + O(\epsilon^{(N-2)/2}). \label{eq:vepsilon}
+\end{equation}
+
+\ulinej{{$q = N$}のとき}：極座標変換をすると、次式が得られる。
+\[
+ \int_{ \{ \lvert x \rvert < r_0 \} } 
+ \frac{\lvert x \rvert^q}{(\epsilon + \lvert x
+ \rvert^2)^N} dx
+ = \mathrm{vol}(S^{N-1}) \int_0^{r_0} \frac{r^N}{(\epsilon + r^2)^N}
+ r^{N-1} dr = O(\lvert \log \epsilon \rvert).
+\]
+ここで$\mathrm{vol}(S^{N-1})$は半径$1$の$(N-1)$次元球面の体積である。
+ゆえに、
+\eqref{eq:vepsilon_S}、
+\eqref{eq:vepsilon}が同様にしたがう。
+
+\ulinej{{$q > N$}のとき}：
+\[
+ \int_{ \{ \lvert x \rvert < r_0 \} } 
+ \frac{\lvert x \rvert^q}{(\epsilon + \lvert x
+ \rvert^2)^N} dx < 
+ \int_{ \{ \lvert x \rvert < r_0 \} } 
+ \lvert x \rvert^{q-2N} dx < \infty
+\]
+であるから、最右辺は$O(1)$である。ゆえに、やはり
+\eqref{eq:vepsilon_S}、
+\eqref{eq:vepsilon}がしたがう。
+いずれの場合でも、
+\begin{equation}
+ \left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2 = 
+ O(\epsilon^{-(N-2)/2}) \label{eq:buepsilon}
+\end{equation}
+である。
+
+次に、
+\[
+ \int_\Omega au_\epsilon^2 dx = O(1) + \int_{ \{ \lvert x \rvert <
+ r_0 \} } \frac{m_1 + m_2 \lvert x \rvert^{q^\prime}}{(\epsilon +
+ \lvert x \rvert^2)^{N-2}} dx 
+\]
+を考察する。$I_1, I_2$を
+\begin{align*}
+ I_1 &= 
+ \int_{ \{ \lvert x \rvert <
+ r_0 \} } \frac{1}{(\epsilon +
+ \lvert x \rvert^2)^{N-2}} dx, \\
+ I_2 &= 
+ \int_{ \{ \lvert x \rvert <
+ r_0 \} } \frac{ \lvert x \rvert^{q^\prime}}{(\epsilon +
+ \lvert x \rvert^2)^{N-2}} dx
+\end{align*}
+とおく。\cite{MR709644}~の p.~444 より、次式が成立する。
+\[
+ I_1 = \begin{cases}
+        O(\epsilon^{-(N-4)/2}) & (n \geq 5),\\
+        O(\lvert \log \epsilon \rvert) & (n = 4), \\ 
+        O(1) & (n = 3).
+       \end{cases}
+\]
+$I_2$を、$N$と$q^\prime + 4$の大小で場合分けして計算する。
+
+\ulinej{{$N > q^\prime + 4$}のとき}：変数変換により、
+\[
+ I_2 = \frac{1}{\epsilon^{(N-q^\prime - 4)/2}} \int_{ \{ \lvert x
+ \rvert < r_0 / \sqrt{\epsilon}\}} 
+ \frac{ \lvert x \rvert^{q^\prime}}{(1 +
+ \lvert x \rvert^2)^{N-2}} dx
+\]
+である。右辺の積分を$I(\epsilon)$とおく。
+$N > q^\prime + 4$であるから、$\epsilon \searrow 0$のとき、
+$I(\epsilon)$は収束する。よって、$I_1 =
+O(\epsilon^{-(N-q^\prime-4)/2})$である。
+
+\ulinej{{$N = q^\prime + 4$}のとき}：極座標変換により、
+\[
+ I_2 = \mathrm{vol}(S^{N-1}) \int_0^{r_0} \frac{ \lvert x
+ \rvert^{N-4}}{(\epsilon + \lvert x \rvert^2)^{N-2}} r^{N-1} dr =
+ O(\lvert \log \epsilon \rvert)
+\]
+と計算される。
+
+\ulinej{{$N < q^\prime + 4$}のとき}：
+\[
+ I_2 < \int_{ \{ \lvert x \rvert < r_0 \}} \lvert x \rvert^{q^\prime -
+ 2(N-2)} dx < \infty
+\]
+であるから、$I_2 = O(1)$である。
+
+よって、$\epsilon \searrow 0$のときの$I_2$の挙動は次の通りにまとめられる。
+\[
+ I_2 = \begin{cases}
+        O(\epsilon^{-(N-q^\prime-4)/2}) & (n > q^\prime + 4),\\
+        O(\lvert \log \epsilon \rvert) & (n = q^\prime + 4), \\ 
+        O(1) & (n < q^\prime + 4).
+       \end{cases}
+\]
+以上の結果と、\eqref{eq:buepsilon}より、以下が成立する。
+\begin{equation}
+ \left\{ 
+ \begin{aligned}
+  \int_\Omega a v_\epsilon dx &= O(1) + m_1 I_1^\prime + m_2
+  I_2^\prime, \\
+  I_1^\prime &= \begin{cases}
+                 O(\epsilon) & (N \geq 5), \\
+                 O(\epsilon \lvert \log \epsilon \rvert) & (N = 4), \\
+                 O(\epsilon^{1/2}) & (N = 3),
+                \end{cases} \\
+  I_2^\prime &= \begin{cases}
+                 O(\epsilon^{1 + q^\prime/2 }) & (N > q^\prime + 4), \\
+                 O(\epsilon^{(N-2)/2} \lvert \log \epsilon \rvert) & (N =
+                 q^\prime + 4), \\
+                 O(\epsilon^{(N-2)/2}) & (N < q^\prime + 4).
+                \end{cases}
+ \end{aligned} \right.
+\end{equation}
 
 \subsection{命題~\ref{prop:second_2}の証明}
+
+% Local Variables:
+% mode: yatex
+% TeX-master: "main.tex"
+% End:
