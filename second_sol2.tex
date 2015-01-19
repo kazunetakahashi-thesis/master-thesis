@@ -45,11 +45,11 @@ $\{ \lvert x \rvert \leq r_0 \}$上$\eta \equiv 1$、
 $\{ \lvert x \rvert \geq 2r_0 \}$上$\eta \equiv 0$となるものとする。
 $\epsilon > 0$とする。
 $\Omega$上の関数$u_\epsilon, v_\epsilon$を、
-\begin{align*}
+\begin{align}
  u_\epsilon (x) &= \frac{\eta(x)}{(\epsilon + \lvert x
- \rvert^2)^{(N-2)/2}}, \\
- v_\epsilon (x) &= \frac{u_\epsilon(x)}{\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}}  
-\end{align*}
+ \rvert^2)^{(N-2)/2}}, \label{eq:def_uepsilon} \\
+ v_\epsilon (x) &= \frac{u_\epsilon(x)}{\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}} \label{eq:def_vepsilon}
+\end{align}
 と定める。
 \end{nota}
 
@@ -201,16 +201,16 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
 よって、$\epsilon \searrow 0$のときの$I_2$の挙動は次の通りにまとめられる。
 \[
  I_2 = \begin{cases}
-        O(\epsilon^{-(N-q^\prime-4)/2}) & (n > q^\prime + 4),\\
-        O(\lvert \log \epsilon \rvert) & (n = q^\prime + 4), \\ 
-        O(1) & (n < q^\prime + 4).
+        O(\epsilon^{-(N-q^\prime-4)/2}) & (N > q^\prime + 4),\\
+        O(\lvert \log \epsilon \rvert) & (N = q^\prime + 4), \\ 
+        O(1) & (N < q^\prime + 4).
        \end{cases}
 \]
 以上の結果と、\eqref{eq:buepsilon}より、以下が成立する。
 \begin{equation}
  \left\{ 
  \begin{aligned}
-  \int_\Omega a v_\epsilon dx &= O(1) + m_1 I_1^\prime + m_2
+  \int_\Omega a v_\epsilon^2 dx &= O(1) + m_1 I_1^\prime + m_2
   I_2^\prime, \\
   I_1^\prime &= \begin{cases}
                  O(\epsilon) & (N \geq 5), \\
@@ -227,6 +227,91 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
 \end{equation}
 
 \subsection{命題~\ref{prop:second_2}の証明}
+
+本小節では、いくつかの補題を積み重ね、
+命題~\ref{prop:second_2}に証明を与える。
+
+\begin{lem}
+ $\tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$とする。
+ このとき、次式が成立する。
+ \begin{equation}
+  \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) = 
+   \frac{1}{NM_1^{(N-2)/2}} S^{N/2}. \label{eq:limI}
+ \end{equation}
+\end{lem}
+
+\begin{proof}
+ \eqref{eq:def_vepsilon}より、
+ \[
+  \int_\Omega bv_\epsilon^{p+1} dx = 1
+ \]
+ であるから、$t \geq 0$に対し、次式が得られる。
+ \[
+  I_\lambda(tv_\epsilon) = \frac{1}{2} t^2 \left\| v_\epsilon
+ \right\|^2 - \frac{1}{p+1} t^{p+1} - \int_\Omega H(tv_\epsilon,
+ \underline{u}_\lambda) dx.
+ \]
+ したがって、次式が成立する。
+ \[
+  I_\lambda(\tau_\epsilon v_\epsilon) = \frac{1}{N} \left( \left\|
+ v_\epsilon \right\|^2 \right)^{N/2} - \int_\Omega H(\tau_\epsilon
+ v_\epsilon, \underline{u}_\lambda) dx.
+ \]
+ \eqref{eq:vepsilon}より、以下がしたがう。
+ \begin{align*}
+  \lim_{\epsilon \searrow 0} \tau_\epsilon
+  &= \frac{S^{1/(p-1)}}{M_1^{2/(p+1)(p-1)}}, \\
+  \lim_{\epsilon \searrow 0} \frac{1}{N} \left( \left\|
+ v_\epsilon \right\|^2 \right)^{N/2} &= \frac{1}{NM_1^{(N-2)/2}}
+  S^{N/2}.
+ \end{align*}
+ $\epsilon \searrow 0$のとき、$\tau_\epsilon v_\epsilon \to 0 ~\ae
+ \tin \Omega$である。ゆえに、補題~\ref{lem:conv}より、次式が成立する。
+ \[
+  \lim_{\epsilon \searrow 0} \int_\Omega H(\tau_\epsilon
+ v_\epsilon, \underline{u}_\lambda) dx = 0.
+ \]
+ 以上より、\eqref{eq:limI}を得る。\qedhere
+\end{proof}
+
+\begin{lem}
+ $\epsilon_0 > 0$と$C > 0$が存在し、$0 < \epsilon < \epsilon_0$に対し、
+ \begin{equation}
+  \int_\Omega H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda)
+   dx \geq C\epsilon^{(N-2)/4} \label{eq:int_Hprime}
+ \end{equation}
+ が成立する。
+\end{lem}
+
+\begin{proof}
+補題~\ref{lem:mountain_dec}より、$t \to \infty$のとき、
+$I_\lambda(t v_\epsilon) \to -\infty$となる。
+したがって、ある$K>0$が存在し、$K < t$においては、
+$I_\lambda(t v_\epsilon) < 0$となる。
+また、$I_\lambda(0) = 0$である。
+ゆえに、$\sup_{t \geq 0} I_\lambda (tv_\epsilon) = 
+\sup_{t \in [0, K]} I_\lambda (tv_\epsilon)$となる。
+$I_\lambda(tv_\epsilon)$は$t$についての連続関数であるから、
+$\sup_{t \geq 0} I_\lambda (tv_\epsilon)$を達成する
+$t > 0$が存在する。この$t$を$t_\epsilon$とかく。$t_\epsilon > 0$であり、
+次式が成立する。
+\begin{equation}
+ I_\lambda(t_\epsilon v_\epsilon) = \sup_{t \geq 0} I_\lambda(t
+  v_\epsilon).
+  \label{eq:t_epsilon}
+\end{equation}
+
+ここで、次式を背理法を用いて証明する。
+\begin{equation}
+ \liminf_{\epsilon \searrow 0} t_\epsilon > 0. \label{eq:liminf_tepsilon}
+\end{equation}
+\eqref{eq:liminf_tepsilon}を否定し、
+$\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する。
+$s, t \geq 0$に対し、$G(s, t) \geq 0$である。そこで、
+
+よって、背理法により、\eqref{eq:liminf_tepsilon}がしたがう。 
+\end{proof}
+
 
 % Local Variables:
 % mode: yatex
