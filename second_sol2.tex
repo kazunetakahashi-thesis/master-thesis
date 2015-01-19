@@ -26,7 +26,7 @@
 $U$について、
 以下の事実が知られている。
 
-\begin{lem}
+\begin{lem}[\cite{MR0463908}]
  タレンティー関数$U$について、次式が成立する。
  \begin{equation}
   S = \frac{\left\| DU \right\|_{L^2(\R^N)}^2}
@@ -274,6 +274,33 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
  以上より、\eqref{eq:limI}を得る。\qedhere
 \end{proof}
 
+\begin{lem} \label{lem:t_epsilon}
+$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する。
+\end{lem}
+
+\begin{proof}
+補題~\ref{lem:mountain_dec}より、$t \to \infty$のとき、
+$I_\lambda(t v_\epsilon) \to -\infty$となる。
+したがって、ある$K>0$が存在し、$K < t$においては、
+$I_\lambda(t v_\epsilon) < 0$となる。
+また、$I_\lambda(0) = 0$である。
+ゆえに、$\sup_{t > 0} I_\lambda (tv_\epsilon) = 
+\sup_{t \in [0, K]} I_\lambda (tv_\epsilon)$となる。
+$I_\lambda(tv_\epsilon)$は$t$についての連続関数であるから、
+$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する。\qedhere
+\end{proof}
+
+\begin{nota}
+ 補題~\ref{lem:t_epsilon}
+ の$t$を$t_\epsilon$とかく。$t_\epsilon > 0$であり、
+ 次式が成立する。
+ \begin{equation}
+  I_\lambda(t_\epsilon v_\epsilon) = \sup_{t > 0} I_\lambda(t
+   v_\epsilon).
+   \label{eq:t_epsilon}
+ \end{equation}
+\end{nota}
+
 \begin{lem} \label{lem:intHprime}
  $\epsilon_0 > 0$と$C > 0$が存在し、$0 < \epsilon < \epsilon_0$に対し、
  \begin{equation}
@@ -284,24 +311,7 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
 \end{lem}
 
 \begin{proof}
-補題~\ref{lem:mountain_dec}より、$t \to \infty$のとき、
-$I_\lambda(t v_\epsilon) \to -\infty$となる。
-したがって、ある$K>0$が存在し、$K < t$においては、
-$I_\lambda(t v_\epsilon) < 0$となる。
-また、$I_\lambda(0) = 0$である。
-ゆえに、$\sup_{t \geq 0} I_\lambda (tv_\epsilon) = 
-\sup_{t \in [0, K]} I_\lambda (tv_\epsilon)$となる。
-$I_\lambda(tv_\epsilon)$は$t$についての連続関数であるから、
-$\sup_{t \geq 0} I_\lambda (tv_\epsilon)$を達成する
-$t > 0$が存在する。この$t$を$t_\epsilon$とかく。$t_\epsilon > 0$であり、
-次式が成立する。
-\begin{equation}
- I_\lambda(t_\epsilon v_\epsilon) = \sup_{t \geq 0} I_\lambda(t
-  v_\epsilon).
-  \label{eq:t_epsilon}
-\end{equation}
-
-ここで、次式を背理法を用いて証明する。
+まず、次式を背理法を用いて証明する。
 \begin{equation}
  \liminf_{\epsilon \searrow 0} t_\epsilon > 0. \label{eq:liminf_tepsilon}
 \end{equation}
@@ -470,7 +480,7 @@ $s$についての増加関数である。
    \alpha(t) = \frac{1}{2} t^2 \left\| v_\epsilon \right\|^2 -
  \frac{1}{p+1} t^{p+1}
  \]
- が、$t = \tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$に
+ が、$t = \left\| v_\epsilon \right\|^{2/(p-1)}$に
  おいて最大値をとることに注意した。\eqref{eq:vepsilon}、
  \eqref{eq:av_epsilon}、補題~\ref{lem:tauepsilon}、補
  題~\ref{lem:intHprime}により、$\epsilon_0 > 0$、$C, C^\prime > 0$が

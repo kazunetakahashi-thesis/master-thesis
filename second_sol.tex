@@ -27,6 +27,7 @@
          I_\lambda (v) = \frac{1}{2} \int_\Omega \lvert Dv \rvert^2 dx
           - \int_\Omega G(v, \underline{u}_\lambda) dx. \label{eq:def_I}
         \end{equation}
+        $I_\lambda$のフレッシェ微分を$I_\lambda^\prime$と表記する。
  \end{enumerate}
 \end{nota}
 
@@ -87,38 +88,44 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 
 命題~\ref{prop:second_1}の証明は本節、
 命題~\ref{prop:second_2}の証明は次節でおこなう。
+本節はこれ以降、命題~\ref{prop:second_1}の証明をおこなう。
 
 まずは、以降の議論で使用する積分の極限について議論する。
 
 \begin{nota}
- 関数$H, h, H^\prime, h^\prime$を以下の通りに定める。
+ 関数$H, h, H^\prime, h^\prime, G^\prime, g^\prime$を以下の通りに定める。
  \begin{align*}
-  H(t, s, x) &= G(t, s, x) - \frac{b(x)}{p+1} t_+ ^{p+1}, \\
+  H(t, s, x) &= G(t, s, x) - \frac{1}{p+1}b(x) t_+ ^{p+1}, \\
   h(t, s, x) &= g(t, s, x) - b(x) t_+ ^{p}, \\
   H^\prime (t, s, x) &= H(t, s, x) + \frac{1}{2}a(x) t_+^2, \\
   h^\prime (t, s, x) &= h(t, s, x) + a(x) t_+.
+  G^\prime (t, s, x) &= G(t, s, x) + \frac{1}{2}a(x) t_+^2, \\
+  g^\prime (t, s, x) &= g(t, s, x) + a(x) t_+.
  \end{align*}
  $H(v, \underline{u}_\lambda, x)$を
  $H(v, \underline{u}_\lambda)$と表記する。
  $h(v, \underline{u}_\lambda)$、
  $H^\prime(v, \underline{u}_\lambda)$、
- $h^\prime(v, \underline{u}_\lambda)$も同様である。
+ $h^\prime(v, \underline{u}_\lambda)$、
+ $G^\prime(v, \underline{u}_\lambda)$、
+ $g^\prime(v, \underline{u}_\lambda)$も全て同様である。
 \end{nota}
 
 \begin{lem} \label{lem:conv}
  $v \in H_0^1(\Omega)$とし、$\{ v_k \}_{k = 0}^\infty$を
  $H_0^1(\Omega)$の有界列とする。$k \to \infty$のとき、
- $v_k \to v ~ae ~tin \Omega$と仮定する。このとき、以下が成立する。
+ $v_k \to v ~ae ~tin \Omega$と仮定する。このとき、$k \to \infty$
+ とすると、以下が成立する。
  \begin{align}
-  \int_\Omega H(v_k, \underline{u}_\lambda)dx &\xrightarrow{k \to
-  \infty} 
+  \int_\Omega H(v_k, \underline{u}_\lambda)dx &\xrightarrow{ \mbox{ ~
+  } } 
   \int_\Omega H(v, \underline{u}_\lambda)dx, \label{eq:conv_H} \\
-  \int_\Omega h(v_k, \underline{u}_\lambda)v_k dx &\xrightarrow{k \to
-  \infty} 
+  \int_\Omega h(v_k, \underline{u}_\lambda)v_k dx &\xrightarrow{
+  \mbox{ ~ } } 
   \int_\Omega h(v, \underline{u}_\lambda)v_k dx. \label{eq:conv_h} \\
   \intertext{また、任意の$\psi \in H_0^1(\Omega)$に対し、}
-  \int_\Omega g(v_k, \underline{u}_\lambda)\psi dx &\xrightarrow{k \to
-  \infty} 
+  \int_\Omega g(v_k, \underline{u}_\lambda)\psi dx &\xrightarrow{
+  \mbox{ ~ } } 
   \int_\Omega g(v, \underline{u}_\lambda)\psi dx \label{eq:conv_g}
  \end{align}
  が成立する。
@@ -126,8 +133,210 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 
 \begin{proof}
  まず、\eqref{eq:conv_H}を証明する。
- $\{ v_k \}$は$H_0^1(\Omega)$の有界列であるから、
+ $\{ v_k \}$は$H_0^1(\Omega)$の有界列で、$v$に$\Omega$上
+ ほとんどいたるところ
+ 収束するから、
+ 必要ならば部分列をとることにより、$k \to \infty$とすると、
+ 以下が成立する。
+ \begin{align}
+  v_k \xrightharpoonup{ \mbox{ ~ } } v & \ \ \text{weakly~} \tin
+  H_0^1(\Omega), \label{eq:minimal_vk_weakly} \\
+  v_k \xrightarrow{ \mbox{ ~ } } v & \ \ \tin L^q(\Omega) \ \
+   (q < p+1), \label{eq:minimal_vk_Lq} \\
+  v_k \xrightarrow{ \mbox{ ~ } } v & \ \ \ae \tin \Omega. 
+    \label{eq:minimal_vk_ae}
+ \end{align}
+ \eqref{eq:minimal_vk_Lq}より、
+ \[
+  \int_\Omega \frac{1}{2} a v_k^2 dx \xrightarrow{k \to \infty}
+ \int_\Omega \frac{1}{2}av^2 dx
+ \]
+ がわかるので、\eqref{eq:conv_H}を示すためには、
+ \begin{equation}
+  \int_\Omega H^\prime(v_k, \underline{u}_\lambda)dx \xrightarrow{ k \to \infty } 
+  \int_\Omega H^\prime(v, \underline{u}_\lambda)dx \label{eq:conv_Hprime} \\  
+ \end{equation}
+ を示せば十分である。以下\eqref{eq:conv_Hprime}を示す。
+ $t, s \geq 0$のとき、次式が成立する。
+ \begin{align}
+  H^\prime(t, s, x) &= b(x) \left( \frac{1}{p+1}(t+s)^{p+1} -
+  \frac{1}{p+1} s^{p+1} - s^p t - \frac{1}{p+1} t^{p+1} \right) \notag \\
+  & \leq b(x) \left( \frac{1}{p+1}(t+s)^{p+1} - \frac{1}{p+1}s^{p+1} -
+  \frac{1}{p+1} t^{p+1}\right) \notag \\
+  & \leq b(x) \int_0^t \left( (\tau + s)^p - \tau^p \right)
+  d\tau. \label{eq:dtau} 
+ \end{align}
+ ここで、$x \geq 0$に対し、$x \mapsto x^p$は下に凸であるから、
+ $(\tau + s)^p - \tau^p \leq p(\tau + s)^{p-1} s$である。
+ さらに、
+ \begin{equation}
+  (\tau + s)^{p-1} \leq (2 \max\{\tau , s\})^{p-1} = 2^{p-1} \max \{
+   \tau^{p-1} + s^{p-1} \} \leq C (\tau^{p-1} + s^{p-1}) \label{eq:taus2p-1}
+ \end{equation}
+ であるから、次が得られる。
+ \begin{equation}
+  H^\prime(t, s, x) \leq C b \int_0^t (\tau^{p-1} + s^{p-1}) s d \tau
+   \leq C b ( t^{p-1} s + s^{p-1} t). \label{eq:fromlemma}
+ \end{equation}
+ \eqref{eq:fromlemma}の証明は、\cite{MR2317491}~の Lemma~C.4を参考にし
+ た。さらにヤングの不等式を適用すると、任意の$\epsilon > 0$に対し、
+ $C > 0$が存在し、$s, t \geq 0$に対し、
+ $H^\prime(t, s, x) \leq b( \epsilon t^{p+1} + C s^{p+1})$
+ が成立する。ゆえに、次式が得られる。
+ \begin{equation}
+  \left\lvert H^\prime(v_k, \underline{u}_\lambda) - H^\prime(v,
+   \underline{u}_\lambda ) \right\rvert \leq b \left( \epsilon
+   (v_\epsilon)_+^{p+1}  + \epsilon v_+^{p+1} + C
+   \underline{u}_\lambda^{p+1} \right). \label{eq:conv_H_abs}
+ \end{equation}
+ そこで、
+ \begin{equation}
+  W_{\epsilon, k} = \left( \left\lvert H^\prime(v_k,
+                            \underline{u}_\lambda) - H^\prime(v,
+                            \underline{u}_\lambda) \right\rvert
+  -\epsilon b (v_k)_+^{p+1}
+                    \right)_+ \label{eq:conv_H_W}
+ \end{equation}
+ とおくと、$k \to \infty$のとき、$W_{\epsilon, k} \to 0 ~\ae ~\tin
+ \Omega$である。また、\eqref{eq:conv_H_abs}より、
+ $\lvert W_{\epsilon, k} \rvert \leq b \left( \epsilon v_+^{p+1} + C
+ \underline{u}_\lambda^{p+1} \right)$であり、この右辺は可積分である。
+ したがって、優収束定理により、
+ \[
+  \lim_{k \to \infty} \int_\Omega  W_{\epsilon, k}(x) dx = 0
+ \]
+ である。さて、$\{v_k \}$は$H_0^1(\Omega)$の有界列であった。
+ $H_0^1(\Omega) \subset L^{p+1}(\Omega)$のソボレフ不等式も
+ 考慮すると、
+ \[
+   \int_\Omega b ( v_k )_+^{p+1} dx \leq C
+ \]
+ をみたす$k$によらない$C > 0$が存在する。
+ \eqref{eq:conv_H_W}より、
+ \[
+  \int_\Omega \left\lvert H(v_k, \underline{u}_\lambda) - H(v,
+ \underline{u}_\lambda ) \right\rvert dx \leq \int_\Omega W_{\epsilon,
+ k} (x)dx + \epsilon \int_\Omega b(v_k)_+^{p+1} dx
+ \]
+ であるから、$k \to \infty$の上極限をとると、次式が得られる。
+ \[
+ \limsup_{k \to \infty} \int_\Omega \left\lvert H(v_k, \underline{u}_\lambda) - H(v,
+ \underline{u}_\lambda ) \right\rvert dx \leq C \epsilon
+ \]
+ $C > 0$は$k, \epsilon$によらず、$\epsilon > 0$は任意であるから、
+ このことは
+ \[
+  \lim_{k \to \infty}
+ \int_\Omega \left\lvert H(v_k, \underline{u}_\lambda) - H(v,
+ \underline{u}_\lambda ) \right\rvert dx = 0
+ \]
+ と同値である。ゆえに\eqref{eq:conv_H}が成立する。
+ 以上の証明は、直接は~\cite{MR2886160}の Lemma~3.1 を参考にしているが、
+ ~\cite{MR699419}のアイデアを参考にした。
+ 
+ \eqref{eq:conv_h}も\eqref{eq:conv_H}と同様に証明される。
+ \eqref{eq:conv_h}を示すためには、やはり
+ \[
+  \int_\Omega h^\prime(v_k, \underline{u}_\lambda) v_k dx
+ \xrightarrow{k \to \infty} \int_\Omega h^\prime (v,
+ \underline{u}_\lambda ) v dx 
+ \]
+ を示せば十分である。$t, s \geq 0$に対し、
+ \[
+  h(t, s, x) t \leq C b(x) (t^p s + s^p t)
+ \]
+ がしたがうため、\eqref{eq:conv_h}と同様に\eqref{eq:conv_H}も得られる。
+ 
+ 最後に\eqref{eq:conv_g}を証明する。\eqref{eq:minimal_vk_weakly}より、
+ \[
+  \int_\Omega a v_k \psi dx \xrightarrow{k \to \infty} \int_\Omega
+ av\psi dx
+ \]
+ であるから、\eqref{eq:conv_g}を示すためには、
+ \[
+  \int_\Omega g^\prime(v_k, \underline{u}_\lambda)\psi dx \xrightarrow{
+  k \to \infty } 
+  \int_\Omega g^\prime(v, \underline{u}_\lambda)\psi dx
+ \]
+ を示せば十分である。
+ \eqref{eq:dtau}、\eqref{eq:taus2p-1}と同様にすれば、
+ $s, t, r \geq 0$に対し、次式がしたがう。
+ \[
+  g^\prime(t, s, x)r = b(x) \left( (t+s)^p - s^p \right) r \leq C b(x)
+ \left( t^pr + s^p r \right).
+ \]
+ ヤングの不等式を$2$回使用すると、$\epsilon > 0$に対し、$C, C^\prime >
+ 0$が存在し、$s, t, r \geq 0$に対し、
+ \[
+  t^p r + s^p r \leq \epsilon t^{p+1} + C r^{p+1} + s^p r \leq
+ \epsilon t^{p+1} + C^\prime (r^{p+1} + s^{p+1})
+ \]
+ が成立する。ゆえに、$g^\prime$は
+ \[
+  g^\prime(t, s, x)r \leq b \left( \epsilon t^{p+1} + C ( r^{p+1} +
+ s^{p+1}) \right)
+ \]
+ と評価される。したがって、次式が成立する。
+ \[  
+  \left\lvert g^\prime(v_k, \underline{u}_\lambda)\psi - g^\prime(v,
+   \underline{u}_\lambda)\psi \right\rvert \leq b \left( \epsilon
+   (v_\epsilon)_+^{p+1}  + \epsilon v_+^{p+1} + C
+   \underline{u}_\lambda^{p+1} + \lvert \psi \rvert^{p+1}
+                                 \right).
+ \]
+ そこで、$\tilde{W}_{\epsilon, k}$を
+\[  \tilde{W}_{\epsilon, k} = 
+   \left( \left\lvert g^\prime(v_k, \underline{u}_\lambda)\psi - g^\prime(v,
+    \underline{u}_\lambda)\psi \right\rvert
+  -\epsilon b (v_k)_+^{p+1}
+          \right)_+ \]
+ と定める。以降は、\eqref{eq:conv_H}の証明と同様に、\eqref{eq:conv_g}
+ が示される。\qedhere
 \end{proof}
+
+命題~\ref{prop:second_1}を証明には、
+$(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}を使用する。
+そこで、$I_\lambda$の
+$(\mathrm{PS})_c$条件を調べることになるが、
+その前準備として、
+$I_\lambda$についてのパレ・スメイル列が
+$H_0^1(\Omega)$の有界列であることを証明する。
+
+\begin{lem} \label{lem:PS_seq}
+ $\{ v_k \}_{k=0}^\infty$は、$I_\lambda$についての
+ パレ・スメイル列であるとする。すなわち、
+\end{lem}
+
+\begin{proof}
+ 
+\end{proof}
+
+補題~\ref{lem:PS_seq}を用いて、
+$I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
+
+\begin{lem}
+ $0 < c < S^{N/2}/NM_1^{(N-2)/2}$とする。このとき、
+ $I_\lambda$は$(\mathrm{PS})_c$条件をみたす。すなわち、
+ 次の条件(i), (ii)をみたす$H_0^1(\Omega))$の点列
+ $\{ v_k \}_{k = 0}^\infty$は、収束する部分列をもつ。
+ \begin{enumerate}[(i)]
+  \item $\displaystyle \lim_{k \to \infty} I_\lambda (v_k) = c$、
+  \item $\displaystyle I^\prime_\lambda (v_k) \xrightarrow{k \to
+        \infty} 0 ~\tin H^{-1}(\Omega)$。
+ \end{enumerate}
+\end{lem}
+
+\begin{proof}
+ 
+\end{proof}
+
+続いて、
+$(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされていることを
+確認する。
+
+\begin{lem}
+ 
+\end{lem}
 
 命題~\ref{prop:second_1}を証明する最後の準備として、次の補題を証明する。
 
@@ -135,7 +344,14 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  
 \end{lem}
 
-\begin{proof}[命題~\ref{prop:second_2}]
+\begin{proof}
+ 
+\end{proof}
+
+$(\mathrm{PS})$条件を課さない峠の定理を用いて、命題
+~\ref{prop:second_1}を証明する。
+
+\begin{proof}[命題~\ref{prop:second_1}]
  
 \end{proof}
 
