@@ -223,15 +223,15 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
                  q^\prime + 4), \\
                  O(\epsilon^{(N-2)/2}) & (N < q^\prime + 4).
                 \end{cases}
- \end{aligned} \right.
+ \end{aligned} \right. \label{eq:av_epsilon}
 \end{equation}
 
 \subsection{命題~\ref{prop:second_2}の証明}
 
-本小節では、いくつかの補題を積み重ね、
+本小節では、補題を積み重ね、
 命題~\ref{prop:second_2}に証明を与える。
 
-\begin{lem}
+\begin{lem} \label{lem:tauepsilon}
  $\tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$とする。
  このとき、次式が成立する。
  \begin{equation}
@@ -274,7 +274,7 @@ O(\epsilon^{-(N-q^\prime-4)/2})$である。
  以上より、\eqref{eq:limI}を得る。\qedhere
 \end{proof}
 
-\begin{lem}
+\begin{lem} \label{lem:intHprime}
  $\epsilon_0 > 0$と$C > 0$が存在し、$0 < \epsilon < \epsilon_0$に対し、
  \begin{equation}
   \int_\Omega H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda)
@@ -308,10 +308,221 @@ $t > 0$が存在する。この$t$を$t_\epsilon$とかく。$t_\epsilon > 0$で
 \eqref{eq:liminf_tepsilon}を否定し、
 $\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する。
 $s, t \geq 0$に対し、$G(s, t) \geq 0$である。そこで、
-
+\begin{equation}
+ I_\lambda(t_\epsilon v_\epsilon) = \frac{1}{2} t_\epsilon^2 \left\|
+                                                              v_\epsilon
+                                                             \right\|^2
+ - \int_\Omega G(t_\epsilon v_\epsilon, \underline{u}_\lambda) dx \leq
+ \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2
+\end{equation}
+において、$\epsilon \searrow 0$における下極限をとると、
+\begin{equation}
+ \liminf_{\epsilon \searrow 0} I_\lambda (t_\epsilon v_\epsilon) \leq
+  0 \label{eq:liminf_cont_1}
+\end{equation}
+がしたがう。一方で、\eqref{eq:t_epsilon}より
+$I_\lambda(t_\epsilon v_\epsilon) \geq I(\tau_\epsilon v_\epsilon)$で
+あるから、補題~\ref{lem:tauepsilon}より、
+\begin{equation}
+  \liminf_{\epsilon \searrow 0} I_\lambda(t_\epsilon v_\epsilon) \geq
+ \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) =
+ \frac{1}{NM_1^{(N-2)/2}} S^{N/2} > 0. \label{eq:lininf_cont_2}
+\end{equation}
+\eqref{eq:liminf_cont_1}と\eqref{eq:lininf_cont_2}は同時に
+成立しない。
 よって、背理法により、\eqref{eq:liminf_tepsilon}がしたがう。 
+
+さて、\eqref{eq:liminf_tepsilon}と\eqref{eq:buepsilon}より、
+$\epsilon_0 > 0$、$C > 0$が存在し、$0 <\epsilon < \epsilon_0$のとき、
+$\lvert x \rvert < r_0$に対し、
+\begin{equation}
+ t_\epsilon v_\epsilon (x) = t_\epsilon \frac{\eta(x)}{(\epsilon +
+ \lvert x \rvert^2)^{(N-2)/2} \left\| b^{1/(p+1)} u_\epsilon
+ \right\|_{L^{p+1}(\Omega)}} \geq \frac{C
+ \epsilon^{(N-2)/4}}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}} 
+ \label{eq:teve_p}
+\end{equation}
+が成立する。必要ならば$\epsilon_0 > 0$を小さくとりなおし、
+$\sqrt{\epsilon_0} < r_0$が成立するとして良い。すると、
+$\lvert x \lvert < \sqrt{\epsilon}$に対し、
+\begin{equation}
+ t_\epsilon v_\epsilon (x) \geq C_0 \epsilon^{-(N-2)/2} \label{eq:teve}
+\end{equation}
+となる。$C_0 > 0$は$\epsilon$によらない。
+この$C_0$について、
+\begin{equation}
+ t_0 = C_0 \epsilon_0^{-(N-2)/2} \label{eq:t_0_epsilon}
+\end{equation}
+と定める。
+$\underline{u}_\lambda > 0 ~\tin \Omega$であるから、
+$\{ \lvert x \rvert \leq \sqrt{\epsilon_0} \}$における
+$\underline{u}_\lambda$の最小値より小さい正の数$s_0$が存在する。
+すなわち、$\lvert x \rvert < \sqrt{\epsilon_0}$に対し、
+\begin{equation}
+ \underline{u}_\lambda (x) > s_0 \label{eq:uus_0}
+\end{equation}
+となる。
+
+ここで、$x \in \Omega$、$t \geq t_0$、$s \geq s_0$に対し、
+\begin{equation}
+ H^\prime (t, s, x) \geq C b(x) t^p \label{eq:Hprime_lb}
+\end{equation}
+を成り立たせる$t, s, x$によらない定数$C>0$が存在することを示す。
+$s, t \geq 0$に対し、
+\[
+ H^\prime(t, s, x) = b(x) \left( \frac{1}{p+1}(t+s)^{p+1} -
+ \frac{1}{p+1} t^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t \right)
+\]
+である。そこで$s$についての偏導関数は、
+\[
+ H^\prime_s (t, s, x) = b(x) \left( (t+s)^p - s^p - ps^{p-1}t \right)
+\]
+である。右辺はテイラーの定理より、$0 < \theta < 1$を用いて
+$p(p-1)(s + \theta t)^{p-2}t^2/2$と表される。これは非負であるから、
+$H^\prime_s(t, s, x) \geq 0$である。すなわち、$H^\prime$は
+$s$についての増加関数である。
+したがって、$s \geq s_0$、$t \geq 0$に対し、
+\begin{equation}
+ H^\prime(t, s, x) \geq H^\prime(t, s_0, x) \label{eq:Hprime_lb_pf1}
+\end{equation}
+である。また、$s \geq 0$、$t \geq 0$に対し、
+\begin{equation}
+ H^\prime(t, s, x) \geq H^\prime(t, 0, x) = 0 \label{eq:Hprime_lb_pf3}
+\end{equation}
+もわかる。ここでテイラーの定理より、
+\[
+ \frac{1}{p+1} (t + s_0)^{p+1} - \frac{1}{p+1} t^{p+1} = (t + \theta
+ s_0)^p s_0
+\]
+ をみたす$0 < \theta < 1$が存在する。ゆえに$t \geq t_0$に対し、
+ 以下がしたがう。
+ \begin{align*}
+  H^\prime(t, s_0, x) &\geq b(x) \left( (t+\theta s_0)^p s_0 -
+  \frac{1}{p+1} s^{p+1} - s^p t\right) \\
+  & \geq b(x) \left( t^p s_0 - \frac{1}{p+1} s^{p+1} - s^p t \right) \\
+  & = t^p b(x) \left( s_0 - \frac{1}{p+1} \frac{1}{t^p} - s^p
+  \frac{1}{t^{p-1}}  \right) \\
+  & \geq t^p b(x) \left( s_0 - \frac{1}{p+1} \frac{1}{t_0^p} - s^p
+  \frac{1}{t_0^{p-1}}  \right).
+ \end{align*}
+ ここで最右辺の括弧の中が正となるよう、
+ 必要ならば$\epsilon_0 > 0$を小さくとりなおす。
+ $s_0$と$C_0$は$\epsilon_0$によっているが、
+ $\lvert x \rvert < \sqrt{\epsilon_0}$に対して
+ \eqref{eq:teve}および\eqref{eq:uus_0}を成り立たせるために
+ $s_0$と$C_0$は変更する必要がないことに注意されたい。
+ \eqref{eq:t_0_epsilon}により、
+ 最右辺の括弧の中が正となるよう、$t_0$を大きくすることができる。
+ 以上により、$t \geq t_0$に対し、
+ \begin{equation}
+  H^\prime (t, s_0, x) \geq C b(x) t^p \label{eq:Hprime_lb_pf2}
+ \end{equation}
+ が成立する。
+ \eqref{eq:Hprime_lb_pf1}と\eqref{eq:Hprime_lb_pf2}より、
+ $t \geq t_0$、$s \geq s_0$に対し、
+ \eqref{eq:Hprime_lb}がしたがう。
+
+ \eqref{eq:Hprime_lb_pf3}、\eqref{eq:Hprime_lb}、\eqref{eq:teve_p}を
+ 順に使うと、
+ $0 < \epsilon < \epsilon_0$に対し、以下が成立する。
+ \begin{align*}
+  \int_\Omega H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda )
+  dx & \geq \int_{\{ \lvert x \rvert \leq \sqrt{\epsilon} \}} 
+  H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda ) dx \\
+  & \geq C \int_{\{ \lvert x \rvert \leq \sqrt{\epsilon} \}} 
+  b(x) (t_\epsilon v_\epsilon)^p dx \\
+  & \geq C \int_{\{ \lvert x \rvert \leq \sqrt{\epsilon} \}} 
+  (M_1 + M_2 (\sqrt{\epsilon})^q) \left(
+  \frac{\epsilon^{(N-2)/4}}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}}
+  \right)^p dx \\
+  & \geq C \int_{\{ \lvert x \rvert \leq \sqrt{\epsilon} \}} 
+  \left(
+  \frac{\epsilon^{(N-2)/4}}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}}
+  \right)^p dx \\
+  & = C \epsilon^{(N-2)/4} \int_{ \{ \lvert y \rvert \leq 1 \}}
+  \frac{1}{(1 + \lvert x \rvert^2)^{(N+2)/2}} dx \\
+  & \geq C \epsilon^{(N-2)/4}.
+ \end{align*}
+ $C>0$は$\epsilon$によらない。所望の\eqref{eq:int_Hprime}が得られた。\qedhere
 \end{proof}
 
+\begin{proof}[命題~\ref{prop:second_2}]
+ \eqref{eq:t_epsilon}より、以下が成立する。
+ \begin{align*}
+  \sup_{t > 0} I_\lambda (t v_\epsilon) & = I_\lambda (t_\epsilon
+  v_\epsilon) \\ 
+  & = \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2 -
+  \frac{1}{p+1} t_\epsilon^p - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
+  dx \\
+  & \leq \sup_{t > 0} \left( \frac{1}{2} t^2 \left\| v_\epsilon
+  \right\|^2 - \frac{1}{p+1} t^{p+1} \right)
+  - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
+  dx \\
+  & = \frac{1}{N} \left( \left\| v_\epsilon \right\|^2 \right)^{N/2}
+  - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
+  dx. \\
+ \end{align*}
+ ここで、最後の変形では、$t > 0$の関数
+ \[
+   \alpha(t) = \frac{1}{2} t^2 \left\| v_\epsilon \right\|^2 -
+ \frac{1}{p+1} t^{p+1}
+ \]
+ が、$t = \tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$に
+ おいて最大値をとることに注意した。\eqref{eq:vepsilon}、
+ \eqref{eq:av_epsilon}、補題~\ref{lem:tauepsilon}、補
+ 題~\ref{lem:intHprime}により、$\epsilon_0 > 0$、$C, C^\prime > 0$が
+ 存在し、$0 < \epsilon < \epsilon_0$に対し、
+ \begin{equation}
+  \sup_{t > 0} I_\lambda (tv_\epsilon) \leq \frac{1}{NM_1^{(N-2)/2}}
+   S^{N/2} + \left( C \epsilon^{(N-2)/2} - C^\prime \epsilon^{(N-2)/4}
+             + m_1 I_1^\prime + m_2 I_2^\prime \right) \label{eq:sup_least}
+ \end{equation}
+ が成立する。ここで$I_1^\prime$、$I_2^\prime$は、\eqref{eq:av_epsilon}
+ のものである。以下の条件を考える。
+ \begin{equation}
+  \text{\eqref{eq:sup_least}の右辺の括弧の中が負となる
+   $\epsilon > 0$が存在する。} \label{eq:condition}
+ \end{equation}
+ \eqref{eq:condition}が成立するならば、
+ その$\epsilon$を用いて$v_0 = v_\epsilon$とすると、$v_0 \geq 0 ~\tin
+ \Omega$、$v_0 \not \equiv 0$、および
+ \eqref{eq:ineq_S}が成立する。
+ 以下、$m_1, m_2$の正負で場合分けして検証する。
+ すべての$N \geq 3$、$q^\prime > 0$に対し、$\epsilon \searrow 0$のとき
+ $I_1^\prime \gg I_2^\prime$であることに注意されたい。
+
+ \begin{enumerate}[(i)]
+  \item \ulinej{{$m_1 < 0$}のとき}：$\epsilon \searrow 0$のとき
+        $\epsilon^{(N-2)/2} \ll \epsilon^{(N-2)/4}$であるから、
+        すべての$N \geq 3$について、\eqref{eq:condition}はみたされる。
+  \item \ulinej{{$m_1 > 0$}のとき}：$\epsilon \searrow 0$のとき
+        $I_1^\prime \ll \epsilon^{(N-2)/4}$となれば、
+        \eqref{eq:condition}はみたされる。
+        \eqref{eq:av_epsilon}より、
+        $N = 3, 4, 5$であれば\eqref{eq:condition}はみたされる。
+  \item \ulinej{{$m_1 = 0$、$m_2 < 0$}のとき}：(i)と同様に、
+        すべての$N \geq 3$について、\eqref{eq:condition}はみたされる。
+  \item \ulinej{{$m_1 = 0$、$m_2 > 0$}のとき}：$\epsilon \searrow 0$のとき
+        $I_2^\prime \ll \epsilon^{(N-2)/4}$となれば、
+        \eqref{eq:condition}はみたされる。
+        \eqref{eq:av_epsilon}より、
+        $N \leq q^\prime + 4$のときは、この式は成立している。
+        $N > q^\prime + 4$のとき、この式が成立する条件は、
+        \[
+         1 + \frac{q^\prime}{2} > \frac{N-2}{4}
+        \]
+        である。これを変形して、$N < 2q^\prime + 6$を得る。
+        以上により、$3 \leq N < 2q^\prime + 6$のとき、
+        \eqref{eq:condition}はみたされる。 \qedhere
+ \end{enumerate}
+\end{proof}
+
+\begin{proof}[定理~\ref{thm:second_solution}]
+ 命題~\ref{prop:second_1}と命題~\ref{prop:second_2}より成立する。 \qedhere
+\end{proof}
 
 % Local Variables:
 % mode: yatex
