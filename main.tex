@@ -6,6 +6,12 @@
 \author{Kazune Takahashi}
 \date{24 January 2015}
 
+\makeatletter
+\renewcommand{\theequation}{%
+\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}
+\makeatother
+
 \usepackage{geometry}
 \geometry{a4paper,left=15mm,right=15mm,top=20mm,bottom=15mm}
 \addtolength{\textheight}{-10mm}
@@ -129,8 +135,10 @@
 \input{intro}
 
 \input{minimal_sol}
+\input{extremal_sol}
 \input{second_sol}
 \input{second_sol2}
+\input{exist}
 \input{nonex}
 
 \appendix
