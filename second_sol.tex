@@ -37,7 +37,7 @@
 \ref{eq:prob_main}と\ref{eq:prob_sec}の関係、および、
 \ref{eq:prob_sec}と$I_\lambda$の関係を明らかにする。
 
-\begin{lem}
+\begin{lem} \label{lem:rel_heart_spade}
  \begin{enumerate}[1.]
   \item 以下の(1), (2)は同値である。
         \begin{enumerate}[(1)]
@@ -51,6 +51,66 @@
         このとき、$v$は\ref{eq:prob_sec}の弱解である。
  \end{enumerate}
 \end{lem}
+
+\begin{proof}
+ \begin{enumerate}[1.] \sage
+  \item \ulinej{(1){$\Rightarrow$}(2)}：
+        $v = \bar{u}_\lambda - \underline{u}_\lambda$とする。
+        $\underline{u}_\lambda$は\ref{eq:prob_main}のminimal solution
+        であるから、$v \geq 0 ~\tin \Omega$である。
+        そこで、
+        \begin{align*}
+         -\Delta \bar{u}_\lambda + a \bar{u}_\lambda &= b
+         \bar{u}_\lambda^p + \lambda f, \\
+         -\Delta \underline{u}_\lambda + a \underline{u}_\lambda &= b
+         \underline{u}_\lambda^p + \lambda f
+        \end{align*}
+        の両辺を引くと、
+        \[
+        -\Delta v + a v = b \left( (\underline{u}_\lambda + v)^p -
+        \underline{u}_\lambda^p \right)
+        \]
+        が得られる。この右辺は非負である。$a \geq \kappa > -\kappa_1$であ
+        るから、強最大値原理より、$v > 0 ~\tin \Omega$である。
+        以上より、$v \in H_0^1(\Omega)$は\ref{eq:prob_sec}の弱解である。
+
+        \ulinej{(2){$\Rightarrow$}(1)}：$\bar{u}_\lambda = v +
+        \underline{u}_\lambda$とすれば、$\bar{u}_\lambda$は
+        \ref{eq:prob_main}の弱解である。
+  \item $I_\lambda$は$C^1$級であり、そのフレッシェ微分は、
+        $u \in H_0^1(\Omega)$、$\psi \in H_0^1(\Omega)$として、
+        \[
+         I^\prime_\lambda(u)\psi = \int_\Omega \left( Dv \cdot D\psi -
+        g(v, \underline{u}_\lambda) \psi \right) dx.
+        \]
+        と表される。$v \in H_0^1(\Omega)$は$I_\lambda$の
+        臨界点であるから、$I^\prime_\lambda(v) = 0$である。
+        すなわち、
+        \begin{equation}
+         \int_\Omega \left( Dv \cdot D\psi - g(v,
+                      \underline{u}_\lambda)\psi \right) dx = 0
+         \label{eq:weak_sol_of_heart}        
+        \end{equation}
+        が成立する。この$\psi \in H_0^1(\Omega)$は任意であるから、
+        $v \in H_0^1(\Omega)$は
+        \begin{align}
+         \left\{
+          \begin{aligned}
+           -\Delta v + a v &= b \left( (v_+ + \underline{u}_\lambda)^p -
+           (\underline{u}_\lambda)^p \right) 
+           & &\text{in~} \Omega, \\
+           v &= 0 & &\text{on~} \partial\Omega
+          \end{aligned}
+         \right.
+        \end{align}
+        の弱解である。$(v_+ + \underline{u}_\lambda)^p -
+           (\underline{u}_\lambda)^p \geq 0 ~\tin \Omega$、
+        $a \geq \kappa > -\kappa_1$より、強最大値原理から、
+        $v > 0 ~\tin \Omega$が従う。ゆえに$v \in H_0^1(\Omega)$
+        は\ref{eq:prob_sec}の
+        弱解である。 \qedhere
+ \end{enumerate}
+\end{proof}
 
 ここで次の記号を置く。
 
@@ -66,7 +126,7 @@
 \end{nota}
 
 $S$は$V$には依存しないことが知られている。例えば~\cite{田中200808}の定
-理＠＠＠＠＠＠を参照されたい。
+理~2.31~(i) を参照されたい。
 
 次の2つの命題を証明することにより、
 定理~\ref{thm:second_solution}を証明する。
@@ -103,7 +163,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
   H(t, s, x) &= G(t, s, x) - \frac{1}{p+1}b(x) t_+ ^{p+1}, \\
   h(t, s, x) &= g(t, s, x) - b(x) t_+ ^{p}, \\
   H^\prime (t, s, x) &= H(t, s, x) + \frac{1}{2}a(x) t_+^2, \\
-  h^\prime (t, s, x) &= h(t, s, x) + a(x) t_+.
+  h^\prime (t, s, x) &= h(t, s, x) + a(x) t_+, \\
   G^\prime (t, s, x) &= G(t, s, x) + \frac{1}{2}a(x) t_+^2, \\
   g^\prime (t, s, x) &= g(t, s, x) + a(x) t_+.
  \end{align*}
@@ -310,39 +370,360 @@ $H_0^1(\Omega)$の有界列であることを証明する。
 
 \begin{lem} \label{lem:PS_seq}
  $\{ v_k \}_{k=0}^\infty$は、$I_\lambda$についての
- パレ・スメイル列であるとする。すなわち、
+ パレ・スメイル列であると仮定する。すなわち、
+ \begin{enumerate}[(i)]
+  \item $\{ I_\lambda(v_k) \}$は有界列。
+  \item $\displaystyle I^\prime_{\lambda} (v_l) \xrightarrow{k \to
+        \infty} 0 ~\tin H^{-1}(\Omega)$。
+ \end{enumerate}
+ と仮定する。このとき、$\{ v_k \}$は$H_0^1(\Omega)$の有界列である。
 \end{lem}
 
 \begin{proof}
- 
+ (i)より、
+ \begin{equation}
+  \frac{1}{2} \left\| v_k \right\|^2 - \int_\Omega G(v_k,
+   \underline{u}_\lambda )dx \leq M \label{eq:ps_1}
+ \end{equation}
+ となる$k \in \N$によらない$M > 0$が存在する。
+ $\epsilon > 0$とする。(ii)より、$K \in \N$が存在し、
+ $k \geq K$、$\psi \in H_0^1(\Omega)$に対し、
+ \[
+  \int_\Omega (D v_k \cdot D \psi) dx - \int_\Omega g(v_k,
+ \underline{u}_\lambda)\psi dx \leq \epsilon \left\| \psi
+ \right\|_{H_0^1(\Omega) }
+ \]
+ が成立する。$\psi = v_k$とすると、次式が得られる。
+ \begin{equation}
+  \left\| v_k \right\|^2 \geq \int_\Omega g(v_k,
+   \underline{u}_\lambda)v_k dx - \epsilon \left\| v_k
+   \right\|_{H_0^1(\Omega)}. \label{eq:ps_2}
+ \end{equation}
+ $\alpha > 0$とする。
+ \eqref{eq:ps_1}、\eqref{eq:ps_2}より、以下がしたがう。
+ \begin{align}
+  \alpha M &\geq  \frac{\alpha}{2} \left\| v_k \right\|^2 - \alpha
+  \int_\Omega G(v_k, \underline{u}_\lambda) dx \notag \\
+  & \geq \frac{\alpha-2}{2} \left\| v_k \right\|^2 + \int_\Omega 
+  \left( g(v_k, \underline{u}_\lambda)v_k - \alpha G(v_k,
+  \underline{u}_\lambda)  \right) dx - \epsilon \left\| v_k
+  \right\|_{H^1_0(\Omega)}. \label{eq:alpha_M}
+ \end{align}
+ 右辺の積分の中身を考察する。$t, s \geq 0$に対し、
+ \[
+   g(t, s)t - \alpha G(t, s)
+  = b \left( (t+s)^p t - s^p t - \frac{\alpha}{p+1}(t+s)^{p+1} +
+  \frac{\alpha}{p+1}s^{p+1} + \alpha s^p t \right) - a \left( t^2 -
+  \frac{\alpha}{2} t^2 \right)
+ \]
+ である。ここで
+ \[
+  F(t) = (t+s)^p t - \frac{\alpha}{p+1}(t+s)^{p+1}
+ \]
+ の$t = 0$のまわりの$2$次のテイラー多項式は、
+ \[
+ s^pt + ps^{p-1} t^2 - \frac{\alpha}{p+1} s^{p+1} - \alpha s^p t -
+ \frac{\alpha p}{2} s^{p-1} t^2 
+ \]
+ と計算される。$F$の$3$階の導関数は、
+ \[
+  F^{\prime\prime\prime}(t) = p(p-1)(p-2)(t+s)^{p-3} t + (3 - \alpha)
+ p(p-1) (t+s)^{p-2}
+ \]
+ と計算される。テイラーの定理より、
+ $3$次の剰余項$R_3$は、$0 < \theta < 1$を用いて、
+ \[
+  R_3 = \frac{F^{\prime\prime\prime}(\theta t)}{3!}t^3 = \frac{t^3}{6}
+ \left( p(p-1)(p-2)(\theta t + s)^{p-3} \theta t + (3-\alpha) p(p-1)
+ (\theta t + s)^{p-2} \right)
+ \]
+ とかける。以下では、$\alpha$を$p$に応じて定め、$R_3 \geq 0$となるように
+ する。$p$の値に応じて場合分けをする。
+
+ \ulinej{{$p \geq 2$}のとき}：$\alpha = 3$とすると、$R_3 \geq 0$が従う。
+
+ \ulinej{{$1 < p \geq 2$}のとき}：$\alpha = p + 1$とすると、以下の通り
+ $R_3 \geq 0$が従う。
+ \begin{align*}
+  R_3 &= \frac{t^3}{6} p(p-1)(\theta t + s)^{p-3} \left( (p-2)\theta t
+  + (2-p) (\theta t + s)\right) \\
+  &= \frac{t^3}{6}p(p-1)(2-p) s (\theta t + s)^{p-3} \geq 0.
+ \end{align*}
+ 以上より、
+ \begin{align*}
+  g(t, s, x)t - \alpha G(t, s, x) &= b\left( ps^{p-1}t^2 -
+  \frac{\alpha p}{2} s^{p-1} t^2 + R_3 \right) - a \left( t^2 -
+  \frac{\alpha}{2} t^2 \right) \\
+  & \geq b\left( ps^{p-1}t^2 -
+  \frac{\alpha p}{2} s^{p-1} t^2 \right) - a \left( t^2 -
+  \frac{\alpha}{2} t^2 \right) \\
+  & = \left( \frac{\alpha}{2} - 1 \right) \left( at^2 - bps^{p-1} t^2 \right)
+ \end{align*}
+ と下から評価される。これを
+ \eqref{eq:alpha_M}に適用すると、$a >
+ \kappa$、及び、
+ $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$が
+ 同値であることから、以下の式変形が進む。
+ \begin{align*}
+  \alpha M &\geq \frac{\alpha-2}{2} \left( \left\| v_k \right\|^2 -
+  \int_\Omega bp \underline{u}_\lambda^{p-1} v_k^2 dx + \int_\Omega
+  av_k^2 dx \right) - \epsilon \left\| v_k \right\|_{H_0^1(\Omega)} \\
+  & =\frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)} \right)
+  \left( \left\| v_k \right\|^2 + \int_\Omega av_k^2 dx \right) \\
+  & \geq \frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)}
+  \right) \left\| v_k \right\|_\kappa^2 \\
+  & \geq  \frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)}
+  \right) C \left\| v_k \right\|_{H_0^1(\Omega)}^2 - \epsilon \left\|
+  v_k \right\|_{H_0^1(\Omega)}.
+ \end{align*}
+ $C >0$はポアンカレの不等式から決まる$k$によらない定数である。
+ $\alpha$の定め方から$\alpha > 2$、補題~\ref{lem:lin_1}から
+ $1 - 1/\mu_1(\lambda) > 0$であるから、結局$k \geq K$に対し、
+ \[
+  \alpha M \geq C^\prime \left\| v_k \right\|_{H_0^1(\Omega)}^2 - \epsilon
+ \left\| v_k \right\|_{H_0^1(\Omega)}
+ \]
+ が成立する。ゆえに、$\{ v_k \}$は$H_0^1(\Omega)$の有界列である。 \qedhere
 \end{proof}
 
 補題~\ref{lem:PS_seq}を用いて、
 $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
 
-\begin{lem}
+\begin{lem} \label{lem:PS_c}
  $0 < c < S^{N/2}/NM_1^{(N-2)/2}$とする。このとき、
  $I_\lambda$は$(\mathrm{PS})_c$条件をみたす。すなわち、
  次の条件(i), (ii)をみたす$H_0^1(\Omega))$の点列
  $\{ v_k \}_{k = 0}^\infty$は、収束する部分列をもつ。
  \begin{enumerate}[(i)]
-  \item $\displaystyle \lim_{k \to \infty} I_\lambda (v_k) = c$、
+  \item $\displaystyle \lim_{k \to \infty} I_\lambda (v_k) = c$。
   \item $\displaystyle I^\prime_\lambda (v_k) \xrightarrow{k \to
         \infty} 0 ~\tin H^{-1}(\Omega)$。
  \end{enumerate}
 \end{lem}
 
 \begin{proof}
+ 仮定(i), (ii)と補題~\ref{lem:PS_seq}より、$\{v_k \}$は
+ $H_0^1(\Omega)$の有界列である。
+ したがって、必要ならば部分列をとることにより、$v \in H_0^1(\Omega)$
+ が存在し、$k \to \infty$とすると、
+ 以下が成立する。
+ \begin{align}
+  v_k \xrightharpoonup{ \mbox{ ~ } } v & \ \ \text{weakly~} \tin
+  H_0^1(\Omega), \label{eq:vk_weakly} \\
+  v_k \xrightarrow{ \mbox{ ~ } } v & \ \ \tin L^q(\Omega) \ \
+   (q < p+1), \label{eq:vk_Lq} \\
+  v_k \xrightarrow{ \mbox{ ~ } } v & \ \ \ae \tin \Omega. 
+    \label{eq:vk_ae}
+ \end{align}
+ (ii)より、任意の$\psi \in H_0^1(\Omega)$に対し、
+ \[
+ \int_\Omega (Dv_k \cdot D\psi) dx - \int_\Omega g(v_k,
+ \underline{u}_\lambda) \psi dx = o(1) \ \ (k \to \infty)
+ \]
+ が成り立つ。
+ \eqref{eq:vk_weakly}と補題~\ref{lem:conv}より、
+ $k \to \infty$とすると、次式がしたがう。
+ \begin{equation}
+  \int_\Omega (Dv \cdot D\psi) dx - \int_\Omega g(v,
+   \underline{u}_\lambda) \psi dx = 0. \label{eq:intvpsi}
+ \end{equation}
+ つまり、$v \in H_0^1(\Omega)$は、$I_\lambda$の臨界点である。
+ よって補題~\ref{lem:rel_heart_spade}.2により、$v$は
+ \ref{eq:prob_sec}の弱解である。
+
+ ここで、
+ \begin{equation}
+  I_\lambda(v) \geq 0 \label{eq:Ilambdageq0}
+ \end{equation}
+ であることを示す。
+ \eqref{eq:intvpsi}で$\psi = v$とすると、
+ \[
+  \int_\Omega \lvert Dv \rvert dx = \int_\Omega g(v,
+ \underline{u}_\lambda)  dx
+ \]
+ という関係式が導かれる。ゆえに、
+ \begin{equation}
+  I_\lambda (v) = \frac{1}{2} \int_\Omega g(v, \underline{u}_\lambda)
+   v dx - \int_\Omega G(v, \underline{u}_\lambda) dx \label{eq:Ilambda_v}
+ \end{equation}
+ とわかる。そこで、$t, s \geq 0$、$x \in \Omega$に対し、
+ \begin{align*}
+  \frac{1}{2} g(t, s, x) t - G(t, s, x) &= \frac{1}{2} \left(b \left(
+  (t+s)^p - s^p \right) at \right)t - \left( b \left(
+  \frac{1}{p+1}(t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^p t -
+  \frac{1}{2}at^2  \right) \right) \\
+  &= b \left( \frac{1}{2} \left( (t+s)^pt - s^pt \right) -\left(
+  \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t \right) \right).
+ \end{align*}
+ を考える。
+ \[
+  \alpha(t) = \frac{1}{2} (t+s)^p t - \frac{1}{p+1}(t+s)^{p+1}
+ \]
+ の$1$次のテイラー多項式は、
+ \[
+  \frac{1}{2} s^p t - \frac{1}{p+1}s^{p+1} - s^p t
+ \]
+ である。$\alpha$の$2$階の導関数は、
+ \[
+  \alpha^{\prime\prime}(t) = \frac{p(p-1)}{2}(t+s)^{p-2}t
+ \]
+ と計算されるから、$2$次の剰余項は、$0 < \theta < 1$を用いて、
+ \[
+  \frac{\alpha^{\prime\prime}(\theta t)}{2} t^2 =
+ \frac{p(p-1)}{2}(\theta t + s)^{p-2} \theta t^3
+ \]
+ と表すことができる。ゆえに、
+ \[
+  \frac{1}{2} g(t, s, x)t - G(t, s, x) = b(x) \frac{p(p-2)}{2} (\theta
+ t + s)^{p-2} \theta t^3 \geq 0
+ \]
+ とわかる。\eqref{eq:Ilambda_v}と合わせ、
+ \eqref{eq:Ilambdageq0}が得られる。
+ \eqref{eq:Ilambdageq0}は、本証明の最後で重要な役割を担う。
+
+ 以下では、$k \to \infty$のとき
+ $v_k \to v ~\tin H_0^1(\Omega)$であることを示す。
+ これが示されれば、証明が完了する。
+ $w_k = v_k - v$とおく。$H_0^1(\Omega)$の点列
+ $\{ w_k \}_{k=0}^\infty$について、以下が成立する。
+ \begin{align}
+  w_k \xrightharpoonup{ \mbox{ ~ } } 0 & \ \ \text{weakly~} \tin
+  H_0^1(\Omega), \label{eq:wk_weakly} \\
+  w_k \xrightarrow{ \mbox{ ~ } } 0 & \ \ \tin L^q(\Omega) \ \
+  (q < p+1), \label{eq:wk_Lq} \\
+  w_k \xrightarrow{ \mbox{ ~ } } 0 & \ \ \ae \tin \Omega. 
+  \label{eq:wk_ae}
+ \end{align}
+ \eqref{eq:wk_weakly}より、以下が成立する。
+ \[
+  \int_\Omega \lvert D v_k \rvert^2 dx = \int_\Omega \lvert Dw_k ^ Dv
+ \rvert^2 dx = \int_\Omega \lvert Dv \rvert^2 dx + \int_\Omega \lvert
+ Dw_k \rvert^2 dx + o(1).
+ \]
+ ここで、$\tilde{w}_k = (v_k)_+ - v$とおく。
+ $v > 0 ~\tin \Omega$より、$\lvert \tilde{w}_k \rvert \leq \lvert w_k
+ \rvert ~\tin \Omega$である。また、
+ $k \to \infty$とすると、$\tilde{w}_k \to 0 ~\ae \tin \Omega$となる。
+ ゆえに、ブレジス・リーブの補題~\cite{MR699419}より、次式が成立する。
+ \begin{equation}
+  \int_\Omega (v_k)_{+}^{p+1} dx = \int_\Omega v^{p+1} dx +
+   \int_\Omega \lvert \tilde{w}_k \rvert^{p+1} dx + o(1) \ \ (k \to
+   \infty).
+   \label{eq:bzlblem}
+ \end{equation}
+ \eqref{eq:bzlblem}と補題~\ref{lem:conv}より、次式が成立する。
  
+ 以上より、$k \o \infty$のとき、
+ $w_k \to 0 ~\tin H_0^1(\Omega)$である。すなわち、
+ $v_k \to v ~\tin H_0^1(\Omega)$である。これが示すべきことであった。\qedhere
 \end{proof}
 
 続いて、
 $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされていることを
 確認する。
 
-\begin{lem}
- 
+\begin{lem} \label{lem:delta_rho}
+ 以下の条件をみたす$\delta > 0$、$\rho > 0$が存在する。
+ \begin{equation}
+  \text{$\left\|v \right\|_{H^1_0(\Omega)}$をみたす$v \in
+   H_0^1(\Omega)$に対し、$I_\lambda(v) \geq \rho$が成立する。} 
+   \label{eq:delta_rho}
+ \end{equation}
 \end{lem}
+
+\begin{proof}
+ $v \in H_0^1(\Omega)$は任意のものとする。
+ \begin{align*}
+  I_\lambda(v) &= \frac{1}{2} \left\| v \right\|^2 - \int_\Omega G(v,
+  \underline{u}_\lambda)dx \\
+  &= \frac{1}{2} \left( \int_\Omega \left( \lvert Dv \rvert^2 + a v^2
+  \right) dx -\int_\Omega pb\underline{u}_\lambda^{p-1} v^2 dx
+  \right)
+  - \int_\Omega b \left( \frac{1}{p+1}(v +
+  \underline{u}_\lambda)^{p-1} - \frac{1}{p+1}
+  \underline{u}_\lambda^{p+1} - \underline{u}_\lambda^p v -
+  \frac{p}{2} \underline{u}_\lambda^{p-1} v^2 \right) dx.
+ \end{align*}
+ 第$1$項を$J_1$とおき、第$2$項の積分を$J_2$とおく。
+ 補題~\ref{lem:lin_p}.2 より、
+ \begin{equation}
+  J_1 \geq \frac{1}{2} \left( 1 - \frac{1}{\mu_1(\lambda)} \right)
+   \int_\Omega \left( \lvert Dv \rvert^2 + a v^2 \right) dx \label{eq:J1}
+ \end{equation}
+ と下から評価される。補題~\ref{lem:lin_1}より、この括弧の中は正である。
+ 次に、$t, s \geq 0$に対し、$\alpha(t) = (t+s)^{p+1}/(p+1)$と定めると、
+ $\alpha$の$t = 0$の周りの$2$次のテイラー多項式は、
+ \[
+ \frac{1}{p+1} (t+s)^{p+1} + s^p t + \frac{p}{2}s^{p-1}t^2
+ \]
+ である。$\alpha$の$3$階の導関数は
+ $\alpha^{\prime\prime\prime}(t) = p(p-1)(t+s)^{p-2}$であるか
+ ら、$3$次の剰余項
+ \begin{equation}
+  R_3 = \frac{1}{p+1}(t+s)^{p+1} - 
+ \frac{1}{p+1} (t+s)^{p+1} - s^p t - \frac{p}{2}s^{p-1}t^2 \label{eq:R_3_1}
+ \end{equation}
+ は、テイラーの定理より、$0 < \theta < 1$を用いて、
+ \[
+  R_3 = \frac{\alpha^{\prime\prime\prime}(\theta t)}{3!} t^3 =
+ \frac{p(p-1)}{6} (\theta t + s)^{p-2} t^3
+ \]
+ とかける。この$R_3$は、
+ \[
+ R_3  \geq C (2 \max \{ t, s \})^{p-2} t^3 
+ = C 2^{p-2} ( \max \{ t^{p-2}, s^{p-2} \})t^3
+ \geq  C ( t^{p-2} + s^{p-2} )t^3
+ = C ( t^{p+1} + s^{p-2} t^3)
+ \]
+ と評価される。$C > 0$は$s, t \geq 0$によらない。
+ さらに、ヤングの不等式より、任意の$\epsilon > 0$に対し、
+ $C > 0$が存在し、$s, t \geq 0$に対し、
+ $s^{p-2} t^3 \leq \epsilon s^{p-1} t^2 + C t^{p+1}$
+ となる。ゆえに、$R_3$は
+ \begin{equation}
+  R_3 \leq \epsilon s^{p-1}t^2 + C t^{p+1} \label{eq:R_3_2}
+ \end{equation}
+ と評価される。\eqref{eq:R_3_1}と\eqref{eq:R_3_2}より、
+ $J_2$の評価
+ \begin{equation}
+  J_2 \leq \epsilon \int_\Omega b \underline{u}_\lambda^{p-1} v^2 dx +
+   C \int_\Omega b v^{p+1} dx \label{eq:J2}
+ \end{equation}
+ が得られる。\eqref{eq:J2}の$2$つの項は、それぞれ
+ 補題~\ref{lem:lin_p}.2、ソボレフ不等式より、
+ \begin{align*}
+  \int_\Omega b\underline{u}_\lambda^{p-1} v^2 dx &\leq
+  \frac{1}{p\mu_1(\lambda)} \int_\Omega \left( \lvert Dv \rvert^2 +
+  av^2 \right) dx, \\
+  \int_\Omega bv^{p+1} dx &\leq \left\| b \right\|_{L^\infty(\Omega)}
+  \left\| v \right\|_{L^{p+1}(\Omega)}^{p+1} \leq C \left\| v
+  \right\|_{H_0^1(\Omega)}^{p+1}
+ \end{align*}
+ と更に評価が進む。これらと\eqref{eq:J1}より、$I_\lambda(v)$は
+ \[
+  I_\lambda(v) = J_1 - J_2 \geq C \int_\Omega \left( \lvert Dv
+ \rvert^2 + a v^2 \right) dx - \epsilon C^\prime \int_\Omega \left(
+ \lvert Dv \rvert^2 + av^2 \right) dx - C^{\prime\prime} \left\| v \right\|^{p+1}_{H_0^1(\Omega)}
+ \]
+ と下から評価される。必要ならば$\epsilon > 0$を小さくすれば、
+ 次式が得られる。
+ \[
+  I_\lambda (v) \geq C \int_\Omega \left( \lvert Dv \rvert^2 + av^2
+ \right) dx - C^\prime \left\| v \right\|_{H_0^1(\Omega)}^{p+1} \leq C
+ \left\| v \right\|_{\kappa}^p - C^\prime \left\| v
+ \right\|^{p+1}_{H_0^1(\Omega)}.
+ \]
+ $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$が同値なノルムであることを考
+ 慮すると、
+ \[
+  I_\lambda \geq C^{\prime\prime} \left| v \right|_{H_0^1(\Omega)}^2
+ - C^{\prime} \left| v \right|_{H_0^1(\Omega)}^{p+1}
+ \]
+ と導かれる。$C^{\prime\prime}, C^\prime > 0$は$v$によらない。
+ $2 < p+1$であるから、$\delta > 0$を十分小さくとれば、$\rho =
+ C^{\prime\prime} \delta^2 - C^{\prime} \delta^{p+1} > 0$とできる。
+ つまり、\eqref{eq:delta_rho}が成立する。 \qedhere
+\end{proof}
 
 命題~\ref{prop:second_1}を証明する最後の準備として、次の補題を証明する。
 
