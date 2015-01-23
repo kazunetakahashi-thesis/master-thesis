@@ -6,11 +6,13 @@
   -\Delta u + a u = b u^p + \lambda f \ \ \tin \Omega.
  \]
  ここで$\Omega \subset \R^N$は有界領域、$f \in H^{-1}(\Omega)$、
- $f \geq 0 ~\tin \Omega$、$a, b \in L^\infty(\Omega)$とし、
+ $f \geq 0 ~\tin \Omega$、$a, b \in L^\infty(\Omega)$、$b \geq 0 ~\tin
+ \Omega$とし、
  $\lambda > 0$はパラメータである。この方程式が正値解を複数個
  持つか否かが、次元$N$と$a$により変化する。
- 特に、$b$が内点$x_0$で最大値をとり、$x_0$のある近傍上$b$は連続かつ$a$
- が$a = m \lvert x - p \rvert^{q^\prime} + o( \lvert x - p
+ 特に、$b$が内点$x_0 \in \Omega$で最大値をとり、
+ $x_0$のある近傍上$b$は連続かつ$a$
+ が$a = m \lvert x - x_0 \rvert^{q^\prime} + o( \lvert x - x_0
  \rvert^{q^\prime})$と表されるとき、
  $3 \leq N < 6 + 2q^\prime$において、方程式は正値解を複数個を持つ。
  本論文の証明は、解の存在は変分法、解の非存在はポホザエフ式の議論によ
@@ -25,8 +27,9 @@ $p = (N+2)/(N-2)$とする。$f \in H^{-1}(\Omega)$は、$f \geq 0$、
 $f \not \equiv 0$をみたすとする。
 $a, b \in L^\infty(\Omega)$とする。
 $\kappa_1$を$-\Delta$の$\Omega$におけるディリクレ境界条件下の
-第$1$固有値とする。$\kappa > - \kappa_1$が存在して、$a \geq \kappa$
-となると仮定する。また、$b \geq 0$、$b \not \equiv 0$と仮定する。
+第$1$固有値とする。$a \geq \kappa ~\tin \Omega$をみたす
+$\kappa > - \kappa_1$が存在すると仮定する。
+また、$b \geq 0 ~\tin \Omega$、$b \not \equiv 0$と仮定する。
 $\lambda > 0$をパラメータとする。以下の方程式を考察する。
 \begin{align}
  \left\{
@@ -69,24 +72,25 @@ $H^1_0(\Omega) \subset L^{p+1}(\Omega)$はコンパクトではないことが
 \end{align}
 ポホザエフの等式~\cite{MR0192184}を用いると、
 $\kappa \geq 0$においては
-\eqref{eq:sobolev_bn}は非自明な弱解を持たないことが従う。
+\eqref{eq:sobolev_bn}が非自明な弱解を持たないことが従う。
 一方で、$\kappa < 0$の場合は複雑である。
 ブレジス -- ニレンベルグは
 \cite{MR709644}~において、以下を示した。
 \begin{enumerate}[1.] \sage
- \item $N \geq 4$の場合は、$-\kappa_1 < \kappa < 0$であることが
-       \eqref{eq:sobolev_bn}は非自明な弱解を持つことと同値である。
- \item $N = 3$かつ$\Omega$が球である場合は、
-       $-\kappa_1 < \kappa < -\kappa_1/4$であることが
-       \eqref{eq:sobolev_bn}は非自明な弱解を
+ \item $N \geq 4$の場合、$-\kappa_1 < \kappa < 0$であることは、
+       \eqref{eq:sobolev_bn}が非自明な弱解を持つことと同値である。
+ \item $N = 3$かつ$\Omega$が球である場合、
+       $-\kappa_1 < \kappa < -\kappa_1/4$であることは、
+       \eqref{eq:sobolev_bn}が非自明な弱解を
        持つことと同値である。
 \end{enumerate}
-この例は、ソボレフ臨界指数を持つ楕円型偏微分方程式は、
-領域の次元$N$により解の存在・非存在が異なりうることを示している。
+\eqref{eq:sobolev_bn}は、
+領域の次元$N$により解の存在・非存在が異なる例となっている。
 
 \eqref{eq:sobolev_bn}では、自明解と、ある$1$つの非自明解の存在が
-議論された。一方で、自明解を持たない方程式として、
-\cite{MR709644}~においては、次の方程式も議論されている。
+議論された。一方で、自明解を持たない方程式ではしばしば、
+非自明解が複数個存在するか否かが焦点となる。
+次の方程式は、その例である。
 \begin{align}
  \left\{
  \begin{aligned}
@@ -99,7 +103,7 @@ $\kappa \geq 0$においては
 \eqref{eq:sobolev_bn2}の弱解$\underline{u}_\lambda$が
 minimal solution であるとは、
 \eqref{eq:sobolev_bn2}の任意の弱解$u$に対し、
-$u \geq \underline{u}_\lambda \tin \Omega$をみたすことをいう。
+$u \geq \underline{u}_\lambda ~\tin \Omega$をみたすことをいう。
 \eqref{eq:sobolev_bn2}の minimal solution については、
 \cite{MR709644}~より前に、
 次の条件(i) -- (iii)をみたす$0 < \bar{\lambda} < \infty$の存在が知られている。
@@ -113,9 +117,10 @@ $u \geq \underline{u}_\lambda \tin \Omega$をみたすことをいう。
 \end{enumerate}
 弱解の存在する$\lambda$の上限$\bar{\lambda}$は
 一般に extremal value と呼ばれる。
-この事実は、
-キーナー -- ケラー \cite{MR0346305}~により一般的な枠組みで示され、
-クランデル -- ラビノビッヅ \cite{MR0382848}~においてより簡潔な仮定のものに緩和された。
+この事実は
+キーナー -- ケラー \cite{MR0346305}~によって一般的な枠組みで示された。
+クランデル -- ラビノビッヅ \cite{MR0382848}~は
+\cite{MR0346305}~の仮定をより簡潔な仮定のものに緩和した。
 さて minimal solution 以外の弱解は、便宜上 second solution と呼ばれる。
 \cite{MR709644}~は、second solution について以下の結果を与えた。
 すなわち、任意の$N \geq 3$に対し、$0 < \lambda < \bar{\lambda}$において、
@@ -153,7 +158,7 @@ $N = 3$、$N = 4$、$N \geq 5$では、それぞれ議論が異なっている�
 $(\mathrm{PS})$条件を課さない峠の定理および
 ソボレフ最良定数とタレンティー関数の関係が道具として用いられている。
 \eqref{eq:tarantello}の
-方程式に$u^p$よりも、適切な意味で$p$より「低い」オーダーを持つ項$g(x, u)$を加
+方程式に、適当な意味で$p$より「低い」オーダーを持つ項$g(x, u)$を加
 えた
 \begin{align}
  \left\{
@@ -183,14 +188,15 @@ $(\mathrm{PS})$条件を課さない峠の定理および
 について以下の事実を示した。
 \begin{enumerate}[1.] \sage
  \item 全ての$N \geq 3$、$\kappa > - \kappa_1$に対し、
-       \eqref{eq:naito_sato}の extremal value $\bar{\lambda}$は有限であり、
-       $0 < \lambda < \bar{\lambda}$において
+       \eqref{eq:naito_sato}の extremal value $\bar{\lambda}$は
+       $0 < \bar{\lambda} < \infty$をみたし、
+       任意の$0 < \lambda < \bar{\lambda}$に対し、
        \eqref{eq:naito_sato}の minimal solution が存在する。
  \item $-\kappa_1 < \kappa \leq 0$のとき、全ての$N \geq 3$に対し、
-       $0 < \lambda < \bar{\lambda}$において
+       任意の$0 < \lambda < \bar{\lambda}$に対し、
        \eqref{eq:naito_sato}の second solution が存在する。
  \item $\kappa > 0$のとき、$N = 3, 4, 5$については、
-       $0 < \lambda < \bar{\lambda}$において
+       任意の$0 < \lambda < \bar{\lambda}$に対し、
        \eqref{eq:naito_sato}の second solution が存在する。
        一方、$N \geq 6$については、$\Omega$が球のときは
        十分小さい$\lambda > 0$に対しては、
@@ -202,21 +208,23 @@ $(\mathrm{PS})$条件を課さない峠の定理および
 \subsection{主要な結果と証明の方針}
 
 本論文は、内藤 -- 佐藤~\cite{MR2886160}の議論を踏襲し、
-\ref{eq:prob_main}を考察する。
+\ref{eq:prob_main}を考察する。まずは minimal solution について
+以下の定理が従う。
 
 \begin{thm} \label{thm:minimal_solution}
  \begin{enumerate}[1.] \sage
-  \item 以下の(i) -- (ii)をみたす
+  \item 以下の(i), (ii)をみたす
         $0 < \bar{\lambda} < \infty$が存在する。
         \begin{enumerate}[(i)]
          \item $0 < \lambda < \bar{\lambda}$において、
                \ref{eq:prob_main}は minimal solution を持つ。
-         \item $\lambda > \bar{\lambda}$において、\eqref{eq:prob_main}は弱解
+         \item $\lambda > \bar{\lambda}$において、\ref{eq:prob_main}は弱解
                 を持たない。
         \end{enumerate}
   \item 正の数$\lambda_1, \lambda_2$が
         $\lambda_1 < \lambda_2 < \bar{\lambda}$をみたすと仮定する。
-        $\lambda = \lambda_1, \lambda_2$に対応する minimal solution
+        $\lambda = \lambda_1, \lambda_2$に対応する\ref{eq:prob_main}
+        の minimal solution
         $\underline{u}_{\lambda_1}$、$\underline{u}_{\lambda_2}$につ
         いて、
         $\underline{u}_{\lambda_1} < \underline{u}_{\lambda_2} ~\tin
@@ -227,8 +235,8 @@ $(\mathrm{PS})$条件を課さない峠の定理および
 \end{thm}
 
 $\lambda = \bar{\lambda}$における弱解を
-extremal solution という。\ref{eq:prob_main}の
-extremal solution について、以下が従う。
+extremal solution という。\ref{eq:prob_main}の場合、
+extremal solution について、以下が成立する。
 
 \begin{thm} \label{thm:extremal_solution}
  \ref{eq:prob_main} には extremal solution が存在する。
@@ -242,7 +250,9 @@ extremal solution について、以下が従う。
 \end{thm}
 
 続けて second solution の結果を述べる。
-まずは内藤 -- 佐藤~\cite{MR2886160}の結果を述べる。
+その前に、比較のため
+内藤 -- 佐藤~\cite{MR2886160}の結果を\ref{eq:prob_main}に
+即して述べる。
 
 \begin{thm}[\cite{MR2886160} Theorem 1.3]
  \label{thm:second_solution_naito_sato}
@@ -269,7 +279,7 @@ extremal solution について、以下が従う。
  ある点$x_0$で最大値$M_1 = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
  達成するものと仮定する。$r_0 > 0$が存在し、
  $\{ \lvert x - x_0 \rvert < 2r_0 \} \subset \Omega$、かつ、
- $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続で$a$は
+ $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続かつ$a$は
  \begin{equation}
   a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q^\prime} 
   + o(\lvert x-x_0 \rvert^{q^\prime}) \label{eq:a_q}
@@ -295,7 +305,7 @@ extremal solution について、以下が従う。
 思われる。1つは、second solution の存在が、$b$の最大点を
 達成する近傍での性質で決定されていることを示している点である。
 もう1つは、解の存在・非存在が変化する次元$N$が、$a$に由来するパラメー
-タで変化しうる点ことを示している点である。
+タで変化しうることを示している点である。
 特に後者は目新しい点であると思われる。
 内藤 -- 佐藤の
 定理~\ref{thm:second_solution_naito_sato}では、
@@ -317,8 +327,8 @@ $6$より大きい値を全てとり得る。
 いわば「$N < \infty$」と「$N < 6$」の「中間部分」の例を
 全て与えているとも言える。
 
-$(0, \bar{\lambda})$上一様にsecond solutionが存在しない例として、
-以下の定理が従う。
+$(0, \bar{\lambda})$上一様に\ref{eq:prob_main}の
+second solutionが存在しない場合もある。
 
 \begin{thm} \label{thm:second_solution_nonex}
  $N \geq 6$とする。
@@ -339,7 +349,7 @@ $(0, \bar{\lambda})$上一様にsecond solutionが存在しない例として、
         $\Omega = \{ x \in \R^N \mid \lvert x \rvert < R\}$
         と仮定する。
         $a = a(\lvert x \rvert)$、
-        $b = a(\lvert x \rvert)$、
+        $b = b(\lvert x \rvert)$、
         $f = f(\lvert x \rvert)$は$\Omega$上球対称とする。
         また、$0 < \alpha < 1$とし、$a , b \in C^1(\Omega)$、
         $f \in C^\alpha([0, R])$であり、$a$は$[0, R]$上
@@ -361,7 +371,7 @@ $\lambda < \hat{\lambda}$における\ref{eq:prob_main}の
 優解とみなし、
 \ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$を
 ある点列の極限として得る。
-最後に、$\lambda$によらない$g_0 \in \Omega$と
+最後に、$\lambda$によらないある$g_0 \in H_0^1(\Omega)$と
 $\underline{u}_\lambda$を比較し、minimal solution が存在する
 $\lambda$が定数で抑えられることを示す。
 
@@ -376,9 +386,8 @@ $\lambda$が定数で抑えられることを示す。
 $0 < \lambda < \bar{\lambda}$では
 $\mu_1(\lambda) > 1$であることが効き、
 extremal solution の
-存在が従う。また、
-$\lambda = \bar{\lambda}$においては
-$\mu_1(\lambda) = 1$であることが効いて、
+存在が従う。また、$b > 0 \tin \Omega$ならば、
+$\mu_1(\bar{\lambda}) = 1$であることが効いて、
 extremal solution の一意性が従う。
 
 \ref{eq:prob_main}の second solution
@@ -397,19 +406,20 @@ $\bar{u}_\lambda$を見出すために、
 \end{align}
 
 定理~\ref{thm:second_solution}を証明するために、
-まず、\eqref{eq:prob_sec}の「エネルギー」を表す汎関数
+まず、\ref{eq:prob_sec}の「エネルギー」を表す汎関数
 $I_\lambda$を定義する。
 $I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる。
 このとき、峠における「エネルギー」$c$が
 $0 < c < S^{N/2} / NM_1^{(N-2)/2}$をみたすことを
 タレンティー関数を用いることで示す。
 ここで$S$はソボレフ最良定数である。
-ここで峠の定理を用いると、$H_0^1(\Omega)$の
-ある列$\{ v_n \}$が得られる。
+ここで$(\mathrm{PS})$条件を課さない
+峠の定理を用いると、$H_0^1(\Omega)$の
+ある点列$\{ v_n \}$が得られる。
 $I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを足がかりに、
 $\{ v_n \}$がある$v \in H_0^1(\Omega)$に収束することを示す。
-そして$v$が\eqref{eq:prob_sec}弱解であることを示す。
-この$v$を用いて、second solution を
+そして$v$が\ref{eq:prob_sec}弱解であることを示す。
+この$v$を用いて、\ref{eq:prob_main}のsecond solution を
 $\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する。
 
 定理~\ref{thm:second_solution_nonex}.1も、おおよそ上記の
@@ -458,6 +468,7 @@ $(\mathrm{PS})$条件を課さない峠の定理に関係する
 と表記する。
 コンパクト台を持つ$\Omega$上の$C^\infty$級関数全体を
 $C^\infty_c (\Omega)$と表記する。
+$\Omega$上の$C^1$級関数全体を$C^1(\Omega)$と表記する。
 
 ノルム空間$X$のノルムを$\dnorm_X$と表記する。
 ノルム空間$X$の双対空間を$X^*$と表記する。
@@ -483,7 +494,8 @@ $\dnorm$は$\dnorm_{H_0^1(\Omega)}$
 
 $\alpha \in \R$に対し、$\alpha_+ = \max \{ \alpha, 0 \}$と定める。
 文字$C$および$C$に飾りをつけたものは
-重要でない正の定数を表す、行によって断りなしに取りかえることがありうる。
+重要でない正の定数を表す。
+これらは式変形中断りなしに取りかえることがある。
 
 % Local Variables:
 % mode: yatex
