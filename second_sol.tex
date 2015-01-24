@@ -133,9 +133,15 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 
 \begin{prop} \label{prop:second_1}
  $0 < \lambda < \bar{\lambda}$とする。
- $v \geq 0 ~\tin \Omega$、$v_0 \not \equiv 0$、かつ、
+ $v \geq 0 ~\tin \Omega$、かつ、
  \begin{equation}
-  \sup_{t > 0} I_\lambda (tv_0) < \frac{1}{NM_1^{(N-2)/2}} S^{N/2} 
+  \int_\Omega b v^{p+1} dx > 0, \label{eq:int_omega_bvp+1}  
+ \end{equation}
+ かつ、
+ \begin{equation}
+  \sup_{t > 0} I_\lambda (tv_0) < 
+   \frac{1}{N\left\| b
+             \right\|_{L^\infty(\Omega)} ^{(N-2)/2}} S^{N/2} 
    \label{eq:ineq_S}
  \end{equation}
  をみたす$v_0 \in H_0^1(\Omega)$が存在することを仮定する。
@@ -144,7 +150,8 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 
 \begin{prop} \label{prop:second_2}
  定理~\ref{thm:second_solution}の仮定のもとで、$v_0 \geq 0 ~\tin
- \Omega$、$v_0 \not \equiv 0$、および、\eqref{eq:ineq_S}をみたす
+ \Omega$、\eqref{eq:int_omega_bvp+1}、
+ および、\eqref{eq:ineq_S}をみたす
  $v_0 \in H_0^1(\Omega)$が存在する。
 \end{prop}
 
