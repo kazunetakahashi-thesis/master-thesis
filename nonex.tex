@@ -1,5 +1,85 @@
 %#!platex main.tex
-\section{$\lambda$が小さい場合の second solution の非存在} \label{sec:sym}
+\section{$\lambda$が小さい場合の second solution の非存在}
+\label{sec:sym}
+
+本節では、定理~\ref{thm:second_solution_nonex}.2を証明する。
+本節を通して、定理~\ref{thm:second_solution_nonex}.2の仮定をおく。
+
+\begin{lem}
+ 定理~\ref{thm:second_solution_nonex}.2の仮定のもとで、
+ 以下が成立する。
+ \begin{enumerate}[1.] \sage
+  \item \ref{eq:prob_main}の弱解$u$は
+        球対称解に限り、
+        $u = u(\lvert x \rvert)
+        \in C^{2+\alpha}([0, R])$
+        をみたす。
+  \item \ref{eq:prob_sec}の弱解$v$は
+        球対称解に限り、
+        $v = v(\lvert x \rvert)
+        \in C^{2+\alpha}([0, R])$
+        をみたす。
+  \item $v = v(\lvert x \rvert) \in C^{2+\alpha}([0, R])$が
+        \ref{eq:prob_sec}の解であることは、
+        $v = v(r)$が
+        次の常備分方程式の解であることと同値である。
+        \begin{align}
+         \left\{
+          \begin{aligned}
+           -v_{rr} - \frac{N-1}{r}v_r  &= g(v, \underline{u}_\lambda)
+           & &\tin (0, R),  \\
+           v &> 0 & &\tin (0, R), \\
+           v_r(0) = v(R) &= 0.  & &
+          \end{aligned}
+         \right. \label{eq:prob_rad}
+        \end{align}
+ \end{enumerate}
+\end{lem}
+
+\begin{proof}
+ \begin{enumerate}[1.] \sage
+  \item $u \in C^{2+\alpha}(\bar{\Omega})$である。
+        $s \geq 0$に対し、$r \in [0, R]$の関数
+        $-a(r) s + b(r) s^{p+1} + \lambda f(r)$は
+        単調減少である。したがって、\cite{MR544879}~より、
+        \ref{eq:prob_main}の解
+        $u = u(\lvert x \rvert) \in C^{2+\alpha}(\bar{\Omega})$
+        は球対称解に限り、
+        $0 \leq r \leq R$に対し、$u_r (r) < 0$である。
+        とくに、
+        \begin{align}
+         \underline{u}_\lambda(r) & \in C^{2+ \alpha}([0, R]), 
+          \label{eq:under_u_r} \\
+         \underline{u}_\lambda^\prime(r) &< 0 \ \ (0 \leq r \leq R)
+          \label{eq:under_u_r_prime}
+        \end{align}
+        が成立する。
+  \item $v \in C^{2+\alpha}(\bar{\Omega})$である。
+        $a, b$は球対称であるから、$g = g(t, s, \lvert x \rvert)$とみな
+        せる。$t \geq 0$、$r \in [0, R]$に対し、
+        \begin{align}
+         \pdif{}{r} g(t, \underline{u}_\lambda(r), r)
+         &= \pdif{}{r} \left( b(r) \left( (t + u_\lambda(r))^p -
+         \underline{u}_\lambda(r)^p \right) a(r) t \right) \notag \\
+         &= b(r) p \left( (t+ \underline{u}_\lambda(r))^{p-1} -
+         \underline{u}_\lambda(r)^{p-1} \right)
+         \underline{u}_\lambda^\prime(r) + b^\prime(r) \left( (t +
+         \underline{u}_\lambda(r))^p  - \underline{u}_\lambda(r)^p
+         \right) - a^\prime(r) t \label{eq:pdifgtur}
+        \end{align}
+        である。\eqref{eq:under_u_r_prime}、$b^\prime(r) \leq 0$、
+        $a^\prime(r) \geq 0$より、\eqref{eq:pdifgtur}の最右辺は
+        $0$以下である。再び\cite{MR544879}~より、
+        \ref{eq:prob_sec}の解
+        $v = v(\lvert x \rvert) \in C^{2+\alpha}\bar{\Omega}$は
+        球対称解に限る。
+  \item \ref{eq:prob_sec}を極座標形式に書き換える。2.~より、
+        \ref{eq:prob_sec}の解は球対称解しかないことから、
+        動径$r$以外の微分演算子の寄与はない。$v$は$0 \in \Omega$
+        において微分可能であることとディリクレ境界条件も考慮し、
+        \eqref{eq:prob_rad}が得られる。\qedhere
+ \end{enumerate}
+\end{proof}
 
 % Local Variables:
 % mode: yatex

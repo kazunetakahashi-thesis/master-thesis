@@ -186,7 +186,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 \begin{lem} \label{lem:conv}
  $v \in H_0^1(\Omega)$とし、$\{ v_k \}_{k = 0}^\infty$を
  $H_0^1(\Omega)$の有界列とする。$k \to \infty$のとき、
- $v_k \to v ~ae ~tin \Omega$と仮定する。このとき、$k \to \infty$
+ $v_k \to v ~\ae ~\tin \Omega$と仮定する。このとき、$k \to \infty$
  とすると、以下が成立する。
  \begin{align}
   \int_\Omega H(v_k, \underline{u}_\lambda)dx &\xrightarrow{ \mbox{ ~
@@ -378,12 +378,13 @@ $H_0^1(\Omega)$の有界列であることを証明する。
 \begin{lem} \label{lem:PS_seq}
  $\{ v_k \}_{k=0}^\infty$は、$I_\lambda$についての
  パレ・スメイル列であると仮定する。すなわち、
+ 以下の(i)、(ii)を仮定する。
  \begin{enumerate}[(i)]
   \item $\{ I_\lambda(v_k) \}$は有界列。
   \item $\displaystyle I^\prime_{\lambda} (v_l) \xrightarrow{k \to
         \infty} 0 ~\tin H^{-1}(\Omega)$。
  \end{enumerate}
- と仮定する。このとき、$\{ v_k \}$は$H_0^1(\Omega)$の有界列である。
+ このとき、$\{ v_k \}$は$H_0^1(\Omega)$の有界列である。
 \end{lem}
 
 \begin{proof}
@@ -449,7 +450,7 @@ $H_0^1(\Omega)$の有界列であることを証明する。
 
  \ulinej{{$p \geq 2$}のとき}：$\alpha = 3$とすると、$R_3 \geq 0$が従う。
 
- \ulinej{{$1 < p \geq 2$}のとき}：$\alpha = p + 1$とすると、以下の通り
+ \ulinej{{$1 < p \leq 2$}のとき}：$\alpha = p + 1$とすると、以下の通り
  $R_3 \geq 0$が従う。
  \begin{align*}
   R_3 &= \frac{t^3}{6} p(p-1)(\theta t + s)^{p-3} \left( (p-2)\theta t
@@ -871,7 +872,8 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   I_\lambda(tv) \leq \frac{t^2}{2} \int_\Omega \left( \lvert Dv
  \rvert^2 + av^2 \right) dx - \frac{t^{p+1}}{p+1} \int_\Omega bv^{p+1} dx.
  \]
- \eqref{eq:int_omega_bvp+1}より、\eqref{eq:mountain_dec}が成立する。
+ $2 \leq p+1$、及び、
+ \eqref{eq:int_omega_bvp+1}より、\eqref{eq:mountain_dec}が成立する。\qedhere
 \end{proof}
 
 $(\mathrm{PS})$条件を課さない峠の定理を用いて、命題

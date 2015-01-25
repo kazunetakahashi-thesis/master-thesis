@@ -11,10 +11,11 @@
  $\lambda > 0$はパラメータである。この方程式が正値解を複数個
  持つか否かが、次元$N$と$a$により変化する。
  特に、$b$が内点$x_0 \in \Omega$で最大値をとり、
- $x_0$のある近傍上$b$は連続かつ$a$
- が$a = m \lvert x - x_0 \rvert^{q^\prime} + o( \lvert x - x_0
- \rvert^{q^\prime})$と表されるとき、
- $3 \leq N < 6 + 2q^\prime$において、方程式は正値解を複数個を持つ。
+ $x_0$のある近傍上$b$は連続かつ
+ $q, m > 0$を用いて$a$が
+ $a(x) = m \lvert x - x_0 \rvert^{q} + o( \lvert x - x_0
+ \rvert^{q})$と表されるとき、
+ $3 \leq N < 6 + 2q$において、方程式は正値解を複数個を持つ。
  本論文の証明は、解の存在は変分法、解の非存在はポホザエフ式の議論によ
  る。
 \end{abstract}
@@ -276,23 +277,23 @@ extremal solution について、以下が成立する。
 
 \begin{thm} \label{thm:second_solution}
  $0 < \lambda < \bar{\lambda}$とする。$b$は$\Omega$上の
- ある点$x_0$で最大値$M_1 = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
+ ある点$x_0$で最大値$M = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
  達成するものと仮定する。$r_0 > 0$が存在し、
  $\{ \lvert x - x_0 \rvert < 2r_0 \} \subset \Omega$、かつ、
  $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続であり$a$は
  \begin{equation}
-  a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q^\prime} 
-  + o(\lvert x-x_0 \rvert^{q^\prime}) \label{eq:a_q}
+  a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q} 
+  + o(\lvert x-x_0 \rvert^{q}) \label{eq:a_q}
  \end{equation}
- であると仮定する。ここで$q^\prime > 0$、
- $M_2 > 0$、$m_1 > \kappa$、$m_2 \neq 0$は
+ であると仮定する。ここで$q > 0$、
+ $m_1 > \kappa$、$m_2 \neq 0$は
  定数である。さらに、以下の(i) -- (iv)の
  いずれかの成立を仮定する。
  \begin{enumerate}[(i)]
   \item $m_1 < 0$、かつ、$N \geq 3$。
   \item $m_1 > 0$、かつ、$N = 3, 4, 5$。
   \item $m_1 = 0$、かつ、$m_2 < 0$、かつ、$N \geq 3$。
-  \item $m_1 = 0$、かつ、$m_2 > 0$、かつ、$3 \leq N < 6 + 2q^\prime$。
+  \item $m_1 = 0$、かつ、$m_2 > 0$、かつ、$3 \leq N < 6 + 2q$。
  \end{enumerate}
  このとき、\ref{eq:prob_main}は、minimal solution
  $\underline{u}_\lambda$
@@ -315,14 +316,14 @@ $\kappa$が非正から正へと変化すると、
 次元$N \geq 3$が、
 $N < \infty$から$N < 6$へと変化することを示している。
 この観点から本論文の定理~\ref{thm:second_solution}.4 を見ると、
-$a = m_2 \lvert x - p \rvert^{q^\prime} + o(\lvert x-x_0
-\rvert^{q^\prime})$ ($m_2 > 0$)は、
+$a = m_2 \lvert x - p \rvert^{q} + o(\lvert x-x_0
+\rvert^{q})$ ($m_2 > 0$)は、
 定数$a = \kappa$が非正から正へと変化する、いわば「中間部分」と見ることができる。
-$N < 6 + 2q^\prime$で
+$N < 6 + 2q$で
 \ref{eq:prob_main}の second solution が存在するという結果は、
 「$N < \infty$」と「$N < 6$」の「中間部分」の結果に
-相当すると考えられる。しかもこの$q^\prime > 0$は
-$a$に由来するパラメータであり、$6 + 2q^\prime$は
+相当すると考えられる。しかもこの$q > 0$は
+$a$に由来するパラメータであり、$6 + 2q$は
 $6$より大きい値を全てとり得る。
 いわば「$N < \infty$」と「$N < 6$」の「中間部分」の例を
 全て与えているとも言える。
@@ -411,7 +412,7 @@ $\bar{u}_\lambda$を見出すために、
 $I_\lambda$を定義する。
 $I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる。
 このとき、峠における「エネルギー」$c$が
-$0 < c < S^{N/2} / NM_1^{(N-2)/2}$をみたすことを
+$0 < c < S^{N/2} / NM^{(N-2)/2}$をみたすことを
 タレンティー関数を用いることで示す。
 ここで$S$はソボレフ最良定数である。
 ここで$(\mathrm{PS})$条件を課さない
