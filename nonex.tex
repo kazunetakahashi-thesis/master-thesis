@@ -4,6 +4,8 @@
 
 本節では、定理~\ref{thm:second_solution_nonex}.2を証明する。
 本節を通して、定理~\ref{thm:second_solution_nonex}.2の仮定をおく。
+以下では、$r$を引数とする関数$f$の導関数を、
+$f^\prime$とも、$f_r$とも表す。
 
 \begin{lem}
  定理~\ref{thm:second_solution_nonex}.2の仮定のもとで、
@@ -80,6 +82,60 @@
         \eqref{eq:prob_rad}が得られる。\qedhere
  \end{enumerate}
 \end{proof}
+
+\begin{lem}
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は、以下の
+ 等式をみたす。
+ \begin{multline}
+  \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
+  r) - g(v, \underline{u}_\lambda, r) v \right) dr
+  + \frac{2}{N-2} \int_0^R r^N \left( G_s(v, \underline{u}_\lambda, r)
+  (\underline{u}_\lambda)_r + G_r(v, \underline{u}_\lambda, r)
+  \right) dr \\ = \frac{1}{N-2} R^N v_r(R)^2. \label{eq:poh_eq}
+ \end{multline}
+ ここで$G_s, G_r$は、以下の偏導関数である。
+ \begin{align*}
+  G_s(t, s, r) &= \pdif{}{s} G(t, s, r), \\
+  G_r(t, s, r) &= \pdif{}{r} G(t, s, r).
+ \end{align*}
+\end{lem}
+
+\begin{proof}
+ \eqref{eq:prob_rad}の方程式に$r^{N-1}$をかけて変形すると、
+ 次式が得られる。
+ \begin{equation}
+  (r^{N-1} v_r)_r + r^{N-1} g(v, \underline{u}_\lambda, r) = 0
+   \label{eq:rad_basic} 
+ \end{equation}
+ \eqref{eq:rad_basic}に$v$をかけて$[0, R]$上積分すると、
+ 部分積分により次式が得られる。
+ \begin{equation}
+  - \int_0^R r^{N-1} (v_r)^2 dr + \int_0^R r^{N-1} g(v,
+   \underline{u}_\lambda, r) v dr = 0.  \label{eq:poh_times_v}
+ \end{equation}
+ \eqref{eq:rad_basic}に$rv_r$をかけて$[0, R]$上積分する。
+ まず\eqref{eq:rad_basic}の第$1$項を計算する。
+ 部分積分により、順次以下の計算が進む。
+ \begin{align*}
+  \int_0^R r v_r (r^{N-1} v_r)_r dr &= R^N v_r(R)^2 - \int_0^R
+  (rv_r)_r r^{N-1} v_r dr, \\
+  \int_0^R (rv_r)_r r^{N-1} v_r dr &= \int_0^R r^{N-1} (v_r)^2 dr +
+  \int_0^R r^N v_r v_{rr} dr, \\
+  \int_0^R r^N v_r v_{rr} dr &= \int_0^R r^N \left( \frac{1}{2}
+  (v_r)^2 \right)^\prime dr = \frac{1}{2} R^N v_r(R)^2 - \frac{N}{2}
+  \int_0^R r^{N-1} (v_r)^2 dr.
+ \end{align*}
+ 以上より、
+ \begin{align}
+  \int_0^R r v_r (r^{N-1} v_r)_r dr &= R^N v_r(R)^2 - 
+  \int_0^R r^{N-1} (v_r)^2 dr - \frac{1}{2} R^N v_r(R)^2 + \frac{N}{2}
+  \int_0^R r^{N-1} (v_r)^2 dr \notag \\ 
+  &= \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
+  dr \label{eq:poh_times_rvr_1}
+ \end{align}
+ と変形される。
+\end{proof}
+
 
 % Local Variables:
 % mode: yatex
