@@ -279,7 +279,7 @@ extremal solution について、以下が成立する。
  ある点$x_0$で最大値$M_1 = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
  達成するものと仮定する。$r_0 > 0$が存在し、
  $\{ \lvert x - x_0 \rvert < 2r_0 \} \subset \Omega$、かつ、
- $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続かつ$a$は
+ $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続であり$a$は
  \begin{equation}
   a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q^\prime} 
   + o(\lvert x-x_0 \rvert^{q^\prime}) \label{eq:a_q}
@@ -331,36 +331,37 @@ $(0, \bar{\lambda})$上一様に\ref{eq:prob_main}の
 second solutionが存在しない場合もある。
 
 \begin{thm} \label{thm:second_solution_nonex}
- $N \geq 6$とする。
  \begin{enumerate}[1.]  \sage
-  \item $a$は$a > 0 ~\tin \Omega$をみたすとする。
-        $b$は$\Omega$上の
-        ある点$x_0$で最大値
-        $M_1 = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
-        達成し、$r_0 > 0$が存在し、
-        $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続と仮定する。
+  \item $N \geq 3$とする。
+        $b > 0 \tin \Omega$であると仮定する。
         このとき、$0 < \lambda^* < \bar{\lambda}$が存在し、
         任意の$\lambda^* \leq
         \lambda < \bar{\lambda}$に対し、\ref{eq:prob_main}は
         minimal solution $\underline{u}_\lambda$以外の弱解
         $\bar{u}_\lambda$を持ち、$\bar{u}_\lambda >
         \underline{u}_\lambda ~\tin \Omega$が成立する。
-  \item $R > 0$とし、
+  \item $N \geq 6$とする。$R > 0$とし、
         $\Omega = \{ x \in \R^N \mid \lvert x \rvert < R\}$
         と仮定する。
         $a = a(\lvert x \rvert)$、
         $b = b(\lvert x \rvert)$、
         $f = f(\lvert x \rvert)$は$\Omega$上球対称とする。
-        また、$0 < \alpha < 1$とし、$a , b \in C^1(\Omega)$、
+        また、$0 < \alpha < 1$とし、$a , b \in C^1([0, R])$、
         $f \in C^\alpha([0, R])$であり、$a$は$[0, R]$上
         単調増加、$b, f$は$[0, R]$上
-        単調減少と仮定する。また、$a(0), b(0) > 0$と仮定する。
+        単調減少と仮定する。また、$a(0), b(0) > 0$とする。
         このとき、$0 < \lambda_*$が存在し、
         任意の$0 < \lambda < \lambda_*$に対し、
         \ref{eq:prob_main}は
         minimal solution $\underline{u}_\lambda$以外の弱解を持たない。
  \end{enumerate}
 \end{thm}
+
+2.~の仮定に$b > 0 \tin \Omega$を加えたものは、1.~の仮定をみたす。
+このとき、\ref{eq:prob_main}について、
+second solution を持つ$\lambda \in [\lambda^*, \bar{\lambda})$と
+second solution を持たない$\lambda \in (0, \lambda_*]$が
+両方存在することになる。
 
 定理~\ref{thm:minimal_solution}を証明するために、
 まず陰関数定理を用い、$\lambda > 0$が

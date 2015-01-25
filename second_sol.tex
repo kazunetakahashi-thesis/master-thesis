@@ -114,7 +114,7 @@
 
 ここで次の記号を置く。
 
-\begin{nota} \label{nota:S_def}
+\begin{defn} \label{defn:S_def}
  $V \subset \R^N$を領域とする。
  \begin{equation}
   S = \inf_{u \in H^1_0(V), u \not \equiv 0}
@@ -122,8 +122,8 @@
                                        \right\|_{L^{p+1}(V)}^2}  
  \label{eq:S_def}
  \end{equation}
- と定める。
-\end{nota}
+ を{\bf ソボレフ最良定数}という。
+\end{defn}
 
 $S$は$V$には依存しないことが知られている。例えば~\cite{田中200808}の定
 理~2.31~(i) を参照されたい。
@@ -544,23 +544,24 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  \end{equation}
  であることを示す。
  \eqref{eq:intvpsi}で$\psi = v$とすると、
- \[
-  \int_\Omega \lvert Dv \rvert dx = \int_\Omega g(v,
- \underline{u}_\lambda)  dx
- \]
- という関係式が導かれる。ゆえに、
+ \begin{equation}
+  \int_\Omega \lvert Dv \rvert^2 dx = \int_\Omega g(v,
+   \underline{u}_\lambda)v dx \label{eq:v_kankei}
+ \end{equation}
+ という関係式が導かれる。ゆえに、$v$における$I_\lambda$の値は
  \begin{equation}
   I_\lambda (v) = \frac{1}{2} \int_\Omega g(v, \underline{u}_\lambda)
    v dx - \int_\Omega G(v, \underline{u}_\lambda) dx \label{eq:Ilambda_v}
  \end{equation}
- とわかる。そこで、$t, s \geq 0$、$x \in \Omega$に対し、
+ と書けることがわかる。
+ そこで、$t, s \geq 0$、$x \in \Omega$に対し、
  \begin{align*}
   \frac{1}{2} g(t, s, x) t - G(t, s, x) &= \frac{1}{2} \left(b \left(
   (t+s)^p - s^p \right) at \right)t - \left( b \left(
   \frac{1}{p+1}(t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^p t -
   \frac{1}{2}at^2  \right) \right) \\
   &= b \left( \frac{1}{2} \left( (t+s)^pt - s^pt \right) -\left(
-  \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t \right) \right).
+  \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t \right) \right)
  \end{align*}
  を考える。
  \[
@@ -601,26 +602,118 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
   w_k \xrightarrow{ \mbox{ ~ } } 0 & \ \ \ae \tin \Omega. 
   \label{eq:wk_ae}
  \end{align}
+ $I_\lambda(v)$と$I_\lambda(v_k)$の差を、$w_k$を用いて評価する。
  \eqref{eq:wk_weakly}より、以下が成立する。
- \[
-  \int_\Omega \lvert D v_k \rvert^2 dx = \int_\Omega \lvert Dw_k ^ Dv
- \rvert^2 dx = \int_\Omega \lvert Dv \rvert^2 dx + \int_\Omega \lvert
- Dw_k \rvert^2 dx + o(1).
- \]
+ \begin{equation}
+  \int_\Omega \lvert D v_k \rvert^2 dx = \int_\Omega \lvert Dw_k + Dv
+   \rvert^2 dx = \int_\Omega \lvert Dv \rvert^2 dx + \int_\Omega \lvert
+   Dw_k \rvert^2 dx + o(1). \label{eq:Dvk_Dwk}
+ \end{equation}
  ここで、$\tilde{w}_k = (v_k)_+ - v$とおく。
  $v > 0 ~\tin \Omega$より、$\lvert \tilde{w}_k \rvert \leq \lvert w_k
  \rvert ~\tin \Omega$である。また、
  $k \to \infty$とすると、$\tilde{w}_k \to 0 ~\ae \tin \Omega$となる。
  ゆえに、ブレジス・リーブの補題~\cite{MR699419}より、次式が成立する。
  \begin{equation}
-  \int_\Omega (v_k)_{+}^{p+1} dx = \int_\Omega v^{p+1} dx +
-   \int_\Omega \lvert \tilde{w}_k \rvert^{p+1} dx + o(1) \ \ (k \to
+  \int_\Omega b(v_k)_{+}^{p+1} dx = \int_\Omega bv^{p+1} dx +
+   \int_\Omega \lvert b\tilde{w}_k \rvert^{p+1} dx + o(1) \ \ (k \to
    \infty).
    \label{eq:bzlblem}
  \end{equation}
- \eqref{eq:bzlblem}と補題~\ref{lem:conv}より、次式が成立する。
- 
- 以上より、$k \o \infty$のとき、
+ \eqref{eq:bzlblem}と補題~\ref{lem:conv}、および、$k \to \infty$のとき
+ $(v_k)_+ \to v ~\ae ~\tin \Omega$より、次式が成立する。
+ \begin{align}
+  \int_\Omega g(v_k, \underline{u}_\lambda) v_k dx &= \int_\Omega
+  h(v_k, \underline{u}_\lambda) v_k dx + \int_\Omega b (v_k)_+^{p+1}
+  dx \notag \\
+  &= \int_\Omega
+  h(v, \underline{u}_\lambda) v dx + \int_\Omega b v^{p+1}
+  dx + \int_\Omega b \lvert \tilde{w}_k \lvert^{p+1} dx + o(1) \notag \\
+  &= \int_\Omega g(v, \underline{u}_\lambda) v dx + 
+  \int_\Omega b \lvert \tilde{w}_k \lvert^{p+1} dx + o(1). \label{eq:w_k_1}
+ \end{align}
+ 同様にして、次式も得られる。
+ \begin{align}
+  \int_\Omega G(v_k, \underline{u}_\lambda) dx &= 
+  \int_\Omega H(v_k, \underline{u}_\lambda) dx + \frac{1}{p+1}
+  \int_\Omega b (v_k)_+^{p+1} dx \notag \\
+  &= \int_\Omega G(v, \underline{u}_\lambda) dx + \frac{1}{p+1}
+  \int_\Omega b \lvert \tilde{w}_k \rvert^{p+1} dx + o(1). \label{eq:w_k_2}
+ \end{align}
+ \eqref{eq:Dvk_Dwk}、\eqref{eq:w_k_2}より、
+ $I_\lambda(v_k)$と$I_\lambda(v)$の差は以下の通りに書ける。
+ \[
+  I_\lambda(v_k) = I_\lambda(v) + \frac{1}{2} \int_\Omega \lvert Dw_k
+ \rvert^2 dx - \frac{1}{p+1} \int_\Omega \lvert \tilde{w}_k
+ \rvert^{p+1} dx + o(1).
+ \]
+ ここで(i)より、次式が得られる。
+ \begin{equation}
+  I_\lambda(v) + \frac{1}{2} \int_\Omega \lvert Dw_k
+   \rvert^2 dx - \frac{1}{p+1} \int_\Omega \lvert \tilde{w}_k
+   \rvert^{p+1} dx = c + o(1). \label{eq:w_k_c}
+ \end{equation}
+ (ii)より、任意の$\epsilon > 0$に対し、$K \in \N$が存在し、
+ $k > K$に対し、
+ \[
+ \left\lvert \int_\Omega \lvert Dv_k \rvert^2 dx - \int_\Omega g(v_k,
+ \underline{u}_\lambda) v_k dx \right\rvert \leq \epsilon \left\| v_k
+ \right\|_{H_0^1(\Omega)} 
+ \]
+ が成立する。$\{ v_k \}$は$H_0^1(\Omega)$の有界列であるから、
+ $\epsilon$、$k$によらない$C > 0$が存在し、$k > K$のとき、
+ \[
+ \left\lvert \int_\Omega \lvert Dv_k \rvert^2 dx - \int_\Omega g(v_k,
+ \underline{u}_\lambda) v_k dx \right\rvert \leq \epsilon C
+ \]
+ が成り立つ。ゆえに、次式が従う。
+ \[
+ \lim_{k \to \infty} \left( \int_\Omega \lvert Dv_k \rvert^2 dx -
+ \int_\Omega g(v_k, \underline{u}_\lambda) v_k dx \right) = 0
+ \]
+ \eqref{eq:v_kankei}、\eqref{eq:Dvk_Dwk}、および、\eqref{eq:w_k_1}より、
+ \[
+ \lim_{k \to \infty} \left( \int_\Omega \lvert Dw_k \rvert^2 dx -
+ \int_\Omega b \lvert \tilde{w}_k \rvert^{p+1} dx \right) = 0 
+ \]
+ が成立する。この事実と、$\{ v_k \}$が$H_0^1(\Omega)$の有界列であるこ
+ とから、実数列
+ \begin{equation}
+  \left\{ \int_\Omega \lvert Dw_k \rvert^2 dx \right\}_k , \ 
+  \left\{ \int_\Omega b \lvert \tilde{w}_k \rvert^{p+1} dx \right\}_k
+  \label{eq:real_seq}
+ \end{equation}
+ は両方共ある有界閉区間上の数列である。
+ したがって、必要ならば$\{ w_k \}$の部分列を取ると、
+ \eqref{eq:real_seq}は収束する。
+ 収束先を$l \geq 0$とすると、
+ \[
+  \lim_{k \to \infty} \int_\Omega \lvert Dw_k \rvert^2 dx = \lim_{k
+ \to \infty} \int_\Omega b \lvert \tilde{w}_k \rvert^{p+1} dx = l
+ \]
+ をみたす。\eqref{eq:S_def}により、
+ \[
+  \int_\Omega \lvert Dw_k \rvert^2 dx \geq S \left( \int_\Omega \lvert
+ \tilde{w}_k \rvert^{p+1} dx \right)^{2/(p+1)} \geq S \left(
+ \frac{1}{\left\| b \right\|_{L^\infty(\Omega)}} \int_\Omega b \lvert
+ \tilde{w}_k \rvert^{p+1} dx \right)^{2/(p+1)}
+ \]
+ が成立する。$k \to \infty$として、
+ \begin{equation}
+  S l^{2/(p+1)} \leq \left\| b \right\|_{L^\infty(\Omega)}^{2/(p+1)} l 
+   \label{eq:PS_c_S}
+ \end{equation}
+ が得られる。ここで$l = 0$であることを背理法を用いて示す。
+ $l > 0$と仮定する。\eqref{eq:PS_c_S}より、
+ $l \geq S^{N/2}/ \left\| b \right\|_{L^\infty(\Omega)}^{(N-2)/2}$
+ である。一方、\eqref{eq:w_k_c}で$k \to \infty$とすると、
+ \[
+  I_\lambda(v = c - \frac{1}{N}l \leq c - \frac{S^{N/2}}{N \left\| b
+ \right\|_{L^\infty(\Omega)}^{(N-2)/2}} < 0
+ \]
+ が得られる。これは\eqref{eq:Ilambdageq0}に反する。
+ したがって、$l = 0$である。
+ 以上より、$k \to \infty$のとき、
  $w_k \to 0 ~\tin H_0^1(\Omega)$である。すなわち、
  $v_k \to v ~\tin H_0^1(\Omega)$である。これが示すべきことであった。\qedhere
 \end{proof}
@@ -632,7 +725,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
 \begin{lem} \label{lem:delta_rho}
  以下の条件をみたす$\delta > 0$、$\rho > 0$が存在する。
  \begin{equation}
-  \text{$\left\|v \right\|_{H^1_0(\Omega)}$をみたす$v \in
+  \text{$\left\|v \right\|_{H^1_0(\Omega)} = \delta$をみたす$v \in
    H_0^1(\Omega)$に対し、$I_\lambda(v) \geq \rho$が成立する。} 
    \label{eq:delta_rho}
  \end{equation}
@@ -675,14 +768,16 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   R_3 = \frac{\alpha^{\prime\prime\prime}(\theta t)}{3!} t^3 =
  \frac{p(p-1)}{6} (\theta t + s)^{p-2} t^3
  \]
- とかける。この$R_3$は、
- \[
- R_3  \geq C (2 \max \{ t, s \})^{p-2} t^3 
+ とかける。この$R_3$は、$p - 2 \geq 0$のとき、
+ \begin{equation}  
+ R_3  \leq C (2 \max \{ t, s \})^{p-2} t^3 
  = C 2^{p-2} ( \max \{ t^{p-2}, s^{p-2} \})t^3
- \geq  C ( t^{p-2} + s^{p-2} )t^3
- = C ( t^{p+1} + s^{p-2} t^3)
- \]
+ \leq  C ( t^{p-2} + s^{p-2} )t^3
+ = C ( t^{p+1} + s^{p-2} t^3) \label{eq:R_3_2_pow}
+ \end{equation}
  と評価される。$C > 0$は$s, t \geq 0$によらない。
+ $p - 2 \leq 0$のときは、$R_3 \leq p(p-1)s^{p-1}t^3 / 6$であるから、
+ やはり\eqref{eq:R_3_2_pow}に帰着する。
  さらに、ヤングの不等式より、任意の$\epsilon > 0$に対し、
  $C > 0$が存在し、$s, t \geq 0$に対し、
  $s^{p-2} t^3 \leq \epsilon s^{p-1} t^2 + C t^{p+1}$
@@ -723,8 +818,8 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
  $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$が同値なノルムであることを考
  慮すると、
  \[
-  I_\lambda \geq C^{\prime\prime} \left| v \right|_{H_0^1(\Omega)}^2
- - C^{\prime} \left| v \right|_{H_0^1(\Omega)}^{p+1}
+  I_\lambda \geq C^{\prime\prime} \left\| v \right\|_{H_0^1(\Omega)}^2
+ - C^{\prime} \left\| v \right\|_{H_0^1(\Omega)}^{p+1}
  \]
  と導かれる。$C^{\prime\prime}, C^\prime > 0$は$v$によらない。
  $2 < p+1$であるから、$\delta > 0$を十分小さくとれば、$\rho =
@@ -735,11 +830,48 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
 命題~\ref{prop:second_1}を証明する最後の準備として、次の補題を証明する。
 
 \begin{lem} \label{lem:mountain_dec}
- 
+ $v \geq 0 ~\tin \Omega$および
+ \eqref{eq:int_omega_bvp+1}をみたす
+ $v \in H_0^1(\Omega)$について、次式が成立する。
+ \begin{equation}
+  \lim_{t \to \infty} I_\lambda(tv) =  -\infty. \label{eq:mountain_dec}
+ \end{equation}
 \end{lem}
 
 \begin{proof}
- 
+ $t, s \geq 0$、$x \in \Omega$とする。
+ \[
+  G^\prime(t, s, x) - \frac{b(x)}{p+1} t^{p+1} = b(x) \left(
+ \frac{1}{p+1}(t+s)^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t -
+ \frac{1}{p+1} t^{p+1} \right)
+ \]
+ である。右辺の括弧の中を$\alpha(s)$とおく。$\alpha$の$1$階導関数は、
+ \[
+  \alpha^\prime(s) = (t+s)^p - s^p - p s^{p-1} t
+ \]
+ である。
+ 右辺を$t$の関数とみると、テイラーの定理より、
+ \[
+  \alpha^\prime(s) = \frac{p(p-1)}{2}(s+ \theta t)^{p-1} t^2
+ \]
+ をみたす$0 < \theta < 1$が存在する。したがって、$\alpha^\prime(s)
+ \geq 0$である。すなわち、$\alpha$は$s$についての単調増加関数である。
+ ゆえに、
+ \[
+ G^\prime(t, s, x) - \frac{b(x)}{p+1} t^{p+1} \geq 
+ G^\prime(t, 0, x) - \frac{b(x)}{p+1} t^{p+1} = 0
+ \]
+ が成立する。したがって、
+ \[
+  \int_\Omega G(tv, \underline{u}_\lambda) dx \geq
+ \frac{t^{p+1}}{p+1} \int_\Omega b v^{p+1} dx
+ \]
+ である。ゆえに、$I_\lambda(tv)$は、次の通りに上から評価される。
+ \[
+  I_\lambda(tv) \leq \frac{t^2}{2} \int_\Omega \left( \lvert Dv
+ \rvert^2 + av^2 \right) dx - \frac{t^{p+1}}{p+1} \int_\Omega bv^{p+1} dx.
+ \]
+ \eqref{eq:int_omega_bvp+1}より、\eqref{eq:mountain_dec}が成立する。
 \end{proof}
 
 $(\mathrm{PS})$条件を課さない峠の定理を用いて、命題
