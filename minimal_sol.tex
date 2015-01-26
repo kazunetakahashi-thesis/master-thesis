@@ -612,7 +612,13 @@ $\phi_1 \in H_0^1(\Omega)$、$\phi_1 > 0 ~\tin \Omega$
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:minimal_solution}]
- 命題~\ref{prop:bar_lambda}により、
+ \begin{enumerate}[1.] \sage
+  \item $\bar{\lambda}$を\ref{eq:prob_main}の extremal value とする。
+        命題~\ref{prop:bar_lambda}により、$0 < \bar{\lambda} < \infty$
+        である。定義~\ref{defn:ext}より、(i), (ii)が成立する。
+  \item 補題~\ref{lem:minimal_va}.3より従う。
+  \item 補題~\ref{lem:imp}.1より従う。 \qedhere
+ \end{enumerate}
 \end{proof}
 
 \subsection{minimal solutionに関する線形化固有値問題}
