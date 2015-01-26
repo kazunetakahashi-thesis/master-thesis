@@ -1,0 +1,33 @@
+%#!platex main.tex
+
+\section{命題~\ref{prop:exist}で使用される不等式の証明}
+
+本付録では、命題~\ref{prop:exist}で使用される不等式の証明を与える。
+
+\begin{lem} \label{lem:ineq_naito_sato}
+ 任意の$0 < \epsilon < 1$、$s, t \geq 0$、$x \in \Omega$に対し、
+ 次式が成立する。
+ \begin{equation}
+  \frac{p}{2}s^{p-1}t^2 - 
+   \left( \frac{1}{p+1}(t+s)^{p+1} -
+    \frac{1}{p+1}s^{p+1} - (t + s)^p - \frac{1}{p+1}t^{p+1}
+   \right) \leq \frac{\epsilon p}{2} s^{p-1}
+   t^2 + \frac{1-\epsilon}{p+1} t^{p+1}.
+ \end{equation}
+\end{lem}
+ 
+\begin{proof}
+ 
+\end{proof}
+
+補題~\ref{lem:ineq_naito_sato}は、\cite{MR2886160}~のLemma~B.2 (iii)
+とほぼ同一である。またその証明は、以上の証明と同一である。
+それにもかかわらず、本付録で証明を改めて書いたのは、
+\cite{MR2886160}~のLemma~B.2 (iii)では$1 < p \leq 2$という仮定が
+ついているからである。この仮定がなくとも
+補題~\ref{lem:ineq_naito_sato}は成立する。
+
+% Local Variables:
+% mode: yatex
+% TeX-master: "main.tex"
+% End:

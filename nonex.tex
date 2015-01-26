@@ -9,8 +9,20 @@ $f^\prime$とも、$f_r$とも表す。
 
 まずは、定理~\ref{thm:second_solution_nonex}.2の仮定の下での
 解の正則性を検討し、以降球対称解のみ考慮すればよいことを証明する。
+正則性の検討において、次の補題を使用する。
 
-\begin{lem}
+\begin{lem}[\cite{MR539217}~, \cite{MR709644}~LEMMA~1.5] 
+ \label{lem:regularity}
+ $N \geq 3$とし、
+ $K \in L^{N/2}(\Omega)$とする。$u \in H_0^1(\Omega)$は
+ \[
+  - \Delta u = K u \ \ ~\tin \Omega
+ \]
+ の弱解であるとする。このとき、任意の$q < \infty$に対し、
+ $u \in L^q(\Omega)$が成立する。
+\end{lem}
+
+\begin{lem} \label{lem:reg_rad}
  定理~\ref{thm:second_solution_nonex}.2の仮定の下で、
  $\lambda_0 > 0$が存在し、$0 < \lambda \leq \lambda_*$
  に対し、以下が成立する。
@@ -279,8 +291,42 @@ $f^\prime$とも、$f_r$とも表す。
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:second_solution_nonex}.2]
- 
-\end{proof}
+ 補題~\ref{lem:imp}.2より、
+ \[
+  \lim_{\lambda \searrow 0} \left\| \underline{u}_\lambda
+ \right\|_{L^\infty(\Omega)} = 0
+ \]
+ が成立する。ゆえに、$0 < \lambda_* < \lambda_0$が存在し、
+ $0 < \lambda \leq \lambda_*$に対し、
+ \[
+  \left\| \underline{u}_\lambda \right\|_{L^\infty(\Omega)} <
+ \left( \frac{a(0)}{pb(0)}\right)^{1/(p-1)}
+ \]
+ が成立する。
+ $a$が単調増加、$b$が単調減少であることから、
+ $0 \leq r \leq R$に対し、
+ $a^\prime(r) \geq 0$、
+ $b^\prime(r) \leq 0$、
+ $a(0) \leq a(r)$、
+ $b(0) \leq b(r)$である。以上より、
+ $0 \leq r \leq R$に対し、次式が成立する。
+ \[ 
+ p(2b(r) + b^\prime(r) r)
+ \underline{u}_\lambda^{p-1} 
+ - (2a(r) + a^\prime(r) r) \leq 
+ 2 p b(r) 
+ \underline{u}_\lambda^{p-1} 
+ - 2a(r) < 2 \left( b(r) \frac{a(0)}{b(0)} - a(r) \right)
+ \leq 2(a(r) - a(r))
+ \leq 0.
+ \]
+ したがって、任意の$v = v(r) \in C^2([0, R])$に対し、
+ \eqref{eq:poh_ineq}は成立しない。したがって、
+ \eqref{eq:prob_rad}の解は存在しない。ゆえに、
+ 補題~\ref{lem:reg_rad}.3、補題~\ref{lem:reg_rad}.2、
+ 補題~\ref{lem:rel_heart_spade}.1より、
+ \ref{eq:prob_main}の弱解は存在しない。 \qedhere
+ \end{proof}
 
 % Local Variables:
 % mode: yatex
