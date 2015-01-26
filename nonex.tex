@@ -83,6 +83,9 @@ $f^\prime$とも、$f_r$とも表す。
  \end{enumerate}
 \end{proof}
 
+ポホザエフ\cite{MR0192184}~式の議論から、
+\eqref{eq:prob_rad}の解がみたすべき等式を導出する。
+
 \begin{lem}
  \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は、以下の
  等式をみたす。
@@ -133,9 +136,144 @@ $f^\prime$とも、$f_r$とも表す。
   &= \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
   dr \label{eq:poh_times_rvr_1}
  \end{align}
- と変形される。
+ と変形される。次に、第$2$項の計算をする。以下の式に注意する。
+ \begin{align*}
+  \frac{d}{dr} \left( r^N G(v(r), \underline{u}_\lambda(r), r )
+  \right) &= N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + g(
+  v(r), \underline{u}_\lambda(r), r) + G_s(v(r),
+  \underline{u}_\lambda(r), r) + G_r(v(r), \underline{u}_\lambda(r),
+  r), \\
+  R^N G(v(R), \underline{u}_\lambda(R), R) &= R^N G(0, 0, R) = 0. 
+ \end{align*}
+ やはり部分積分により、以下の通り計算がなされる。
+ \begin{equation}
+  \int_0^R r^N g(v, \underline{u}_\lambda, r) v_r dr
+   = -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
+   (\underline{u}_\lambda)_r dr - \int_0^R r^N G_r(v,
+   \underline{u}_\lambda, r) dr. \label{eq:poh_times_rvr_2}
+ \end{equation}
+ \eqref{eq:poh_times_rvr_1}、\eqref{eq:poh_times_rvr_2}より、
+ 次式が得られる。
+ \begin{equation}
+  \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
+   dr -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
+   (\underline{u}_\lambda)_r dr - \int_0^R r^N G_r(v,
+   \underline{u}_\lambda, r) dr = 0. \label{eq:poh_times_rvr}
+ \end{equation}
+ $\text{\eqref{eq:poh_times_v}} + \text{\eqref{eq:poh_times_rvr}} \times
+ 2/(N-2)$より、\eqref{eq:poh_eq}が証明される。\qedhere
 \end{proof}
 
+\eqref{eq:poh_eq}から、不等式を導出する。
+
+\begin{lem}
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は、以下の
+ 不等式をみたす。
+ \begin{equation}
+  \int_0^R r^{N-1} \left( p(2b(r) + b^\prime(r) r)
+                    \underline{u}_\lambda^{p-1} 
+                    - (2a(r) + a^\prime(r) r) \right) v^2 dr \geq 0.
+  \label{eq:poh_ineq}
+ \end{equation}
+\end{lem}
+
+\begin{proof}
+ まず、\eqref{eq:poh_eq}の右辺について
+ \begin{equation}
+  \frac{1}{N-2} R^N v_r(R)^2 \geq 0 \label{eq:poh_ineq_0}
+ \end{equation}
+ である。
+ 次に、$G_s$を調べる。$t, s \geq 0$、$0 \leq r \leq R$に対し、
+ \[
+  G_s(t, s, r) = \pdif{}{s} \left( b(r) \left( \frac{1}{p+1}
+ (t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^pt \right)
+ - \frac{1}{2}a(r) t^2 \right) = b(r) \left( (t+s)^p - s^p -p s^{p-1}
+ t \right)
+ \]
+ である。テイラーの定理より、$0 < \theta < 1$を用いて、
+ \[
+  (t+s)^p - s^p - ps^{p-1} t = \frac{p(p-1)}{2} (s + \theta t)^{p-2} t^2
+ \]
+ と書ける。これは$0$以上である。
+ よって、\eqref{eq:under_u_r_prime}も考慮すると、次式が得られる。
+ \begin{equation}
+  \int_0^R r^N G_s(v, \underline{u}_\lambda, r)
+   (\underline{u}_\lambda)_r dr \leq 0. \label{eq:poh_ineq_1}
+ \end{equation}
+ 続けて、$G_r$を調べる。$t, s \geq 0$、$0 \leq r \leq R$に対し、
+ \[
+  G_r(t, s, r) = b^\prime(r) \left( \frac{1}{p+1} (t+s)^{p+1} -
+ \frac{1}{p+1} s^{p+1} - s^{p} t \right) - \frac{1}{2} s^\prime(r) t^2
+ \]
+ である。テイラーの定理より、
+ \[
+  \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} -s^p t -
+ \frac{p}{2} s^{p-1} t^2 = \frac{p(p-1)}{6} (s + \theta t)^{p-2} t^3
+ \]
+ をみたす$0 < \theta < 1$が存在する。右辺は$0$以上であるから、
+ $b^\prime(r) \leq 0$も合わせて、
+ \begin{equation}
+  \int_0^R r^N G_r(v, \underline{u}_\lambda, r) dr \leq \int_0^R
+   \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} v^2 -
+    \frac{1}{2} s^\prime v^2 \right)dr = 
+   \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} -
+    \frac{1}{2} s^\prime \right) v^2 dr \label{eq:poh_ineq_2} 
+ \end{equation}
+ と評価できる。最後に、
+ \begin{align*}
+  \frac{2N}{N-2}G(t, s, r) - g(t, s, r)t 
+  &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t - \right)
+  \frac{p+1}{2} a(r) t^2 \right) - \left( b(r) \left( (t+s)^p - s^p
+  \right) - a(r) t \right) t \\
+  &= b(r) \left( (t+s)^{p+1} - (t+s)^p t - s^{p+1} - (p+1)s^p t + s^p
+  t \right) -\frac{p-1}{2} a(r) t^2
+ \end{align*}
+ を考察する。$\alpha(t) = (t+s)^{p+1} - (t+s)^p t = (t+s)^p s$とおく。
+ $1, 2, 3$階導関数を計算すると、それぞれ以下の通りである。
+ \begin{align*}
+  \alpha^\prime(t) &= p(t+s)^{p-1}s, \\
+  \alpha^{\prime\prime}(t) &= p(p-1)(t+s)^{p-2}s, \\
+  \alpha^{\prime\prime\prime}(t) &= p(p-1)(p-2)(t+s)^{p-3}s.
+ \end{align*}
+ $\alpha$の$t = 0$のまわりのテイラー多項式を考える。
+ $3$次の剰余項を$R_3$とすると、
+ \[
+  R_3 = (t+s)^{p+1} - (t+s)^p t -s^{p+1} -(p+1)s^p t - s^p t -
+ \frac{1}{2}p(p-1) s^{p-1}t^2
+ \]
+ である。テイラーの定理より、$R_3$は$0 < \theta < 1$を用いて
+ \[
+  R_3 = \frac{p(p-1)(p-2)}{6}(s + \theta t)^{p-3} st^3
+ \]
+ と表される。$N \geq 6$であるから、$1 < p \leq 2$である。
+ ゆえに、$R_3 \leq 0$とわかる。以上より、
+ \begin{equation}
+  \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
+           r) - g(v, \underline{u}_\lambda, r) v \right) dr \leq \int_0^R
+  r^{N-1} \left( b \frac{1}{2} p(p-1) \underline{u}_\lambda^{p-1} -
+ \frac{p-1}{2} a  \right) v^2 dr \label{eq:poh_ineq_3}
+ \end{equation}
+ と評価される。\eqref{eq:poh_ineq_0}、
+ \eqref{eq:poh_ineq_1}、\eqref{eq:poh_ineq_2}、
+ \eqref{eq:poh_ineq_3}より、\eqref{eq:poh_eq}から
+ \[
+  \int_0^R r^{N-1} \left( b \frac{1}{2} p(p-1)
+ \underline{u}_\lambda^{p-1} - \frac{p-1}{2} a \right) v^2 dr 
+ + \frac{p-1}{4} \int_0^R r^N \left( b^\prime p
+ \underline{u}_\lambda^{p-1} - a^\prime \right) v^2 dr \geq 0
+ \]
+ が得られる。変形すると、
+ \[
+  \int_0^R \frac{p-1}{4}  r^{N-1} \left( p(2b + b^\prime r)
+ \underline{u}_\lambda^{p-1} 
+ - (2a + a^\prime r) \right) v^2 dr \geq 0.
+ \]
+ がわかる。$(p-1)/4 > 0$より、\eqref{eq:poh_ineq}が得られる。\qedhere
+\end{proof}
+
+\begin{proof}[定理~\ref{thm:second_solution_nonex}.2]
+ 
+\end{proof}
 
 % Local Variables:
 % mode: yatex

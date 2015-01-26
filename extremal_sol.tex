@@ -244,13 +244,51 @@ $b > 0 ~\tin \Omega$のときは唯一つに限る
 第$1$固有値$\mu_1(\lambda)$である。補題~\ref{lem:lin_1}では、
 $0 < \lambda < \bar{\lambda}$において
 $\mu_1(\lambda) > 1$となることを示した。
-$b > 0 ~\tin \Omega$
+$b > 0 ~\tin \Omega$のときは、
 $\lambda = \bar{\lambda}$において、この不等式が成立しなくなることを示
-す。
+す。その準備として、
+まずは$\lambda$が大きくなると$\mu_1(\lambda)$が小さくなることを示す。
 
 \begin{lem} \label{rem:mu1_dec}
- $\lambda_1, \lambda_2$は、
+ $\lambda_1, \lambda_2$は、$0 < \lambda_1 \leq \lambda_2 \leq
+ \bar{\lambda}$とする。このとき、$\mu_1(\lambda_1) \geq
+ \mu_1(\lambda_2)$が成立する。
 \end{lem}
+
+\begin{proof}
+ $\phi_1$を$\lambda = \lambda_1$における
+ \ref{eq:prob_main}のminimal solutionに関する
+ 線形化固有値問題\eqref{eq:lin_prob_min_sol}の
+ 第$1$固有関数とする。補題~\ref{lem:lin_p}.2より、$\mu_1(\lambda_1)$、
+ $\mu_1(\lambda_2)$は以下の通りに書ける。
+ \begin{align*}
+  \mu_1(\lambda_1) &= \frac{\displaystyle 
+  \int_\Omega \left( \lvert D\phi_1 \rvert^2
+  + a \phi_1^2 \right) dx}{\displaystyle \int_\Omega p b
+  \underline{u}_{\lambda_1}^{p-1} \phi_1^2 dx}, \\
+  \mu_1(\lambda_2) &= \inf_{\psi \in H_0^1(\Omega), \ \psi \not\equiv
+  0} \frac{\displaystyle 
+  \int_\Omega \left( \lvert D\psi \rvert^2
+  + a \psi^2 \right) dx}{\displaystyle \int_\Omega p b
+  \underline{u}_{\lambda_2}^{p-1} \psi^2 dx}.
+ \end{align*}
+ 補題~\ref{lem:minimal_va}.3より、
+ $\underline{u}_{\lambda_1} \leq \underline{u}_{\lambda_2} ~\ae ~\tin
+ \Omega$であるから、
+ \[
+  \mu_1(\lambda_2) \leq 
+  \inf_{\phi_1 \in H_0^1(\Omega), \ \phi_1 \not\equiv
+  0} \frac{\displaystyle 
+  \int_\Omega \left( \lvert D\phi_1 \rvert^2
+  + a \phi_1^2 \right) dx}{\displaystyle \int_\Omega p b
+  \underline{u}_{\lambda_2}^{p-1} \phi_1^2 dx} \leq
+  \frac{\displaystyle 
+  \int_\Omega \left( \lvert D\phi_1 \rvert^2
+  + a \phi_1^2 \right) dx}{\displaystyle \int_\Omega p b
+  \underline{u}_{\lambda_1}^{p-1} \phi_1^2 dx} = \mu_1(\lambda_1)
+ \]
+ が得られる。 \qedhere
+\end{proof}
 
 \begin{lem} \label{lem:mu_1_bar_lambda}
  \begin{enumerate}[1.] \sage
