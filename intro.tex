@@ -120,7 +120,7 @@ $u \geq \underline{u}_\lambda ~\tin \Omega$をみたすことをいう。
 一般に extremal value と呼ばれる。
 この事実は
 キーナー -- ケラー \cite{MR0346305}~によって一般的な枠組みで示された。
-クランデル -- ラビノビッヅ \cite{MR0382848}~は
+クランダール -- ラビノビッヅ \cite{MR0382848}~は
 \cite{MR0346305}~の仮定をより簡潔にした。
 さて minimal solution 以外の弱解は、便宜上 second solution と呼ばれる。
 \cite{MR709644}~は、second solution について以下の結果を与えた。
@@ -128,7 +128,7 @@ $u \geq \underline{u}_\lambda ~\tin \Omega$をみたすことをいう。
 \eqref{eq:sobolev_bn2}は second solution を持つ。
 この事実は、\cite{MR709644}~以前より、
 $\Omega$が球である場合に限っては、
-ジョゼフ -- ラングレン\cite{MR0340701}~により事実上証明がなされていた。
+ジョゼフ -- ルンドグレン\cite{MR0340701}~により事実上証明がなされていた。
 球対称性から常微分方程式の議論に持ち込まれ証明がなされた。
 しかし、\cite{MR709644}~では$\Omega$の形状を限定しなかった。
 道具として、$(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}と
@@ -150,7 +150,7 @@ $N = 3$、$N = 4$、$N \geq 5$では、それぞれ議論が異なっている�
  \begin{aligned}
   -\Delta u &= u^p + \lambda f  & &\tin \Omega,  \\
   u &> 0 & &\tin \Omega, \\
-  u &= 0 & &\ton \partial\Omega
+  u &= 0 & &\ton \partial\Omega.
  \end{aligned}
  \right. \label{eq:tarantello}
 \end{align}
@@ -180,7 +180,7 @@ $(\mathrm{PS})$条件を課さない峠の定理および
  \begin{aligned}
   -\Delta u + \kappa u &= u^p + \lambda f  & &\tin \Omega,  \\
   u &> 0 & &\tin \Omega, \\
-  u &= 0 & &\ton \partial\Omega
+  u &= 0 & &\ton \partial\Omega.
  \end{aligned}
  \right. \label{eq:naito_sato}
 \end{align}
@@ -262,7 +262,7 @@ extremal solution について、以下が成立する。
  以下の(i), (ii)の
  いずれかの成立を仮定する。
  \begin{enumerate}[(i)]
-  \item $\kappa_1 < \kappa \leq 0$かつ$N \geq 3$。
+  \item $-\kappa_1 < \kappa \leq 0$かつ$N \geq 3$。
   \item $\kappa > 0$かつ$N = 3, 4, 5$。
  \end{enumerate}
  このとき、\ref{eq:prob_main}は、minimal solution
@@ -307,7 +307,7 @@ extremal solution について、以下が成立する。
 達成する近傍での性質で決定されていることを示している点である。
 もう1つは、解の存在・非存在が変化する次元$N$が、$a$に由来するパラメー
 タで変化しうることを示している点である。
-特に後者は目新しい点であると思われる。
+特に後者は新しい点であると思われる。
 内藤 -- 佐藤の
 定理~\ref{thm:second_solution_naito_sato}では、
 $a = \kappa$および$b = 1$であるとき、
@@ -328,13 +328,13 @@ $6$より大きい値を全てとり得る。
 いわば「$N < \infty$」と「$N < 6$」の「中間部分」の例を
 全て与えているとも言える。
 
-$(0, \bar{\lambda})$上一様に\ref{eq:prob_main}の
-second solutionが存在しない場合もある。
+\ref{eq:prob_main}の second solutionが
+$(0, \bar{\lambda})$上一様には存在しない場合もある。
 
 \begin{thm} \label{thm:second_solution_nonex}
  \begin{enumerate}[1.]  \sage
   \item $N \geq 3$とする。
-        $b > 0 \tin \Omega$であると仮定する。
+        $b > 0 ~\tin \Omega$であると仮定する。
         このとき、$0 < \lambda^* < \bar{\lambda}$が存在し、
         任意の$\lambda^* \leq
         \lambda < \bar{\lambda}$に対し、\ref{eq:prob_main}は
@@ -358,7 +358,7 @@ second solutionが存在しない場合もある。
  \end{enumerate}
 \end{thm}
 
-2.~の仮定に$b > 0 \tin \Omega$を加えたものは、1.~の仮定をみたす。
+2.~の仮定に$b > 0 ~\tin \Omega$を加えたものは、1.~の仮定をみたす。
 このとき、\ref{eq:prob_main}について、
 second solution を持つ$\lambda \in [\lambda^*, \bar{\lambda})$と
 second solution を持たない$\lambda \in (0, \lambda_*]$が
@@ -402,7 +402,7 @@ $\bar{u}_\lambda$を見出すために、
   (\underline{u}_\lambda)^p \right) 
   & &\text{in~} \Omega, \\
   v &> 0 & &\text{in~} \Omega, \\
-  v &= 0 & &\text{on~} \partial\Omega
+  v &= 0 & &\text{on~} \partial\Omega.
  \end{aligned}
  \right. \tag*{$(\heartsuit)_\lambda$} \label{eq:prob_sec}
 \end{align}
@@ -410,17 +410,24 @@ $\bar{u}_\lambda$を見出すために、
 定理~\ref{thm:second_solution}を証明するために、
 まず、\ref{eq:prob_sec}の「エネルギー」を表す汎関数
 $I_\lambda$を定義する。
-$I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる。
-このとき、峠における「エネルギー」$c$が
-$0 < c < S^{N/2} / NM^{(N-2)/2}$をみたすことを
+$I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる
+ことを考える。
+具体的には、まず、峠における「エネルギー」$c$が
+$0 < c < S^{N/2} / N\left\| b \right\|_{L^\infty(\Omega)}
+^{(N-2)/2}$をみたすことを
 タレンティー関数を用いることで示す。
-ここで$S$はソボレフ最良定数である。
-ここで$(\mathrm{PS})$条件を課さない
-峠の定理を用いると、$H_0^1(\Omega)$の
-ある点列$\{ v_n \}$が得られる。
-$I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを足がかりに、
-$\{ v_n \}$がある$v \in H_0^1(\Omega)$に収束することを示す。
-そして$v$が\ref{eq:prob_sec}弱解であることを示す。
+ここで$S$は以下で定義されるソボレフ最良定数である。
+\[
+   S = \inf_{u \in H^1_0(V), u \not \equiv 0}
+ \frac{\left\| Du \right\|_{L^2(V)}^2}{\left\| u
+                                       \right\|_{L^{p+1}(V)}^2} \ \ \ \ (V
+ \subset \R^N \text{は領域}).
+\]
+次に、この$c$について、
+$I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを示す。
+その他の仮定も確かめ、$(\mathrm{PS})$条件を課さない
+峠の定理を用いると、$I_\lambda$の臨界点$v$が得られる。
+$v$が\ref{eq:prob_sec}の弱解である。
 この$v$を用いて、\ref{eq:prob_main}のsecond solution を
 $\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する。
 
@@ -429,10 +436,11 @@ $\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する。
 \ref{eq:prob_main}の minimal solution における線形化固有値問題
 の第$1$固有関数を考察することで得られる。
 定理~\ref{thm:second_solution_nonex}.2は、
-以下の通りに証明される。\cite{MR544879}~より
-\ref{eq:prob_main}も\ref{eq:prob_sec}も、解は全て球対称であることから、
-方程式\ref{eq:prob_sec}は、
-動径$r$についての常微分方程式に帰着する。
+以下の通りに証明される。まずは$\lambda > 0$が小さいところでは、
+\ref{eq:prob_main}の minimal solution も
+\ref{eq:prob_sec}の弱解も古典解になることを確かめる。
+すると\cite{MR544879}~より、球対称解のみ考慮すれば十分である。
+方程式\ref{eq:prob_sec}は、動径$r$についての常微分方程式に帰着する。
 その解$v$が存在するならば、ポホザエフ式の議論から従うある等式をみたす
 必要がある。
 しかし$\lambda > 0$が十分小さい時は、$C^{2 + \alpha}(\Omega)$の
@@ -485,16 +493,17 @@ $H_0^1(\Omega)$上のノルム$\dnorm_{\kappa}$を、$w \in H_0^1(\Omega)$に対
 と定める。$\kappa > -\kappa_1$、$\Omega$が有界領域で
 あることにより、ポアンカレの不等式から
 $\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムである。また、
+と同値なノルムとなる。また、
 $H_0^1(\Omega)$上のノルム$\dnorm$を、$w \in H_0^1(\Omega)$に対し、
 \[
  \left\| w \right\| = \left(\int_\Omega \lvert Dw \rvert^2 dx\right)^{1/2}
 \]
 と定める。やはりポアンカレの不等式から
 $\dnorm$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムであることがしたがう。
+と同値なノルムとなる。
 
-$\alpha \in \R$に対し、$\alpha_+ = \max \{ \alpha, 0 \}$と定める。
+$\alpha \in \R$に対し、$\alpha_+ = \max \{ \alpha, 0 \}$、
+$\alpha_- = \min \{ -\alpha, 0 \}$と定める。
 文字$C$および$C$に飾りをつけたものは
 重要でない正の定数を表す。
 これらは式変形中、断りなしに導入され、断りなしに取りかえることがある。

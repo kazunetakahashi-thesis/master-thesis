@@ -5,7 +5,7 @@
 $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
 
 \begin{defn}
- $\bar{\lambda}$を記号~\ref{nota:ext}のものとする。
+ $\bar{\lambda}$を\ref{eq:prob_main}の extremal value とする。
  $\lambda = \bar{\lambda}$における\ref{eq:prob_main}の弱解を
  \ref{eq:prob_main}の{\bf extremal solution }という。
 \end{defn}
@@ -36,7 +36,7 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
   \int_\Omega (Dv_\lambda \cdot D\psi + a v_\lambda \psi) dx =
  \int_\Omega b(v_\lambda + \lambda g_0)^p \psi dx.
  \]
- $\psi = v_\lambda$とおくと、次を得る。
+ $\psi = v_\lambda$とおくと、次が得られる。
  \begin{equation}
   \int_\Omega \left( \lvert Dv_\lambda \rvert^2 + a \lvert v_\lambda
                \rvert^2 \right) dx =
@@ -84,19 +84,19 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
    v_\lambda^2 dx + C \lambda^p \int_\Omega bg_0^p v_\lambda dx.
    \label{eq:v_lambda_I}
  \end{equation}
- ここで、補題~\ref{lem:lin_p}.2、補題~\ref{lem:lin_1}から、次式を得る。
+ ここで、補題~\ref{lem:lin_p}.2、補題~\ref{lem:lin_1}から、次式が得られる。
  \[
-  I \leq \mu_1 p \int_\Omega b (\underline{u}_\lambda)^{p-1}
+  I \geq \mu_1 p \int_\Omega b (\underline{u}_\lambda)^{p-1}
  \underline{v}_\lambda^2 dx > p \int_\Omega b (\underline{u}_\lambda)^{p-1}
  \underline{v}_\lambda^2 dx.
  \]
- すなわち、次を得る。
+ すなわち、次が得られる。
  \begin{equation}
   \int_\Omega b(\underline{u}_\lambda)^{p-1} v_\lambda^2 dx <
    \frac{I}{p} \label{eq:I/p}
  \end{equation}
  また、$g_0, v_\lambda \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$、及び、
- ヘルダーの不等式、ソボレフの不等式から、次式を得る。
+ ヘルダーの不等式、ソボレフの不等式から、次式が得られる。
  \begin{equation}
   \int_\Omega b g_0^p v_\lambda dx \leq 
    \left\| b  \right\|_{L^\infty(\Omega)}
@@ -109,7 +109,7 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
  ここで$C, C^\prime > 0$は$\lambda$によらない。
 
  \eqref{eq:v_lambda}、\eqref{eq:I/p}、\eqref{eq:bg_0v_lambda}
- から、次式がしたがう。
+ から、次式が従う。
  \[
   I \leq \frac{1 + \epsilon}{p} I + \bar{\lambda}^p C \left\|
  v_\lambda \right\|_{\kappa}.
@@ -186,21 +186,19 @@ $\underline{u}_\lambda$の極限をとることで、
         \]
          補題~\ref{lem:minimal_va}.3 と
         \eqref{eq:extremal_u_n_ae}により、$u_n \leq u ~\tin \Omega$となる。
-         とくに、$u > 0 ~\tin \Omega$である。
-        また、$b \in L^\infty(\Omega)$、
-        $u, \psi \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$より、
+        とくに、$u > 0 ~\tin \Omega$である。
+        \eqref{eq:extremal_u_n_ae}より、
+        単調収束定理を用いて、次が得られる。
         \[
-        \left\lvert bu_n^p \psi \right\rvert \leq b \hat{u}^p
-        \lvert\psi\rvert \ \ \ae
-        \tin \Omega
-        \]
-         の右辺は可積分である。\eqref{eq:extremal_u_n_ae}より、
-        優収束定理から、次を得る。
-        \[
-        \int_\Omega bu_n^p \psi dx \xrightarrow{n \to \infty} 
+        \int_\Omega bu_n^p \psi dx 
+        = \int_\Omega bu_n^p \psi_+ dx - 
+        \int_\Omega bu_n^p \psi_- dx
+        \xrightarrow{n \to \infty}
+        \int_\Omega bu^p \psi_+ dx -
+        \int_\Omega bu^p \psi_- dx =
         \int_\Omega bu^p \psi dx.
         \]
-        したがって、\eqref{eq:u_n_weaksol}で$n \to \infty$とすると次を得る。
+        したがって、\eqref{eq:u_n_weaksol}で$n \to \infty$とすると次が得られる。
         \[ 
          \int_\Omega (Du \cdot D\psi + a u \psi) dx 
           = \int_\Omega bu^p \psi dx + \bar{\lambda} \int_\Omega f\psi dx.
@@ -219,7 +217,7 @@ $\underline{u}_\lambda$の極限をとることで、
         \underline{u}_{\bar{\lambda}} ~\tin \Omega$
         である。$n \to \infty$とすると、
         $u \leq \underline{u}_{\bar{\lambda}} ~\tin \Omega$
-        を得る。$u \in S_{\bar{\lambda}}$であり、
+        が得られる。$u \in S_{\bar{\lambda}}$であり、
         $\underline{u}_{\bar{\lambda}}$は$\lambda = \bar{\lambda}$
         における \ref{eq:prob_main}の minimal solution 
         であるから、$u = \underline{u}_{\bar{\lambda}}$である。
@@ -560,7 +558,7 @@ $\mu_1(\bar{\lambda}) = 1$であることから、
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:extremal_solution}]
- 命題~\ref{prop:ext_exi}.1 と命題~\ref{prop:ext_uni} からしたがう。\qedhere
+ 命題~\ref{prop:ext_exi}.1 と命題~\ref{prop:ext_uni} から従う。\qedhere
 \end{proof}
 
 % Local Variables:

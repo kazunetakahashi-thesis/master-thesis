@@ -194,7 +194,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
   \int_\Omega H(v, \underline{u}_\lambda)dx, \label{eq:conv_H} \\
   \int_\Omega h(v_k, \underline{u}_\lambda)v_k dx &\xrightarrow{
   \mbox{ ~ } } 
-  \int_\Omega h(v, \underline{u}_\lambda)v_k dx. \label{eq:conv_h} \\
+  \int_\Omega h(v, \underline{u}_\lambda)v dx. \label{eq:conv_h} \\
   \intertext{また、任意の$\psi \in H_0^1(\Omega)$に対し、}
   \int_\Omega g(v_k, \underline{u}_\lambda)\psi dx &\xrightarrow{
   \mbox{ ~ } } 
@@ -248,7 +248,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  であるから、次が得られる。
  \begin{equation}
   H^\prime(t, s, x) \leq C b \int_0^t (\tau^{p-1} + s^{p-1}) s d \tau
-   \leq C b ( t^{p-1} s + s^{p-1} t). \label{eq:fromlemma}
+   \leq C b ( t^{p} s + s^{p} t). \label{eq:fromlemma}
  \end{equation}
  \eqref{eq:fromlemma}の証明は、\cite{MR2317491}~の Lemma~C.4を参考にし
  た。さらにヤングの不等式を適用すると、任意の$\epsilon > 0$に対し、
@@ -258,7 +258,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  \begin{equation}
   \left\lvert H^\prime(v_k, \underline{u}_\lambda) - H^\prime(v,
    \underline{u}_\lambda ) \right\rvert \leq b \left( \epsilon
-   (v_\epsilon)_+^{p+1}  + \epsilon v_+^{p+1} + C
+   (v_k)_+^{p+1}  + \epsilon v_+^{p+1} + C
    \underline{u}_\lambda^{p+1} \right). \label{eq:conv_H_abs}
  \end{equation}
  そこで、
@@ -292,8 +292,9 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  \]
  であるから、$k \to \infty$の上極限をとると、次式が得られる。
  \[
- \limsup_{k \to \infty} \int_\Omega \left\lvert H(v_k, \underline{u}_\lambda) - H(v,
- \underline{u}_\lambda ) \right\rvert dx \leq C \epsilon
+ \limsup_{k \to \infty} \int_\Omega 
+ \left\lvert H(v_k, \underline{u}_\lambda) - H(v,
+ \underline{u}_\lambda ) \right\rvert dx \leq C \epsilon.
  \]
  $C > 0$は$k, \epsilon$によらず、$\epsilon > 0$は任意であるから、
  このことは
@@ -317,7 +318,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  \[
   h(t, s, x) t \leq C b(x) (t^p s + s^p t)
  \]
- がしたがうため、\eqref{eq:conv_h}と同様に\eqref{eq:conv_H}も得られる。
+ が従うため、\eqref{eq:conv_h}と同様に\eqref{eq:conv_H}も得られる。
  
  最後に\eqref{eq:conv_g}を証明する。\eqref{eq:minimal_vk_weakly}より、
  \[
@@ -332,7 +333,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  \]
  を示せば十分である。
  \eqref{eq:dtau}、\eqref{eq:taus2p-1}と同様にすれば、
- $s, t, r \geq 0$に対し、次式がしたがう。
+ $s, t, r \geq 0$に対し、次式が従う。
  \[
   g^\prime(t, s, x)r = b(x) \left( (t+s)^p - s^p \right) r \leq C b(x)
  \left( t^pr + s^p r \right).
@@ -352,7 +353,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
  \[  
   \left\lvert g^\prime(v_k, \underline{u}_\lambda)\psi - g^\prime(v,
    \underline{u}_\lambda)\psi \right\rvert \leq b \left( \epsilon
-   (v_\epsilon)_+^{p+1}  + \epsilon v_+^{p+1} + C
+   (v_k)_+^{p+1}  + \epsilon v_+^{p+1} + C
    (\underline{u}_\lambda^{p+1} + \lvert \psi \rvert^{p+1})
                                  \right).
  \]
@@ -368,7 +369,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 
 命題~\ref{prop:second_1}を証明には、
 $(\mathrm{PS})$条件を課さない峠の定理を使用する。
-その後、$I_\lambda$の
+このため、$I_\lambda$の
 $(\mathrm{PS})_c$条件が必要となる。
 $I_\lambda$の
 $(\mathrm{PS})_c$条件を調べる準備として、
@@ -381,7 +382,7 @@ $H_0^1(\Omega)$の有界列であることを証明する。
  以下の(i)、(ii)を仮定する。
  \begin{enumerate}[(i)]
   \item $\{ I_\lambda(v_k) \}$は有界列。
-  \item $\displaystyle I^\prime_{\lambda} (v_l) \xrightarrow{k \to
+  \item $\displaystyle I^\prime_{\lambda} (v_k) \xrightarrow{k \to
         \infty} 0 ~\tin H^{-1}(\Omega)$。
  \end{enumerate}
  このとき、$\{ v_k \}$は$H_0^1(\Omega)$の有界列である。
@@ -408,7 +409,7 @@ $H_0^1(\Omega)$の有界列であることを証明する。
    \right\|_{H_0^1(\Omega)}. \label{eq:ps_2}
  \end{equation}
  $\alpha > 0$とする。
- \eqref{eq:ps_1}、\eqref{eq:ps_2}より、以下がしたがう。
+ \eqref{eq:ps_1}、\eqref{eq:ps_2}より、以下が従う。
  \begin{align}
   \alpha M &\geq  \frac{\alpha}{2} \left\| v_k \right\|^2 - \alpha
   \int_\Omega G(v_k, \underline{u}_\lambda) dx \notag \\
@@ -476,10 +477,14 @@ $H_0^1(\Omega)$の有界列であることを証明する。
   \alpha M &\geq \frac{\alpha-2}{2} \left( \left\| v_k \right\|^2 -
   \int_\Omega bp \underline{u}_\lambda^{p-1} v_k^2 dx + \int_\Omega
   av_k^2 dx \right) - \epsilon \left\| v_k \right\|_{H_0^1(\Omega)} \\
-  & =\frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)} \right)
-  \left( \left\| v_k \right\|^2 + \int_\Omega av_k^2 dx \right) \\
+  & \geq \frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)} \right)
+  \left( \left\| v_k \right\|^2 + \int_\Omega av_k^2 dx \right)
+  - \epsilon \left\|
+  v_k \right\|_{H_0^1(\Omega)} \\
   & \geq \frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)}
-  \right) \left\| v_k \right\|_\kappa^2 \\
+  \right) \left\| v_k \right\|_\kappa^2
+  - \epsilon \left\|
+  v_k \right\|_{H_0^1(\Omega)} \\
   & \geq  \frac{\alpha -2}{2} \left( 1 - \frac{1}{\mu_1(\lambda)}
   \right) C \left\| v_k \right\|_{H_0^1(\Omega)}^2 - \epsilon \left\|
   v_k \right\|_{H_0^1(\Omega)}.
@@ -498,14 +503,19 @@ $H_0^1(\Omega)$の有界列であることを証明する。
 $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
 
 \begin{lem} \label{lem:PS_c}
- $0 < c < S^{N/2}/NM_1^{(N-2)/2}$とする。このとき、
- $I_\lambda$は$(\mathrm{PS})_c$条件をみたす。すなわち、
- 次の条件(i), (ii)をみたす$H_0^1(\Omega))$の点列
- $\{ v_k \}_{k = 0}^\infty$は、収束する部分列をもつ。
- \begin{enumerate}[(i)]
-  \item $\displaystyle \lim_{k \to \infty} I_\lambda (v_k) = c$。
-  \item $\displaystyle I^\prime_\lambda (v_k) \xrightarrow{k \to
-        \infty} 0 ~\tin H^{-1}(\Omega)$。
+ \begin{enumerate}[1.] \sage
+  \item  $0 < c < S^{N/2}/N\left\| b \right\|_{L^\infty(\Omega)}
+         ^{(N-2)/2}$とする。このとき、
+         $I_\lambda$は$(\mathrm{PS})_c$条件をみたす。すなわち、
+         次の条件(i), (ii)をみたす$H_0^1(\Omega))$の点列
+         $\{ v_k \}_{k = 0}^\infty$は、収束する部分列をもつ。
+         \begin{enumerate}[(i)]
+          \item $\displaystyle \lim_{k \to \infty} I_\lambda (v_k) = c$。
+          \item $\displaystyle I^\prime_\lambda (v_k) \xrightarrow{k \to
+                \infty} 0 ~\tin H^{-1}(\Omega)$。
+         \end{enumerate}
+  \item 1.~における$\{ v_k \}$の部分列の収束先を$v$とする。
+        $v$は\ref{eq:prob_sec}の弱解である。
  \end{enumerate}
 \end{lem}
 
@@ -530,7 +540,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  \]
  が成り立つ。
  \eqref{eq:vk_weakly}と補題~\ref{lem:conv}より、
- $k \to \infty$とすると、次式がしたがう。
+ $k \to \infty$とすると、次式が従う。
  \begin{equation}
   \int_\Omega (Dv \cdot D\psi) dx - \int_\Omega g(v,
    \underline{u}_\lambda) \psi dx = 0. \label{eq:intvpsi}
@@ -538,6 +548,9 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  つまり、$v \in H_0^1(\Omega)$は、$I_\lambda$の臨界点である。
  よって補題~\ref{lem:rel_heart_spade}.2により、$v$は
  \ref{eq:prob_sec}の弱解である。
+ したがって、あとは、
+ $k \to \infty$のとき、$v_k \to v ~\tin H_0^1(\Omega)$
+ であることを示せば、補題の証明が完了する。
 
  ここで、
  \begin{equation}
@@ -568,7 +581,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  \[
   \alpha(t) = \frac{1}{2} (t+s)^p t - \frac{1}{p+1}(t+s)^{p+1}
  \]
- の$1$次のテイラー多項式は、
+ の$t = 0$のまわりの$1$次のテイラー多項式は、
  \[
   \frac{1}{2} s^p t - \frac{1}{p+1}s^{p+1} - s^p t
  \]
@@ -590,9 +603,8 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  \eqref{eq:Ilambdageq0}が得られる。
  \eqref{eq:Ilambdageq0}は、本証明の最後で重要な役割を担う。
 
- 以下では、$k \to \infty$のとき
- $v_k \to v ~\tin H_0^1(\Omega)$であることを示す。
- これが示されれば、証明が完了する。
+ $k \to \infty$のとき
+ $v_k \to v ~\tin H_0^1(\Omega)$であることを示すために、
  $w_k = v_k - v$とおく。$H_0^1(\Omega)$の点列
  $\{ w_k \}_{k=0}^\infty$について、以下が成立する。
  \begin{align}
@@ -709,7 +721,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる。
  $l \geq S^{N/2}/ \left\| b \right\|_{L^\infty(\Omega)}^{(N-2)/2}$
  である。一方、\eqref{eq:w_k_c}で$k \to \infty$とすると、
  \[
-  I_\lambda(v = c - \frac{1}{N}l \leq c - \frac{S^{N/2}}{N \left\| b
+  I_\lambda(v) = c - \frac{1}{N}l \leq c - \frac{S^{N/2}}{N \left\| b
  \right\|_{L^\infty(\Omega)}^{(N-2)/2}} < 0
  \]
  が得られる。これは\eqref{eq:Ilambdageq0}に反する。
@@ -734,6 +746,8 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
 
 \begin{proof}
  $v \in H_0^1(\Omega)$は任意のものとする。
+ $I_\lambda(v) = I_\lambda(v_+)$であるから、$v \geq 0 ~\tin \Omega$と
+ 仮定しても一般性を失わない。
  \begin{align*}
   I_\lambda(v) &= \frac{1}{2} \left\| v \right\|^2 - \int_\Omega G(v,
   \underline{u}_\lambda)dx \\
@@ -752,7 +766,10 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
    \int_\Omega \left( \lvert Dv \rvert^2 + a v^2 \right) dx \label{eq:J1}
  \end{equation}
  と下から評価される。補題~\ref{lem:lin_1}より、この括弧の中は正である。
- 次に、$t, s \geq 0$に対し、$\alpha(t) = (t+s)^{p+1}/(p+1)$と定めると、
+ 次に、$t, s \geq 0$に対し、$\alpha(t) = (t+s)^{p+1}/(p+1)$と定める。
+ ここで、$p$と$2$の大小で場合分けをして$J_2$を評価する。
+
+ \underline{{$p > 2$}のとき}：
  $\alpha$の$t = 0$の周りの$2$次のテイラー多項式は、
  \[
  \frac{1}{p+1} (t+s)^{p+1} + s^p t + \frac{p}{2}s^{p-1}t^2
@@ -762,7 +779,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
  ら、$3$次の剰余項
  \begin{equation}
   R_3 = \frac{1}{p+1}(t+s)^{p+1} - 
- \frac{1}{p+1} (t+s)^{p+1} - s^p t - \frac{p}{2}s^{p-1}t^2 \label{eq:R_3_1}
+ \frac{1}{p+1} s^{p+1} - s^p t - \frac{p}{2}s^{p-1}t^2 \label{eq:R_3_1}
  \end{equation}
  は、テイラーの定理より、$0 < \theta < 1$を用いて、
  \[
@@ -771,14 +788,12 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
  \]
  とかける。この$R_3$は、$p - 2 \geq 0$のとき、
  \begin{equation}  
- R_3  \leq C (2 \max \{ t, s \})^{p-2} t^3 
- = C 2^{p-2} ( \max \{ t^{p-2}, s^{p-2} \})t^3
- \leq  C ( t^{p-2} + s^{p-2} )t^3
- = C ( t^{p+1} + s^{p-2} t^3) \label{eq:R_3_2_pow}
+  R_3  \leq C (2 \max \{ t, s \})^{p-2} t^3 
+   = C 2^{p-2} ( \max \{ t^{p-2}, s^{p-2} \})t^3
+   \leq  C ( t^{p-2} + s^{p-2} )t^3
+   = C ( t^{p+1} + s^{p-2} t^3) \label{eq:R_3_2_pow}
  \end{equation}
- と評価される。$C > 0$は$s, t \geq 0$によらない。
- $p - 2 \leq 0$のときは、$R_3 \leq p(p-1)s^{p-1}t^3 / 6$であるから、
- やはり\eqref{eq:R_3_2_pow}に帰着する。
+ と評価される。
  さらに、ヤングの不等式より、任意の$\epsilon > 0$に対し、
  $C > 0$が存在し、$s, t \geq 0$に対し、
  $s^{p-2} t^3 \leq \epsilon s^{p-1} t^2 + C t^{p+1}$
@@ -792,7 +807,37 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   J_2 \leq \epsilon \int_\Omega b \underline{u}_\lambda^{p-1} v^2 dx +
    C \int_\Omega b v^{p+1} dx \label{eq:J2}
  \end{equation}
- が得られる。\eqref{eq:J2}の$2$つの項は、それぞれ
+ が得られる。
+
+ \underline{{$p \leq 2$}のとき}：
+ $\alpha$の$t = 0$の周りのテイラー多項式における$2$次の剰余項
+ \[
+  R_2 = \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} -s^p t
+ \]
+ はテイラーの定理より、$0 < \theta^\prime < 1$を用いて、
+ \[
+  R_2 = \frac{\alpha^{\prime\prime}(\theta t)}{2!} t^2 = \frac{p}{2}(s
+ + \theta t)^{p-1} t^2
+ \]
+ と書ける。そこで、
+ \[
+  R_2 - \frac{p}{2}s^{p-1} t^2 = \frac{p}{2}(s
+ + \theta t)^{p-1} t^2 - \frac{p}{2}s^{p-1} t^2
+ \]
+ を考えると、$p - 1 \leq 1$であるから、
+ \[
+  (s + \theta t)^{p-1} \leq (t+ s)^{p-1} \leq t^{p-1} + s^{p-1}
+ \]
+ である。ゆえに
+ \[
+  R_2 - \frac{p}{2}s^{p-1} t^2 \leq \frac{p}{2} t^{p+1}
+ \]
+ である。よって、\eqref{eq:J2}において$C = p/2$、
+ $\epsilon = 0$としたものが
+ 成立する。$J_2$の評価式としては、$\epsilon > 0$の項を加えた
+ \eqref{eq:J2}に合流する。
+
+ \eqref{eq:J2}の$2$つの項は、それぞれ
  補題~\ref{lem:lin_p}.2、ソボレフ不等式より、
  \begin{align*}
   \int_\Omega b\underline{u}_\lambda^{p-1} v^2 dx &\leq

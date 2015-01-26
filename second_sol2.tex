@@ -167,7 +167,7 @@ $\epsilon_n \searrow 0$となる任意の数列とする。
  \right\|_{L^{p+1}(\Omega)}^2} =
  \frac{S}{M^{2/(p+1)}}
 \]
-が成立する。すなわち、次式がしたがう。
+が成立する。すなわち、次式が従う。
 \begin{equation}
  \left\| v_\epsilon \right\|^2 = \left\| Dv_\epsilon
                                  \right\|^2_{L^2(\Omega)} 
@@ -208,9 +208,9 @@ $I_1, I_2$を
 とおく。\cite{MR709644}~の p.~444 より、次式が成立する。
 \[
  I_1 = \begin{cases}
-        O(\epsilon^{-(N-4)/2}) & (n \geq 5),\\
-        O(\lvert \log \epsilon \rvert) & (n = 4), \\ 
-        O(1) & (n = 3).
+        O(\epsilon^{-(N-4)/2}) & (N \geq 5),\\
+        O(\lvert \log \epsilon \rvert) & (N = 4), \\ 
+        O(1) & (N = 3).
        \end{cases}
 \]
 $0 < e < 1$とする。$\theta (x) = o(\lvert x \rvert^q)$より、
@@ -233,7 +233,6 @@ $\tilde{I}_2, \hat{I}_2$を
 $(1 - e)\hat{I} \leq \tilde{I}_2 \leq (1 + e)\hat{I}_2$、
 $e$は$\epsilon$と無関係であるから、
 $O(I_2) = O(\tilde{I}_2) = O(\hat{I}_2)$である。
-
 $\hat{I}_2$を、$N$と$q + 4$の大小で場合分けして計算する。
 
 \ulinej{{$N > q + 4$}のとき}：変数変換により、
@@ -328,7 +327,7 @@ O(\epsilon^{-(N-q-4)/2})$である。
  v_\epsilon \right\|^2 \right)^{N/2} - \int_\Omega H(\tau_\epsilon
  v_\epsilon, \underline{u}_\lambda) dx.
  \]
- \eqref{eq:vepsilon}より、以下がしたがう。
+ \eqref{eq:vepsilon}より、以下が従う。
  \begin{align*}
   \lim_{\epsilon \searrow 0} \tau_\epsilon
   &= \frac{S^{1/(p-1)}}{M^{2/(p+1)(p-1)}}, \\
@@ -342,7 +341,7 @@ O(\epsilon^{-(N-q-4)/2})$である。
   \lim_{\epsilon \searrow 0} \int_\Omega H(\tau_\epsilon
  v_\epsilon, \underline{u}_\lambda) dx = 0.
  \]
- 以上より、\eqref{eq:limI}を得る。\qedhere
+ 以上より、\eqref{eq:limI}が得られる。\qedhere
 \end{proof}
 
 \begin{lem} \label{lem:t_epsilon}
@@ -401,7 +400,7 @@ $s, t \geq 0$に対し、$G(s, t) \geq 0$である。そこで、
  \liminf_{\epsilon \searrow 0} I_\lambda (t_\epsilon v_\epsilon) \leq
   0 \label{eq:liminf_cont_1}
 \end{equation}
-がしたがう。一方で、\eqref{eq:t_epsilon}より
+が従う。一方で、\eqref{eq:t_epsilon}より
 $I_\lambda(t_\epsilon v_\epsilon) \geq I(\tau_\epsilon v_\epsilon)$で
 あるから、補題~\ref{lem:tauepsilon}より、
 \begin{equation}
@@ -411,7 +410,7 @@ $I_\lambda(t_\epsilon v_\epsilon) \geq I(\tau_\epsilon v_\epsilon)$で
 \end{equation}
 \eqref{eq:liminf_cont_1}と\eqref{eq:lininf_cont_2}は同時に
 成立しない。
-よって、背理法により、\eqref{eq:liminf_tepsilon}がしたがう。 
+よって、背理法により、\eqref{eq:liminf_tepsilon}が従う。 
 
 さて、\eqref{eq:liminf_tepsilon}と\eqref{eq:buepsilon}より、
 $\epsilon_0 > 0$、$C > 0$が存在し、$0 <\epsilon < \epsilon_0$のとき、
@@ -476,7 +475,7 @@ $s$についての増加関数である。
  s_0)^p s_0
 \]
  をみたす$0 < \theta < 1$が存在する。ゆえに$t \geq t_0$に対し、
- 以下がしたがう。
+ 以下が従う。
  \begin{align*}
   H^\prime(t, s_0, x) &\geq b(x) \left( (t+\theta s_0)^p s_0 -
   \frac{1}{p+1} s^{p+1} - s^p t\right) \\
@@ -501,7 +500,7 @@ $s$についての増加関数である。
  が成立する。
  \eqref{eq:Hprime_lb_pf1}と\eqref{eq:Hprime_lb_pf2}より、
  $t \geq t_0$、$s \geq s_0$に対し、
- \eqref{eq:Hprime_lb}がしたがう。
+ \eqref{eq:Hprime_lb}が従う。
  
  $b$は$\{ \lvert x \rvert < \sqrt{\epsilon_0}\}$上連続であるから、
  $\delta > 0$が存在し、$\lvert x \rvert < \sqrt{\epsilon_0}$ならば、
@@ -601,7 +600,7 @@ $s$についての増加関数である。
         \[
          1 + \frac{q}{2} > \frac{N-2}{4}
         \]
-        である。これを変形して、$N < 2q + 6$を得る。
+        である。これを変形して、$N < 2q + 6$が得られる。
         以上により、$3 \leq N < 2q + 6$のとき、
         \eqref{eq:condition}はみたされる。 \qedhere
  \end{enumerate}

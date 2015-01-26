@@ -7,12 +7,16 @@
 以下では、$r$を引数とする関数$f$の導関数を、
 $f^\prime$とも、$f_r$とも表す。
 
+まずは、定理~\ref{thm:second_solution_nonex}.2の仮定の下での
+解の正則性を検討し、以降球対称解のみ考慮すればよいことを証明する。
+
 \begin{lem}
- 定理~\ref{thm:second_solution_nonex}.2の仮定のもとで、
- 以下が成立する。
+ 定理~\ref{thm:second_solution_nonex}.2の仮定の下で、
+ $\lambda_0 > 0$が存在し、$0 < \lambda \leq \lambda_*$
+ に対し、以下が成立する。
  \begin{enumerate}[1.] \sage
-  \item \ref{eq:prob_main}の弱解$u$は
-        球対称解に限り、
+  \item \ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$
+        は球対称解であり、
         $u = u(\lvert x \rvert)
         \in C^{2+\alpha}([0, R])$
         をみたす。
@@ -40,9 +44,12 @@ $f^\prime$とも、$f_r$とも表す。
 
 \begin{proof}
  \begin{enumerate}[1.] \sage
-  \item $u \in C^{2+\alpha}(\bar{\Omega})$である。
+  \item $\lambda_0 > 0$を
+        補題~\ref{lem:imp}における$\lambda_0$とする。
+        このとき、補題~\ref{lem:imp}.2により、
+        $u \in C^{2+\alpha}(\bar{\Omega})$である。
         $s \geq 0$に対し、$r \in [0, R]$の関数
-        $-a(r) s + b(r) s^{p+1} + \lambda f(r)$は
+        $-a(r) s + b(r) s^p + \lambda f(r)$は
         単調減少である。したがって、\cite{MR544879}~より、
         \ref{eq:prob_main}の解
         $u = u(\lvert x \rvert) \in C^{2+\alpha}(\bar{\Omega})$
@@ -73,7 +80,7 @@ $f^\prime$とも、$f_r$とも表す。
         $a^\prime(r) \geq 0$より、\eqref{eq:pdifgtur}の最右辺は
         $0$以下である。再び\cite{MR544879}~より、
         \ref{eq:prob_sec}の解
-        $v = v(\lvert x \rvert) \in C^{2+\alpha}\bar{\Omega}$は
+        $v = v(\lvert x \rvert) \in C^{2+\alpha}(\bar{\Omega})$は
         球対称解に限る。
   \item \ref{eq:prob_sec}を極座標形式に書き換える。2.~より、
         \ref{eq:prob_sec}の解は球対称解しかないことから、
