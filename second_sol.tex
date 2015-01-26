@@ -367,7 +367,7 @@ $S$は$V$には依存しないことが知られている。例えば~\cite{田�
 \end{proof}
 
 命題~\ref{prop:second_1}を証明には、
-$(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}を使用する。
+$(\mathrm{PS})$条件を課さない峠の定理を使用する。
 その後、$I_\lambda$の
 $(\mathrm{PS})_c$条件が必要となる。
 $I_\lambda$の
@@ -880,7 +880,29 @@ $(\mathrm{PS})$条件を課さない峠の定理を用いて、命題
 ~\ref{prop:second_1}を証明する。
 
 \begin{proof}[命題~\ref{prop:second_1}]
- 
+ 補題~\ref{lem:delta_rho}の$\delta > 0$について、
+ $e = Tv_0$が$\left\| e \right\|_{H_0^1(\Omega)} > \delta$をみたすよう、
+ $T > 0$を定める。この$T > 0$は、補題~\ref{lem:mountain_dec}により存在
+ する。
+ \[
+   c = \inf_{\gamma \in \Gamma} \max_{s \in [0, 1]} I_\lambda ( \gamma
+ (s ))
+ \]
+ と定める。ここで$\Gamma$は、$\gamma(0) = 0$を始点、$\gamma(1) = e$を
+ 終点とする$H_0^1(\Omega)$上の連続な道$\gamma$全体である。
+ 補題~\ref{lem:delta_rho}、および、\eqref{eq:ineq_S}より、
+ 補題~\ref{lem:delta_rho}の$\rho > 0$について、
+ \[
+  0 < \rho \leq c <    \frac{1}{N\left\| b
+             \right\|_{L^\infty(\Omega)} ^{(N-2)/2}} S^{N/2} 
+ \]
+ が成立する。補題~\ref{lem:PS_c}.1より、$(\mathrm{PS})_c$条件は
+ 成立する。ゆえに、
+ $(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}が
+ 適用できる。すると、補題~\ref{lem:PS_c}.1の(i), (ii)を
+ みたす$H_0^1(\Omega)$の点列$\{ v_k \}$が得られる。
+ 補題~\ref{lem:PS_c}.2より、\ref{eq:prob_sec}の弱解$v \in
+ H_0^1(\Omega)$が得られる。\qedhere
 \end{proof}
 
 % Local Variables:
