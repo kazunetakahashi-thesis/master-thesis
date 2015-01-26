@@ -422,12 +422,12 @@ minimal solution が存在することを示す。
 \ref{eq:prob_main}の解が存在する$\lambda$が見つかれば、
 それより小さい$\lambda$については、\ref{eq:prob_main}の解が存在する。
 そこで、\ref{eq:prob_main}の解が存在する$\lambda$が
-どこまで大きくなるのかを調べる。そのために次の記号を置く。
+どこまで大きくなるのかを調べる。そのために次の定義を置く。
 
-\begin{nota} \label{nota:ext}
+\begin{defn} \label{defn:ext}
  $\bar{\lambda} = \sup \{ \lambda \geq 0 \mid S_\lambda \neq \emptyset
- \}$と定める。
-\end{nota}
+ \}$を\ref{eq:prob_main}の {\bf extremal value}という。
+\end{defn}
 
 ここから先は、$\bar{\lambda} < \infty$を示すことを目標に議論を進める。
 その準備として、$\lambda > 0$によらない$H_0^1(\Omega)$の元$g_0$を用意
@@ -564,7 +564,7 @@ $g_0$について、次の補題を示す。
 $g_0$を用いて、次の命題を証明する。
 
 \begin{prop} \label{prop:bar_lambda}
- $\bar{\lambda}$を記号~\ref{nota:ext}のものとする。
+ $\bar{\lambda}$を記号~\ref{defn:ext}のものとする。
  $0 < \bar{\lambda} < \infty$である。
 \end{prop}
 

@@ -374,13 +374,123 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
           \label{eq:Phi_dr_barlambda}
         \end{equation}
         となる。
-
         ここで、
-        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
+        H_0^1(\Omega) \to H^{-1}(\Omega)$
         が可逆であることを示す。
-        $f \in H^{-1}(\Omega)$とする。
+
+        まずは$\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$
+        が
+        全射であることを示す。$f \in H^{-1}(\Omega)$とする。
+        $I_f \colon H_0^1(\Omega) \to \R$を次式で定める。
+        \begin{equation}
+         I_f (w) = \int_\Omega \left( \lvert Dw \rvert + aw^2 \right)
+          dx - \int_\Omega bp \underline{u}_{\bar{\lambda}}^{p-1} w^2
+          dx - \int_\Omega fw dx. \label{eq:def_I_f}
+        \end{equation}
+        $I_f$の$H_0^1(\Omega)$における下限を達成する元$u \in
+        H_0^1(\Omega)$が
+        存在するとすれば、$u$は$\Phi(\bar{\lambda},
+        \underline{u}_\lambda)u = f$をみたす。
+        以下、この$u$の存在を示す。$w \in H_0^1(\Omega)$とする。
+        補題~\ref{lem:lin_p}.1より、次式が従う。
+        \begin{equation}
+         \int_\Omega \left( \lvert Dw \rvert^2 + aw^2 \right) dx \geq
+          \mu_1(\bar{\lambda}) \int_\Omega bp
+          \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx.
+          \label{eq:mu_1_bar_lambda_r} 
+        \end{equation}
+        ゆえに、\eqref{eq:def_I_f}は以下の通りに下から評価される。
+        \[
+         I_f(w) \geq \left( 1 - \frac{1}{\mu_1(\bar{\lambda})} \right)
+        \int_\Omega \left( \lvert Dw \rvert^2 + aw^2\right) dx -
+        \int_\Omega fw dx \geq \left( 1 -
+        \frac{1}{\mu_1(\bar{\lambda})} \right) \left\| w
+        \right\|_\kappa^2 - \left\| f \right\|_{H^{-1}(\Omega)}
+        \left\| w \right\|_{H_0^1(\Omega)}.
+        \]
+        仮定より、$\mu_1(\bar{\lambda}) > 1$であるから、
+        $1 - 1/\mu_1(\bar{\lambda}) > 0$である。また、
+        $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$は
+        同値なノルムである。ゆえに、$C, C^\prime > 0$が存在し、
+        $w \in H_0^1(\Omega)$に対し、
+        \[
+         I_f (w) \geq C \left\| w \right\|^2_{H_0^1(\Omega)} -
+          C^\prime \left\| w \right\|_{H_0^1(\Omega)}          
+        \]
+        が成立する。ゆえに、$\left\| w \right\|_{H_0^1(\Omega)} \to
+        \infty$のとき、$I_f(w) \to \infty$となる。
+        すなわち、$I_f$は強圧的であり、下に有界である。
+        ここで$w \mapsto \langle f, w \rangle$は弱連続であり、
+        $L \colon \R^N \times \R \times \Omega$を
+        \[
+         L(t, s, x) = t^2 + a(x)s^2 - b(x)p
+        \underline{u}_{\bar{\lambda}}^{p-1}(x) s^2
+        \]
+        と定めると、\eqref{eq:def_I_f}より
+        \[
+         I_f (w) = \int_\Omega L(Dw, w, x) dx - \langle f , w \rangle
+        \]
+        である。
+        $L$は$t, s$について連続であり、
+        $t$について下に凸である
+        から、$I_f$は弱下半連続である。
+        したがって、$I_f$の$H_0^1(\Omega)$における下限を達成する元$u
+        \in H_0^1(\Omega)$が存在する。
+        この部分は、例えば~\cite{MR2597943}の\S~8.2のTHEOREM 1, 2を
+        参照されたい。以上より、
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
+        H_0^1(\Omega) \to H^{-1}(\Omega)$は全射である。
+        
+        次に、$\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
+        H_0^1(\Omega) \to H^{-1}(\Omega)$が単射であることを示す。
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$は
+        線形写像であるから、
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})w = 0$
+        となる
+        $w \in H_0^1(\Omega)$が$w = 0$に限ることを示せば良い。
+        いま、$f = 0$であるから、
+        $\langle \Phi_u (\bar{\lambda},
+        \underline{u}_{\bar{\lambda}})w , w \rangle = 0$である。つまり、
+        \[
+         \int_\Omega \left( \lvert Dw \rvert^2 + aw^2 \right)dx =
+        \int_\Omega p b\underline{u}_\lambda^{p-1} w^2 dx
+        \]
+        である。\eqref{eq:mu_1_bar_lambda_r}と合わせて、
+        \[
+         \left( \mu_1(\bar{\lambda}) - 1 \right) p \int_\Omega b
+        \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0
+        \]
+        が従う。$\mu_1 ( \bar{\lambda}) > 1$より、
+        \[
+         \int_\Omega b
+        \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0 
+        \]
+        となるが、$b , \underline{u}_{\bar{\lambda}} > 0 ~\tin \Omega$
+        であるから、$w \equiv 0$と結論付けられる。
+        したがって、
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$
+        は単射である。
+
+        以上より、
+        $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
+        H_0^1(\Omega) \to H^{-1}(\Omega)$は全単射である。
+        ゆえに、陰関数定理より、$\epsilon > 0$が存在して、
+        $\lambda \in (\bar{\lambda} - \epsilon, \bar{\lambda} +
+        \epsilon)$
+        に対し、$\Phi (\lambda, \underline{u}_{\lambda}) = 0$をみたす
+        $\underline{u}_\lambda \in H_0^1(\Omega)$が存在する。
+        補題~\ref{lem:imp}.1の証明と同様にすると、
+        $\underline{u}_\lambda$は\ref{eq:prob_main}の弱解である。
+        ゆえに、$S_\lambda \neq \emptyset$をみたす
+        $\lambda > \bar{\lambda}$が存在する。しかし
+        これは、定義~\ref{defn:ext}に反する。したがって、
+        背理法により、$\mu_1(\bar{\lambda}) = 1$と結論付けられる。
  \end{enumerate}
 \end{proof}
+
+$\mu_1(\bar{\lambda}) = 1$であることから、
+\ref{eq:prob_main}の extremal solution の一意性が証明される。
 
 \begin{prop} \label{prop:ext_uni}
  $b > 0 ~\tin \Omega$と仮定する。
@@ -388,6 +498,66 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
  $\lambda = \bar{\lambda}$における\ref{eq:prob_main}の minimal
  solution $\underline{u}_{\bar{\lambda}}$に限る。
 \end{prop}
+
+\begin{proof}
+ $u \in S_{\bar{\lambda}}$とする。$z = u -
+ \underline{u}_{\bar{\lambda}}$とする。$\underline{u}_{\bar{\lambda}}$
+ は$\lambda = \bar{\lambda}$における\ref{eq:prob_main}の
+ minimal solution であるから、$z \geq 0 ~\tin \Omega$である。また、
+ \begin{align*}
+  -\Delta u + au &= bu^p + \bar{\lambda} f, \\
+  -\Delta \underline{u}_{\bar{\lambda}} + a
+  -\underline{u}_{\bar{\lambda}}
+  &= b \underline{u}_{\bar{\lambda}}^p + \bar{\lambda} f
+ \end{align*}
+ の両辺を引くと、
+ \begin{equation}
+  -\Delta z + az = b \left( u^p - \underline{u}_{\bar{\lambda}}^p
+ \right) ~\tin \Omega \label{eq:unique_1}
+ \end{equation}
+ が得られる。
+ 
+ $\phi_1 \in H_0^1(\Omega)$を、$\mu_1(\bar{\lambda})$に付随する
+ $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする。
+ 補題~\ref{lem:lin_p}.1、及び、
+ 補題~\ref{lem:mu_1_bar_lambda}.2より、
+ \begin{equation}
+  -\Delta \phi_1 + a\phi_1 = pb \underline{u}_{\bar{\lambda}}^{p-1}
+   \phi_1 ~\tin \Omega \label{eq:unique_2}
+ \end{equation}
+ が成立する。$\text{\eqref{eq:unique_1}} \times \phi_1 -
+ \text{\eqref{eq:unique_2}} \times z$を$\Omega$上積分すると、
+ \begin{equation}
+  \int_\Omega b F(u, \underline{u}_{\bar{\lambda}}) \phi_1 dx = 0
+   \label{eq:unique_eq_zero}
+ \end{equation}
+ が得られる。ここで$F \colon \R^2 \to \R$は、
+ $F(t, s) = t^p - s^p - ps^{p-1}(t-s)$である。
+ $\alpha(t) = t^p$とする。
+ $\alpha$の$t = s$の周りの$1$次のテイラー多項式は、
+ $s^p + ps^{p-1}(t-s)$である。
+ ゆえに、
+ $2$次の剰余項は$F(t, s)$に一致する。
+ テイラーの定理より、ある$0 < \theta < 1$を用いて、
+ \[
+  F(t, s) = \frac{\alpha^{\prime\prime}(s + \theta t)}{2!} (t-s)^2 = \frac{1}{2}
+ p(p-1) (s+ \theta t)^{p-2} (t-s)^2
+ \]
+ と書ける。ここで次の(i), (ii)がわかる。
+ \begin{enumerate}[(i)]
+  \item $t \geq s \geq 0$ならば、$F(t, s) \geq 0$である。
+  \item $t \geq s \geq 0$のとき、$F(t, s) = 0$であることは、
+        $t = s$であることと同値である。
+ \end{enumerate}
+ $u \geq \underline{u}_{\bar{\lambda}} ~\tin \Omega$であることに注意する。
+ (i)、$b, \phi_1 > 0 ~\tin \Omega$、および、\eqref{eq:unique_eq_zero}
+ より、$F(u, \underline{u}_{\bar{\lambda}}) = 0 ~\ae ~\tin \Omega$であ
+ る。さらに(ii)より、$u = \underline{u}_{\bar{\lambda}} ~\ae ~\tin
+ \Omega$である。つまり、$H_0^1(\Omega)$の元として、
+ $u = \underline{u}_{\bar{\lambda}}$である。すなわち、
+ \ref{eq:prob_main}の extremal solution は、
+ $\underline{u}_{\bar{\lambda}}$に限る。 \qedhere
+\end{proof}
 
 \begin{proof}[定理~\ref{thm:extremal_solution}]
  命題~\ref{prop:ext_exi}.1 と命題~\ref{prop:ext_uni} からしたがう。\qedhere
