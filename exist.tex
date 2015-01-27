@@ -36,32 +36,17 @@
  である。ここで、$t, s \geq 0$、$x \in \Omega$とし、
  \[
  A = \frac{p}{2} b(x) s^{p-1} t^2 - H^\prime(t, s) = b(x) \left(
- \frac{p}{2} s^{p-1} t^2 - \frac{1}{p+1} (t+s)^{p+1} +
- \frac{1}{p+1}t^p + \frac{1}{p+1} s^{p+1} + s^p t \right)
+ \frac{p}{2} s^{p-1} t^2 - \left(\frac{1}{p+1} (t+s)^{p+1} -
+ \frac{1}{p+1}t^p - \frac{1}{p+1} s^{p+1} - s^p t \right) \right)
  \]
- を考察する。テイラーの定理より、
-\[
- \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t =
- \frac{p}{2} (s+\theta t)^{p-1} t^2
-\]
- をみたす$0 < \theta < 1$が存在する。ゆえに、
- \[
- A = b \left( \frac{1}{p+1} t^{p+1} + \frac{p}{2} s^{p-1} t^2 -
- \frac{p}{2} (s + \theta t)^{p-1} t^2\right)
-\]
- と変形される。ここで$\epsilon > 0$とする。$\epsilon$は
- 後述の\eqref{eq:epsilon_gutaiteki}をみたすものとする。
- \[
- \frac{p}{2}(s + \theta t)^{p-1} t^2 = \frac{p}{2}(1 - \epsilon)(s +
- \theta t)^{p-1} t^2 + \frac{p}{2} \epsilon (s+\theta t)^{p-1} t^2
- \geq \frac{p}{2} (1- \epsilon) s^{p-1}t^2 + \frac{p}{2} \epsilon t^{p+1}
- \]
- と変形できるので、
+ を考察する。ここで$0 < \epsilon < 1$を、
+ 後述の\eqref{eq:epsilon_gutaiteki}をみたすよう定める。
+ 補題~\ref{lem:ineq_naito_sato}より、
  \[
  A \leq b \left( \left( \frac{1}{p+1} - \frac{p}{2} \epsilon \right)
  t^{p+1} + \frac{p}{2}\epsilon s^{p-1} t^2 \right)
  \]
- となる。$p > 1$であるから、$p/2 > 1/(p+1)$である。ゆえに、
+ が成立する。$p > 1$であるから、$p/2 > 1/(p+1)$である。ゆえに、
  \[
  A \leq b \left( \frac{1 - \epsilon}{p+1} t^{p+1} +
  \frac{p\epsilon}{2} s^{p-1} t^2 \right)
