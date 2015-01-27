@@ -43,13 +43,13 @@ $f^\prime$とも，$f_r$とも表す．
   \item $v = v(\lvert x \rvert) \in C^2([0, R])$が
         \ref{eq:prob_sec}の解であることは，
         $v = v(r)$が
-        次の常備分方程式の解であることと同値である．
+        次の常微分方程式の解であることと同値である．
         \begin{align}
          \left\{
           \begin{aligned}
            -v_{rr} - \frac{N-1}{r}v_r  &= g(v, \underline{u}_\lambda)
            & &\tin (0, R),  \\
-           v &> 0 & &\tin (0, R), \\
+           v &> 0 & &\tin [0, R), \\
            v_r(0) = v(R) &= 0.  & &
           \end{aligned}
          \right. \label{eq:prob_rad}
@@ -89,7 +89,7 @@ $f^\prime$とも，$f_r$とも表す．
         \end{equation}
         とし，$K^\prime = b K - a$と定める．
         $K, K^\prime$は，$\Omega$上ほとんど至るところ定義される．
-        ここで$v > 0 ~\tin \Omega$，$y \geq 0$に対し，$y \mapsto y^p$
+        ここで$v > 0 ~\tin \Omega$，$y \geq 0$について$y \mapsto y^p$
         は
         下に凸であるから，
         $(v + \underline{u}_\lambda)^p - \underline{u}_\lambda^p \leq
@@ -129,8 +129,9 @@ $f^\prime$とも，$f_r$とも表す．
         せる．$t \geq 0$，$r \in [0, R]$に対し，
         \begin{align}
          \pdif{}{r} g(t, \underline{u}_\lambda(r), r)
-         &= \pdif{}{r} \left( b(r) \left( (t + u_\lambda(r))^p -
-         \underline{u}_\lambda(r)^p \right) a(r) t \right) \notag \\
+         &= \pdif{}{r} \left( b(r) \left( (t + \underline{u}
+         _\lambda(r))^p -
+         \underline{u}_\lambda(r)^p \right) - a(r) t \right) \notag \\
          &= b(r) p \left( (t+ \underline{u}_\lambda(r))^{p-1} -
          \underline{u}_\lambda(r)^{p-1} \right)
          \underline{u}_\lambda^\prime(r) + b^\prime(r) \left( (t +
@@ -151,7 +152,7 @@ $f^\prime$とも，$f_r$とも表す．
  \end{enumerate}
 \end{proof}
 
-ポホザエフ\cite{MR0192184}~式の議論から，
+ポホザエフ\cite{MR0192184}~の議論から，
 \eqref{eq:prob_rad}の解がみたすべき等式を導出する．
 
 \begin{lem}
@@ -175,7 +176,7 @@ $f^\prime$とも，$f_r$とも表す．
  \eqref{eq:prob_rad}の方程式に$r^{N-1}$をかけて変形すると，
  次式が得られる．
  \begin{equation}
-  (r^{N-1} v_r)_r + r^{N-1} g(v, \underline{u}_\lambda, r) = 0
+  (r^{N-1} v_r)_r + r^{N-1} g(v, \underline{u}_\lambda, r) = 0.
    \label{eq:rad_basic} 
  \end{equation}
  \eqref{eq:rad_basic}に$v$をかけて$[0, R]$上積分すると，
@@ -207,9 +208,10 @@ $f^\prime$とも，$f_r$とも表す．
  と変形される．次に，第$2$項の計算をする．以下の式に注意する．
  \begin{align*}
   \frac{d}{dr} \left( r^N G(v(r), \underline{u}_\lambda(r), r )
-  \right) &= N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + g(
-  v(r), \underline{u}_\lambda(r), r) + G_s(v(r),
-  \underline{u}_\lambda(r), r) + G_r(v(r), \underline{u}_\lambda(r),
+  \right) &= N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + r^N g(
+  v(r), \underline{u}_\lambda(r), r) + r^N G_s(v(r),
+  \underline{u}_\lambda(r), r) (\underline{u}_\lambda)_r
+  + r^N G_r(v(r), \underline{u}_\lambda(r),
   r), \\
   R^N G(v(R), \underline{u}_\lambda(R), R) &= R^N G(0, 0, R) = 0. 
  \end{align*}
@@ -271,7 +273,7 @@ $f^\prime$とも，$f_r$とも表す．
  続けて，$G_r$を調べる．$t, s \geq 0$，$0 \leq r \leq R$に対し，
  \[
   G_r(t, s, r) = b^\prime(r) \left( \frac{1}{p+1} (t+s)^{p+1} -
- \frac{1}{p+1} s^{p+1} - s^{p} t \right) - \frac{1}{2} s^\prime(r) t^2
+ \frac{1}{p+1} s^{p+1} - s^{p} t \right) - \frac{1}{2} a^\prime(r) t^2
  \]
  である．テイラーの定理より，
  \[
@@ -282,15 +284,15 @@ $f^\prime$とも，$f_r$とも表す．
  $b^\prime(r) \leq 0$も合わせて，
  \begin{equation}
   \int_0^R r^N G_r(v, \underline{u}_\lambda, r) dr \leq \int_0^R
-   \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} v^2 -
-    \frac{1}{2} s^\prime v^2 \right)dr = 
-   \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} -
-    \frac{1}{2} s^\prime \right) v^2 dr \label{eq:poh_ineq_2} 
+   r^N \left( \frac{p}{2} b^\prime \underline{u}_\lambda^{p-1} v^2 -
+    \frac{1}{2} a^\prime v^2 \right)dr = 
+   \int_0^R r^N \left( \frac{p}{2} b^\prime \underline{u}_\lambda^{p-1} -
+    \frac{1}{2} a^\prime \right) v^2 dr \label{eq:poh_ineq_2} 
  \end{equation}
  と評価できる．最後に，
  \begin{align*}
   \frac{2N}{N-2}G(t, s, r) - g(t, s, r)t 
-  &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t - \right)
+  &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t \right) -
   \frac{p+1}{2} a(r) t^2 \right) - \left( b(r) \left( (t+s)^p - s^p
   \right) - a(r) t \right) t \\
   &= b(r) \left( (t+s)^{p+1} - (t+s)^p t - s^{p+1} - (p+1)s^p t + s^p
@@ -306,8 +308,7 @@ $f^\prime$とも，$f_r$とも表す．
  $\alpha$の$t = 0$のまわりのテイラー多項式を考える．
  $3$次の剰余項を$R_3$とすると，
  \[
-  R_3 = (t+s)^{p+1} - (t+s)^p t -s^{p+1} -(p+1)s^p t - s^p t -
- \frac{1}{2}p(p-1) s^{p-1}t^2
+  R_3 = s^{p+1} + p(t+s)^{p-1} s \frac{1}{2}p(p-1)s^{p-1}t^2
  \]
  である．テイラーの定理より，$R_3$は$0 < \theta < 1$を用いて
  \[
@@ -318,14 +319,14 @@ $f^\prime$とも，$f_r$とも表す．
  \begin{equation}
   \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
            r) - g(v, \underline{u}_\lambda, r) v \right) dr \leq \int_0^R
-  r^{N-1} \left( b \frac{1}{2} p(p-1) \underline{u}_\lambda^{p-1} -
+  r^{N-1} \left( \frac{1}{2} p(p-1) b\underline{u}_\lambda^{p-1} -
  \frac{p-1}{2} a  \right) v^2 dr \label{eq:poh_ineq_3}
  \end{equation}
  と評価される．\eqref{eq:poh_ineq_0}，
  \eqref{eq:poh_ineq_1}，\eqref{eq:poh_ineq_2}，
  \eqref{eq:poh_ineq_3}より，\eqref{eq:poh_eq}から
  \[
-  \int_0^R r^{N-1} \left( b \frac{1}{2} p(p-1)
+  \int_0^R r^{N-1} \left( \frac{1}{2} p(p-1) b
  \underline{u}_\lambda^{p-1} - \frac{p-1}{2} a \right) v^2 dr 
  + \frac{p-1}{4} \int_0^R r^N \left( b^\prime p
  \underline{u}_\lambda^{p-1} - a^\prime \right) v^2 dr \geq 0
@@ -345,7 +346,7 @@ $f^\prime$とも，$f_r$とも表す．
   \lim_{\lambda \searrow 0} \left\| \underline{u}_\lambda
  \right\|_{L^\infty(\Omega)} = 0
  \]
- が成立する．ゆえに，$0 < \lambda_* < \lambda_0$が存在し，
+ が成立する．ゆえに，$0 < \lambda_*$が存在し，
  $0 < \lambda \leq \lambda_*$に対し，
  \[
   \left\| \underline{u}_\lambda \right\|_{L^\infty(\Omega)} <

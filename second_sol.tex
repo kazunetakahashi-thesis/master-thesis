@@ -12,7 +12,7 @@
   \item $\R \times \R \times \Omega$を定義域とする実数値関数$g, G$を
         以下の通りに定める．
         \begin{align}
-         g(t, s, x) &= b(x) \left( (t_+ + s)^p - s^p \right) - a t_+, 
+         g(t, s, x) &= b(x) \left( (t_+ + s)^p - s^p \right) - a(x) t_+, 
          \label{eq:def_g} \\
          G(t, s, x) &= \int_0^{t_+} g(t, s, x) dt
          \notag \\
@@ -70,7 +70,7 @@
         -\Delta v + a v = b \left( (\underline{u}_\lambda + v)^p -
         \underline{u}_\lambda^p \right)
         \]
-        が得られる．この右辺は非負である．$a \geq \kappa > -\kappa_1$であ
+        が得られる．この右辺は非負である．$a > -\kappa_1$であ
         るから，強最大値原理より，$v > 0 ~\tin \Omega$である．
         以上より，$v \in H_0^1(\Omega)$は\ref{eq:prob_sec}の弱解である．
 
@@ -133,9 +133,9 @@ $S$は$V$には依存しないことが知られている．例えば~\cite{田�
 
 \begin{prop} \label{prop:second_1}
  $0 < \lambda < \bar{\lambda}$とする．
- $v \geq 0 ~\tin \Omega$，かつ，
+ $v_0 \geq 0 ~\tin \Omega$，かつ，
  \begin{equation}
-  \int_\Omega b v^{p+1} dx > 0, \label{eq:int_omega_bvp+1}  
+  \int_\Omega b v_0^{p+1} dx > 0, \label{eq:int_omega_bvp+1}  
  \end{equation}
  かつ，
  \begin{equation}
@@ -243,7 +243,7 @@ $S$は$V$には依存しないことが知られている．例えば~\cite{田�
  さらに，
  \begin{equation}
   (\tau + s)^{p-1} \leq (2 \max\{\tau , s\})^{p-1} = 2^{p-1} \max \{
-   \tau^{p-1} + s^{p-1} \} \leq C (\tau^{p-1} + s^{p-1}) \label{eq:taus2p-1}
+   \tau^{p-1}, s^{p-1} \} \leq C (\tau^{p-1} + s^{p-1}) \label{eq:taus2p-1}
  \end{equation}
  であるから，次が得られる．
  \begin{equation}
@@ -377,8 +377,9 @@ $I_\lambda$についてのパレ・スメイル列が
 $H_0^1(\Omega)$の有界列であることを証明する．
 
 \begin{lem} \label{lem:PS_seq}
+ $H_0^1(\Omega)$の点列
  $\{ v_k \}_{k=0}^\infty$は，$I_\lambda$についての
- パレ・スメイル列であると仮定する．すなわち，
+ パレ・スメイル列であるとする．すなわち，
  以下の(i)，(ii)を仮定する．
  \begin{enumerate}[(i)]
   \item $\{ I_\lambda(v_k) \}$は有界列．
@@ -398,8 +399,8 @@ $H_0^1(\Omega)$の有界列であることを証明する．
  $\epsilon > 0$とする．(ii)より，$K \in \N$が存在し，
  $k \geq K$，$\psi \in H_0^1(\Omega)$に対し，
  \[
-  \int_\Omega (D v_k \cdot D \psi) dx - \int_\Omega g(v_k,
- \underline{u}_\lambda)\psi dx \leq \epsilon \left\| \psi
+  \left\lvert \int_\Omega (D v_k \cdot D \psi) dx - \int_\Omega g(v_k,
+ \underline{u}_\lambda)\psi dx \right\rvert \leq \epsilon \left\| \psi
  \right\|_{H_0^1(\Omega) }
  \]
  が成立する．$\psi = v_k$とすると，次式が得られる．
@@ -472,7 +473,8 @@ $H_0^1(\Omega)$の有界列であることを証明する．
  \eqref{eq:alpha_M}に適用すると，$a >
  \kappa$，及び，
  $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$が
- 同値であることから，以下の式変形が進む．
+ 同値であることから，
+ 途中で補題~\ref{lem:lin_p}.2も考慮して，以下の式変形が進む．
  \begin{align*}
   \alpha M &\geq \frac{\alpha-2}{2} \left( \left\| v_k \right\|^2 -
   \int_\Omega bp \underline{u}_\lambda^{p-1} v_k^2 dx + \int_\Omega
@@ -536,7 +538,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  (ii)より，任意の$\psi \in H_0^1(\Omega)$に対し，
  \[
  \int_\Omega (Dv_k \cdot D\psi) dx - \int_\Omega g(v_k,
- \underline{u}_\lambda) \psi dx = o(1) \ \ (k \to \infty)
+ \underline{u}_\lambda) \psi dx = o(1)
  \]
  が成り立つ．
  \eqref{eq:vk_weakly}と補題~\ref{lem:conv}より，
@@ -571,7 +573,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  そこで，$t, s \geq 0$，$x \in \Omega$に対し，
  \begin{align*}
   \frac{1}{2} g(t, s, x) t - G(t, s, x) &= \frac{1}{2} \left(b \left(
-  (t+s)^p - s^p \right) at \right)t - \left( b \left(
+  (t+s)^p - s^p \right) -at \right)t - \left( b \left(
   \frac{1}{p+1}(t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^p t -
   \frac{1}{2}at^2  \right) \right) \\
   &= b \left( \frac{1}{2} \left( (t+s)^pt - s^pt \right) -\left(
@@ -596,7 +598,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  \]
  と表すことができる．ゆえに，
  \[
-  \frac{1}{2} g(t, s, x)t - G(t, s, x) = b(x) \frac{p(p-2)}{2} (\theta
+  \frac{1}{2} g(t, s, x)t - G(t, s, x) = b(x) \frac{p(p-1)}{2} (\theta
  t + s)^{p-2} \theta t^3 \geq 0
  \]
  とわかる．\eqref{eq:Ilambda_v}と合わせ，
@@ -605,7 +607,9 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
 
  $k \to \infty$のとき
  $v_k \to v ~\tin H_0^1(\Omega)$であることを示すために，
- $w_k = v_k - v$とおく．$H_0^1(\Omega)$の点列
+ $w_k = v_k - v$とおく．
+ \eqref{eq:vk_weakly}，\eqref{eq:vk_Lq}，\eqref{eq:vk_ae}より，
+ $H_0^1(\Omega)$の点列
  $\{ w_k \}_{k=0}^\infty$について，以下が成立する．
  \begin{align}
   w_k \xrightharpoonup{ \mbox{ ~ } } 0 & \ \ \text{weakly~} \tin
@@ -629,8 +633,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  ゆえに，ブレジス・リーブの補題~\cite{MR699419}より，次式が成立する．
  \begin{equation}
   \int_\Omega b(v_k)_{+}^{p+1} dx = \int_\Omega bv^{p+1} dx +
-   \int_\Omega \lvert b\tilde{w}_k \rvert^{p+1} dx + o(1) \ \ (k \to
-   \infty).
+   \int_\Omega \lvert b\tilde{w}_k \rvert^{p+1} dx + o(1).
    \label{eq:bzlblem}
  \end{equation}
  \eqref{eq:bzlblem}と補題~\ref{lem:conv}，および，$k \to \infty$のとき
@@ -682,7 +685,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  が成り立つ．ゆえに，次式が従う．
  \[
  \lim_{k \to \infty} \left( \int_\Omega \lvert Dv_k \rvert^2 dx -
- \int_\Omega g(v_k, \underline{u}_\lambda) v_k dx \right) = 0
+ \int_\Omega g(v_k, \underline{u}_\lambda) v_k dx \right) = 0.
  \]
  \eqref{eq:v_kankei}，\eqref{eq:Dvk_Dwk}，および，\eqref{eq:w_k_1}より，
  \[
@@ -786,7 +789,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   R_3 = \frac{\alpha^{\prime\prime\prime}(\theta t)}{3!} t^3 =
  \frac{p(p-1)}{6} (\theta t + s)^{p-2} t^3
  \]
- とかける．この$R_3$は，$p - 2 \geq 0$のとき，
+ とかける．この$R_3$は，$p - 2 > 0$のとき，
  \begin{equation}  
   R_3  \leq C (2 \max \{ t, s \})^{p-2} t^3 
    = C 2^{p-2} ( \max \{ t^{p-2}, s^{p-2} \})t^3
@@ -824,7 +827,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   R_2 - \frac{p}{2}s^{p-1} t^2 = \frac{p}{2}(s
  + \theta t)^{p-1} t^2 - \frac{p}{2}s^{p-1} t^2
  \]
- を考えると，$p - 1 \leq 1$であるから，
+ を考えると，$0 < p - 1 \leq 1$であるから，
  \[
   (s + \theta t)^{p-1} \leq (t+ s)^{p-1} \leq t^{p-1} + s^{p-1}
  \]
@@ -857,7 +860,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
  次式が得られる．
  \[
   I_\lambda (v) \geq C \int_\Omega \left( \lvert Dv \rvert^2 + av^2
- \right) dx - C^\prime \left\| v \right\|_{H_0^1(\Omega)}^{p+1} \leq C
+ \right) dx - C^\prime \left\| v \right\|_{H_0^1(\Omega)}^{p+1} \geq C
  \left\| v \right\|_{\kappa}^p - C^\prime \left\| v
  \right\|^{p+1}_{H_0^1(\Omega)}.
  \]
@@ -917,7 +920,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   I_\lambda(tv) \leq \frac{t^2}{2} \int_\Omega \left( \lvert Dv
  \rvert^2 + av^2 \right) dx - \frac{t^{p+1}}{p+1} \int_\Omega bv^{p+1} dx.
  \]
- $2 \leq p+1$，及び，
+ $2 \leq p+1$，および，
  \eqref{eq:int_omega_bvp+1}より，\eqref{eq:mountain_dec}が成立する．\qedhere
 \end{proof}
 
@@ -941,7 +944,7 @@ $(\mathrm{PS})$条件を課さない峠の定理を用いて，命題
   0 < \rho \leq c <    \frac{1}{N\left\| b
              \right\|_{L^\infty(\Omega)} ^{(N-2)/2}} S^{N/2} 
  \]
- が成立する．補題~\ref{lem:PS_c}.1より，$(\mathrm{PS})_c$条件は
+ が成立する．補題~\ref{lem:PS_c}.1より，$(\mathrm{PS})_c$条件が
  成立する．ゆえに，
  $(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}が
  適用できる．すると，補題~\ref{lem:PS_c}.1の(i), (ii)を

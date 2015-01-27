@@ -3,11 +3,12 @@
  
  本節では，定理~\ref{thm:second_solution_nonex}.1を証明する．
  
- $0 < \lambda \geq \bar{\lambda}$に対し，$\phi_\lambda$を
+ $0 < \lambda \leq \bar{\lambda}$に対し，$\phi_\lambda$を
  \eqref{eq:lin_prob_min_sol}の第$1$固有関数とする．
  補題~\ref{lem:lin_p}.1より，$\Omega$上正値であるものが
- 存在するので，$\phi_\lambda > 0 ~\tin \Omega$とする．また，
- $\left\| \phi_\lambda \right\|_{L^{p+1}(\Omega)} = 1$と正規化する．
+ 存在するので，$\phi_\lambda > 0 ~\tin \Omega$と仮定して良い．また，
+ $\left\| \phi_\lambda \right\|_{L^{p+1}(\Omega)} = 1$と正規化されたも
+ のとする．
  次の命題を示せば，命題~\ref{prop:second_1}と合わせて，証明が完了する．
  
 \begin{prop} \label{prop:exist}
@@ -100,7 +101,7 @@
 $t = ( P_\epsilon(\phi_\lambda) / \epsilon K )^{1/(p-1)}$において
 最大値をとることに注意した．ここで，補題~\ref{lem:lin_p}.2より，
 \[
- \int_\Omega \left( \lvert D\phi_\lambda \rvert + a \phi_\lambda^2
+ \int_\Omega \left( \lvert D\phi_\lambda \rvert^2 + a \phi_\lambda^2
  \right) dx = \mu_1(\lambda) p \int_\Omega b
  \underline{u}_\lambda^{p-1} \phi_\lambda^2 dx
 \]

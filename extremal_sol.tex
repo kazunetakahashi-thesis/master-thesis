@@ -29,7 +29,8 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  $v_\lambda = \underline{u}_\lambda - \lambda g_0$と定める．
  すると，次式が成立する．
  \[
-  -\Delta v_\lambda = \underline{u}_\lambda - \lambda g_0 \ \ ~\tin \Omega.
+  -\Delta v_\lambda + a v_\lambda 
+ = b(\underline{u}_\lambda - \lambda g_0)^p \ \ ~\tin \Omega.
  \]
  ゆえに，$\psi \in H_0^1(\Omega)$とすると，次式が成立する．
  \[
@@ -38,8 +39,8 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  \]
  $\psi = v_\lambda$とおくと，次式が得られる．
  \begin{equation}
-  \int_\Omega \left( \lvert Dv_\lambda \rvert^2 + a \lvert v_\lambda
-               \rvert^2 \right) dx =
+  \int_\Omega \left( \lvert Dv_\lambda \rvert^2 + a v_\lambda
+               ^2 \right) dx =
   \int_\Omega b(v_\lambda + \lambda g_0)^p v_\lambda dx. \label{eq:v_lambda}
  \end{equation}
 
@@ -76,7 +77,6 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  \eqref{eq:tspleq}が得られる．以上の\eqref{eq:tspleq}の証明は
  \cite{MR2317491}~の Lemma 4.1 によった．
 
- \eqref{eq:v_lambda}の左辺を$I$とおく．
  \eqref{eq:tspleq}より，次式が成立する．
  \begin{equation}
   \int_\Omega b (v_\lambda + \lambda g_0)^p v_\lambda dx 
@@ -84,11 +84,12 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
    v_\lambda^2 dx + C \lambda^p \int_\Omega bg_0^p v_\lambda dx.
    \label{eq:v_lambda_I}
  \end{equation}
- ここで，補題~\ref{lem:lin_p}.2，補題~\ref{lem:lin_1}から，次式が得られる．
+ \eqref{eq:v_lambda}の左辺を$I$とおく．
+ 補題~\ref{lem:lin_p}.2，補題~\ref{lem:lin_1}から，次式が得られる．
  \[
   I \geq \mu_1 p \int_\Omega b (\underline{u}_\lambda)^{p-1}
- \underline{v}_\lambda^2 dx > p \int_\Omega b (\underline{u}_\lambda)^{p-1}
- \underline{v}_\lambda^2 dx.
+ v_\lambda^2 dx > p \int_\Omega b (\underline{u}_\lambda)^{p-1}
+ v_\lambda^2 dx.
  \]
  すなわち，次式が得られる．
  \begin{equation}
@@ -111,7 +112,7 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  \eqref{eq:v_lambda}，\eqref{eq:I/p}，\eqref{eq:bg_0v_lambda}
  から，次式が従う．
  \[
-  I \leq \frac{1 + \epsilon}{p} I + \bar{\lambda}^p C \left\|
+  I < \frac{1 + \epsilon}{p} I + \bar{\lambda}^p C \left\|
  v_\lambda \right\|_{\kappa}.
  \]
  $\epsilon > 0$を$(1+\epsilon)/p < 1$となるよう小さくとれば，
@@ -152,7 +153,7 @@ $\underline{u}_\lambda$の極限をとることで，
 
 \begin{proof}
  \begin{enumerate}[1.] \sage
-  \item 正の数の列$\{ \lambda_n \}_{n=0}^\infty$は，
+  \item 正の実数列$\{ \lambda_n \}_{n=0}^\infty$は，
         $\lambda_n \nearrow \bar{\lambda}$をみたすものとする．
         $u_n = \underline{u}_{\lambda_n}$とかく．
         $u_n$は$\lambda = \lambda_n$における
@@ -209,12 +210,12 @@ $\underline{u}_\lambda$の極限をとることで，
         $u \in H_0^1(\Omega)$は\ref{eq:prob_main}の extremal solution
         である．
         すなわち，\ref{eq:prob_main}の extremal solution
-        が存在する．補題~\ref{lem:minimal_itt}.2 より，
+        が存在する．補題~\ref{lem:minimal_va}.2より，
         特に$\lambda = \bar{\lambda}$における
         \ref{eq:prob_main}の minimal solution 
         $\underline{u}_{\bar{\lambda}}$
         が存在する．
-  \item 補題~\ref{lem:minimal_itt}.3 より，
+  \item 補題~\ref{lem:minimal_va}.3より，
         $u_n = \underline{u}_{\lambda_n} <
         \underline{u}_{\bar{\lambda}} ~\tin \Omega$
         である．$n \to \infty$とすると，
@@ -259,7 +260,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
  $\phi_1$を$\lambda = \lambda_1$における
  \ref{eq:prob_main}のminimal solutionに関する
  線形化固有値問題\eqref{eq:lin_prob_min_sol}の
- 第$1$固有関数とする．補題~\ref{lem:lin_p}.2より，$\mu_1(\lambda_1)$，
+ 第$1$固有関数とする．レイリー商より，$\mu_1(\lambda_1)$，
  $\mu_1(\lambda_2)$は以下の通りに書ける．
  \begin{align*}
   \mu_1(\lambda_1) &= \frac{\displaystyle 
@@ -302,7 +303,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
   \item $\phi_1 \in H_0^1(\Omega)$を，$\mu_1(\bar{\lambda})$に付随する
         $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする．
         正の実数列
-        $\{\lambda_n \}_{n=0}^\infty$を$\lambda_n$を，$\lambda_n
+        $\{\lambda_n \}_{n=0}^\infty$は$\lambda_n
         \nearrow \bar{\lambda}$をみたすものとする．
         単調収束定理より，次式が成立する．
         \[
@@ -363,7 +364,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
         \geq 1$である．$\mu_1(\bar{\lambda}) = 1$を背理法を用いて示す．
         
         $\mu_1(\bar{\lambda}) > 1$であると仮定する．
-        $\Phi \colon [0,\infty) \times H^1_0 (\Omega) \to
+        $\Phi \colon (0,\infty) \times H^1_0 (\Omega) \to
         H^{-1}(\Omega)$を
         \eqref{eq:def_of_Phi}の通りに定める．
         \eqref{eq:Phi_dr}より，$w \in H^1_0(\Omega)$に対し
@@ -424,7 +425,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
         ここで$w \mapsto \langle f, w \rangle$は弱連続であり，
         $L \colon \R^N \times \R \times \Omega$を
         \[
-         L(t, s, x) = t^2 + a(x)s^2 - b(x)p
+         L(t, s, x) = \lvert t \rvert^2 + a(x)s^2 - b(x)p
         \underline{u}_{\bar{\lambda}}^{p-1}(x) s^2
         \]
         と定めると，\eqref{eq:def_I_f}より
@@ -461,7 +462,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
          \left( \mu_1(\bar{\lambda}) - 1 \right) p \int_\Omega b
         \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0
         \]
-        が従う．$\mu_1 ( \bar{\lambda}) > 1$より，
+        が従う．仮定より，$\mu_1 ( \bar{\lambda}) > 1$であるから，
         \[
          \int_\Omega b
         \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0 
@@ -474,7 +475,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
 
         以上より，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
-        H_0^1(\Omega) \to H^{-1}(\Omega)$は全単射である．
+        H_0^1(\Omega) \to H^{-1}(\Omega)$は可逆である．
         ゆえに，陰関数定理より，$\epsilon > 0$が存在して，
         $\lambda \in (\bar{\lambda} - \epsilon, \bar{\lambda} +
         \epsilon)$
@@ -507,7 +508,7 @@ $\mu_1(\bar{\lambda}) = 1$であることから，
  \begin{align*}
   -\Delta u + au &= bu^p + \bar{\lambda} f, \\
   -\Delta \underline{u}_{\bar{\lambda}} + a
-  -\underline{u}_{\bar{\lambda}}
+  \underline{u}_{\bar{\lambda}}
   &= b \underline{u}_{\bar{\lambda}}^p + \bar{\lambda} f
  \end{align*}
  の両辺を引くと，
@@ -519,7 +520,7 @@ $\mu_1(\bar{\lambda}) = 1$であることから，
  
  $\phi_1 \in H_0^1(\Omega)$を，$\mu_1(\bar{\lambda})$に付随する
  $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする．
- 補題~\ref{lem:lin_p}.1，及び，
+ 補題~\ref{lem:lin_p}.2，及び，
  補題~\ref{lem:mu_1_bar_lambda}.2より，
  \begin{equation}
   -\Delta \phi_1 + a\phi_1 = pb \underline{u}_{\bar{\lambda}}^{p-1}
@@ -545,14 +546,14 @@ $\mu_1(\bar{\lambda}) = 1$であることから，
  \]
  と書ける．ここで次の(i), (ii)がわかる．
  \begin{enumerate}[(i)]
-  \item $t \geq s \geq 0$ならば，$F(t, s) \geq 0$である．
-  \item $t \geq s \geq 0$のとき，$F(t, s) = 0$であることは，
+  \item $t \geq s > 0$ならば，$F(t, s) \geq 0$である．
+  \item $t \geq s > 0$のとき，$F(t, s) = 0$であることは，
         $t = s$であることと同値である．
  \end{enumerate}
  $u \geq \underline{u}_{\bar{\lambda}} ~\tin \Omega$であることに注意する．
  (i)，$b, \phi_1 > 0 ~\tin \Omega$，および，\eqref{eq:unique_eq_zero}
- より，$F(u, \underline{u}_{\bar{\lambda}}) = 0 ~\ae ~\tin \Omega$であ
- る．さらに(ii)より，$u = \underline{u}_{\bar{\lambda}} ~\ae ~\tin
+ より，$F(u, \underline{u}_{\bar{\lambda}}) = 0 ~\ae \tin \Omega$であ
+ る．さらに(ii)より，$u = \underline{u}_{\bar{\lambda}} ~\ae \tin
  \Omega$である．つまり，$H_0^1(\Omega)$の元として，
  $u = \underline{u}_{\bar{\lambda}}$である．すなわち，
  \ref{eq:prob_main}の extremal solution は，

@@ -100,7 +100,7 @@ $M - e \leq b(x) \leq M$が成立する．必要ならば，$\delta > 0$を
 \]
 とすると，単調収束定理より，
 \[
- \lim_{\epsilon \searrow 0} I(\epsilon)
+ \lim_{\epsilon \searrow 0} I(\epsilon) =
  \int_{\R^N} \frac{1}{(1 + \lvert x
  \rvert^2)^N} dx = \left\| U \right\|_{L^{p+1}(\Omega)}^{p+1}
 \]
@@ -129,7 +129,7 @@ $J(\epsilon) = O(1)$であり，
 最右辺，最左辺の括弧の中は，$\epsilon \searrow 0$のとき$1$に
 収束する．$\{ \epsilon_n \}_{n=0}^\infty$を$n \to \infty$のとき
 $\epsilon_n \searrow 0$となる任意の数列とする．
-\eqref{eq:2/p+1pow}，\eqref{eq:Duepsilon}，及び，
+\eqref{eq:2/p+1pow}，\eqref{eq:Duepsilon}，および，
 \eqref{eq:S_ach}より，
 \begin{align}
  \liminf_{n \to \infty} \frac{\left\| Du_{\epsilon_n}
@@ -187,12 +187,13 @@ $\epsilon_n \searrow 0$となる任意の数列とする．
 \]
 を考察する．
 $a(x)$の$o(\lvert v \rvert^q)$の項を$m_2 \neq 0$で割ったものを
-$\theta(x)$と書く．
+$\theta(x)$と書く．つまり，$a$は，
 \[
  a(x) = m_1 + m_2 \lvert x \rvert^q + m_2 \theta(x) 
  = m_1 + m_2 \lvert x \rvert^q \left( 1 + \frac{\theta(x)}{\lvert
  x \rvert^q } \right)
 \]
+と表される．
 $I_1, I_2$を
 \begin{align*}
  I_1 &= 
@@ -330,7 +331,7 @@ O(\epsilon^{-(N-q-4)/2})$である．
  \eqref{eq:vepsilon}より，以下が従う．
  \begin{align*}
   \lim_{\epsilon \searrow 0} \tau_\epsilon
-  &= \frac{S^{1/(p-1)}}{M^{2/(p+1)(p-1)}}, \\
+  &= \frac{S^{2/(p-1)}}{M^{2/(p+1)(p-1)}}, \\
   \lim_{\epsilon \searrow 0} \frac{1}{N} \left( \left\|
  v_\epsilon \right\|^2 \right)^{N/2} &= \frac{1}{NM^{(N-2)/2}}
   S^{N/2}.
@@ -381,36 +382,54 @@ $\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する．\q
 \end{lem}
 
 \begin{proof}
-まず，次式を背理法を用いて証明する．
-\begin{equation}
- \liminf_{\epsilon \searrow 0} t_\epsilon > 0. \label{eq:liminf_tepsilon}
-\end{equation}
-\eqref{eq:liminf_tepsilon}を否定し，
-$\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する．
-$s, t \geq 0$に対し，$G(s, t) \geq 0$である．そこで，
-\begin{equation}
- I_\lambda(t_\epsilon v_\epsilon) = \frac{1}{2} t_\epsilon^2 \left\|
-                                                              v_\epsilon
-                                                             \right\|^2
- - \int_\Omega G(t_\epsilon v_\epsilon, \underline{u}_\lambda) dx \leq
- \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2
-\end{equation}
-において，$\epsilon \searrow 0$における下極限をとると，
-\begin{equation}
- \liminf_{\epsilon \searrow 0} I_\lambda (t_\epsilon v_\epsilon) \leq
-  0 \label{eq:liminf_cont_1}
-\end{equation}
-が従う．一方で，\eqref{eq:t_epsilon}より
-$I_\lambda(t_\epsilon v_\epsilon) \geq I(\tau_\epsilon v_\epsilon)$で
-あるから，補題~\ref{lem:tauepsilon}より，
-\begin{equation}
+ まず，次式を背理法を用いて証明する．
+ \begin{equation}
+  \liminf_{\epsilon \searrow 0} t_\epsilon > 0. \label{eq:liminf_tepsilon}
+ \end{equation}
+ \eqref{eq:liminf_tepsilon}の意味は，$0$に収束する
+ 任意の正の実数列$\{ \epsilon_n \}_{n=0}^\infty$に対し，
+ $\liminf_{n \to \infty} t_{\epsilon_n} > 0$であるということである．
+ \eqref{eq:liminf_tepsilon}を否定し，
+ $\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する．
+ $s, t \geq 0$，$x \in \Omega$に対し，
+ $G^\prime(s, t, x) \geq 0$であることを確かめる．
+ テイラーの定理より，
+ \[
+  G^\prime(t, s, x) = b(x) \left( \frac{1}{p+1}(t+s)^{p+1} -
+ \frac{1}{p+1}s^{p+1} - s^p t \right)
+ = b(x) p (s + \theta t)^{p-1} t^2
+ \]
+ となる$0 < \theta < 1$が存在する．最右辺は$0$以上である．
+ ゆえに$G^\prime(s, t, x) \geq 0$が成立する．
+ そこで，
+ \begin{equation}
+  I_\lambda(t_\epsilon v_\epsilon) = \frac{1}{2} t_\epsilon^2 
+   \int_\Omega \left( \lvert Dv_\epsilon \rvert^2 a v_\epsilon^2
+               \right) dx
+  - \int_\Omega G^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda) dx \leq
+  \frac{1}{2} t_\epsilon^2 
+  \int_\Omega \left( \lvert Dv_\epsilon \rvert^2 a v_\epsilon^2
+              \right) dx \lvert \leq  C t_\epsilon^2 \left\|
+              v_\epsilon \right\|^2 
+ \end{equation}
+ において，$\epsilon \searrow 0$における下極限をとると，
+ 仮定と\eqref{eq:vepsilon}により
+ \begin{equation}
+  \liminf_{\epsilon \searrow 0} I_\lambda (t_\epsilon v_\epsilon) \leq
+   0 \label{eq:liminf_cont_1}
+ \end{equation}
+ が従う．一方で，\eqref{eq:t_epsilon}より
+ $I_\lambda(t_\epsilon v_\epsilon) \geq I_\lambda
+ (\tau_\epsilon v_\epsilon)$で
+ あるから，補題~\ref{lem:tauepsilon}より，
+ \begin{equation}
   \liminf_{\epsilon \searrow 0} I_\lambda(t_\epsilon v_\epsilon) \geq
- \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) =
- \frac{1}{NM^{(N-2)/2}} S^{N/2} > 0. \label{eq:lininf_cont_2}
-\end{equation}
-\eqref{eq:liminf_cont_1}と\eqref{eq:lininf_cont_2}は同時に
-成立しない．
-よって，背理法により，\eqref{eq:liminf_tepsilon}が従う． 
+   \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) =
+   \frac{1}{NM^{(N-2)/2}} S^{N/2} > 0. \label{eq:lininf_cont_2}
+ \end{equation}
+ \eqref{eq:liminf_cont_1}と\eqref{eq:lininf_cont_2}は同時に
+ 成立しない．
+ よって，背理法により，\eqref{eq:liminf_tepsilon}が従う． 
 
 さて，\eqref{eq:liminf_tepsilon}と\eqref{eq:buepsilon}より，
 $\epsilon_0 > 0$，$C > 0$が存在し，$0 <\epsilon < \epsilon_0$のとき，
@@ -434,14 +453,13 @@ $\lvert x \lvert < \sqrt{\epsilon}$に対し，
  t_0 = C_0 \epsilon_0^{-(N-2)/2} \label{eq:t_0_epsilon}
 \end{equation}
 と定める．
-$\underline{u}_\lambda > 0 ~\tin \Omega$であるから，
-$\{ \lvert x \rvert \leq \sqrt{\epsilon_0} \}$における
-$\underline{u}_\lambda$の最小値より小さい正の数$s_0$が存在する．
-すなわち，$\lvert x \rvert < \sqrt{\epsilon_0}$に対し，
+また，強最大値原理より，
 \begin{equation}
- \underline{u}_\lambda (x) > s_0 \label{eq:uus_0}
+ \underline{u}_\lambda (x) > s_0 \ \ \tin \{ \lvert x \rvert \leq
+  \sqrt{\epsilon_0} \}
+  \label{eq:uus_0}
 \end{equation}
-となる．
+を成立させる$x$によらない$s_0 > 0$が存在する．
 
 ここで，$x \in \Omega$，$t \geq t_0$，$s \geq s_0$に対し，
 \begin{equation}
@@ -478,11 +496,11 @@ $s$についての増加関数である．
  以下が従う．
  \begin{align*}
   H^\prime(t, s_0, x) &\geq b(x) \left( (t+\theta s_0)^p s_0 -
-  \frac{1}{p+1} s^{p+1} - s^p t\right) \\
-  & \geq b(x) \left( t^p s_0 - \frac{1}{p+1} s^{p+1} - s^p t \right) \\
-  & = t^p b(x) \left( s_0 - \frac{1}{p+1} \frac{1}{t^p} - s^p
+  \frac{1}{p+1} s_0^{p+1} - s_0^p t\right) \\
+  & \geq b(x) \left( t^p s_0 - \frac{1}{p+1} s_0^{p+1} - s_0^p t \right) \\
+  & = t^p b(x) \left( s_0 - \frac{s_0^{p-1}}{p+1} \frac{1}{t^p} - s_0^p
   \frac{1}{t^{p-1}}  \right) \\
-  & \geq t^p b(x) \left( s_0 - \frac{1}{p+1} \frac{1}{t_0^p} - s^p
+  & \geq t^p b(x) \left( s_0 - \frac{s_0^{p-1}}{p+1} \frac{1}{t_0^p} - s_0^p
   \frac{1}{t_0^{p-1}}  \right).
  \end{align*}
  ここで最右辺の括弧の中が正となるよう，
@@ -525,9 +543,10 @@ $s$についての増加関数である．
   \right)^p dx \\
   & = C \epsilon^{(N-2)/4} \int_{ \{ \lvert y \rvert \leq 1 \}}
   \frac{1}{(1 + \lvert x \rvert^2)^{(N+2)/2}} dx \\
-  & \geq C \epsilon^{(N-2)/4}.
+  & = C^\prime \epsilon^{(N-2)/4}.
  \end{align*}
- $C>0$は$\epsilon$によらない．所望の\eqref{eq:int_Hprime}が得られた．\qedhere
+ $C^\prime > 0$
+ は$\epsilon$によらない．所望の\eqref{eq:int_Hprime}が得られた．\qedhere
 \end{proof}
 
 \begin{proof}[命題~\ref{prop:second_2}]
@@ -572,7 +591,7 @@ $s$についての増加関数である．
  \end{equation}
  \eqref{eq:condition}が成立するならば，
  その$\epsilon$を用いて$v_0 = v_\epsilon$とすると，$v_0 \geq 0 ~\tin
- \Omega$，$v_0 \not \equiv 0$，および
+ \Omega$，\eqref{eq:int_omega_bvp+1}，および，
  \eqref{eq:ineq_S}が成立する．すなわち，
  \eqref{eq:condition}は，命題~\ref{prop:second_2}の帰結の
  十分条件である．
