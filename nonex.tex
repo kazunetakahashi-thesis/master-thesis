@@ -2,48 +2,48 @@
 \section{$\lambda$が小さい場合の second solution の非存在}
 \label{sec:sym}
 
-本節では、定理~\ref{thm:second_solution_nonex}.2を証明する。
-本節を通して、定理~\ref{thm:second_solution_nonex}.2の仮定をおく。
-以下では、$r$を引数とする関数$f$の導関数を、
-$f^\prime$とも、$f_r$とも表す。
+本節では，定理~\ref{thm:second_solution_nonex}.2を証明する．
+本節を通して，定理~\ref{thm:second_solution_nonex}.2の仮定をおく．
+以下では，$r$を引数とする関数$f$の導関数を，
+$f^\prime$とも，$f_r$とも表す．
 
-まずは、定理~\ref{thm:second_solution_nonex}.2の仮定の下での
-解の正則性を検討し、以降球対称解のみ考慮すればよいことを証明する。
-正則性の検討において、次の補題を使用する。
+まずは，定理~\ref{thm:second_solution_nonex}.2の仮定の下での
+解の正則性を検討し，以降球対称解のみ考慮すればよいことを証明する．
+正則性の検討において，次の補題を使用する．
 
 \begin{lem}[\cite{MR539217}] 
  \label{lem:regularity}
- $N \geq 3$とし、
- $K \in L^{N/2}(\Omega)$とする。$u \in H_0^1(\Omega)$は
+ $N \geq 3$とし，
+ $K \in L^{N/2}(\Omega)$とする．$u \in H_0^1(\Omega)$は
  \[
   - \Delta u = K u \ \ ~\tin \Omega
  \]
- の弱解であるとする。このとき、任意の$q < \infty$に対し、
- $u \in L^q(\Omega)$が成立する。
+ の弱解であるとする．このとき，任意の$q < \infty$に対し，
+ $u \in L^q(\Omega)$が成立する．
 \end{lem}
 
-補題~\ref{lem:regularity}の主張の書き方は、
-\cite{MR709644}~LEMMA~1.5を参考にした。
+補題~\ref{lem:regularity}の主張の書き方は，
+\cite{MR709644}~LEMMA~1.5を参考にした．
 
 \begin{lem} \label{lem:reg_rad}
- 定理~\ref{thm:second_solution_nonex}.2の仮定の下で、
- $\lambda_0 > 0$が存在し、$0 < \lambda \leq \lambda_*$
- に対し、以下が成立する。
+ 定理~\ref{thm:second_solution_nonex}.2の仮定の下で，
+ $\lambda_0 > 0$が存在し，$0 < \lambda \leq \lambda_*$
+ に対し，以下が成立する．
  \begin{enumerate}[1.] \sage
   \item \ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$
-        は球対称解であり、
+        は球対称解であり，
         $u = u(\lvert x \rvert)
         \in C^{2+\alpha}([0, R])$
-        をみたす。
+        をみたす．
   \item \ref{eq:prob_sec}の弱解$v$は
-        球対称解に限り、
+        球対称解に限り，
         $v = v(\lvert x \rvert)
         \in C^2([0, R])$
-        をみたす。
+        をみたす．
   \item $v = v(\lvert x \rvert) \in C^2([0, R])$が
-        \ref{eq:prob_sec}の解であることは、
+        \ref{eq:prob_sec}の解であることは，
         $v = v(r)$が
-        次の常備分方程式の解であることと同値である。
+        次の常備分方程式の解であることと同値である．
         \begin{align}
          \left\{
           \begin{aligned}
@@ -60,25 +60,25 @@ $f^\prime$とも、$f_r$とも表す。
 \begin{proof}
  \begin{enumerate}[1.] \sage
   \item $\lambda_0 > 0$を
-        補題~\ref{lem:imp}における$\lambda_0$とする。
-        このとき、補題~\ref{lem:imp}.2により、
-        $u \in C^{2+\alpha}(\bar{\Omega})$である。
-        $s \geq 0$に対し、$r \in [0, R]$の関数
+        補題~\ref{lem:imp}における$\lambda_0$とする．
+        このとき，補題~\ref{lem:imp}.2により，
+        $u \in C^{2+\alpha}(\bar{\Omega})$である．
+        $s \geq 0$に対し，$r \in [0, R]$の関数
         $-a(r) s + b(r) s^p + \lambda f(r)$は
-        単調減少である。したがって、\cite{MR544879}~より、
+        単調減少である．したがって，\cite{MR544879}~より，
         \ref{eq:prob_main}の解
         $u = u(\lvert x \rvert) \in C^{2+\alpha}(\bar{\Omega})$
-        は球対称解に限り、
-        $0 \leq r \leq R$に対し、$u_r (r) < 0$である。
-        とくに、
+        は球対称解に限り，
+        $0 \leq r \leq R$に対し，$u_r (r) < 0$である．
+        とくに，
         \begin{align}
          \underline{u}_\lambda(r) & \in C^{2+ \alpha}([0, R]), 
           \label{eq:under_u_r} \\
          \underline{u}_\lambda^\prime(r) &< 0 \ \ (0 \leq r \leq R)
           \label{eq:under_u_r_prime}
         \end{align}
-        が成立する。
-  \item $v \in H_0^1(\Omega)$は\ref{eq:prob_sec}の弱解であるとする。
+        が成立する．
+  \item $v \in H_0^1(\Omega)$は\ref{eq:prob_sec}の弱解であるとする．
         $\Omega$上の関数$K \colon \Omega \to\R$を
         \begin{equation}
          K(x) = \begin{cases}
@@ -87,46 +87,46 @@ $f^\prime$とも、$f_r$とも表す。
                  p \underline{u}_\lambda(x)^{p-1} & ( v(x) = 0 )
                 \end{cases}
         \end{equation}
-        とし、$K^\prime = b K - a$と定める。
-        $K, K^\prime$は、$\Omega$上ほとんど至るところ定義される。
-        ここで$v > 0 ~\tin \Omega$、$y \geq 0$に対し、$y \mapsto y^p$
+        とし，$K^\prime = b K - a$と定める．
+        $K, K^\prime$は，$\Omega$上ほとんど至るところ定義される．
+        ここで$v > 0 ~\tin \Omega$，$y \geq 0$に対し，$y \mapsto y^p$
         は
-        下に凸であるから、
+        下に凸であるから，
         $(v + \underline{u}_\lambda)^p - \underline{u}_\lambda^p \leq
-        p(v+ \underline{u}_\lambda)^{p-1} v$が成立する。
-        \ref{eq:prob_sec}より、
+        p(v+ \underline{u}_\lambda)^{p-1} v$が成立する．
+        \ref{eq:prob_sec}より，
         $v \in H_0^1(\Omega)$は
-        $- \Delta v = K^\prime v ~\tin \Omega$をみたす。
-        ゆえに、$\Omega$上$\lvert K \rvert \leq p
-        (v+\underline{u}_\lambda)^{p-1}$とわかる。
+        $- \Delta v = K^\prime v ~\tin \Omega$をみたす．
+        ゆえに，$\Omega$上$\lvert K \rvert \leq p
+        (v+\underline{u}_\lambda)^{p-1}$とわかる．
         $v + \underline{u}_\lambda \in H_0^1(\Omega) \subset
         L^{p+1}(\Omega)$
-        より、$(v + \underline{u}_\lambda)^{p-1} \in L^{N/2}(\Omega)$
-        である。したがって、$K \in L^{N/2}(\Omega)$である。
-        $a, b \in C^1(\bar{\Omega})$であるから、
-        $K^\prime \in L^{N/2}(\Omega)$である。
-        \ref{eq:prob_sec}より、
+        より，$(v + \underline{u}_\lambda)^{p-1} \in L^{N/2}(\Omega)$
+        である．したがって，$K \in L^{N/2}(\Omega)$である．
+        $a, b \in C^1(\bar{\Omega})$であるから，
+        $K^\prime \in L^{N/2}(\Omega)$である．
+        \ref{eq:prob_sec}より，
         $v \in H_0^1(\Omega)$は
-        $- \Delta v = K^\prime v ~\tin \Omega$をみたす。
-        ゆえに、補題~\ref{lem:regularity}より、
-        任意の$q < \infty$に対し、
-        $v \in L^q(\Omega)$が成立する。
-        したがって、$b \left( (v+ \underline{u}_\lambda)^p -
-        \underline{u}_\lambda^p \right) - av \in L^q(\Omega)$である。
-        また、$\partial \Omega$は$C^\infty$級であることに注意する。
-        $v$は\ref{eq:prob_sec}の弱解であるから、
-        $v \in W^{2, q}(\Omega)$である。$q > N$とすると、
-        $2 - N /q > 1$であるから、ソボレフ埋め込みにより、
+        $- \Delta v = K^\prime v ~\tin \Omega$をみたす．
+        ゆえに，補題~\ref{lem:regularity}より，
+        任意の$q < \infty$に対し，
+        $v \in L^q(\Omega)$が成立する．
+        したがって，$b \left( (v+ \underline{u}_\lambda)^p -
+        \underline{u}_\lambda^p \right) - av \in L^q(\Omega)$である．
+        また，$\partial \Omega$は$C^\infty$級であることに注意する．
+        $v$は\ref{eq:prob_sec}の弱解であるから，
+        $v \in W^{2, q}(\Omega)$である．$q > N$とすると，
+        $2 - N /q > 1$であるから，ソボレフ埋め込みにより，
         $v \in W^{2, q}(\Omega) \subset C^1(\bar{\Omega}) \subset
-        C(\bar{\Omega})$である。$\underline{u}_\lambda \in C^{2 +
-        \alpha}(\bar{\Omega})$も考慮すると、
+        C(\bar{\Omega})$である．$\underline{u}_\lambda \in C^{2 +
+        \alpha}(\bar{\Omega})$も考慮すると，
         $b \left( (v+ \underline{u}_\lambda)^p -
         \underline{u}_\lambda^p \right) - av \in C(\bar{\Omega})$であ
-        る。再び、$v$は\ref{eq:prob_sec}の弱解であるから、
-        $v \in C^2(\bar{\Omega})$である。
+        る．再び，$v$は\ref{eq:prob_sec}の弱解であるから，
+        $v \in C^2(\bar{\Omega})$である．
         
-        $a, b$は球対称であるから、$g = g(t, s, \lvert x \rvert)$とみな
-        せる。$t \geq 0$、$r \in [0, R]$に対し、
+        $a, b$は球対称であるから，$g = g(t, s, \lvert x \rvert)$とみな
+        せる．$t \geq 0$，$r \in [0, R]$に対し，
         \begin{align}
          \pdif{}{r} g(t, \underline{u}_\lambda(r), r)
          &= \pdif{}{r} \left( b(r) \left( (t + u_\lambda(r))^p -
@@ -137,26 +137,26 @@ $f^\prime$とも、$f_r$とも表す。
          \underline{u}_\lambda(r))^p  - \underline{u}_\lambda(r)^p
          \right) - a^\prime(r) t \label{eq:pdifgtur}
         \end{align}
-        である。\eqref{eq:under_u_r_prime}、$b^\prime(r) \leq 0$、
-        $a^\prime(r) \geq 0$より、\eqref{eq:pdifgtur}の最右辺は
-        $0$以下である。再び\cite{MR544879}~より、
+        である．\eqref{eq:under_u_r_prime}，$b^\prime(r) \leq 0$，
+        $a^\prime(r) \geq 0$より，\eqref{eq:pdifgtur}の最右辺は
+        $0$以下である．再び\cite{MR544879}~より，
         \ref{eq:prob_sec}の解
         $v = v(\lvert x \rvert) \in C^{2+\alpha}(\bar{\Omega})$は
-        球対称解に限る。
-  \item \ref{eq:prob_sec}を極座標形式に書き換える。2.~より、
-        \ref{eq:prob_sec}の解は球対称解しかないことから、
-        動径$r$以外の微分演算子の寄与はない。$v$は$0 \in \Omega$
-        において微分可能であることとディリクレ境界条件も考慮し、
-        \eqref{eq:prob_rad}が得られる。\qedhere
+        球対称解に限る．
+  \item \ref{eq:prob_sec}を極座標形式に書き換える．2.~より，
+        \ref{eq:prob_sec}の解は球対称解しかないことから，
+        動径$r$以外の微分演算子の寄与はない．$v$は$0 \in \Omega$
+        において微分可能であることとディリクレ境界条件も考慮し，
+        \eqref{eq:prob_rad}が得られる．\qedhere
  \end{enumerate}
 \end{proof}
 
-ポホザエフ\cite{MR0192184}~式の議論から、
-\eqref{eq:prob_rad}の解がみたすべき等式を導出する。
+ポホザエフ\cite{MR0192184}~式の議論から，
+\eqref{eq:prob_rad}の解がみたすべき等式を導出する．
 
 \begin{lem}
- \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は、以下の
- 等式をみたす。
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は，以下の
+ 等式をみたす．
  \begin{multline}
   \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
   r) - g(v, \underline{u}_\lambda, r) v \right) dr
@@ -164,7 +164,7 @@ $f^\prime$とも、$f_r$とも表す。
   (\underline{u}_\lambda)_r + G_r(v, \underline{u}_\lambda, r)
   \right) dr \\ = \frac{1}{N-2} R^N v_r(R)^2. \label{eq:poh_eq}
  \end{multline}
- ここで$G_s, G_r$は、以下の偏導関数である。
+ ここで$G_s, G_r$は，以下の偏導関数である．
  \begin{align*}
   G_s(t, s, r) &= \pdif{}{s} G(t, s, r), \\
   G_r(t, s, r) &= \pdif{}{r} G(t, s, r).
@@ -172,21 +172,21 @@ $f^\prime$とも、$f_r$とも表す。
 \end{lem}
 
 \begin{proof}
- \eqref{eq:prob_rad}の方程式に$r^{N-1}$をかけて変形すると、
- 次式が得られる。
+ \eqref{eq:prob_rad}の方程式に$r^{N-1}$をかけて変形すると，
+ 次式が得られる．
  \begin{equation}
   (r^{N-1} v_r)_r + r^{N-1} g(v, \underline{u}_\lambda, r) = 0
    \label{eq:rad_basic} 
  \end{equation}
- \eqref{eq:rad_basic}に$v$をかけて$[0, R]$上積分すると、
- 部分積分により次式が得られる。
+ \eqref{eq:rad_basic}に$v$をかけて$[0, R]$上積分すると，
+ 部分積分により次式が得られる．
  \begin{equation}
   - \int_0^R r^{N-1} (v_r)^2 dr + \int_0^R r^{N-1} g(v,
    \underline{u}_\lambda, r) v dr = 0.  \label{eq:poh_times_v}
  \end{equation}
- \eqref{eq:rad_basic}に$rv_r$をかけて$[0, R]$上積分する。
- まず\eqref{eq:rad_basic}の第$1$項を計算する。
- 部分積分により、順次以下の計算が進む。
+ \eqref{eq:rad_basic}に$rv_r$をかけて$[0, R]$上積分する．
+ まず\eqref{eq:rad_basic}の第$1$項を計算する．
+ 部分積分により，順次以下の計算が進む．
  \begin{align*}
   \int_0^R r v_r (r^{N-1} v_r)_r dr &= R^N v_r(R)^2 - \int_0^R
   (rv_r)_r r^{N-1} v_r dr, \\
@@ -196,7 +196,7 @@ $f^\prime$とも、$f_r$とも表す。
   (v_r)^2 \right)^\prime dr = \frac{1}{2} R^N v_r(R)^2 - \frac{N}{2}
   \int_0^R r^{N-1} (v_r)^2 dr.
  \end{align*}
- 以上より、
+ 以上より，
  \begin{align}
   \int_0^R r v_r (r^{N-1} v_r)_r dr &= R^N v_r(R)^2 - 
   \int_0^R r^{N-1} (v_r)^2 dr - \frac{1}{2} R^N v_r(R)^2 + \frac{N}{2}
@@ -204,7 +204,7 @@ $f^\prime$とも、$f_r$とも表す。
   &= \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
   dr \label{eq:poh_times_rvr_1}
  \end{align}
- と変形される。次に、第$2$項の計算をする。以下の式に注意する。
+ と変形される．次に，第$2$項の計算をする．以下の式に注意する．
  \begin{align*}
   \frac{d}{dr} \left( r^N G(v(r), \underline{u}_\lambda(r), r )
   \right) &= N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + g(
@@ -213,15 +213,15 @@ $f^\prime$とも、$f_r$とも表す。
   r), \\
   R^N G(v(R), \underline{u}_\lambda(R), R) &= R^N G(0, 0, R) = 0. 
  \end{align*}
- やはり部分積分により、以下の通り計算がなされる。
+ やはり部分積分により，以下の通り計算がなされる．
  \begin{equation}
   \int_0^R r^N g(v, \underline{u}_\lambda, r) v_r dr
    = -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
    (\underline{u}_\lambda)_r dr - \int_0^R r^N G_r(v,
    \underline{u}_\lambda, r) dr. \label{eq:poh_times_rvr_2}
  \end{equation}
- \eqref{eq:poh_times_rvr_1}、\eqref{eq:poh_times_rvr_2}より、
- 次式が得られる。
+ \eqref{eq:poh_times_rvr_1}，\eqref{eq:poh_times_rvr_2}より，
+ 次式が得られる．
  \begin{equation}
   \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
    dr -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
@@ -229,14 +229,14 @@ $f^\prime$とも、$f_r$とも表す。
    \underline{u}_\lambda, r) dr = 0. \label{eq:poh_times_rvr}
  \end{equation}
  $\text{\eqref{eq:poh_times_v}} + \text{\eqref{eq:poh_times_rvr}} \times
- 2/(N-2)$より、\eqref{eq:poh_eq}が証明される。\qedhere
+ 2/(N-2)$より，\eqref{eq:poh_eq}が証明される．\qedhere
 \end{proof}
 
-\eqref{eq:poh_eq}から、不等式を導出する。
+\eqref{eq:poh_eq}から，不等式を導出する．
 
 \begin{lem}
- \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は、以下の
- 不等式をみたす。
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は，以下の
+ 不等式をみたす．
  \begin{equation}
   \int_0^R r^{N-1} \left( p(2b(r) + b^\prime(r) r)
                     \underline{u}_\lambda^{p-1} 
@@ -246,40 +246,40 @@ $f^\prime$とも、$f_r$とも表す。
 \end{lem}
 
 \begin{proof}
- まず、\eqref{eq:poh_eq}の右辺について
+ まず，\eqref{eq:poh_eq}の右辺について
  \begin{equation}
   \frac{1}{N-2} R^N v_r(R)^2 \geq 0 \label{eq:poh_ineq_0}
  \end{equation}
- である。
- 次に、$G_s$を調べる。$t, s \geq 0$、$0 \leq r \leq R$に対し、
+ である．
+ 次に，$G_s$を調べる．$t, s \geq 0$，$0 \leq r \leq R$に対し，
  \[
   G_s(t, s, r) = \pdif{}{s} \left( b(r) \left( \frac{1}{p+1}
  (t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^pt \right)
  - \frac{1}{2}a(r) t^2 \right) = b(r) \left( (t+s)^p - s^p -p s^{p-1}
  t \right)
  \]
- である。テイラーの定理より、$0 < \theta < 1$を用いて、
+ である．テイラーの定理より，$0 < \theta < 1$を用いて，
  \[
   (t+s)^p - s^p - ps^{p-1} t = \frac{p(p-1)}{2} (s + \theta t)^{p-2} t^2
  \]
- と書ける。これは$0$以上である。
- よって、\eqref{eq:under_u_r_prime}も考慮すると、次式が得られる。
+ と書ける．これは$0$以上である．
+ よって，\eqref{eq:under_u_r_prime}も考慮すると，次式が得られる．
  \begin{equation}
   \int_0^R r^N G_s(v, \underline{u}_\lambda, r)
    (\underline{u}_\lambda)_r dr \leq 0. \label{eq:poh_ineq_1}
  \end{equation}
- 続けて、$G_r$を調べる。$t, s \geq 0$、$0 \leq r \leq R$に対し、
+ 続けて，$G_r$を調べる．$t, s \geq 0$，$0 \leq r \leq R$に対し，
  \[
   G_r(t, s, r) = b^\prime(r) \left( \frac{1}{p+1} (t+s)^{p+1} -
  \frac{1}{p+1} s^{p+1} - s^{p} t \right) - \frac{1}{2} s^\prime(r) t^2
  \]
- である。テイラーの定理より、
+ である．テイラーの定理より，
  \[
   \frac{1}{p+1} (t+s)^{p+1} - \frac{1}{p+1} s^{p+1} -s^p t -
  \frac{p}{2} s^{p-1} t^2 = \frac{p(p-1)}{6} (s + \theta t)^{p-2} t^3
  \]
- をみたす$0 < \theta < 1$が存在する。右辺は$0$以上であるから、
- $b^\prime(r) \leq 0$も合わせて、
+ をみたす$0 < \theta < 1$が存在する．右辺は$0$以上であるから，
+ $b^\prime(r) \leq 0$も合わせて，
  \begin{equation}
   \int_0^R r^N G_r(v, \underline{u}_\lambda, r) dr \leq \int_0^R
    \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} v^2 -
@@ -287,7 +287,7 @@ $f^\prime$とも、$f_r$とも表す。
    \left( b^\prime \frac{p}{2} \underline{u}_\lambda^{p-1} -
     \frac{1}{2} s^\prime \right) v^2 dr \label{eq:poh_ineq_2} 
  \end{equation}
- と評価できる。最後に、
+ と評価できる．最後に，
  \begin{align*}
   \frac{2N}{N-2}G(t, s, r) - g(t, s, r)t 
   &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t - \right)
@@ -296,69 +296,69 @@ $f^\prime$とも、$f_r$とも表す。
   &= b(r) \left( (t+s)^{p+1} - (t+s)^p t - s^{p+1} - (p+1)s^p t + s^p
   t \right) -\frac{p-1}{2} a(r) t^2
  \end{align*}
- を考察する。$\alpha(t) = (t+s)^{p+1} - (t+s)^p t = (t+s)^p s$とおく。
- $1, 2, 3$階導関数を計算すると、それぞれ以下の通りである。
+ を考察する．$\alpha(t) = (t+s)^{p+1} - (t+s)^p t = (t+s)^p s$とおく．
+ $1, 2, 3$階導関数を計算すると，それぞれ以下の通りである．
  \begin{align*}
   \alpha^\prime(t) &= p(t+s)^{p-1}s, \\
   \alpha^{\prime\prime}(t) &= p(p-1)(t+s)^{p-2}s, \\
   \alpha^{\prime\prime\prime}(t) &= p(p-1)(p-2)(t+s)^{p-3}s.
  \end{align*}
- $\alpha$の$t = 0$のまわりのテイラー多項式を考える。
- $3$次の剰余項を$R_3$とすると、
+ $\alpha$の$t = 0$のまわりのテイラー多項式を考える．
+ $3$次の剰余項を$R_3$とすると，
  \[
   R_3 = (t+s)^{p+1} - (t+s)^p t -s^{p+1} -(p+1)s^p t - s^p t -
  \frac{1}{2}p(p-1) s^{p-1}t^2
  \]
- である。テイラーの定理より、$R_3$は$0 < \theta < 1$を用いて
+ である．テイラーの定理より，$R_3$は$0 < \theta < 1$を用いて
  \[
   R_3 = \frac{p(p-1)(p-2)}{6}(s + \theta t)^{p-3} st^3
  \]
- と表される。$N \geq 6$であるから、$1 < p \leq 2$である。
- ゆえに、$R_3 \leq 0$とわかる。以上より、
+ と表される．$N \geq 6$であるから，$1 < p \leq 2$である．
+ ゆえに，$R_3 \leq 0$とわかる．以上より，
  \begin{equation}
   \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
            r) - g(v, \underline{u}_\lambda, r) v \right) dr \leq \int_0^R
   r^{N-1} \left( b \frac{1}{2} p(p-1) \underline{u}_\lambda^{p-1} -
  \frac{p-1}{2} a  \right) v^2 dr \label{eq:poh_ineq_3}
  \end{equation}
- と評価される。\eqref{eq:poh_ineq_0}、
- \eqref{eq:poh_ineq_1}、\eqref{eq:poh_ineq_2}、
- \eqref{eq:poh_ineq_3}より、\eqref{eq:poh_eq}から
+ と評価される．\eqref{eq:poh_ineq_0}，
+ \eqref{eq:poh_ineq_1}，\eqref{eq:poh_ineq_2}，
+ \eqref{eq:poh_ineq_3}より，\eqref{eq:poh_eq}から
  \[
   \int_0^R r^{N-1} \left( b \frac{1}{2} p(p-1)
  \underline{u}_\lambda^{p-1} - \frac{p-1}{2} a \right) v^2 dr 
  + \frac{p-1}{4} \int_0^R r^N \left( b^\prime p
  \underline{u}_\lambda^{p-1} - a^\prime \right) v^2 dr \geq 0
  \]
- が得られる。変形すると、
+ が得られる．変形すると，
  \[
   \int_0^R \frac{p-1}{4}  r^{N-1} \left( p(2b + b^\prime r)
  \underline{u}_\lambda^{p-1} 
  - (2a + a^\prime r) \right) v^2 dr \geq 0.
  \]
- がわかる。$(p-1)/4 > 0$より、\eqref{eq:poh_ineq}が得られる。\qedhere
+ がわかる．$(p-1)/4 > 0$より，\eqref{eq:poh_ineq}が得られる．\qedhere
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:second_solution_nonex}.2]
- 補題~\ref{lem:imp}.2より、
+ 補題~\ref{lem:imp}.2より，
  \[
   \lim_{\lambda \searrow 0} \left\| \underline{u}_\lambda
  \right\|_{L^\infty(\Omega)} = 0
  \]
- が成立する。ゆえに、$0 < \lambda_* < \lambda_0$が存在し、
- $0 < \lambda \leq \lambda_*$に対し、
+ が成立する．ゆえに，$0 < \lambda_* < \lambda_0$が存在し，
+ $0 < \lambda \leq \lambda_*$に対し，
  \[
   \left\| \underline{u}_\lambda \right\|_{L^\infty(\Omega)} <
  \left( \frac{a(0)}{pb(0)}\right)^{1/(p-1)}
  \]
- が成立する。
- $a$が単調増加、$b$が単調減少であることから、
- $0 \leq r \leq R$に対し、
- $a^\prime(r) \geq 0$、
- $b^\prime(r) \leq 0$、
- $a(0) \leq a(r)$、
- $b(0) \leq b(r)$である。以上より、
- $0 \leq r \leq R$に対し、次式が成立する。
+ が成立する．
+ $a$が単調増加，$b$が単調減少であることから，
+ $0 \leq r \leq R$に対し，
+ $a^\prime(r) \geq 0$，
+ $b^\prime(r) \leq 0$，
+ $a(0) \leq a(r)$，
+ $b(0) \leq b(r)$である．以上より，
+ $0 \leq r \leq R$に対し，次式が成立する．
  \[ 
  p(2b(r) + b^\prime(r) r)
  \underline{u}_\lambda(r)^{p-1} 
@@ -369,13 +369,13 @@ $f^\prime$とも、$f_r$とも表す。
  \leq 2(a(r) - a(r))
  \leq 0.
  \]
- したがって、任意の$v = v(r) \in C^2([0, R])$に対し、
- \eqref{eq:poh_ineq}は成立しない。したがって、
- \eqref{eq:prob_rad}の解は存在しない。ゆえに、
- 補題~\ref{lem:reg_rad}.3、補題~\ref{lem:reg_rad}.2、
- 補題~\ref{lem:rel_heart_spade}.1より、
+ したがって，任意の$v = v(r) \in C^2([0, R])$に対し，
+ \eqref{eq:poh_ineq}は成立しない．したがって，
+ \eqref{eq:prob_rad}の解は存在しない．ゆえに，
+ 補題~\ref{lem:reg_rad}.3，補題~\ref{lem:reg_rad}.2，
+ 補題~\ref{lem:rel_heart_spade}.1より，
  \ref{eq:prob_main}の minimal solution 以外の
- 弱解は存在しない。 \qedhere
+ 弱解は存在しない． \qedhere
  \end{proof}
 
 % Local Variables:

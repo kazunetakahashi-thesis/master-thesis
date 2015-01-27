@@ -1,37 +1,37 @@
 %#!platex main.tex
 \begin{abstract}
  以下の非斉次半線形楕円型方程式のディリクレ境界条件下の
- 正値解を考察する。
+ 正値解を考察する．
  \[
   -\Delta u + a u = b u^p + \lambda f \ \ \tin \Omega.
  \]
- ここで$\Omega \subset \R^N$は有界領域、$f \in H^{-1}(\Omega)$、
- $f \geq 0 ~\tin \Omega$、$a, b \in L^\infty(\Omega)$、$b \geq 0 ~\tin
- \Omega$とし、
- $\lambda > 0$はパラメータである。この方程式が正値解を複数個
- 持つか否かが、次元$N$と$a$により変化する。
- 特に、$b$が内点$x_0 \in \Omega$で最大値をとり、
+ ここで$\Omega \subset \R^N$は有界領域，$f \in H^{-1}(\Omega)$，
+ $f \geq 0 ~\tin \Omega$，$a, b \in L^\infty(\Omega)$，$b \geq 0 ~\tin
+ \Omega$とし，
+ $\lambda > 0$はパラメータである．この方程式が正値解を複数個
+ 持つか否かが，次元$N$と$a$により変化する．
+ 特に，$b$が内点$x_0 \in \Omega$で最大値をとり，
  $x_0$のある近傍上$b$は連続かつ
  $q, m > 0$を用いて$a$が
  $a(x) = m \lvert x - x_0 \rvert^{q} + o( \lvert x - x_0
- \rvert^{q})$と表されるとき、
- $3 \leq N < 6 + 2q$において、方程式は正値解を複数個を持つ。
- 本論文の証明は、解の存在は変分法、解の非存在はポホザエフ式の議論によ
- る。
+ \rvert^{q})$と表されるとき，
+ $3 \leq N < 6 + 2q$において，方程式は正値解を複数個を持つ．
+ 本論文の証明は，解の存在は変分法，解の非存在はポホザエフの議論によ
+ る．
 \end{abstract}
 
 \section{はじめに}
 
-$N$を$3$以上の自然数とする。$\Omega \subset \R^N$を有界領域とする。
-境界$\partial \Omega$は$C^\infty$級とする。
-$p = (N+2)/(N-2)$とする。$f \in H^{-1}(\Omega)$は、$f \geq 0$、
-$f \not \equiv 0$をみたすとする。
-$a, b \in L^\infty(\Omega)$とする。
+$N$を$3$以上の自然数とする．$\Omega \subset \R^N$を有界領域とする．
+境界$\partial \Omega$は$C^\infty$級とする．
+$p = (N+2)/(N-2)$とする．$f \in H^{-1}(\Omega)$は，$f \geq 0$，
+$f \not \equiv 0$をみたすとする．
+$a, b \in L^\infty(\Omega)$とする．
 $\kappa_1$を$-\Delta$の$\Omega$におけるディリクレ境界条件下の
-第$1$固有値とする。$a \geq \kappa ~\tin \Omega$をみたす
-$\kappa > - \kappa_1$が存在すると仮定する。
-また、$b \geq 0 ~\tin \Omega$、$b \not \equiv 0$と仮定する。
-$\lambda > 0$をパラメータとする。以下の方程式を考察する。
+第$1$固有値とする．$a \geq \kappa ~\tin \Omega$をみたす
+$\kappa > - \kappa_1$が存在すると仮定する．
+また，$b \geq 0 ~\tin \Omega$，$b \not \equiv 0$と仮定する．
+$\lambda > 0$をパラメータとする．以下の方程式を考察する．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -42,26 +42,27 @@ $\lambda > 0$をパラメータとする。以下の方程式を考察する。
  \right. \tag*{$(\spadesuit)_\lambda$} \label{eq:prob_main}
 \end{align}
 
-$u \in H_0^1(\Omega)$が\ref{eq:prob_main}の弱解であるとは、任意の$\psi
-\in H_0^1(\Omega)$に対し、
+$u \in H_0^1(\Omega)$が\ref{eq:prob_main}の弱解であるとは，任意の$\psi
+\in H_0^1(\Omega)$に対し，
 \[
  \int_\Omega \left( Du \cdot D\psi + a u \psi \right) dx = \int_\Omega
  b u^p \psi dx + \lambda \int_\Omega f \psi dx
 \]
-が成立することをいう。
+が成立することをいう．
 
 \subsection{先行研究}
 
-$p = (N-2)/(N+2)$はソボレフ臨界指数と呼ばれる。
-ソボレフ臨界指数$p$については、ソボレフ埋め込み
+$p = (N-2)/(N+2)$はソボレフ臨界指数と呼ばれる．
+ソボレフ臨界指数$p$については，ソボレフ埋め込み
 $H^1_0(\Omega) \subset L^{p+1}(\Omega)$はコンパクトではないことが
-よく知られている。
-そのため、ソボレフ臨界指数を持つ半線形楕円型偏微分方程式は、
-次元$N$や領域の形状により、解の存在・非存在が細かく異なる。
-本小節では、特に次元$N$に注目し、
-正値解についての主要な先行研究を取り上げる。
+よく知られている．
+そのため，ソボレフ臨界指数を持つ半線形楕円型偏微分方程式の
+正値解の存在・非存在は，
+次元$N$や領域の形状に依存していることが知られている．
+本小節では，特に次元$N$に注目し，
+正値解についての主要な先行研究を取り上げる．
 
-まずは、以下の斉次方程式を取り上げる。
+まずは，以下の斉次方程式を取り上げる．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -71,27 +72,27 @@ $H^1_0(\Omega) \subset L^{p+1}(\Omega)$はコンパクトではないことが
  \end{aligned}
  \right. \label{eq:sobolev_bn}
 \end{align}
-ポホザエフの等式~\cite{MR0192184}を用いると、
+ポホザエフの恒等式~\cite{MR0192184}を用いると，
 $\kappa \geq 0$においては
-\eqref{eq:sobolev_bn}が非自明な弱解を持たないことが従う。
-一方で、$\kappa < 0$の場合は複雑である。
+\eqref{eq:sobolev_bn}が非自明な弱解を持たないことが分かる．
+一方で，$\kappa < 0$の場合は複雑である．
 ブレジス -- ニレンベルグは
-\cite{MR709644}~において、以下を示した。
+\cite{MR709644}~において，以下を示した．
 \begin{enumerate}[1.] \sage
- \item $N \geq 4$の場合、$-\kappa_1 < \kappa < 0$であることは、
-       \eqref{eq:sobolev_bn}が非自明な弱解を持つことと同値である。
- \item $N = 3$かつ$\Omega$が球である場合、
-       $-\kappa_1 < \kappa < -\kappa_1/4$であることは、
+ \item $N \geq 4$の場合，$-\kappa_1 < \kappa < 0$であることは，
+       \eqref{eq:sobolev_bn}が非自明な弱解を持つことと同値である．
+ \item $N = 3$かつ$\Omega$が球である場合，
+       $-\kappa_1 < \kappa < -\kappa_1/4$であることは，
        \eqref{eq:sobolev_bn}が非自明な弱解を
-       持つことと同値である。
+       持つことと同値である．
 \end{enumerate}
-\eqref{eq:sobolev_bn}は、
-領域の次元$N$により解の存在・非存在が異なる例となっている。
+\eqref{eq:sobolev_bn}は，
+領域の次元$N$により解の存在・非存在が異なる例となっている．
 
-\eqref{eq:sobolev_bn}では、自明解と、ある$1$つの非自明解の存在が
-議論された。一方で、自明解を持たない方程式ではしばしば、
-非自明解が複数個存在するか否かが焦点となる。
-次の方程式は、その例である。
+\eqref{eq:sobolev_bn}では，自明解と，ある$1$つの非自明解の存在が
+議論された．一方で，自明解を持たない方程式ではしばしば，
+非自明解が複数個存在するか否かが焦点となる．
+次の方程式は，その例である．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -102,49 +103,50 @@ $\kappa \geq 0$においては
  \right. \label{eq:sobolev_bn2}
 \end{align}
 \eqref{eq:sobolev_bn2}の弱解$\underline{u}_\lambda$が
-minimal solution であるとは、
-\eqref{eq:sobolev_bn2}の任意の弱解$u$に対し、
-$u \geq \underline{u}_\lambda ~\tin \Omega$をみたすことをいう。
-\eqref{eq:sobolev_bn2}の minimal solution については、
-\cite{MR709644}~より前に、
-次の条件(i) -- (iii)をみたす$0 < \bar{\lambda} < \infty$の存在が知られている。
+minimal solution であるとは，
+\eqref{eq:sobolev_bn2}の任意の弱解$u$に対し，
+$u \geq \underline{u}_\lambda ~\tin \Omega$をみたすことをいう．
+\eqref{eq:sobolev_bn2}の minimal solution については，
+\cite{MR709644}~より前に，
+次の条件(i) -- (iii)をみたす$0 < \bar{\lambda} < \infty$の存在が知られている．
 \begin{enumerate}[(i)]
- \item $0 < \lambda < \bar{\lambda}$において、
-       \eqref{eq:sobolev_bn2}は minimal solution を持つ。
- \item $\lambda = \bar{\lambda}$において、\eqref{eq:sobolev_bn2}は唯一
-       の弱解を持つ。
- \item $\lambda > \bar{\lambda}$において、\eqref{eq:sobolev_bn2}は弱解
-       を持たない。
+ \item $0 < \lambda < \bar{\lambda}$において，
+       \eqref{eq:sobolev_bn2}は minimal solution を持つ．
+ \item $\lambda = \bar{\lambda}$において，\eqref{eq:sobolev_bn2}は唯一
+       の弱解を持つ．
+ \item $\lambda > \bar{\lambda}$において，\eqref{eq:sobolev_bn2}は弱解
+       を持たない．
 \end{enumerate}
 弱解の存在する$\lambda$の上限$\bar{\lambda}$は
-一般に extremal value と呼ばれる。
+一般に extremal value と呼ばれる．
 この事実は
-キーナー -- ケラー \cite{MR0346305}~によって一般的な枠組みで示された。
+キーナー -- ケラー \cite{MR0346305}~によって一般的な枠組みで示された．
 クランダール -- ラビノビッヅ \cite{MR0382848}~は
-\cite{MR0346305}~の仮定をより簡潔にした。
-さて minimal solution 以外の弱解は、便宜上 second solution と呼ばれる。
-\cite{MR709644}~は、second solution について以下の結果を与えた。
-すなわち、任意の$N \geq 3$に対し、$0 < \lambda < \bar{\lambda}$において、
-\eqref{eq:sobolev_bn2}は second solution を持つ。
-この事実は、\cite{MR709644}~以前より、
-$\Omega$が球である場合に限っては、
-ジョゼフ -- ルンドグレン\cite{MR0340701}~により事実上証明がなされていた。
-球対称性から常微分方程式の議論に持ち込まれ証明がなされた。
-しかし、\cite{MR709644}~では$\Omega$の形状を限定しなかった。
-道具として、$(\mathrm{PS})$条件を課さない峠の定理~\cite{MR0370183}と
+\cite{MR0346305}~の仮定をより簡潔にした．
+さて minimal solution 以外の弱解は，便宜上 second solution と呼ばれる．
+\cite{MR709644}~は，second solution について以下の結果を与えた．
+すなわち，任意の$N \geq 3$に対し，$0 < \lambda < \bar{\lambda}$において，
+\eqref{eq:sobolev_bn2}は second solution を持つ．
+この事実は，\cite{MR709644}~以前より，
+$\Omega$が球である場合に限っては，
+ジョゼフ -- ルンドグレン\cite{MR0340701}~により事実上証明がなされていた．
+球対称性から常微分方程式の議論に帰着され，示された．
+しかし，\cite{MR709644}~では$\Omega$の形状を限定しなかった．
+道具として，パレ・スメイル条件
+(以下，$(\mathrm{PS})$条件)を課さない峠の定理~\cite{MR0370183}と
 ソボレフ最良定数とタレンティー関数の
-関係~\cite{MR0463908}を用いており、この部分が
-\cite{MR709644}~の新しいところであった。
+関係~\cite{MR0463908}を用いており，この部分が
+\cite{MR709644}~の新しいところであった．
 任意の$N \geq 3$に対し\eqref{eq:sobolev_bn2}
-の second solution の結果は同一である。しかし、
-\cite{MR709644}~の証明においては、
-\eqref{eq:sobolev_bn}と同様、領域の次元$N$が鍵となっている。
-$N = 3$、$N = 4$、$N \geq 5$では、それぞれ議論が異なっている。
+の second solution の結果は同一である．しかし，
+\cite{MR709644}~の証明においては，
+\eqref{eq:sobolev_bn}と同様，領域の次元$N$が鍵となっている．
+$N = 3$，$N = 4$，$N \geq 5$では，それぞれ議論が異なっている．
 
-以上は斉次方程式の例であった。以下では
-パラメータ$\lambda$が非斉次項につく先行研究を取り上げる。
-\ref{eq:prob_main}において、$a = 0$、$b = 1$としたものは、
-以下の方程式である。
+以上は斉次方程式の例であった．以下では
+パラメータ$\lambda$が非斉次項につく先行研究を取り上げる．
+\ref{eq:prob_main}において，$a = 0$，$b = 1$としたものは，
+以下の方程式である．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -154,12 +156,12 @@ $N = 3$、$N = 4$、$N \geq 5$では、それぞれ議論が異なっている�
  \end{aligned}
  \right. \label{eq:tarantello}
 \end{align}
-タランテッロは\cite{MR1168304}~において、\eqref{eq:tarantello}に
-少なくとも$2$つの弱解が存在することが示された。ここでも
+タランテッロは\cite{MR1168304}~において，\eqref{eq:tarantello}に
+少なくとも$2$つの弱解が存在することが示された．ここでも
 $(\mathrm{PS})$条件を課さない峠の定理および
-ソボレフ最良定数とタレンティー関数の関係が道具として用いられている。
+ソボレフ最良定数とタレンティー関数の関係が道具として用いられている．
 \eqref{eq:tarantello}の
-方程式に、適当な意味で$p$より「低い」オーダーを持つ項$g(x, u)$を加
+方程式に，適当な意味で$p$より「低い」オーダーを持つ項$g(x, u)$を加
 えた
 \begin{align}
  \left\{
@@ -170,11 +172,11 @@ $(\mathrm{PS})$条件を課さない峠の定理および
  \end{aligned}
  \right. \label{eq:tarantello2}
 \end{align}
-についても、曹 -- 周~\cite{MR1408672}により
-少なくとも$2$つの弱解が存在することが示された。
+についても，曹 -- 周~\cite{MR1408672}により
+少なくとも$2$つの弱解が存在することが示された．
 
-\ref{eq:prob_main}において、$a = \kappa$、$b = 1$としたものは、
-以下の方程式である。
+\ref{eq:prob_main}において，$a = \kappa$，$b = 1$としたものは，
+以下の方程式である．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -185,216 +187,219 @@ $(\mathrm{PS})$条件を課さない峠の定理および
  \right. \label{eq:naito_sato}
 \end{align}
 
-内藤 -- 佐藤~\cite{MR2886160}は、\eqref{eq:naito_sato}
-について以下の事実を示した。
+内藤 -- 佐藤~\cite{MR2886160}は，\eqref{eq:naito_sato}
+について以下の事実を示した．
 \begin{enumerate}[1.] \sage
- \item 全ての$N \geq 3$、$\kappa > - \kappa_1$に対し、
+ \item 全ての$N \geq 3$，$\kappa > - \kappa_1$に対し，
        \eqref{eq:naito_sato}の extremal value $\bar{\lambda}$は
-       $0 < \bar{\lambda} < \infty$をみたし、
-       任意の$0 < \lambda < \bar{\lambda}$に対し、
-       \eqref{eq:naito_sato}の minimal solution が存在する。
- \item $-\kappa_1 < \kappa \leq 0$のとき、全ての$N \geq 3$に対し、
-       任意の$0 < \lambda < \bar{\lambda}$に対し、
-       \eqref{eq:naito_sato}の second solution が存在する。
- \item $\kappa > 0$のとき、$N = 3, 4, 5$については、
-       任意の$0 < \lambda < \bar{\lambda}$に対し、
-       \eqref{eq:naito_sato}の second solution が存在する。
-       一方、$N \geq 6$については、$\Omega$が球のときは
-       十分小さい$\lambda > 0$に対しては、
-       \eqref{eq:naito_sato}の second solution は存在しない。
+       $0 < \bar{\lambda} < \infty$をみたし，
+       任意の$0 < \lambda < \bar{\lambda}$に対し，
+       \eqref{eq:naito_sato}の minimal solution が存在する．
+ \item $-\kappa_1 < \kappa \leq 0$のとき，全ての$N \geq 3$に対し，
+       任意の$0 < \lambda < \bar{\lambda}$に対し，
+       \eqref{eq:naito_sato}の second solution が存在する．
+ \item $\kappa > 0$のとき，$N = 3, 4, 5$については，
+       任意の$0 < \lambda < \bar{\lambda}$に対し，
+       \eqref{eq:naito_sato}の second solution が存在する．
+       一方，$N \geq 6$については，
+       $\Omega$が球かつ$f \in C^{2+\alpha}(\bar{\Omega})$が
+       球対称のときは
+       十分小さい$\lambda > 0$に対しては，
+       \eqref{eq:naito_sato}の解は一意的である．
 \end{enumerate}
-特に3.~は、領域の次元$N$により\eqref{eq:naito_sato}の
-解の存在・非存在が異なることを主張しており、目を引くところである。
+特に3.~は，領域の次元$N$により\eqref{eq:naito_sato}の
+解の存在・非存在が異なることを主張しており，目を引くところである．
 
 \subsection{主要な結果と証明の方針}
 
-本論文は、内藤 -- 佐藤~\cite{MR2886160}の議論を踏襲し、
-\ref{eq:prob_main}を考察する。まずは minimal solution について
-以下の定理が従う。
+本論文は，内藤 -- 佐藤~\cite{MR2886160}の議論を踏襲し，
+\ref{eq:prob_main}を考察する．まずは minimal solution について
+以下の定理が従う．
 
 \begin{thm} \label{thm:minimal_solution}
  \begin{enumerate}[1.] \sage
   \item 以下の(i), (ii)をみたす
-        $0 < \bar{\lambda} < \infty$が存在する。
+        $0 < \bar{\lambda} < \infty$が存在する．
         \begin{enumerate}[(i)]
-         \item $0 < \lambda < \bar{\lambda}$において、
-               \ref{eq:prob_main}は minimal solution を持つ。
-         \item $\lambda > \bar{\lambda}$において、\ref{eq:prob_main}は弱解
-                を持たない。
+         \item $0 < \lambda < \bar{\lambda}$において，
+               \ref{eq:prob_main}は minimal solution を持つ．
+         \item $\lambda > \bar{\lambda}$において，\ref{eq:prob_main}は弱解
+                を持たない．
         \end{enumerate}
   \item 正の数$\lambda_1, \lambda_2$が
-        $\lambda_1 < \lambda_2 < \bar{\lambda}$をみたすと仮定する。
+        $\lambda_1 < \lambda_2 < \bar{\lambda}$をみたすと仮定する．
         $\lambda = \lambda_1, \lambda_2$に対応する\ref{eq:prob_main}
         の minimal solution
-        $\underline{u}_{\lambda_1}$、$\underline{u}_{\lambda_2}$につ
-        いて、
+        $\underline{u}_{\lambda_1}$，$\underline{u}_{\lambda_2}$につ
+        いて，
         $\underline{u}_{\lambda_1} < \underline{u}_{\lambda_2} ~\tin
-        \Omega$が成立する。
-  \item $\lambda \searrow 0$のとき、$\underline{u}_\lambda \to 0 ~
-        \tin H_0^1(\Omega)$が成立する。 
+        \Omega$が成立する．
+  \item $\lambda \searrow 0$のとき，$\underline{u}_\lambda \to 0 ~
+        \tin H_0^1(\Omega)$が成立する． 
  \end{enumerate}
 \end{thm}
 
 $\lambda = \bar{\lambda}$における弱解を
-extremal solution という。\ref{eq:prob_main}の場合、
-extremal solution について、以下が成立する。
+extremal solution という．\ref{eq:prob_main}の場合，
+extremal solution について，以下が成立する．
 
 \begin{thm} \label{thm:extremal_solution}
- \ref{eq:prob_main} には extremal solution が存在する。
- とくに、$\lambda = \bar{\lambda}$における
+ \ref{eq:prob_main} には extremal solution が存在する．
+ とくに，$\lambda = \bar{\lambda}$における
  \ref{eq:prob_main} の
- minimal solution が存在する。
- また、$b > 0 ~\tin \Omega$ならば、\ref{eq:prob_main} の 
- extremal solution は、$\lambda = \bar{\lambda}$における
+ minimal solution が存在する．
+ また，$b > 0 ~\tin \Omega$ならば，\ref{eq:prob_main} の 
+ extremal solution は，$\lambda = \bar{\lambda}$における
  \ref{eq:prob_main} の
- minimal solution に限る。
+ minimal solution に限る．
 \end{thm}
 
-続けて second solution の結果を述べる。
-その前に、比較のため
+続けて second solution の結果を述べる．
+その前に，比較のため
 内藤 -- 佐藤~\cite{MR2886160}の結果を\ref{eq:prob_main}に
-即して述べる。
+即して述べる．
 
 \begin{thm}[\cite{MR2886160} Theorem 1.3]
  \label{thm:second_solution_naito_sato}
- $0 < \lambda < \bar{\lambda}$とする。
- $\Omega$上$a = \kappa$、$b = 1$は定数とする。
+ $0 < \lambda < \bar{\lambda}$とする．
+ $\Omega$上$a = \kappa$，$b = 1$は定数とする．
  以下の(i), (ii)の
- いずれかの成立を仮定する。
+ いずれかの成立を仮定する．
  \begin{enumerate}[(i)]
-  \item $-\kappa_1 < \kappa \leq 0$かつ$N \geq 3$。
-  \item $\kappa > 0$かつ$N = 3, 4, 5$。
+  \item $-\kappa_1 < \kappa \leq 0$かつ$N \geq 3$．
+  \item $\kappa > 0$かつ$N = 3, 4, 5$．
  \end{enumerate}
- このとき、\ref{eq:prob_main}は、minimal solution
+ このとき，\ref{eq:prob_main}は，minimal solution
  $\underline{u}_\lambda$
- 以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$を持ち、
+ 以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$を持ち，
  $\bar{u}_\lambda >
- \underline{u}_\lambda ~\tin \Omega$が成立する。
+ \underline{u}_\lambda ~\tin \Omega$が成立する．
 \end{thm}
 
-\ref{eq:prob_main}の second solution について、
-本論文では、以下の定理を証明する。
+\ref{eq:prob_main}の second solution について，
+本論文では，以下の定理を証明する．
 
 \begin{thm} \label{thm:second_solution}
- $0 < \lambda < \bar{\lambda}$とする。$b$は$\Omega$上の
+ $0 < \lambda < \bar{\lambda}$とする．$b$は$\Omega$上の
  ある点$x_0$で最大値$M = \left\| b \right\|_{L^\infty(\Omega)} > 0$を
- 達成するものと仮定する。$r_0 > 0$が存在し、
- $\{ \lvert x - x_0 \rvert < 2r_0 \} \subset \Omega$、かつ、
- $\{ \lvert x - x_0 \rvert < r_0 \}$上、$b$は連続であり$a$は
+ 達成するものと仮定する．$r_0 > 0$が存在し，
+ $\{ \lvert x - x_0 \rvert < 2r_0 \} \subset \Omega$，かつ，
+ $\{ \lvert x - x_0 \rvert < r_0 \}$上，$b$は連続であり$a$は
  \begin{equation}
   a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q} 
   + o(\lvert x-x_0 \rvert^{q}) \label{eq:a_q}
  \end{equation}
- であると仮定する。ここで$q > 0$、
- $m_1 > \kappa$、$m_2 \neq 0$は
- 定数である。さらに、以下の(i) -- (iv)の
- いずれかの成立を仮定する。
+ であると仮定する．ここで$q > 0$，
+ $m_1 > \kappa$，$m_2 \neq 0$は
+ 定数である．さらに，以下の(i) -- (iv)の
+ いずれかの成立を仮定する．
  \begin{enumerate}[(i)]
-  \item $m_1 < 0$、かつ、$N \geq 3$。
-  \item $m_1 > 0$、かつ、$N = 3, 4, 5$。
-  \item $m_1 = 0$、かつ、$m_2 < 0$、かつ、$N \geq 3$。
-  \item $m_1 = 0$、かつ、$m_2 > 0$、かつ、$3 \leq N < 6 + 2q$。
+  \item $m_1 < 0$，かつ，$N \geq 3$．
+  \item $m_1 > 0$，かつ，$N = 3, 4, 5$．
+  \item $m_1 = 0$，かつ，$m_2 < 0$，かつ，$N \geq 3$．
+  \item $m_1 = 0$，かつ，$m_2 > 0$，かつ，$3 \leq N < 6 + 2q$．
  \end{enumerate}
- このとき、\ref{eq:prob_main}は、minimal solution
+ このとき，\ref{eq:prob_main}は，minimal solution
  $\underline{u}_\lambda$
- 以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$を持ち、
+ 以外の弱解$\bar{u}_\lambda \in H_0^1(\Omega)$を持ち，
  $\bar{u}_\lambda >
- \underline{u}_\lambda ~\tin \Omega$が成立する。
+ \underline{u}_\lambda ~\tin \Omega$が成立する．
 \end{thm}
 
 本論文の定理~\ref{thm:second_solution}の意義は大きく2つあると
-思われる。1つは、second solution の存在が、$b$の最大点を
-達成する近傍での性質で決定されていることを示している点である。
-もう1つは、解の存在・非存在が変化する次元$N$が、$a$に由来するパラメー
-タで変化しうることを示している点である。
-特に後者は新しい点であると思われる。
+思われる．1つは，second solution の存在が，$b$の最大点を
+達成する近傍での性質で決定されていることを示している点である．
+もう1つは，解の存在・非存在が変化する次元$N$が，$a$に由来するパラメー
+タで変化しうることを示している点である．
+特に後者は新しい点であると思われる．
 内藤 -- 佐藤の
-定理~\ref{thm:second_solution_naito_sato}では、
-$a = \kappa$および$b = 1$であるとき、
-$\kappa$が非正から正へと変化すると、
+定理~\ref{thm:second_solution_naito_sato}では，
+$a = \kappa$および$b = 1$であるとき，
+$\kappa$が非正から正へと変化すると，
 \ref{eq:prob_main}の second solution が存在する
-次元$N \geq 3$が、
-$N < \infty$から$N < 6$へと変化することを示している。
-この観点から本論文の定理~\ref{thm:second_solution}.4 を見ると、
+次元$N \geq 3$が，
+$N < \infty$から$N < 6$へと変化することを示している．
+この観点から本論文の定理~\ref{thm:second_solution}.4 を見ると，
 $a = m_2 \lvert x - p \rvert^{q} + o(\lvert x-x_0
-\rvert^{q})$ ($m_2 > 0$)は、
-定数$a = \kappa$が非正から正へと変化する、いわば「中間部分」と見ることができる。
+\rvert^{q})$ ($m_2 > 0$)は，
+定数$a = \kappa$が非正から正へと変化する，いわば「中間部分」と見ることができる．
 $N < 6 + 2q$で
-\ref{eq:prob_main}の second solution が存在するという結果は、
+\ref{eq:prob_main}の second solution が存在するという結果は，
 「$N < \infty$」と「$N < 6$」の「中間部分」の結果に
-相当すると考えられる。しかもこの$q > 0$は
-$a$に由来するパラメータであり、$6 + 2q$は
-$6$より大きい値を全てとり得る。
+相当すると考えられる．しかもこの$q > 0$は
+$a$に由来するパラメータであり，$6 + 2q$は
+$6$より大きい値を全てとり得る．
 いわば「$N < \infty$」と「$N < 6$」の「中間部分」の例を
-全て与えているとも言える。
+全て与えているとも言える．
 
 \ref{eq:prob_main}の second solutionが
-$(0, \bar{\lambda})$上一様には存在しない場合もある。
+$(0, \bar{\lambda})$上一様には存在しない場合もある．
 
 \begin{thm} \label{thm:second_solution_nonex}
  \begin{enumerate}[1.]  \sage
-  \item $N \geq 3$とする。
-        $b > 0 ~\tin \Omega$であると仮定する。
-        このとき、$0 < \lambda^* < \bar{\lambda}$が存在し、
+  \item $N \geq 3$とする．
+        $b > 0 ~\tin \Omega$であると仮定する．
+        このとき，$0 < \lambda^* < \bar{\lambda}$が存在し，
         任意の$\lambda^* \leq
-        \lambda < \bar{\lambda}$に対し、\ref{eq:prob_main}は
+        \lambda < \bar{\lambda}$に対し，\ref{eq:prob_main}は
         minimal solution $\underline{u}_\lambda$以外の弱解
-        $\bar{u}_\lambda$を持ち、$\bar{u}_\lambda >
-        \underline{u}_\lambda ~\tin \Omega$が成立する。
-  \item $N \geq 6$とする。$R > 0$とし、
+        $\bar{u}_\lambda$を持ち，$\bar{u}_\lambda >
+        \underline{u}_\lambda ~\tin \Omega$が成立する．
+  \item $N \geq 6$とする．$R > 0$とし，
         $\Omega = \{ x \in \R^N \mid \lvert x \rvert < R\}$
-        と仮定する。
-        $a = a(\lvert x \rvert)$、
-        $b = b(\lvert x \rvert)$、
-        $f = f(\lvert x \rvert)$は$\Omega$上球対称とする。
-        また、$0 < \alpha < 1$とし、$a , b \in C^1([0, R])$、
-        $f \in C^\alpha([0, R])$であり、$a$は$[0, R]$上
-        単調増加、$b, f$は$[0, R]$上
-        単調減少と仮定する。また、$a(0), b(0) > 0$とする。
-        このとき、$0 < \lambda_*$が存在し、
-        任意の$0 < \lambda < \lambda_*$に対し、
+        と仮定する．
+        $a = a(\lvert x \rvert)$，
+        $b = b(\lvert x \rvert)$，
+        $f = f(\lvert x \rvert)$は$\Omega$上球対称とする．
+        また，$0 < \alpha < 1$とし，$a , b \in C^1([0, R])$，
+        $f \in C^\alpha([0, R])$であり，$a$は$[0, R]$上
+        単調増加，$b, f$は$[0, R]$上
+        単調減少と仮定する．また，$a(0), b(0) > 0$とする．
+        このとき，$0 < \lambda_*$が存在し，
+        任意の$0 < \lambda < \lambda_*$に対し，
         \ref{eq:prob_main}は
-        minimal solution $\underline{u}_\lambda$以外の弱解を持たない。
+        minimal solution $\underline{u}_\lambda$以外の弱解を持たない．
  \end{enumerate}
 \end{thm}
 
-2.~の仮定に$b > 0 ~\tin \Omega$を加えたものは、1.~の仮定をみたす。
-このとき、\ref{eq:prob_main}について、
+2.~の仮定に$b > 0 ~\tin \Omega$を加えたものは，1.~の仮定をみたす．
+このとき，\ref{eq:prob_main}について，
 second solution を持つ$\lambda \in [\lambda^*, \bar{\lambda})$と
 second solution を持たない$\lambda \in (0, \lambda_*]$が
-両方存在することになる。
+両方存在することになる．
 
-定理~\ref{thm:minimal_solution}を証明するために、
-まず陰関数定理を用い、$\lambda > 0$が
-十分小さいときに、$H_0^1(\Omega)$の原点付近で
-\ref{eq:prob_main}の弱解が存在することを示す。
-次に、既に得られた$\lambda = \hat{\lambda}$における\ref{eq:prob_main}の解を
+定理~\ref{thm:minimal_solution}を証明するために，
+まず陰関数定理を用い，$\lambda > 0$が
+十分小さいときに，$H_0^1(\Omega)$の原点付近で
+\ref{eq:prob_main}の弱解が存在することを示す．
+次に，既に得られた$\lambda = \hat{\lambda}$における\ref{eq:prob_main}
+の解が
 $\lambda < \hat{\lambda}$における\ref{eq:prob_main}の
-優解とみなし、
+優解であることを示し，この優解を用いて，
 \ref{eq:prob_main}の minimal solution $\underline{u}_\lambda$を
-ある点列の極限として得る。
-最後に、$\lambda$によらないある$g_0 \in H_0^1(\Omega)$と
-$\underline{u}_\lambda$を比較し、minimal solution が存在する
-$\lambda$が定数で抑えられることを示す。
+ある点列の極限として得る．
+最後に，$\lambda$によらないある$g_0 \in H_0^1(\Omega)$と
+$\underline{u}_\lambda$を比較し，minimal solution が存在する
+$\lambda$が定数で抑えられることを示す．
 
-定理~\ref{thm:extremal_solution}を証明するために、
+定理~\ref{thm:extremal_solution}を証明するために，
 \ref{eq:prob_main}の minimal solution における線形化固有値問題
 \[
 -\Delta \phi + a \phi = \mu p b (\underline{u}_\lambda)^{p-1} \phi
   ~\tin \Omega, \ \ \phi \in H_0^1(\Omega)
 \] 
-を考察する。
-特に、第$1$固有値$\mu_1(\lambda)$の値を詳しく調べる。
+を考察する．
+特に，第$1$固有値$\mu_1(\lambda)$の値を詳しく調べる．
 $0 < \lambda < \bar{\lambda}$では
-$\mu_1(\lambda) > 1$であることが効き、
+$\mu_1(\lambda) > 1$であることが効き，
 extremal solution の
-存在が従う。また、$b > 0 ~\tin \Omega$ならば、
-$\mu_1(\bar{\lambda}) = 1$であることが効いて、
-extremal solution の一意性が従う。
+存在が分かる．また，$b > 0 ~\tin \Omega$ならば，
+$\mu_1(\bar{\lambda}) = 1$であることが効いて，
+extremal solution の一意性が分かる．
 
 \ref{eq:prob_main}の second solution
-$\bar{u}_\lambda$を見出すために、
-以下の方程式\ref{eq:prob_sec}を考察する。
+$\bar{u}_\lambda$を見出すために，
+以下の方程式\ref{eq:prob_sec}を考察する．
 \begin{align}
  \left\{
  \begin{aligned}
@@ -407,109 +412,115 @@ $\bar{u}_\lambda$を見出すために、
  \right. \tag*{$(\heartsuit)_\lambda$} \label{eq:prob_sec}
 \end{align}
 
-定理~\ref{thm:second_solution}を証明するために、
-まず、\ref{eq:prob_sec}の「エネルギー」を表す汎関数
-$I_\lambda$を定義する。
+定理~\ref{thm:second_solution}を証明するために，
+まず，\ref{eq:prob_sec}の「エネルギー」を表す汎関数
+$I_\lambda$を定義する．
 $I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる
-ことを考える。
-具体的には、まず、峠における「エネルギー」$c$が
+ことを考える．
+具体的には，まず，峠における「エネルギー」$c$が
 $0 < c < S^{N/2} / N\left\| b \right\|_{L^\infty(\Omega)}
 ^{(N-2)/2}$をみたすことを
-タレンティー関数を用いることで示す。
-ここで$S$は以下で定義されるソボレフ最良定数である。
+タレンティー関数を用いることで示す．
+ここで$S$は以下で定義されるソボレフ最良定数である．
 \[
    S = \inf_{u \in H^1_0(V), u \not \equiv 0}
  \frac{\left\| Du \right\|_{L^2(V)}^2}{\left\| u
                                        \right\|_{L^{p+1}(V)}^2} \ \ \ \ (V
  \subset \R^N \text{は領域}).
 \]
-次に、この$c$について、
-$I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを示す。
-その他の仮定も確かめ、$(\mathrm{PS})$条件を課さない
-峠の定理を用いると、$I_\lambda$の臨界点$v$が得られる。
-$v$が\ref{eq:prob_sec}の弱解である。
-この$v$を用いて、\ref{eq:prob_main}のsecond solution を
-$\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する。
+次に，この$c$について，
+$I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを示す．
+その他の仮定も確かめ，$(\mathrm{PS})$条件を課さない
+峠の定理を用いると，$I_\lambda$の臨界点$v$が得られる．
+$v$が\ref{eq:prob_sec}の弱解である．
+この$v$を用いて，\ref{eq:prob_main}のsecond solution を
+$\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する．
 
-定理~\ref{thm:second_solution_nonex}.1も、おおよそ上記の
-方法で従うが、峠における「エネルギー」$c$の条件は、
+定理~\ref{thm:second_solution_nonex}.1も，おおよそ上記の
+方法で分かるが，峠における「エネルギー」$c$の条件は，
 \ref{eq:prob_main}の minimal solution における線形化固有値問題
-の第$1$固有関数を考察することで得られる。
-定理~\ref{thm:second_solution_nonex}.2は、
-以下の通りに証明される。まずは$\lambda > 0$が小さいところでは、
+の第$1$固有関数を考察することで得られる．
+定理~\ref{thm:second_solution_nonex}.2は，
+以下の通りに証明される．まずは$\lambda > 0$が小さいところでは，
 \ref{eq:prob_main}の minimal solution も
-\ref{eq:prob_sec}の弱解も古典解になることを確かめる。
-すると\cite{MR544879}~より、球対称解のみ考慮すれば十分である。
-方程式\ref{eq:prob_sec}は、動径$r$についての常微分方程式に帰着する。
-その解$v$が存在するならば、ポホザエフ式の議論から従うある等式をみたす
-必要がある。
-しかし$\lambda > 0$が十分小さい時は、$C^{2 + \alpha}(\Omega)$の
-原点付近にminimal solution $\underline{u}_\lambda$が存在すること、
+\ref{eq:prob_sec}の弱解も古典解になることを確かめる．
+すると\cite{MR544879}~より，球対称解のみ考慮すれば十分である．
+方程式\ref{eq:prob_sec}は，動径$r$についての常微分方程式に帰着する．
+その解$v$が存在するならば，ポホザエフ式の議論から分かるある等式をみたす
+必要がある．
+しかし$\lambda > 0$が十分小さい時は，$C^{2 + \alpha}(\Omega)$の
+原点付近にminimal solution $\underline{u}_\lambda$が存在すること，
 それゆえに$\lambda \searrow 0$のとき
 $\left\| \underline{u}_\lambda \right\|_{L^\infty(\Omega)} \to 0$
-となることから、$\lambda$が十分小さいとき$v$は
-前述の等式をみたさなくなる。こうして解の非存在が従う。
+となることから，$\lambda$が十分小さいとき$v$は
+前述の等式をみたさなくなる．こうして解の非存在が分かる．
 
 \subsection{本論文の構成}
 
-\S~\ref{sec:minimal_sol}では、minimal solution について論じ、定
-理~\ref{thm:minimal_solution}を証明する。
-\S~\ref{sec:extremal_sol}では、
-extremal solution について論じ、定理~\ref{thm:extremal_solution}を
-証明する。
-\S~\ref{sec:second_sol}、\S~\ref{sec:second_sol2}では、
-定理~\ref{thm:second_solution}を$2$つの命題に分割して証明する。
+\S~\ref{sec:minimal_sol}では，minimal solution について論じ，定
+理~\ref{thm:minimal_solution}を証明する．
+\S~\ref{sec:extremal_sol}では，
+extremal solution について論じ，定理~\ref{thm:extremal_solution}を
+証明する．
+\S~\ref{sec:second_sol}，\S~\ref{sec:second_sol2}では，
+定理~\ref{thm:second_solution}を$2$つの命題に分割して証明する．
 このうち
-\S~\ref{sec:second_sol}は、
+\S~\ref{sec:second_sol}は，
 $(\mathrm{PS})$条件を課さない峠の定理に関係する
-部分であり、
-\S~\ref{sec:second_sol2}は、タレンティー関数を用いて
-峠の「エネルギー」を抑える部分である。
-\S~\ref{sec:exist}では、定理~\ref{thm:second_solution_nonex}.1を、
-\S~\ref{sec:sym}では、定理~\ref{thm:second_solution_nonex}.2を証明する。
+部分であり，
+\S~\ref{sec:second_sol2}は，タレンティー関数を用いて
+峠の「エネルギー」を抑える部分である．
+\S~\ref{sec:exist}では，定理~\ref{thm:second_solution_nonex}.1を，
+\S~\ref{sec:sym}では，定理~\ref{thm:second_solution_nonex}.2を証明する．
 
 \subsection{記号}
 
-ルベーグ空間を$L^q(\Omega)$ ($1 \leq q \leq \infty$)と表記する。
-ソボレフ空間$W^{1, 2}(\Omega)$を$H^1(\Omega)$と表記する。
+ルベーグ空間を$L^q(\Omega)$ ($1 \leq q \leq \infty$)と表記する．
+ソボレフ空間$W^{1, 2}(\Omega)$を$H^1(\Omega)$と表記する．
 トレースの意味で$u |_{\partial \Omega} = 0$が成立
-する$u \in H^1(\Omega)$全体を$H_0^1(\Omega)$と表記する。
-ヘルダー空間を$C^{k + \alpha}(\Omega)$ ($k \in \N$、$0 < \alpha < 1$)
-と表記する。
+する$u \in H^1(\Omega)$全体を$H_0^1(\Omega)$と表記する．
+ヘルダー空間を$C^{k + \alpha}(\Omega)$ ($k \in \N$，$0 < \alpha < 1$)
+と表記する．
 コンパクト台を持つ$\Omega$上の$C^\infty$級関数全体を
-$C^\infty_c (\Omega)$と表記する。
-$k \in \N$に対し、
+$C^\infty_c (\Omega)$と表記する．
+$k \in \N$に対し，
 $\Omega$上の$C^k$級関数全体を$C^k(\Omega)$
-と表記する。$k = 0$のとき、$C^0(\Omega) = C(\Omega)$は
-$\Omega$上の連続関数全体である。
+と表記する．$k = 0$のとき，$C^0(\Omega) = C(\Omega)$は
+$\Omega$上の連続関数全体である．
 
-ノルム空間$X$のノルムを$\dnorm_X$と表記する。
-ノルム空間$X$の双対空間を$X^*$と表記する。
-$H_0^1(\Omega)^*$を$H^{-1}(\Omega)$と表記する。
+ノルム空間$X$のノルムを$\dnorm_X$と表記する．
+ノルム空間$X$の双対空間を$X^*$と表記する．
+$H_0^1(\Omega)^*$を$H^{-1}(\Omega)$と表記する．
 $f \in H^{-1}$の$u \in H_0^1(\Omega)$への作用を$\langle f, u \rangle$
-と表記する。
-$H_0^1(\Omega)$上のノルム$\dnorm_{\kappa}$を、$w \in H_0^1(\Omega)$に対し、
+と表記する．
+$H_0^1(\Omega)$上の標準的なノルム$\dnorm_{H_0^1(\Omega)}$を
+\[
+ \left\| w \right\|_{H_0^1} = \left(\int_\Omega \left( \lvert Dw \rvert^2 +
+  w ^2 \right) dx\right)^{1/2}
+\]
+とする．
+$H_0^1(\Omega)$上のノルム$\dnorm_{\kappa}$を，$w \in H_0^1(\Omega)$に対し，
 \[
  \left\| w \right\|_\kappa = \left(\int_\Omega \left( \lvert Dw \rvert^2 +
  \kappa w ^2 \right) dx\right)^{1/2}
 \]
-と定める。$\kappa > -\kappa_1$、$\Omega$が有界領域で
-あることにより、ポアンカレの不等式から
+と定める．$\kappa > -\kappa_1$，$\Omega$が有界領域で
+あることにより，ポアンカレの不等式から
 $\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムとなる。また、
-$H_0^1(\Omega)$上のノルム$\dnorm$を、$w \in H_0^1(\Omega)$に対し、
+と同値なノルムとなる．また，
+$H_0^1(\Omega)$上のノルム$\dnorm$を，$w \in H_0^1(\Omega)$に対し，
 \[
  \left\| w \right\| = \left(\int_\Omega \lvert Dw \rvert^2 dx\right)^{1/2}
 \]
-と定める。やはりポアンカレの不等式から
+と定める．やはりポアンカレの不等式から
 $\dnorm$は$\dnorm_{H_0^1(\Omega)}$
-と同値なノルムとなる。
+と同値なノルムとなる．
 
-$\alpha \in \R$に対し、$\alpha_+ = \max \{ \alpha, 0 \}$、
-$\alpha_- = \min \{ -\alpha, 0 \}$と定める。
+$\alpha \in \R$に対し，$\alpha_+ = \max \{ \alpha, 0 \}$，
+$\alpha_- = \max \{ -\alpha, 0 \}$と定める．
 文字$C$および$C$に飾りをつけたものは
-重要でない正の定数を表す。
-これらは式変形中、断りなしに導入され、断りなしに取りかえることがある。
+重要でない正の定数を表す．
+これらは式変形中，断りなしに導入され，断りなしに取りかえることがある．
 
 % Local Variables:
 % mode: yatex

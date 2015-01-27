@@ -2,11 +2,11 @@
 
 \section{命題~\ref{prop:exist}で使用される不等式の証明}
 
-本付録では、命題~\ref{prop:exist}で使用される不等式の証明を与える。
-
+本付録では，命題~\ref{prop:exist}で使用される不等式の証明を与える．
+2
 \begin{lem} \label{lem:ineq_naito_sato}
- 任意の$0 < \epsilon < 1$、$s, t \geq 0$に対し、
- 次式が成立する。
+ 任意の$0 < \epsilon < 1$，$s, t \geq 0$に対し，
+ 次式が成立する．
  \begin{equation}
   \frac{p}{2}s^{p-1}t^2 - 
    \left( \frac{1}{p+1}(t+s)^{p+1} -
@@ -17,14 +17,14 @@
 \end{lem}
  
 \begin{proof}
- \eqref{eq:ineq_naito_sato}の左辺を$Y(t, s)$とおく。
- $Y$の$t$についての$2$階偏導関数は、
+ \eqref{eq:ineq_naito_sato}の左辺を$Y(t, s)$とおく．
+ $Y$の$t$についての$2$階偏導関数は，
  \begin{align*}
   Y_{tt}(t, s) &= p s^{p-1} - p(t+s)^{p-1} + pt^{p-1} \\
   &= p \left( (1- \epsilon) t^{p-1} + \epsilon t^{p-1} + s^{p-1} -
   (t+s)^{p-1} \right)
  \end{align*}
- である。$p - 1 > 0$より、以下の計算が進む。
+ である．$p - 1 > 0$より，以下の計算が進む．
  \begin{align*}
   \epsilon t^{p-1} + s^{p-1} - (s+t)^{p-1} &= 
   \epsilon t^{p-1} + s^{p-1} - (1-\epsilon)(t+s)^{p-1} - \epsilon
@@ -32,11 +32,11 @@
   & \leq \epsilon t^{p-1} + s^{p-1} - (1-\epsilon) s^{p-1} - \epsilon
   t^{p-1} = \epsilon s^{p-1}.
  \end{align*}
- ゆえに、$Y_tt$は、
+ ゆえに，$Y_{tt}$は，
  \[
   Y_{tt}(t, s) \leq p \left( (1-\epsilon) t^{p-1} + \epsilon s^{p-1} \right)
  \]
- と評価される。$Y_t(0, s) = Y(0, s) = 0$であるから、以下が成り立つ。
+ と評価される．$Y_t(0, s) = Y(0, s) = 0$であるから，以下が成り立つ．
  \begin{align*}
   Y_t(t, s) &\leq \int_0^t  p \left( (1-\epsilon) t^{p-1} + \epsilon
   s^{p-1} \right) dt = (1 - \epsilon) t^p + \epsilon p s^{p-1} t, \\
@@ -44,17 +44,17 @@
   s^{p-1} t \right)dt = \frac{1 -\epsilon}{p+1} t^{p+1} +
   \frac{\epsilon p}{2}s^{p-1}t^2.
  \end{align*}
- 以上より、\eqref{eq:ineq_naito_sato}が成立する。\qedhere
+ 以上より，\eqref{eq:ineq_naito_sato}が成立する．\qedhere
 \end{proof}
 
-補題~\ref{lem:ineq_naito_sato}は、\cite{MR2886160}~のLemma~B.2 (iii)
-とほぼ同一である。またその証明は、以上の証明と同一である。
-それにもかかわらず、本付録で証明を改めて書いたのは、
+補題~\ref{lem:ineq_naito_sato}は，\cite{MR2886160}~のLemma~B.2 (iii)
+とほぼ同一である．またその証明は，以上の証明と同一である．
+それにもかかわらず，本付録で証明を改めて書いたのは，
 \cite{MR2886160}~のLemma~B.2 (iii)では$1 < p \leq 2$という仮定が
-ついているからである。この仮定がなくとも
-補題~\ref{lem:ineq_naito_sato}は成立する。
+ついているからである．この仮定がなくとも
+補題~\ref{lem:ineq_naito_sato}は成立する．
 
 % Local Variables:
 % mode: yatex
 % TeX-master: "main.tex"
-% End:
+% End:1

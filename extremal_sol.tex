@@ -1,19 +1,19 @@
 %#!platex main.tex
 \section{extremal solution の存在と一意性} \label{sec:extremal_sol}
 
-本節では、\ref{eq:prob_main}の extremal solution について考察する。
-$\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
+本節では，\ref{eq:prob_main}の extremal solution について考察する．
+$\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
 
 \begin{defn}
- $\bar{\lambda}$を\ref{eq:prob_main}の extremal value とする。
+ $\bar{\lambda}$を\ref{eq:prob_main}の extremal value とする．
  $\lambda = \bar{\lambda}$における\ref{eq:prob_main}の弱解を
- \ref{eq:prob_main}の{\bf extremal solution }という。
+ \ref{eq:prob_main}の{\bf extremal solution }という．
 \end{defn}
 
 \subsection{extremal solution の存在}
 
-本小節では、\ref{eq:prob_main}の extremal solution が存在することを示
-す。このために、まず以下の集合を考察する。
+本小節では，\ref{eq:prob_main}の extremal solution が存在することを示
+す．このために，まず以下の集合を考察する．
 \begin{equation}
  K = \{ \underline{u}_\lambda \in H_0^1(\Omega) \mid 0 < \lambda <
   \bar{\lambda} \}.
@@ -21,43 +21,43 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
 \end{equation}
 
 \begin{lem} \label{lem:set_min_sol}
- \eqref{eq:set_min_sol}の$K$は$H_0^1(\Omega)$の有界集合である。
+ \eqref{eq:set_min_sol}の$K$は$H_0^1(\Omega)$の有界集合である．
 \end{lem}
 
 \begin{proof}
- $g_0 \in H_0^1(\Omega)$を記号~\ref{nota:g_0}のものとする。
- $v_\lambda = \underline{u}_\lambda - \lambda g_0$と定める。
- すると、次が成立する。
+ $g_0 \in H_0^1(\Omega)$を記号~\ref{nota:g_0}のものとする．
+ $v_\lambda = \underline{u}_\lambda - \lambda g_0$と定める．
+ すると，次式が成立する．
  \[
   -\Delta v_\lambda = \underline{u}_\lambda - \lambda g_0 \ \ ~\tin \Omega.
  \]
- ゆえに、$\psi \in H_0^1(\Omega)$とすると、次が成立する。
+ ゆえに，$\psi \in H_0^1(\Omega)$とすると，次式が成立する．
  \[
   \int_\Omega (Dv_\lambda \cdot D\psi + a v_\lambda \psi) dx =
  \int_\Omega b(v_\lambda + \lambda g_0)^p \psi dx.
  \]
- $\psi = v_\lambda$とおくと、次が得られる。
+ $\psi = v_\lambda$とおくと，次式が得られる．
  \begin{equation}
   \int_\Omega \left( \lvert Dv_\lambda \rvert^2 + a \lvert v_\lambda
                \rvert^2 \right) dx =
   \int_\Omega b(v_\lambda + \lambda g_0)^p v_\lambda dx. \label{eq:v_lambda}
  \end{equation}
 
- ここで、次の事実を示す。任意の$\epsilon > 0$に対し、$C > 0$が
- 存在し、任意の$s, t \geq 0$に対し、次式が成立する。
+ ここで，次の事実を示す．任意の$\epsilon > 0$に対し，$C > 0$が
+ 存在し，任意の$s, t \geq 0$に対し，次式が成立する．
  \begin{equation}
   (t+s)^p \leq (1 + \epsilon) (t+s)^{p-1} t + C s^p. \label{eq:tspleq}
  \end{equation}
- まず、$(t+s)^{p-1}s$にヤングの不等式を用いる。
- $q, r > 1$は、$q^{-1} + r^{-1} = 1$をみたすものとする。
- 任意の$0 < \tilde{\epsilon} < 1$に対し、$\tilde{C} > 0$が存在し、
- 次が成立する。
+ まず，$(t+s)^{p-1}s$にヤングの不等式を用いる．
+ $q, r > 1$は，$q^{-1} + r^{-1} = 1$をみたすものとする．
+ 任意の$0 < \tilde{\epsilon} < 1$に対し，$\tilde{C} > 0$が存在し，
+ 次式が成立する．
  \[
   (t+s)^{p-1} s \leq \tilde{\epsilon} \left( (t+s)^{p-1} \right)^q +
  \tilde{C} s^r.
  \]
- ここで$q = p/(p-1)$とおくと、$r = p$である。
- ゆえに、以下が成立する。
+ ここで$q = p/(p-1)$とおくと，$r = p$である．
+ ゆえに，以下が成立する．
  \begin{align*}
   (t+s)^{p-1} s & \leq \tilde{\epsilon} (t+s)^p + \tilde{C} s^p \\
   &= \tilde{\epsilon} (t+s)^{p-1} t + \tilde{\epsilon} (t+s)^{p-1} s 
@@ -65,38 +65,38 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
   (t+s)^{p-1} s &\leq \frac{\tilde{\epsilon}}{1 - \tilde{\epsilon}}
   (t+s)^{p-1} t + \frac{\tilde{C}}{1 - \tilde{\epsilon}} s^p.
  \end{align*}
- 任意の$\epsilon > 0$に対し、
+ 任意の$\epsilon > 0$に対し，
  $\epsilon = \tilde{\epsilon} / (1 - \tilde{\epsilon})$となる
- $0 < \tilde{\epsilon} < 1$は存在する。この$\tilde{\epsilon}$に対し、
- $C = \tilde{C}/ (1 - \tilde{\epsilon})$とすると、次が成立する。
+ $0 < \tilde{\epsilon} < 1$は存在する．この$\tilde{\epsilon}$に対し，
+ $C = \tilde{C}/ (1 - \tilde{\epsilon})$とすると，次式が成立する．
  \[
   (t+s)^{p-1} s \leq \epsilon (t+s)^{p-1} t + Cs^p.
  \]
- $(t+s)^{p} = (t+s)^{p-1} s + (t+s)^{p-1}t$より、
- \eqref{eq:tspleq}が得られる。以上の\eqref{eq:tspleq}の証明は
- \cite{MR2317491}~の Lemma 4.1 によった。
+ $(t+s)^{p} = (t+s)^{p-1} s + (t+s)^{p-1}t$より，
+ \eqref{eq:tspleq}が得られる．以上の\eqref{eq:tspleq}の証明は
+ \cite{MR2317491}~の Lemma 4.1 によった．
 
- \eqref{eq:v_lambda}の左辺を$I$とおく。
- \eqref{eq:tspleq}より、次式が成立する。
+ \eqref{eq:v_lambda}の左辺を$I$とおく．
+ \eqref{eq:tspleq}より，次式が成立する．
  \begin{equation}
   \int_\Omega b (v_\lambda + \lambda g_0)^p v_\lambda dx 
    \leq (1 + \epsilon) \int_\Omega b \underline{u}_\lambda ^{p-1}
    v_\lambda^2 dx + C \lambda^p \int_\Omega bg_0^p v_\lambda dx.
    \label{eq:v_lambda_I}
  \end{equation}
- ここで、補題~\ref{lem:lin_p}.2、補題~\ref{lem:lin_1}から、次式が得られる。
+ ここで，補題~\ref{lem:lin_p}.2，補題~\ref{lem:lin_1}から，次式が得られる．
  \[
   I \geq \mu_1 p \int_\Omega b (\underline{u}_\lambda)^{p-1}
  \underline{v}_\lambda^2 dx > p \int_\Omega b (\underline{u}_\lambda)^{p-1}
  \underline{v}_\lambda^2 dx.
  \]
- すなわち、次が得られる。
+ すなわち，次式が得られる．
  \begin{equation}
   \int_\Omega b(\underline{u}_\lambda)^{p-1} v_\lambda^2 dx <
    \frac{I}{p} \label{eq:I/p}
  \end{equation}
- また、$g_0, v_\lambda \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$、及び、
- ヘルダーの不等式、ソボレフの不等式から、次式が得られる。
+ また，$g_0, v_\lambda \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$，及び，
+ ヘルダーの不等式，ソボレフの不等式から，次式が得られる．
  \begin{equation}
   \int_\Omega b g_0^p v_\lambda dx \leq 
    \left\| b  \right\|_{L^\infty(\Omega)}
@@ -106,69 +106,69 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する。
    \leq C^\prime \left\| v_\lambda \right\|_{\kappa}.
    \label{eq:bg_0v_lambda}
  \end{equation}
- ここで$C, C^\prime > 0$は$\lambda$によらない。
+ ここで$C, C^\prime > 0$は$\lambda$によらない．
 
- \eqref{eq:v_lambda}、\eqref{eq:I/p}、\eqref{eq:bg_0v_lambda}
- から、次式が従う。
+ \eqref{eq:v_lambda}，\eqref{eq:I/p}，\eqref{eq:bg_0v_lambda}
+ から，次式が従う．
  \[
   I \leq \frac{1 + \epsilon}{p} I + \bar{\lambda}^p C \left\|
  v_\lambda \right\|_{\kappa}.
  \]
- $\epsilon > 0$を$(1+\epsilon)/p < 1$となるよう小さくとれば、
- $I \leq C \left\| v_\lambda \right\|_\kappa$となる。
- ここで$I \geq \left\| v_\lambda \right\|_\kappa^2$、$v_\lambda \not
- \equiv 0$であるから、$\left\| v_\lambda \right\|_{\kappa} \leq C$であ
- る。$\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$は同値であるから、
+ $\epsilon > 0$を$(1+\epsilon)/p < 1$となるよう小さくとれば，
+ $I \leq C \left\| v_\lambda \right\|_\kappa$となる．
+ ここで$I \geq \left\| v_\lambda \right\|_\kappa^2$，$v_\lambda \not
+ \equiv 0$であるから，$\left\| v_\lambda \right\|_{\kappa} \leq C$であ
+ る．$\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$は同値であるから，
  $\{ v_\lambda \in H_0^1(\Omega) \mid 0 < \lambda < \bar{\lambda} \}$
- は$H_0^1(\Omega)$の有界集合である。
+ は$H_0^1(\Omega)$の有界集合である．
  $v_\lambda$の定め方から
- $\underline{u}_\lambda = v_\lambda + \lambda g_0$であるため、
- 次の式が成立する。
+ $\underline{u}_\lambda = v_\lambda + \lambda g_0$であるため，
+ 次の式が成立する．
  \[
   \left\| \underline{u}_\lambda \right\|_{H_0^1(\Omega)} 
  \leq \left\| v_\lambda \right\|_{H_0^1(\Omega)}
  + \bar{\lambda} \left\| g_0 \right\|_{H_0^1(\Omega)}.
  \]
- 右辺は$\lambda$によらない定数で抑えられる。従って、
- \eqref{eq:set_min_sol}の$K$は、$H_0^1(\Omega)$の有界集合である。\qedhere
+ 右辺は$\lambda$によらない定数で抑えられる．従って，
+ \eqref{eq:set_min_sol}の$K$は，$H_0^1(\Omega)$の有界集合である．\qedhere
 \end{proof}
 
 $\lambda \nearrow \bar{\lambda}$のときの
-$\underline{u}_\lambda$の極限をとることで、
-\ref{eq:prob_main}の extremal solution を構成する。
+$\underline{u}_\lambda$の極限をとることで，
+\ref{eq:prob_main}の extremal solution を構成する．
 
 \begin{prop} \label{prop:ext_exi}
  \begin{enumerate}[1.] \sage
-  \item \ref{eq:prob_main}の extremal solution が存在する。とくに、
+  \item \ref{eq:prob_main}の extremal solution が存在する．とくに，
         $\lambda = \bar{\lambda}$における\ref{eq:prob_main}の
-        minimal solution $\underline{u}_{\bar{\lambda}}$が存在する。
-  \item $\lambda > 0$とする。$\lambda \nearrow \bar{\lambda}$のとき、
+        minimal solution $\underline{u}_{\bar{\lambda}}$が存在する．
+  \item $\lambda > 0$とする．$\lambda \nearrow \bar{\lambda}$のとき，
         $\underline{u}_\lambda \nearrow
         \underline{u}_{\bar{\lambda}} ~\ae
         \tin
-        \Omega$となる。
+        \Omega$となる．
  \end{enumerate}
 \end{prop}
 
 \begin{proof}
  \begin{enumerate}[1.] \sage
-  \item 正の数の列$\{ \lambda_n \}_{n=0}^\infty$は、
-        $\lambda_n \nearrow \bar{\lambda}$をみたすものとする。
-        $u_n = \underline{u}_{\lambda_n}$とかく。
+  \item 正の数の列$\{ \lambda_n \}_{n=0}^\infty$は，
+        $\lambda_n \nearrow \bar{\lambda}$をみたすものとする．
+        $u_n = \underline{u}_{\lambda_n}$とかく．
         $u_n$は$\lambda = \lambda_n$における
-         \ref{eq:prob_main}の弱解であるから、
+         \ref{eq:prob_main}の弱解であるから，
         任意の$\psi \in H_0^1(\Omega)$
-        に対し、次が成立する。
+        に対し，次式が成立する．
         \begin{equation}
          \int_\Omega (Du_n \cdot D\psi + a u_{n} \psi) dx 
           = \int_\Omega bu_n^p \psi dx + \lambda \int_\Omega f\psi dx.
           \label{eq:u_n_weaksol}
         \end{equation}
-        補題~\ref{lem:set_min_sol} より、$\{ u_n \}$は$H_0^1(\Omega)$の
-         有界列である。
-        ゆえに、必要ならば部分列をとることにより、
-        $u \in H_0^1(\Omega)$が存在して、$n \to \infty$とすると、
-        以下が成立する。
+        補題~\ref{lem:set_min_sol} より，$\{ u_n \}$は$H_0^1(\Omega)$の
+         有界列である．
+        ゆえに，必要ならば部分列をとることにより，
+        $u \in H_0^1(\Omega)$が存在して，$n \to \infty$とすると，
+        以下が成立する．
         \begin{align}
          u_n \xrightharpoonup{ \mbox{ ~ } } u & \ \ \text{weakly~} \tin
          H_0^1(\Omega), \label{eq:extremal_u_n_weakly} \\
@@ -177,18 +177,18 @@ $\underline{u}_\lambda$の極限をとることで、
          u_n \xrightarrow{ \mbox{ ~ } } u & \ \ \ae \tin \Omega. 
          \label{eq:extremal_u_n_ae}
         \end{align}
-        $u$が\ref{eq:prob_main}の extremal solution であることを示す。
-        \eqref{eq:extremal_u_n_weakly}により、次が成立する。
+        $u$が\ref{eq:prob_main}の extremal solution であることを示す．
+        \eqref{eq:extremal_u_n_weakly}により，次式が成立する．
         \[
         \int_\Omega (Du_n \cdot D\psi + a u_n \psi) dx
         \xrightarrow{n \to \infty}
         \int_\Omega (Du \cdot D\psi + a u \psi) dx.
         \]
          補題~\ref{lem:minimal_va}.3 と
-        \eqref{eq:extremal_u_n_ae}により、$u_n \leq u ~\tin \Omega$となる。
-        とくに、$u > 0 ~\tin \Omega$である。
-        \eqref{eq:extremal_u_n_ae}より、
-        単調収束定理を用いて、次が得られる。
+        \eqref{eq:extremal_u_n_ae}により，$u_n \leq u ~\tin \Omega$となる．
+        とくに，$u > 0 ~\tin \Omega$である．
+        \eqref{eq:extremal_u_n_ae}より，
+        単調収束定理を用いて，次式が得られる．
         \[
         \int_\Omega bu_n^p \psi dx 
         = \int_\Omega bu_n^p \psi_+ dx - 
@@ -198,67 +198,69 @@ $\underline{u}_\lambda$の極限をとることで、
         \int_\Omega bu^p \psi_- dx =
         \int_\Omega bu^p \psi dx.
         \]
-        したがって、\eqref{eq:u_n_weaksol}で$n \to \infty$とすると次が得られる。
+        したがって，\eqref{eq:u_n_weaksol}で$n \to \infty$とすると次式
+        が
+        得られる．
         \[ 
          \int_\Omega (Du \cdot D\psi + a u \psi) dx 
           = \int_\Omega bu^p \psi dx + \bar{\lambda} \int_\Omega f\psi dx.
         \]
-        $\psi \in H_0^1(\Omega)$は任意であるから、
+        $\psi \in H_0^1(\Omega)$は任意であるから，
         $u \in H_0^1(\Omega)$は\ref{eq:prob_main}の extremal solution
-        である。
-        すなわち、\ref{eq:prob_main}の extremal solution
-        が存在する。補題~\ref{lem:minimal_itt}.2 より、
+        である．
+        すなわち，\ref{eq:prob_main}の extremal solution
+        が存在する．補題~\ref{lem:minimal_itt}.2 より，
         特に$\lambda = \bar{\lambda}$における
         \ref{eq:prob_main}の minimal solution 
         $\underline{u}_{\bar{\lambda}}$
-        が存在する。
-  \item 補題~\ref{lem:minimal_itt}.3 より、
+        が存在する．
+  \item 補題~\ref{lem:minimal_itt}.3 より，
         $u_n = \underline{u}_{\lambda_n} <
         \underline{u}_{\bar{\lambda}} ~\tin \Omega$
-        である。$n \to \infty$とすると、
+        である．$n \to \infty$とすると，
         $u \leq \underline{u}_{\bar{\lambda}} ~\tin \Omega$
-        が得られる。$u \in S_{\bar{\lambda}}$であり、
+        が得られる．$u \in S_{\bar{\lambda}}$であり，
         $\underline{u}_{\bar{\lambda}}$は$\lambda = \bar{\lambda}$
         における \ref{eq:prob_main}の minimal solution 
-        であるから、$u = \underline{u}_{\bar{\lambda}}$である。
-        したがって、$n \to \infty$のとき、
+        であるから，$u = \underline{u}_{\bar{\lambda}}$である．
+        したがって，$n \to \infty$のとき，
         $\underline{u}_{\lambda_n} \nearrow
         \underline{u}_{\bar{\lambda}} ~\ae \tin \Omega$
-        となる。$\{ \lambda_n \}$の任意性により、
-        $\lambda \nearrow \bar{\lambda}$のとき、
+        となる．$\{ \lambda_n \}$の任意性により，
+        $\lambda \nearrow \bar{\lambda}$のとき，
         $\underline{u}_{\lambda} \nearrow
-        \underline{u}_{\bar{\lambda}} ~\ae \tin \Omega$となる。\qedhere
+        \underline{u}_{\bar{\lambda}} ~\ae \tin \Omega$となる．\qedhere
  \end{enumerate}
 \end{proof}
 
 \subsection{extremal solution の一意性}
 
-前小節では、\ref{eq:prob_main}の extremal solution の存在を示した。
-本小節では、\ref{eq:prob_main}の extremal solution が
+前小節では，\ref{eq:prob_main}の extremal solution の存在を示した．
+本小節では，\ref{eq:prob_main}の extremal solution が
 $b > 0 ~\tin \Omega$のときは唯一つに限る
-ことを示す。
+ことを示す．
 
-鍵となるのは、\eqref{eq:lin_prob_min_sol}の
-第$1$固有値$\mu_1(\lambda)$である。補題~\ref{lem:lin_1}では、
+鍵となるのは，\eqref{eq:lin_prob_min_sol}の
+第$1$固有値$\mu_1(\lambda)$である．補題~\ref{lem:lin_1}では，
 $0 < \lambda < \bar{\lambda}$において
-$\mu_1(\lambda) > 1$となることを示した。
-$b > 0 ~\tin \Omega$のときは、
-$\lambda = \bar{\lambda}$において、この不等式が成立しなくなることを示
-す。その準備として、
-まずは$\lambda$が大きくなると$\mu_1(\lambda)$が小さくなることを示す。
+$\mu_1(\lambda) > 1$となることを示した．
+$b > 0 ~\tin \Omega$のときは，
+$\lambda = \bar{\lambda}$において，この不等式が成立しなくなることを示
+す．その準備として，
+まずは$\lambda$が大きくなると$\mu_1(\lambda)$が小さくなることを示す．
 
 \begin{lem} \label{rem:mu1_dec}
- $\lambda_1, \lambda_2$は、$0 < \lambda_1 \leq \lambda_2 \leq
- \bar{\lambda}$とする。このとき、$\mu_1(\lambda_1) \geq
- \mu_1(\lambda_2)$が成立する。
+ $\lambda_1, \lambda_2$は，$0 < \lambda_1 \leq \lambda_2 \leq
+ \bar{\lambda}$とする．このとき，$\mu_1(\lambda_1) \geq
+ \mu_1(\lambda_2)$が成立する．
 \end{lem}
 
 \begin{proof}
  $\phi_1$を$\lambda = \lambda_1$における
  \ref{eq:prob_main}のminimal solutionに関する
  線形化固有値問題\eqref{eq:lin_prob_min_sol}の
- 第$1$固有関数とする。補題~\ref{lem:lin_p}.2より、$\mu_1(\lambda_1)$、
- $\mu_1(\lambda_2)$は以下の通りに書ける。
+ 第$1$固有関数とする．補題~\ref{lem:lin_p}.2より，$\mu_1(\lambda_1)$，
+ $\mu_1(\lambda_2)$は以下の通りに書ける．
  \begin{align*}
   \mu_1(\lambda_1) &= \frac{\displaystyle 
   \int_\Omega \left( \lvert D\phi_1 \rvert^2
@@ -270,9 +272,9 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
   + a \psi^2 \right) dx}{\displaystyle \int_\Omega p b
   \underline{u}_{\lambda_2}^{p-1} \psi^2 dx}.
  \end{align*}
- 補題~\ref{lem:minimal_va}.3より、
+ 補題~\ref{lem:minimal_va}.3より，
  $\underline{u}_{\lambda_1} \leq \underline{u}_{\lambda_2} ~\ae ~\tin
- \Omega$であるから、
+ \Omega$であるから，
  \[
   \mu_1(\lambda_2) \leq 
   \inf_{\phi_1 \in H_0^1(\Omega), \ \phi_1 \not\equiv
@@ -285,31 +287,31 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
   + a \phi_1^2 \right) dx}{\displaystyle \int_\Omega p b
   \underline{u}_{\lambda_1}^{p-1} \phi_1^2 dx} = \mu_1(\lambda_1)
  \]
- が得られる。 \qedhere
+ が得られる． \qedhere
 \end{proof}
 
 \begin{lem} \label{lem:mu_1_bar_lambda}
  \begin{enumerate}[1.] \sage
-  \item $\lambda \nearrow \bar{\lambda}$のとき、$\mu_1(\lambda)
-        \searrow \mu_1(\bar{\lambda})$である。
-  \item $b > 0 ~\tin \Omega$ならば、$\mu_1(\bar{\lambda}) = 1$である。
+  \item $\lambda \nearrow \bar{\lambda}$のとき，$\mu_1(\lambda)
+        \searrow \mu_1(\bar{\lambda})$である．
+  \item $b > 0 ~\tin \Omega$ならば，$\mu_1(\bar{\lambda}) = 1$である．
  \end{enumerate}
 \end{lem}
 \begin{proof}
  \begin{enumerate}[1.] \sage
-  \item $\phi_1 \in H_0^1(\Omega)$を、$\mu_1(\bar{\lambda})$に付随する
-        $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする。
+  \item $\phi_1 \in H_0^1(\Omega)$を，$\mu_1(\bar{\lambda})$に付随する
+        $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする．
         正の実数列
-        $\{\lambda_n \}_{n=0}^\infty$を$\lambda_n$を、$\lambda_n
-        \nearrow \bar{\lambda}$をみたすものとする。
-        単調収束定理より、次式が成立する。
+        $\{\lambda_n \}_{n=0}^\infty$を$\lambda_n$を，$\lambda_n
+        \nearrow \bar{\lambda}$をみたすものとする．
+        単調収束定理より，次式が成立する．
         \[
          \int_\Omega bp ( \underline{u}_{\lambda_n} )^{p-1} \phi_1^2
           dx \nearrow \int_\Omega bp
           (\underline{u}_{\bar{\lambda}})^{p-1} \phi_1^2 dx  \ \ (n
         \to \infty).        
         \]
-        $\{\lambda_n \}$の任意性より、次式が成立する。
+        $\{\lambda_n \}$の任意性より，次式が成立する．
         \begin{equation}
          \int_\Omega bp ( \underline{u}_{\lambda} )^{p-1} \phi_1^2
           dx \nearrow \int_\Omega bp
@@ -317,9 +319,9 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
            \ \ (\lambda \nearrow \bar{\lambda}).
           \label{eq:int_lambda_barlambda}
         \end{equation}
-        $\epsilon > 0$とする。\eqref{eq:int_lambda_barlambda}より、
-        $\delta > 0$が存在し、$0 < \bar{\lambda} - \lambda < \delta$な
-        らば、
+        $\epsilon > 0$とする．\eqref{eq:int_lambda_barlambda}より，
+        $\delta > 0$が存在し，$0 < \bar{\lambda} - \lambda < \delta$な
+        らば，
         \begin{equation}
          0 < \frac{\displaystyle \int_\Omega \left( \lvert D\phi_1
                                               \rvert^2
@@ -336,7 +338,7 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
          \int_\Omega bp (\underline{u}_{\lambda})^{p-1} \phi_1^2
          dx} < \epsilon \label{eq:zero_int_epsilon}
         \end{equation}
-        が成立する。ここで、$\tilde{\mu}(\lambda)$を
+        が成立する．ここで，$\tilde{\mu}(\lambda)$を
         \[
          \tilde{\mu}(\lambda) = 
         \frac{\displaystyle \int_\Omega \left( \lvert D\phi_1
@@ -346,41 +348,41 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
          {\displaystyle 
          \int_\Omega bp (\underline{u}_{\bar{\lambda}})^{p-1} \phi_1^2 dx}
         \]
-        と定めると、\eqref{eq:zero_int_epsilon}は
+        と定めると，\eqref{eq:zero_int_epsilon}は
         $0 < \tilde{\mu}(\lambda) - \mu_1(\bar{\lambda}) < \epsilon$
-        と書き直される。\eqref{eq:mu1_quotient}より、
-        $\mu_1(\lambda) \leq \tilde{\mu}(\lambda)$である。
+        と書き直される．\eqref{eq:mu1_quotient}より，
+        $\mu_1(\lambda) \leq \tilde{\mu}(\lambda)$である．
         補題~\ref{rem:mu1_dec}より$\mu_1(\bar{\lambda}) \leq
         \mu_1(\lambda)$
-        である。したがって、$0 < \bar{\lambda} - \lambda < \delta$なら
-        ば、$0 \leq \mu_1 (\lambda) - \mu_1 (\bar{\lambda}) \leq
-        \tilde{\mu}(\lambda) - \mu_1 (\bar{\lambda}) < \epsilon$となる。
-        以上より、$\lambda \nearrow \bar{\lambda}$のとき、
-        $\mu_1(\lambda) \searrow \mu_1(\bar{\lambda})$である。
-  \item 補題~\ref{lem:lin_1} および 1.~より、$\mu_1(\bar{\lambda})
-        \geq 1$である。$\mu_1(\bar{\lambda}) = 1$を背理法を用いて示す。
+        である．したがって，$0 < \bar{\lambda} - \lambda < \delta$なら
+        ば，$0 \leq \mu_1 (\lambda) - \mu_1 (\bar{\lambda}) \leq
+        \tilde{\mu}(\lambda) - \mu_1 (\bar{\lambda}) < \epsilon$となる．
+        以上より，$\lambda \nearrow \bar{\lambda}$のとき，
+        $\mu_1(\lambda) \searrow \mu_1(\bar{\lambda})$である．
+  \item 補題~\ref{lem:lin_1} および 1.~より，$\mu_1(\bar{\lambda})
+        \geq 1$である．$\mu_1(\bar{\lambda}) = 1$を背理法を用いて示す．
         
-        $\mu_1(\bar{\lambda}) > 1$であると仮定する。
+        $\mu_1(\bar{\lambda}) > 1$であると仮定する．
         $\Phi \colon [0,\infty) \times H^1_0 (\Omega) \to
         H^{-1}(\Omega)$を
-        \eqref{eq:def_of_Phi}の通りに定める。
-        \eqref{eq:Phi_dr}より、$w \in H^1_0(\Omega)$に対し
+        \eqref{eq:def_of_Phi}の通りに定める．
+        \eqref{eq:Phi_dr}より，$w \in H^1_0(\Omega)$に対し
         \begin{equation}
          \Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})
           w = -\Delta w + aw - b
           p(\underline{u}_{\bar{\lambda}})^{p-1} w.
           \label{eq:Phi_dr_barlambda}
         \end{equation}
-        となる。
-        ここで、
+        となる．
+        ここで，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
         H_0^1(\Omega) \to H^{-1}(\Omega)$
-        が可逆であることを示す。
+        が可逆であることを示す．
 
         まずは$\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$
         が
-        全射であることを示す。$f \in H^{-1}(\Omega)$とする。
-        $I_f \colon H_0^1(\Omega) \to \R$を次式で定める。
+        全射であることを示す．$f \in H^{-1}(\Omega)$とする．
+        $I_f \colon H_0^1(\Omega) \to \R$を次式で定める．
         \begin{equation}
          I_f (w) = \int_\Omega \left( \lvert Dw \rvert + aw^2 \right)
           dx - \int_\Omega bp \underline{u}_{\bar{\lambda}}^{p-1} w^2
@@ -388,17 +390,17 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
         \end{equation}
         $I_f$の$H_0^1(\Omega)$における下限を達成する元$u \in
         H_0^1(\Omega)$が
-        存在するとすれば、$u$は$\Phi(\bar{\lambda},
-        \underline{u}_\lambda)u = f$をみたす。
-        以下、この$u$の存在を示す。$w \in H_0^1(\Omega)$とする。
-        補題~\ref{lem:lin_p}.1より、次式が従う。
+        存在するとすれば，$u$は$\Phi(\bar{\lambda},
+        \underline{u}_\lambda)u = f$をみたす．
+        以下，この$u$の存在を示す．$w \in H_0^1(\Omega)$とする．
+        補題~\ref{lem:lin_p}.1より，次式が従う．
         \begin{equation}
          \int_\Omega \left( \lvert Dw \rvert^2 + aw^2 \right) dx \geq
           \mu_1(\bar{\lambda}) \int_\Omega bp
           \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx.
           \label{eq:mu_1_bar_lambda_r} 
         \end{equation}
-        ゆえに、\eqref{eq:def_I_f}は以下の通りに下から評価される。
+        ゆえに，\eqref{eq:def_I_f}は以下の通りに下から評価される．
         \[
          I_f(w) \geq \left( 1 - \frac{1}{\mu_1(\bar{\lambda})} \right)
         \int_\Omega \left( \lvert Dw \rvert^2 + aw^2\right) dx -
@@ -407,158 +409,158 @@ $\lambda = \bar{\lambda}$において、この不等式が成立しなくなる�
         \right\|_\kappa^2 - \left\| f \right\|_{H^{-1}(\Omega)}
         \left\| w \right\|_{H_0^1(\Omega)}.
         \]
-        仮定より、$\mu_1(\bar{\lambda}) > 1$であるから、
-        $1 - 1/\mu_1(\bar{\lambda}) > 0$である。また、
+        仮定より，$\mu_1(\bar{\lambda}) > 1$であるから，
+        $1 - 1/\mu_1(\bar{\lambda}) > 0$である．また，
         $\dnorm_\kappa$と$\dnorm_{H_0^1(\Omega)}$は
-        同値なノルムである。ゆえに、$C, C^\prime > 0$が存在し、
-        $w \in H_0^1(\Omega)$に対し、
+        同値なノルムである．ゆえに，$C, C^\prime > 0$が存在し，
+        $w \in H_0^1(\Omega)$に対し，
         \[
          I_f (w) \geq C \left\| w \right\|^2_{H_0^1(\Omega)} -
           C^\prime \left\| w \right\|_{H_0^1(\Omega)}          
         \]
-        が成立する。ゆえに、$\left\| w \right\|_{H_0^1(\Omega)} \to
-        \infty$のとき、$I_f(w) \to \infty$となる。
-        すなわち、$I_f$は強圧的であり、下に有界である。
-        ここで$w \mapsto \langle f, w \rangle$は弱連続であり、
+        が成立する．ゆえに，$\left\| w \right\|_{H_0^1(\Omega)} \to
+        \infty$のとき，$I_f(w) \to \infty$となる．
+        すなわち，$I_f$は強圧的であり，下に有界である．
+        ここで$w \mapsto \langle f, w \rangle$は弱連続であり，
         $L \colon \R^N \times \R \times \Omega$を
         \[
          L(t, s, x) = t^2 + a(x)s^2 - b(x)p
         \underline{u}_{\bar{\lambda}}^{p-1}(x) s^2
         \]
-        と定めると、\eqref{eq:def_I_f}より
+        と定めると，\eqref{eq:def_I_f}より
         \[
          I_f (w) = \int_\Omega L(Dw, w, x) dx - \langle f , w \rangle
         \]
-        である。
-        $L$は$t, s$について連続であり、
+        である．
+        $L$は$t, s$について連続であり，
         $t$について下に凸である
-        から、$I_f$は弱下半連続である。
-        したがって、$I_f$の$H_0^1(\Omega)$における下限を達成する元$u
-        \in H_0^1(\Omega)$が存在する。
-        この部分は、例えば~\cite{MR2597943}の\S~8.2のTHEOREM 1, 2を
-        参照されたい。以上より、
+        から，$I_f$は弱下半連続である．
+        したがって，$I_f$の$H_0^1(\Omega)$における下限を達成する元$u
+        \in H_0^1(\Omega)$が存在する．
+        この部分は，例えば~\cite{MR2597943}の\S~8.2のTHEOREM 1, 2を
+        参照されたい．以上より，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
-        H_0^1(\Omega) \to H^{-1}(\Omega)$は全射である。
+        H_0^1(\Omega) \to H^{-1}(\Omega)$は全射である．
         
-        次に、$\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
-        H_0^1(\Omega) \to H^{-1}(\Omega)$が単射であることを示す。
+        次に，$\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
+        H_0^1(\Omega) \to H^{-1}(\Omega)$が単射であることを示す．
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$は
-        線形写像であるから、
+        線形写像であるから，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})w = 0$
         となる
-        $w \in H_0^1(\Omega)$が$w = 0$に限ることを示せば良い。
-        いま、$f = 0$であるから、
+        $w \in H_0^1(\Omega)$が$w = 0$に限ることを示せば良い．
+        いま，$f = 0$であるから，
         $\langle \Phi_u (\bar{\lambda},
-        \underline{u}_{\bar{\lambda}})w , w \rangle = 0$である。つまり、
+        \underline{u}_{\bar{\lambda}})w , w \rangle = 0$である．つまり，
         \[
          \int_\Omega \left( \lvert Dw \rvert^2 + aw^2 \right)dx =
         \int_\Omega p b\underline{u}_\lambda^{p-1} w^2 dx
         \]
-        である。\eqref{eq:mu_1_bar_lambda_r}と合わせて、
+        である．\eqref{eq:mu_1_bar_lambda_r}と合わせて，
         \[
          \left( \mu_1(\bar{\lambda}) - 1 \right) p \int_\Omega b
         \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0
         \]
-        が従う。$\mu_1 ( \bar{\lambda}) > 1$より、
+        が従う．$\mu_1 ( \bar{\lambda}) > 1$より，
         \[
          \int_\Omega b
         \underline{u}_{\bar{\lambda}}^{p-1} w^2 dx \leq 0 
         \]
-        となるが、$b , \underline{u}_{\bar{\lambda}} > 0 ~\tin \Omega$
-        であるから、$w \equiv 0$と結論付けられる。
-        したがって、
+        となるが，$b , \underline{u}_{\bar{\lambda}} > 0 ~\tin \Omega$
+        であるから，$w \equiv 0$と結論付けられる．
+        したがって，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}})$
-        は単射である。
+        は単射である．
 
-        以上より、
+        以上より，
         $\Phi_u (\bar{\lambda}, \underline{u}_{\bar{\lambda}}) \colon
-        H_0^1(\Omega) \to H^{-1}(\Omega)$は全単射である。
-        ゆえに、陰関数定理より、$\epsilon > 0$が存在して、
+        H_0^1(\Omega) \to H^{-1}(\Omega)$は全単射である．
+        ゆえに，陰関数定理より，$\epsilon > 0$が存在して，
         $\lambda \in (\bar{\lambda} - \epsilon, \bar{\lambda} +
         \epsilon)$
-        に対し、$\Phi (\lambda, \underline{u}_{\lambda}) = 0$をみたす
-        $\underline{u}_\lambda \in H_0^1(\Omega)$が存在する。
-        補題~\ref{lem:imp}.1の証明と同様にすると、
-        $\underline{u}_\lambda$は\ref{eq:prob_main}の弱解である。
-        ゆえに、$S_\lambda \neq \emptyset$をみたす
-        $\lambda > \bar{\lambda}$が存在する。しかし
-        これは、定義~\ref{defn:ext}に反する。したがって、
-        背理法により、$\mu_1(\bar{\lambda}) = 1$と結論付けられる。
+        に対し，$\Phi (\lambda, \underline{u}_{\lambda}) = 0$をみたす
+        $\underline{u}_\lambda \in H_0^1(\Omega)$が存在する．
+        補題~\ref{lem:imp}.1の証明と同様にすると，
+        $\underline{u}_\lambda$は\ref{eq:prob_main}の弱解である．
+        ゆえに，$S_\lambda \neq \emptyset$をみたす
+        $\lambda > \bar{\lambda}$が存在する．しかし
+        これは，定義~\ref{defn:ext}に反する．したがって，
+        背理法により，$\mu_1(\bar{\lambda}) = 1$と結論付けられる．
  \end{enumerate}
 \end{proof}
 
-$\mu_1(\bar{\lambda}) = 1$であることから、
-\ref{eq:prob_main}の extremal solution の一意性が証明される。
+$\mu_1(\bar{\lambda}) = 1$であることから，
+\ref{eq:prob_main}の extremal solution の一意性が証明される．
 
 \begin{prop} \label{prop:ext_uni}
- $b > 0 ~\tin \Omega$と仮定する。
- \ref{eq:prob_main}の extremal solution は、
+ $b > 0 ~\tin \Omega$と仮定する．
+ \ref{eq:prob_main}の extremal solution は，
  $\lambda = \bar{\lambda}$における\ref{eq:prob_main}の minimal
- solution $\underline{u}_{\bar{\lambda}}$に限る。
+ solution $\underline{u}_{\bar{\lambda}}$に限る．
 \end{prop}
 
 \begin{proof}
- $u \in S_{\bar{\lambda}}$とする。$z = u -
- \underline{u}_{\bar{\lambda}}$とする。$\underline{u}_{\bar{\lambda}}$
+ $u \in S_{\bar{\lambda}}$とする．$z = u -
+ \underline{u}_{\bar{\lambda}}$とする．$\underline{u}_{\bar{\lambda}}$
  は$\lambda = \bar{\lambda}$における\ref{eq:prob_main}の
- minimal solution であるから、$z \geq 0 ~\tin \Omega$である。また、
+ minimal solution であるから，$z \geq 0 ~\tin \Omega$である．また，
  \begin{align*}
   -\Delta u + au &= bu^p + \bar{\lambda} f, \\
   -\Delta \underline{u}_{\bar{\lambda}} + a
   -\underline{u}_{\bar{\lambda}}
   &= b \underline{u}_{\bar{\lambda}}^p + \bar{\lambda} f
  \end{align*}
- の両辺を引くと、
+ の両辺を引くと，
  \begin{equation}
   -\Delta z + az = b \left( u^p - \underline{u}_{\bar{\lambda}}^p
  \right) ~\tin \Omega \label{eq:unique_1}
  \end{equation}
- が得られる。
+ が得られる．
  
- $\phi_1 \in H_0^1(\Omega)$を、$\mu_1(\bar{\lambda})$に付随する
- $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする。
- 補題~\ref{lem:lin_p}.1、及び、
- 補題~\ref{lem:mu_1_bar_lambda}.2より、
+ $\phi_1 \in H_0^1(\Omega)$を，$\mu_1(\bar{\lambda})$に付随する
+ $\phi_1 > 0 ~\tin \Omega$をみたす固有関数とする．
+ 補題~\ref{lem:lin_p}.1，及び，
+ 補題~\ref{lem:mu_1_bar_lambda}.2より，
  \begin{equation}
   -\Delta \phi_1 + a\phi_1 = pb \underline{u}_{\bar{\lambda}}^{p-1}
    \phi_1 ~\tin \Omega \label{eq:unique_2}
  \end{equation}
- が成立する。$\text{\eqref{eq:unique_1}} \times \phi_1 -
- \text{\eqref{eq:unique_2}} \times z$を$\Omega$上積分すると、
+ が成立する．$\text{\eqref{eq:unique_1}} \times \phi_1 -
+ \text{\eqref{eq:unique_2}} \times z$を$\Omega$上積分すると，
  \begin{equation}
   \int_\Omega b F(u, \underline{u}_{\bar{\lambda}}) \phi_1 dx = 0
    \label{eq:unique_eq_zero}
  \end{equation}
- が得られる。ここで$F \colon \R^2 \to \R$は、
- $F(t, s) = t^p - s^p - ps^{p-1}(t-s)$である。
- $\alpha(t) = t^p$とする。
- $\alpha$の$t = s$の周りの$1$次のテイラー多項式は、
- $s^p + ps^{p-1}(t-s)$である。
- ゆえに、
- $2$次の剰余項は$F(t, s)$に一致する。
- テイラーの定理より、ある$0 < \theta < 1$を用いて、
+ が得られる．ここで$F \colon \R^2 \to \R$は，
+ $F(t, s) = t^p - s^p - ps^{p-1}(t-s)$である．
+ $\alpha(t) = t^p$とする．
+ $\alpha$の$t = s$の周りの$1$次のテイラー多項式は，
+ $s^p + ps^{p-1}(t-s)$である．
+ ゆえに，
+ $2$次の剰余項は$F(t, s)$に一致する．
+ テイラーの定理より，ある$0 < \theta < 1$を用いて，
  \[
   F(t, s) = \frac{\alpha^{\prime\prime}(s + \theta t)}{2!} (t-s)^2 = \frac{1}{2}
  p(p-1) (s+ \theta t)^{p-2} (t-s)^2
  \]
- と書ける。ここで次の(i), (ii)がわかる。
+ と書ける．ここで次の(i), (ii)がわかる．
  \begin{enumerate}[(i)]
-  \item $t \geq s \geq 0$ならば、$F(t, s) \geq 0$である。
-  \item $t \geq s \geq 0$のとき、$F(t, s) = 0$であることは、
-        $t = s$であることと同値である。
+  \item $t \geq s \geq 0$ならば，$F(t, s) \geq 0$である．
+  \item $t \geq s \geq 0$のとき，$F(t, s) = 0$であることは，
+        $t = s$であることと同値である．
  \end{enumerate}
- $u \geq \underline{u}_{\bar{\lambda}} ~\tin \Omega$であることに注意する。
- (i)、$b, \phi_1 > 0 ~\tin \Omega$、および、\eqref{eq:unique_eq_zero}
- より、$F(u, \underline{u}_{\bar{\lambda}}) = 0 ~\ae ~\tin \Omega$であ
- る。さらに(ii)より、$u = \underline{u}_{\bar{\lambda}} ~\ae ~\tin
- \Omega$である。つまり、$H_0^1(\Omega)$の元として、
- $u = \underline{u}_{\bar{\lambda}}$である。すなわち、
- \ref{eq:prob_main}の extremal solution は、
- $\underline{u}_{\bar{\lambda}}$に限る。 \qedhere
+ $u \geq \underline{u}_{\bar{\lambda}} ~\tin \Omega$であることに注意する．
+ (i)，$b, \phi_1 > 0 ~\tin \Omega$，および，\eqref{eq:unique_eq_zero}
+ より，$F(u, \underline{u}_{\bar{\lambda}}) = 0 ~\ae ~\tin \Omega$であ
+ る．さらに(ii)より，$u = \underline{u}_{\bar{\lambda}} ~\ae ~\tin
+ \Omega$である．つまり，$H_0^1(\Omega)$の元として，
+ $u = \underline{u}_{\bar{\lambda}}$である．すなわち，
+ \ref{eq:prob_main}の extremal solution は，
+ $\underline{u}_{\bar{\lambda}}$に限る． \qedhere
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:extremal_solution}]
- 命題~\ref{prop:ext_exi}.1 と命題~\ref{prop:ext_uni} から従う。\qedhere
+ 命題~\ref{prop:ext_exi}.1 と命題~\ref{prop:ext_uni} から従う．\qedhere
 \end{proof}
 
 % Local Variables:

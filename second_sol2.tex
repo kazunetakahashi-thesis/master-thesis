@@ -1,67 +1,67 @@
 %#!platex main.tex
 \section{second solutionの存在 2 --- 命題~\ref{prop:second_2}の証明} \label{sec:second_sol2}
 
-本節では、命題~\ref{prop:second_2}を証明する。
-本節を通し、定理~\ref{thm:second_solution}の仮定をおく。
-必要ならば$\Omega$を平行移動することにより、$x_0 = 0$としてよい。
-以降$x_0 = 0$とする。
+本節では，命題~\ref{prop:second_2}を証明する．
+本節を通し，定理~\ref{thm:second_solution}の仮定をおく．
+必要ならば$\Omega$を平行移動することにより，$x_0 = 0$としてよい．
+以降$x_0 = 0$とする．
 
 \subsection{タレンティー関数の考察}
 
-本小節では、命題~\ref{prop:second_2}の証明の鍵となる
-タレンティー関数を考察する。
-命題~\ref{prop:second_2}の$v_0$は、タレンティー関数を
-加工することにより得られる。そこで本小節では、
-次小節で必要となる具体的計算を実行する。
+本小節では，命題~\ref{prop:second_2}の証明の鍵となる
+タレンティー関数を考察する．
+命題~\ref{prop:second_2}の$v_0$は，タレンティー関数を
+加工することにより得られる．そこで本小節では，
+次小節で必要となる具体的計算を実行する．
 
-まずは、タレンティー関数を定義する。
+まずは，タレンティー関数を定義する．
 \begin{defn}
  {\bf タレンティー関数}$U \colon \R^N \to \R$を
  \[
    U(x) = \frac{1}{(1 + \lvert x \rvert^2)^{(N-2)/2}}
  \]
- と定める。
+ と定める．
 \end{defn}
 
-$U$について、
-以下の事実が知られている。
+$U$について，
+以下の事実が知られている．
 
 \begin{lem}[\cite{MR0463908}]
- タレンティー関数$U$について、次式が成立する。
+ タレンティー関数$U$について，次式が成立する．
  \begin{equation}
   S = \frac{\left\| DU \right\|_{L^2(\R^N)}^2}
    {\left\| U \right\|_{L^{p+1}(\R^N)}^2}. 
    \label{eq:S_ach}
  \end{equation}
- すなわち、\eqref{eq:S_def}の右辺の下限は、$V = \R^N$のとき、
- $U$により達成される。
+ すなわち，\eqref{eq:S_def}の右辺の下限は，$V = \R^N$のとき，
+ $U$により達成される．
 \end{lem}
 
 \begin{nota}
-$\Omega$上の cut off function $\eta$を、
-$\eta \in C^\infty_c (\Omega)$、$0 \leq \eta \leq 1 ~\tin
-\Omega$、
-$\{ \lvert x \rvert \leq r_0 \}$上$\eta \equiv 1$、
-$\{ \lvert x \rvert \geq 2r_0 \}$上$\eta \equiv 0$となるものとする。
-$\epsilon > 0$とする。
-$\Omega$上の関数$u_\epsilon, v_\epsilon$を、
+$\Omega$上の cut off function $\eta$を，
+$\eta \in C^\infty_c (\Omega)$，$0 \leq \eta \leq 1 ~\tin
+\Omega$，
+$\{ \lvert x \rvert \leq r_0 \}$上$\eta \equiv 1$，
+$\{ \lvert x \rvert \geq 2r_0 \}$上$\eta \equiv 0$となるものとする．
+$\epsilon > 0$とする．
+$\Omega$上の関数$u_\epsilon, v_\epsilon$を，
 \begin{align}
  u_\epsilon (x) &= \frac{\eta(x)}{(\epsilon + \lvert x
  \rvert^2)^{(N-2)/2}}, \label{eq:def_uepsilon} \\
  v_\epsilon (x) &= \frac{u_\epsilon(x)}{\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}} \label{eq:def_vepsilon}
 \end{align}
-と定める。
+と定める．
 \end{nota}
 
-さて、\cite{MR709644}~の p.~444 より、次式が成立する。
+さて，\cite{MR709644}~の p.~444 より，次式が成立する．
 \begin{equation}
  \left\| Du_\epsilon \right\|_{L^2(\Omega)}^2 
   = \left\| DU \right\|_{L^2(\R^N)}^2 \epsilon^{-(N-2)/2} + O(1).
   \label{eq:Duepsilon}
 \end{equation}
 
-次に、$\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2$
-を考察する。
+次に，$\left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2$
+を考察する．
 \[
  \int_\Omega b u_{\epsilon}^{p+1} dx
  = \int_\Omega \frac{b(x) \eta(x)^{p+1}}{(\epsilon + \lvert x
@@ -70,12 +70,12 @@ $\Omega$上の関数$u_\epsilon, v_\epsilon$を、
  \frac{b(x)}{(\epsilon + \lvert x
  \rvert^2)^N} dx.
 \]
-最左辺の積分を$I$とおく。
-$e > 0$とする。$\delta > 0$が存在し、$\lvert x \rvert < \delta$ならば、
-$M - e \leq b(x) \leq M$が成立する。必要ならば、$\delta > 0$を
-小さくとりなおすと、$\delta < r_0$となる。
-この$e, \delta$は、$\epsilon$とは無関係であることに
-注意されたい。ここで$\tilde{I}$、$\hat{I}$を
+最左辺の積分を$I$とおく．
+$e > 0$とする．$\delta > 0$が存在し，$\lvert x \rvert < \delta$ならば，
+$M - e \leq b(x) \leq M$が成立する．必要ならば，$\delta > 0$を
+小さくとりなおすと，$\delta < r_0$となる．
+この$e, \delta$は，$\epsilon$とは無関係であることに
+注意されたい．ここで$\tilde{I}$，$\hat{I}$を
 \begin{align*}
  \tilde{I} &= \int_{ \{ \lvert x \rvert < \delta \} } 
  \frac{b(x)}{(\epsilon + \lvert x
@@ -84,39 +84,39 @@ $M - e \leq b(x) \leq M$が成立する。必要ならば、$\delta > 0$を
  \frac{1}{(\epsilon + \lvert x
  \rvert^2)^N} dx
 \end{align*}
-とおく。$I = O(1) + \tilde{I}$、$(M - e) \hat{I}
- \leq \tilde{I} \leq M \hat{I}$である。変数変換により、
+とおく．$I = O(1) + \tilde{I}$，$(M - e) \hat{I}
+ \leq \tilde{I} \leq M \hat{I}$である．変数変換により，
 \[
  \hat{I} 
  = \frac{1}{\epsilon^{N/2}} \int_{ \left\{ \lvert x \rvert <
  \delta/\sqrt{\epsilon} \right\}} \frac{1}{(1 + \lvert x
  \rvert^2)^N}dx
 \]
-が得られる。
+が得られる．
 \[
  I(\epsilon) = \int_{ \left\{ \lvert x \rvert <
  \delta/\sqrt{\epsilon} \right\}} \frac{1}{(1 + \lvert x
  \rvert^2)^N} dx
 \]
-とすると、単調収束定理より、
+とすると，単調収束定理より，
 \[
  \lim_{\epsilon \searrow 0} I(\epsilon)
  \int_{\R^N} \frac{1}{(1 + \lvert x
  \rvert^2)^N} dx = \left\| U \right\|_{L^{p+1}(\Omega)}^{p+1}
 \]
-がわかる。$\tilde{I}$と$I(\epsilon)$の関係は、
+がわかる．$\tilde{I}$と$I(\epsilon)$の関係は，
 \[
  \frac{(M - e)I(\epsilon)}{\epsilon^{N/2}} \leq \tilde{I} \leq \frac{M
  I(\epsilon)}{\epsilon^{N/2}}
 \]
-である。ここで$J(\epsilon) = I - \tilde{I}$とおく。
-$J(\epsilon) = O(1)$であり、
+である．ここで$J(\epsilon) = I - \tilde{I}$とおく．
+$J(\epsilon) = O(1)$であり，
 \[
  \frac{(M - e)I(\epsilon)}{\epsilon^{N/2}} + J(\epsilon)
  \leq I \leq \frac{M
  I(\epsilon)}{\epsilon^{N/2}} + J(\epsilon)
 \]
-両辺を$2/(p+1)$乗すると、次式が得られる。
+両辺を$2/(p+1)$乗すると，次式が得られる．
 \begin{multline}
  \frac{(M -e)^{2/(p+1)}}{\epsilon^{(N-2)/2}} I(\epsilon)^{2/(p+1)}
  \left( 1 + \frac{\epsilon^{N/2}}{(M-e)I(\epsilon)} J(\epsilon)
@@ -126,11 +126,11 @@ $J(\epsilon) = O(1)$であり、
  \left( 1 + \frac{\epsilon^{N/2}}{MI(\epsilon)} J(\epsilon)
  \right)^{2/(p+1)} \label{eq:2/p+1pow} 
 \end{multline}
-最右辺、最左辺の括弧の中は、$\epsilon \searrow 0$のとき$1$に
-収束する。$\{ \epsilon_n \}_{n=0}^\infty$を$n \to \infty$のとき
-$\epsilon_n \searrow 0$となる任意の数列とする。
-\eqref{eq:2/p+1pow}、\eqref{eq:Duepsilon}、及び、
-\eqref{eq:S_ach}より、
+最右辺，最左辺の括弧の中は，$\epsilon \searrow 0$のとき$1$に
+収束する．$\{ \epsilon_n \}_{n=0}^\infty$を$n \to \infty$のとき
+$\epsilon_n \searrow 0$となる任意の数列とする．
+\eqref{eq:2/p+1pow}，\eqref{eq:Duepsilon}，及び，
+\eqref{eq:S_ach}より，
 \begin{align}
  \liminf_{n \to \infty} \frac{\left\| Du_{\epsilon_n}
  \right\|_{L^2(\Omega)}^2}{\left\| b^{1/(p+1)} u_{\epsilon_n}
@@ -145,7 +145,7 @@ $\epsilon_n \searrow 0$となる任意の数列とする。
    {(M-e)^{2/(p+1)} \left\| U \right\|_{L^{p+1}(\R^N)}^2} 
  = \frac{S}{(M-e)^{2/(p+1)}} \label{eq:limsup_quo}
 \end{align}
-が得られる。$e > 0$は任意であるから、
+が得られる．$e > 0$は任意であるから，
 \eqref{eq:limsup_quo}から
 \begin{equation}
  \limsup_{n \to \infty} \frac{\left\| Du_{\epsilon_n}
@@ -153,41 +153,41 @@ $\epsilon_n \searrow 0$となる任意の数列とする。
  \right\|_{L^{p+1}(\Omega)}^2} \leq 
  \frac{S}{M^{2/(p+1)}} \label{eq:limsup_quo2}
 \end{equation}
-が従う。\eqref{eq:liminf_quo}、\eqref{eq:limsup_quo2}より、
+が従う．\eqref{eq:liminf_quo}，\eqref{eq:limsup_quo2}より，
 \[
  \lim_{n \to \infty} \frac{\left\| Du_{\epsilon_n}
  \right\|_{L^2(\Omega)}^2}{\left\| b^{1/(p+1)} u_{\epsilon_n}
  \right\|_{L^{p+1}(\Omega)}^2} =
  \frac{S}{M^{2/(p+1)}}
 \]
-であるとわかる。$\{ \epsilon_n \}$の任意性から、
+であるとわかる．$\{ \epsilon_n \}$の任意性から，
 \[
  \lim_{\epsilon \searrow 0} \frac{\left\| Du_{\epsilon}
  \right\|_{L^2(\Omega)}^2}{\left\| b^{1/(p+1)} u_{\epsilon}
  \right\|_{L^{p+1}(\Omega)}^2} =
  \frac{S}{M^{2/(p+1)}}
 \]
-が成立する。すなわち、次式が従う。
+が成立する．すなわち，次式が従う．
 \begin{equation}
  \left\| v_\epsilon \right\|^2 = \left\| Dv_\epsilon
                                  \right\|^2_{L^2(\Omega)} 
  = \frac{S}{M^{2/(p+1)}} + O(\epsilon^{(N-2)/2}). \label{eq:vepsilon}
 \end{equation}
-また、議論の途中で次式も判明している。
+また，議論の途中で次式も判明している．
 \begin{equation}
  \left\| b^{1/(p+1)} u_\epsilon \right\|_{L^{p+1}(\Omega)}^2 = 
  O(\epsilon^{-(N-2)/2}). \label{eq:buepsilon}
 \end{equation}
 
-次に、
+次に，
 \[
  \int_\Omega au_\epsilon^2 dx = O(1) + \int_{ \{ \lvert x \rvert <
  r_0 \} } \frac{a(x)}{(\epsilon +
  \lvert x \rvert^2)^{N-2}} dx 
 \]
-を考察する。
+を考察する．
 $a(x)$の$o(\lvert v \rvert^q)$の項を$m_2 \neq 0$で割ったものを
-$\theta(x)$と書く。
+$\theta(x)$と書く．
 \[
  a(x) = m_1 + m_2 \lvert x \rvert^q + m_2 \theta(x) 
  = m_1 + m_2 \lvert x \rvert^q \left( 1 + \frac{\theta(x)}{\lvert
@@ -205,7 +205,7 @@ $I_1, I_2$を
  \rvert^q \right)}{(\epsilon +
  \lvert x \rvert^2)^{N-2}} dx
 \end{align*}
-とおく。\cite{MR709644}~の p.~444 より、次式が成立する。
+とおく．\cite{MR709644}~の p.~444 より，次式が成立する．
 \[
  I_1 = \begin{cases}
         O(\epsilon^{-(N-4)/2}) & (N \geq 5),\\
@@ -213,10 +213,10 @@ $I_1, I_2$を
         O(1) & (N = 3).
        \end{cases}
 \]
-$0 < e < 1$とする。$\theta (x) = o(\lvert x \rvert^q)$より、
-$\delta > 0$が存在し、$\lvert x \rvert < \delta$ならば、
-$\lvert \theta (x) \rvert \leq e \lvert x \rvert^q$となる。
-必要ならば$\delta > 0$を小さくし、$\delta < r_0$とする。
+$0 < e < 1$とする．$\theta (x) = o(\lvert x \rvert^q)$より，
+$\delta > 0$が存在し，$\lvert x \rvert < \delta$ならば，
+$\lvert \theta (x) \rvert \leq e \lvert x \rvert^q$となる．
+必要ならば$\delta > 0$を小さくし，$\delta < r_0$とする．
 $\tilde{I}_2, \hat{I}_2$を
 \begin{align*}
  \tilde{I}_2 &= 
@@ -229,46 +229,46 @@ $\tilde{I}_2, \hat{I}_2$を
  \delta \} } \frac{ \lvert x \rvert^q }{(\epsilon +
  \lvert x \rvert^2)^{N-2}} dx
 \end{align*}
-と定める。$I_2 = O(1) + \tilde{I}_2$、
-$(1 - e)\hat{I} \leq \tilde{I}_2 \leq (1 + e)\hat{I}_2$、
-$e$は$\epsilon$と無関係であるから、
-$O(I_2) = O(\tilde{I}_2) = O(\hat{I}_2)$である。
-$\hat{I}_2$を、$N$と$q + 4$の大小で場合分けして計算する。
+と定める．$I_2 = O(1) + \tilde{I}_2$，
+$(1 - e)\hat{I} \leq \tilde{I}_2 \leq (1 + e)\hat{I}_2$，
+$e$は$\epsilon$と無関係であるから，
+$O(I_2) = O(\tilde{I}_2) = O(\hat{I}_2)$である．
+$\hat{I}_2$を，$N$と$q + 4$の大小で場合分けして計算する．
 
-\ulinej{{$N > q + 4$}のとき}：変数変換により、
+\ulinej{{$N > q + 4$}のとき}：変数変換により，
 \[
  \hat{I}_2 = \frac{1}{\epsilon^{(N-q - 4)/2}} \int_{ \{ \lvert x
  \rvert < \delta / \sqrt{\epsilon}\}} 
  \frac{ \lvert x \rvert^{q}}{(1 +
  \lvert x \rvert^2)^{N-2}} dx
 \]
-である。
+である．
 \[
  I(\epsilon) = \int_{ \{ \lvert x
  \rvert < \delta / \sqrt{\epsilon}\}} 
  \frac{ \lvert x \rvert^{q}}{(1 +
  \lvert x \rvert^2)^{N-2}} dx
 \]
-とおく。$N > q + 4$であるから、$\epsilon \searrow 0$のとき、
-$I(\epsilon)$は収束する。よって、$I_1 =
-O(\epsilon^{-(N-q-4)/2})$である。
+とおく．$N > q + 4$であるから，$\epsilon \searrow 0$のとき，
+$I(\epsilon)$は収束する．よって，$I_1 =
+O(\epsilon^{-(N-q-4)/2})$である．
 
-\ulinej{{$N = q + 4$}のとき}：極座標変換により、
+\ulinej{{$N = q + 4$}のとき}：極座標変換により，
 \[
  \hat{I}_2 = \mathrm{vol}(S^{N-1}) \int_0^{\delta} \frac{ \lvert x
  \rvert^{N-4}}{(\epsilon + \lvert x \rvert^2)^{N-2}} r^{N-1} dr =
  O(\lvert \log \epsilon \rvert)
 \]
-と計算される。
+と計算される．
 
 \ulinej{{$N < q + 4$}のとき}：
 \[
  \hat{I}_2 < \int_{ \{ \lvert x \rvert < \delta \}} \lvert x \rvert^{q -
  2(N-2)} dx < \infty
 \]
-であるから、$\hat{I}_2 = O(1)$である。
+であるから，$\hat{I}_2 = O(1)$である．
 
-以上より、$\epsilon \searrow 0$のときの$I_2$の挙動は次の通りにまとめられる。
+以上より，$\epsilon \searrow 0$のときの$I_2$の挙動は次の通りにまとめられる．
 \[
  I_2 = \begin{cases}
         O(\epsilon^{-(N-q-4)/2}) & (N > q + 4),\\
@@ -276,7 +276,7 @@ O(\epsilon^{-(N-q-4)/2})$である。
         O(1) & (N < q + 4).
        \end{cases}
 \]
-以上の結果と、\eqref{eq:buepsilon}より、以下が成立する。
+以上の結果と，\eqref{eq:buepsilon}より，以下が成立する．
 \begin{equation}
  \left\{ 
  \begin{aligned}
@@ -298,12 +298,12 @@ O(\epsilon^{-(N-q-4)/2})$である。
 
 \subsection{命題~\ref{prop:second_2}の証明}
 
-本小節では、補題を積み重ね、
-命題~\ref{prop:second_2}に証明を与える。
+本小節では，補題を積み重ね，
+命題~\ref{prop:second_2}に証明を与える．
 
 \begin{lem} \label{lem:tauepsilon}
- $\tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$とする。
- このとき、次式が成立する。
+ $\tau_\epsilon = \left\| v_\epsilon \right\|^{2/(p-1)}$とする．
+ このとき，次式が成立する．
  \begin{equation}
   \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) = 
    \frac{1}{NM^{(N-2)/2}} S^{N/2}. \label{eq:limI}
@@ -311,23 +311,23 @@ O(\epsilon^{-(N-q-4)/2})$である。
 \end{lem}
 
 \begin{proof}
- \eqref{eq:def_vepsilon}より、
+ \eqref{eq:def_vepsilon}より，
  \[
   \int_\Omega bv_\epsilon^{p+1} dx = 1
  \]
- であるから、$t \geq 0$に対し、次式が得られる。
+ であるから，$t \geq 0$に対し，次式が得られる．
  \[
   I_\lambda(tv_\epsilon) = \frac{1}{2} t^2 \left\| v_\epsilon
  \right\|^2 - \frac{1}{p+1} t^{p+1} - \int_\Omega H(tv_\epsilon,
  \underline{u}_\lambda) dx.
  \]
- したがって、次式が成立する。
+ したがって，次式が成立する．
  \[
   I_\lambda(\tau_\epsilon v_\epsilon) = \frac{1}{N} \left( \left\|
  v_\epsilon \right\|^2 \right)^{N/2} - \int_\Omega H(\tau_\epsilon
  v_\epsilon, \underline{u}_\lambda) dx.
  \]
- \eqref{eq:vepsilon}より、以下が従う。
+ \eqref{eq:vepsilon}より，以下が従う．
  \begin{align*}
   \lim_{\epsilon \searrow 0} \tau_\epsilon
   &= \frac{S^{1/(p-1)}}{M^{2/(p+1)(p-1)}}, \\
@@ -335,35 +335,35 @@ O(\epsilon^{-(N-q-4)/2})$である。
  v_\epsilon \right\|^2 \right)^{N/2} &= \frac{1}{NM^{(N-2)/2}}
   S^{N/2}.
  \end{align*}
- $\epsilon \searrow 0$のとき、$\tau_\epsilon v_\epsilon \to 0 ~\ae
- \tin \Omega$である。ゆえに、補題~\ref{lem:conv}より、次式が成立する。
+ $\epsilon \searrow 0$のとき，$\tau_\epsilon v_\epsilon \to 0 ~\ae
+ \tin \Omega$である．ゆえに，補題~\ref{lem:conv}より，次式が成立する．
  \[
   \lim_{\epsilon \searrow 0} \int_\Omega H(\tau_\epsilon
  v_\epsilon, \underline{u}_\lambda) dx = 0.
  \]
- 以上より、\eqref{eq:limI}が得られる。\qedhere
+ 以上より，\eqref{eq:limI}が得られる．\qedhere
 \end{proof}
 
 \begin{lem} \label{lem:t_epsilon}
-$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する。
+$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する．
 \end{lem}
 
 \begin{proof}
-補題~\ref{lem:mountain_dec}より、$t \to \infty$のとき、
-$I_\lambda(t v_\epsilon) \to -\infty$となる。
-したがって、ある$K>0$が存在し、$K < t$においては、
-$I_\lambda(t v_\epsilon) < 0$となる。
-また、$I_\lambda(0) = 0$である。
-ゆえに、$\sup_{t > 0} I_\lambda (tv_\epsilon) = 
-\sup_{t \in [0, K]} I_\lambda (tv_\epsilon)$となる。
-$I_\lambda(tv_\epsilon)$は$t$についての連続関数であるから、
-$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する。\qedhere
+補題~\ref{lem:mountain_dec}より，$t \to \infty$のとき，
+$I_\lambda(t v_\epsilon) \to -\infty$となる．
+したがって，ある$K>0$が存在し，$K < t$においては，
+$I_\lambda(t v_\epsilon) < 0$となる．
+また，$I_\lambda(0) = 0$である．
+ゆえに，$\sup_{t > 0} I_\lambda (tv_\epsilon) = 
+\sup_{t \in [0, K]} I_\lambda (tv_\epsilon)$となる．
+$I_\lambda(tv_\epsilon)$は$t$についての連続関数であるから，
+$\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する．\qedhere
 \end{proof}
 
 \begin{nota}
  補題~\ref{lem:t_epsilon}
- の$t$を$t_\epsilon$とかく。$t_\epsilon > 0$であり、
- 次式が成立する。
+ の$t$を$t_\epsilon$とかく．$t_\epsilon > 0$であり，
+ 次式が成立する．
  \begin{equation}
   I_\lambda(t_\epsilon v_\epsilon) = \sup_{t > 0} I_\lambda(t
    v_\epsilon).
@@ -372,22 +372,22 @@ $\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する。\q
 \end{nota}
 
 \begin{lem} \label{lem:intHprime}
- $\epsilon_0 > 0$と$C > 0$が存在し、$0 < \epsilon < \epsilon_0$に対し、
+ $\epsilon_0 > 0$と$C > 0$が存在し，$0 < \epsilon < \epsilon_0$に対し，
  \begin{equation}
   \int_\Omega H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda)
    dx \geq C\epsilon^{(N-2)/4} \label{eq:int_Hprime}
  \end{equation}
- が成立する。
+ が成立する．
 \end{lem}
 
 \begin{proof}
-まず、次式を背理法を用いて証明する。
+まず，次式を背理法を用いて証明する．
 \begin{equation}
  \liminf_{\epsilon \searrow 0} t_\epsilon > 0. \label{eq:liminf_tepsilon}
 \end{equation}
-\eqref{eq:liminf_tepsilon}を否定し、
-$\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する。
-$s, t \geq 0$に対し、$G(s, t) \geq 0$である。そこで、
+\eqref{eq:liminf_tepsilon}を否定し，
+$\liminf_{\epsilon \searrow 0} t_\epsilon = 0$であることを仮定する．
+$s, t \geq 0$に対し，$G(s, t) \geq 0$である．そこで，
 \begin{equation}
  I_\lambda(t_\epsilon v_\epsilon) = \frac{1}{2} t_\epsilon^2 \left\|
                                                               v_\epsilon
@@ -395,26 +395,26 @@ $s, t \geq 0$に対し、$G(s, t) \geq 0$である。そこで、
  - \int_\Omega G(t_\epsilon v_\epsilon, \underline{u}_\lambda) dx \leq
  \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2
 \end{equation}
-において、$\epsilon \searrow 0$における下極限をとると、
+において，$\epsilon \searrow 0$における下極限をとると，
 \begin{equation}
  \liminf_{\epsilon \searrow 0} I_\lambda (t_\epsilon v_\epsilon) \leq
   0 \label{eq:liminf_cont_1}
 \end{equation}
-が従う。一方で、\eqref{eq:t_epsilon}より
+が従う．一方で，\eqref{eq:t_epsilon}より
 $I_\lambda(t_\epsilon v_\epsilon) \geq I(\tau_\epsilon v_\epsilon)$で
-あるから、補題~\ref{lem:tauepsilon}より、
+あるから，補題~\ref{lem:tauepsilon}より，
 \begin{equation}
   \liminf_{\epsilon \searrow 0} I_\lambda(t_\epsilon v_\epsilon) \geq
  \lim_{\epsilon \searrow 0} I_\lambda (\tau_\epsilon v_\epsilon) =
  \frac{1}{NM^{(N-2)/2}} S^{N/2} > 0. \label{eq:lininf_cont_2}
 \end{equation}
 \eqref{eq:liminf_cont_1}と\eqref{eq:lininf_cont_2}は同時に
-成立しない。
-よって、背理法により、\eqref{eq:liminf_tepsilon}が従う。 
+成立しない．
+よって，背理法により，\eqref{eq:liminf_tepsilon}が従う． 
 
-さて、\eqref{eq:liminf_tepsilon}と\eqref{eq:buepsilon}より、
-$\epsilon_0 > 0$、$C > 0$が存在し、$0 <\epsilon < \epsilon_0$のとき、
-$\lvert x \rvert < r_0$に対し、
+さて，\eqref{eq:liminf_tepsilon}と\eqref{eq:buepsilon}より，
+$\epsilon_0 > 0$，$C > 0$が存在し，$0 <\epsilon < \epsilon_0$のとき，
+$\lvert x \rvert < r_0$に対し，
 \begin{equation}
  t_\epsilon v_\epsilon (x) = t_\epsilon \frac{\eta(x)}{(\epsilon +
  \lvert x \rvert^2)^{(N-2)/2} \left\| b^{1/(p+1)} u_\epsilon
@@ -422,60 +422,60 @@ $\lvert x \rvert < r_0$に対し、
  \epsilon^{(N-2)/4}}{(\epsilon + \lvert x \rvert^2)^{(N-2)/2}} 
  \label{eq:teve_p}
 \end{equation}
-が成立する。必要ならば$\epsilon_0 > 0$を小さくとりなおし、
-$\sqrt{\epsilon_0} < r_0$が成立するとして良い。すると、
-$\lvert x \lvert < \sqrt{\epsilon}$に対し、
+が成立する．必要ならば$\epsilon_0 > 0$を小さくとりなおし，
+$\sqrt{\epsilon_0} < r_0$が成立するとして良い．すると，
+$\lvert x \lvert < \sqrt{\epsilon}$に対し，
 \begin{equation}
  t_\epsilon v_\epsilon (x) \geq C_0 \epsilon^{-(N-2)/2} \label{eq:teve}
 \end{equation}
-となる。$C_0 > 0$は$\epsilon$によらない。
-この$C_0$について、
+となる．$C_0 > 0$は$\epsilon$によらない．
+この$C_0$について，
 \begin{equation}
  t_0 = C_0 \epsilon_0^{-(N-2)/2} \label{eq:t_0_epsilon}
 \end{equation}
-と定める。
-$\underline{u}_\lambda > 0 ~\tin \Omega$であるから、
+と定める．
+$\underline{u}_\lambda > 0 ~\tin \Omega$であるから，
 $\{ \lvert x \rvert \leq \sqrt{\epsilon_0} \}$における
-$\underline{u}_\lambda$の最小値より小さい正の数$s_0$が存在する。
-すなわち、$\lvert x \rvert < \sqrt{\epsilon_0}$に対し、
+$\underline{u}_\lambda$の最小値より小さい正の数$s_0$が存在する．
+すなわち，$\lvert x \rvert < \sqrt{\epsilon_0}$に対し，
 \begin{equation}
  \underline{u}_\lambda (x) > s_0 \label{eq:uus_0}
 \end{equation}
-となる。
+となる．
 
-ここで、$x \in \Omega$、$t \geq t_0$、$s \geq s_0$に対し、
+ここで，$x \in \Omega$，$t \geq t_0$，$s \geq s_0$に対し，
 \begin{equation}
  H^\prime (t, s, x) \geq C b(x) t^p \label{eq:Hprime_lb}
 \end{equation}
-を成り立たせる$t, s, x$によらない定数$C>0$が存在することを示す。
-$s, t \geq 0$に対し、
+を成り立たせる$t, s, x$によらない定数$C>0$が存在することを示す．
+$s, t \geq 0$に対し，
 \[
  H^\prime(t, s, x) = b(x) \left( \frac{1}{p+1}(t+s)^{p+1} -
  \frac{1}{p+1} t^{p+1} - \frac{1}{p+1} s^{p+1} - s^p t \right)
 \]
-である。そこで$s$についての偏導関数は、
+である．そこで$s$についての偏導関数は，
 \[
  H^\prime_s (t, s, x) = b(x) \left( (t+s)^p - s^p - ps^{p-1}t \right)
 \]
-である。右辺はテイラーの定理より、$0 < \theta < 1$を用いて
-$p(p-1)(s + \theta t)^{p-2}t^2/2$と表される。これは非負であるから、
-$H^\prime_s(t, s, x) \geq 0$である。すなわち、$H^\prime$は
-$s$についての増加関数である。
-したがって、$s \geq s_0$、$t \geq 0$に対し、
+である．右辺はテイラーの定理より，$0 < \theta < 1$を用いて
+$p(p-1)(s + \theta t)^{p-2}t^2/2$と表される．これは非負であるから，
+$H^\prime_s(t, s, x) \geq 0$である．すなわち，$H^\prime$は
+$s$についての増加関数である．
+したがって，$s \geq s_0$，$t \geq 0$に対し，
 \begin{equation}
  H^\prime(t, s, x) \geq H^\prime(t, s_0, x) \label{eq:Hprime_lb_pf1}
 \end{equation}
-である。また、$s \geq 0$、$t \geq 0$に対し、
+である．また，$s \geq 0$，$t \geq 0$に対し，
 \begin{equation}
  H^\prime(t, s, x) \geq H^\prime(t, 0, x) = 0 \label{eq:Hprime_lb_pf3}
 \end{equation}
-もわかる。ここでテイラーの定理より、
+もわかる．ここでテイラーの定理より，
 \[
  \frac{1}{p+1} (t + s_0)^{p+1} - \frac{1}{p+1} t^{p+1} = (t + \theta
  s_0)^p s_0
 \]
- をみたす$0 < \theta < 1$が存在する。ゆえに$t \geq t_0$に対し、
- 以下が従う。
+ をみたす$0 < \theta < 1$が存在する．ゆえに$t \geq t_0$に対し，
+ 以下が従う．
  \begin{align*}
   H^\prime(t, s_0, x) &\geq b(x) \left( (t+\theta s_0)^p s_0 -
   \frac{1}{p+1} s^{p+1} - s^p t\right) \\
@@ -485,30 +485,30 @@ $s$についての増加関数である。
   & \geq t^p b(x) \left( s_0 - \frac{1}{p+1} \frac{1}{t_0^p} - s^p
   \frac{1}{t_0^{p-1}}  \right).
  \end{align*}
- ここで最右辺の括弧の中が正となるよう、
- 必要ならば$\epsilon_0 > 0$を小さくとりなおす。
- $s_0$と$C_0$は$\epsilon_0$によっているが、
+ ここで最右辺の括弧の中が正となるよう，
+ 必要ならば$\epsilon_0 > 0$を小さくとりなおす．
+ $s_0$と$C_0$は$\epsilon_0$によっているが，
  $\lvert x \rvert < \sqrt{\epsilon_0}$に対して
  \eqref{eq:teve}および\eqref{eq:uus_0}を成り立たせるために
- $s_0$と$C_0$は変更する必要がないことに注意されたい。
- \eqref{eq:t_0_epsilon}により、
- 最右辺の括弧の中が正となるよう、$t_0$を大きくすることができる。
- 以上により、$t \geq t_0$に対し、
+ $s_0$と$C_0$は変更する必要がないことに注意されたい．
+ \eqref{eq:t_0_epsilon}により，
+ 最右辺の括弧の中が正となるよう，$t_0$を大きくすることができる．
+ 以上により，$t \geq t_0$に対し，
  \begin{equation}
   H^\prime (t, s_0, x) \geq C b(x) t^p \label{eq:Hprime_lb_pf2}
  \end{equation}
- が成立する。
- \eqref{eq:Hprime_lb_pf1}と\eqref{eq:Hprime_lb_pf2}より、
- $t \geq t_0$、$s \geq s_0$に対し、
- \eqref{eq:Hprime_lb}が従う。
+ が成立する．
+ \eqref{eq:Hprime_lb_pf1}と\eqref{eq:Hprime_lb_pf2}より，
+ $t \geq t_0$，$s \geq s_0$に対し，
+ \eqref{eq:Hprime_lb}が従う．
  
- $b$は$\{ \lvert x \rvert < \sqrt{\epsilon_0}\}$上連続であるから、
- $\delta > 0$が存在し、$\lvert x \rvert < \sqrt{\epsilon_0}$ならば、
- $b(x) \geq M_1 - \delta$となる。必要ならば$\epsilon_0 > 0$を
- 小さく取り直せば、$M_1 - \delta > 0$とできる。
- \eqref{eq:Hprime_lb_pf3}、\eqref{eq:Hprime_lb}、\eqref{eq:teve_p}を
- 順に使うと、
- $0 < \epsilon < \epsilon_0$に対し、以下が成立する。
+ $b$は$\{ \lvert x \rvert < \sqrt{\epsilon_0}\}$上連続であるから，
+ $\delta > 0$が存在し，$\lvert x \rvert < \sqrt{\epsilon_0}$ならば，
+ $b(x) \geq M_1 - \delta$となる．必要ならば$\epsilon_0 > 0$を
+ 小さく取り直せば，$M_1 - \delta > 0$とできる．
+ \eqref{eq:Hprime_lb_pf3}，\eqref{eq:Hprime_lb}，\eqref{eq:teve_p}を
+ 順に使うと，
+ $0 < \epsilon < \epsilon_0$に対し，以下が成立する．
  \begin{align*}
   \int_\Omega H^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda )
   dx & \geq \int_{\{ \lvert x \rvert \leq \sqrt{\epsilon} \}} 
@@ -527,11 +527,11 @@ $s$についての増加関数である。
   \frac{1}{(1 + \lvert x \rvert^2)^{(N+2)/2}} dx \\
   & \geq C \epsilon^{(N-2)/4}.
  \end{align*}
- $C>0$は$\epsilon$によらない。所望の\eqref{eq:int_Hprime}が得られた。\qedhere
+ $C>0$は$\epsilon$によらない．所望の\eqref{eq:int_Hprime}が得られた．\qedhere
 \end{proof}
 
 \begin{proof}[命題~\ref{prop:second_2}]
- \eqref{eq:t_epsilon}より、以下が成立する。
+ \eqref{eq:t_epsilon}より，以下が成立する．
  \begin{align*}
   \sup_{t > 0} I_\lambda (t v_\epsilon) & = I_\lambda (t_\epsilon
   v_\epsilon) \\ 
@@ -549,68 +549,68 @@ $s$についての増加関数である。
   v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
   dx. \\
  \end{align*}
- ここで、最後の変形では、$t > 0$の関数
+ ここで，最後の変形では，$t > 0$の関数
  \[
    \alpha(t) = \frac{1}{2} t^2 \left\| v_\epsilon \right\|^2 -
  \frac{1}{p+1} t^{p+1}
  \]
- が、$t = \left\| v_\epsilon \right\|^{2/(p-1)}$に
- おいて最大値をとることに注意した。\eqref{eq:vepsilon}、
- \eqref{eq:av_epsilon}、補題~\ref{lem:tauepsilon}、補
- 題~\ref{lem:intHprime}により、$\epsilon_0 > 0$、$C, C^\prime > 0$が
- 存在し、$0 < \epsilon < \epsilon_0$に対し、
+ が，$t = \left\| v_\epsilon \right\|^{2/(p-1)}$に
+ おいて最大値をとることに注意した．\eqref{eq:vepsilon}，
+ \eqref{eq:av_epsilon}，補題~\ref{lem:tauepsilon}，補
+ 題~\ref{lem:intHprime}により，$\epsilon_0 > 0$，$C, C^\prime > 0$が
+ 存在し，$0 < \epsilon < \epsilon_0$に対し，
  \begin{equation}
   \sup_{t > 0} I_\lambda (tv_\epsilon) \leq \frac{1}{NM^{(N-2)/2}}
    S^{N/2} + \left( C \epsilon^{(N-2)/2} - C^\prime \epsilon^{(N-2)/4}
              + m_1 I_1^\prime + m_2 I_2^\prime \right) \label{eq:sup_least}
  \end{equation}
- が成立する。ここで$I_1^\prime$、$I_2^\prime$は、\eqref{eq:av_epsilon}
- のものである。以下の条件を考える。
+ が成立する．ここで$I_1^\prime$，$I_2^\prime$は，\eqref{eq:av_epsilon}
+ のものである．以下の条件を考える．
  \begin{equation}
   \text{\eqref{eq:sup_least}の右辺の括弧の中が負となる
-   $\epsilon > 0$が存在する。} \label{eq:condition}
+   $\epsilon > 0$が存在する．} \label{eq:condition}
  \end{equation}
- \eqref{eq:condition}が成立するならば、
- その$\epsilon$を用いて$v_0 = v_\epsilon$とすると、$v_0 \geq 0 ~\tin
- \Omega$、$v_0 \not \equiv 0$、および
- \eqref{eq:ineq_S}が成立する。すなわち、
- \eqref{eq:condition}は、命題~\ref{prop:second_2}の帰結の
- 十分条件である。
- 以下、$m_1, m_2$の正負で場合分けして検証する。
- すべての$N \geq 3$、$q > 0$に対し、$\epsilon \searrow 0$のとき
- $I_1^\prime \gg I_2^\prime$であることに注意されたい。
+ \eqref{eq:condition}が成立するならば，
+ その$\epsilon$を用いて$v_0 = v_\epsilon$とすると，$v_0 \geq 0 ~\tin
+ \Omega$，$v_0 \not \equiv 0$，および
+ \eqref{eq:ineq_S}が成立する．すなわち，
+ \eqref{eq:condition}は，命題~\ref{prop:second_2}の帰結の
+ 十分条件である．
+ 以下，$m_1, m_2$の正負で場合分けして検証する．
+ すべての$N \geq 3$，$q > 0$に対し，$\epsilon \searrow 0$のとき
+ $I_1^\prime \gg I_2^\prime$であることに注意されたい．
 
  \begin{enumerate}[(i)]
   \item \ulinej{{$m_1 < 0$}のとき}：$\epsilon \searrow 0$のとき
-        $\epsilon^{(N-2)/2} \ll \epsilon^{(N-2)/4}$であるから、
-        すべての$N \geq 3$について、\eqref{eq:condition}はみたされる。
+        $\epsilon^{(N-2)/2} \ll \epsilon^{(N-2)/4}$であるから，
+        すべての$N \geq 3$について，\eqref{eq:condition}はみたされる．
   \item \ulinej{{$m_1 > 0$}のとき}：$\epsilon \searrow 0$のとき
-        $I_1^\prime \ll \epsilon^{(N-2)/4}$となれば、
-        \eqref{eq:condition}はみたされる。
-        \eqref{eq:av_epsilon}より、
-        $N = 3, 4, 5$であれば\eqref{eq:condition}はみたされる。
-  \item \ulinej{{$m_1 = 0$、$m_2 < 0$}のとき}：(i)と同様に、
-        すべての$N \geq 3$について、\eqref{eq:condition}はみたされる。
-  \item \ulinej{{$m_1 = 0$、$m_2 > 0$}のとき}：$\epsilon \searrow 0$のとき
-        $I_2^\prime \ll \epsilon^{(N-2)/4}$となれば、
-        \eqref{eq:condition}はみたされる。
-        \eqref{eq:av_epsilon}より、
-        $N \leq q + 4$のときは、この式は成立している。
-        $N > q + 4$のとき、この式が成立する条件は、
+        $I_1^\prime \ll \epsilon^{(N-2)/4}$となれば，
+        \eqref{eq:condition}はみたされる．
+        \eqref{eq:av_epsilon}より，
+        $N = 3, 4, 5$であれば\eqref{eq:condition}はみたされる．
+  \item \ulinej{{$m_1 = 0$，$m_2 < 0$}のとき}：(i)と同様に，
+        すべての$N \geq 3$について，\eqref{eq:condition}はみたされる．
+  \item \ulinej{{$m_1 = 0$，$m_2 > 0$}のとき}：$\epsilon \searrow 0$のとき
+        $I_2^\prime \ll \epsilon^{(N-2)/4}$となれば，
+        \eqref{eq:condition}はみたされる．
+        \eqref{eq:av_epsilon}より，
+        $N \leq q + 4$のときは，この式は成立している．
+        $N > q + 4$のとき，この式が成立する条件は，
         \[
          1 + \frac{q}{2} > \frac{N-2}{4}
         \]
-        である。これを変形して、$N < 2q + 6$が得られる。
-        以上により、$3 \leq N < 2q + 6$のとき、
-        \eqref{eq:condition}はみたされる。 \qedhere
+        である．これを変形して，$N < 2q + 6$が得られる．
+        以上により，$3 \leq N < 2q + 6$のとき，
+        \eqref{eq:condition}はみたされる． \qedhere
  \end{enumerate}
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:second_solution}]
  命題~\ref{prop:second_1}と命題~\ref{prop:second_2}より
- \ref{eq:prob_sec}は弱解$v$を持つ。
- これと補題~\ref{lem:rel_heart_spade}.2より、\ref{eq:prob_main}は
- minimal solution 以外の弱解を持つ。
+ \ref{eq:prob_sec}は弱解$v$を持つ．
+ これと補題~\ref{lem:rel_heart_spade}.2より，\ref{eq:prob_main}は
+ minimal solution 以外の弱解を持つ．
  \qedhere
 \end{proof}
 

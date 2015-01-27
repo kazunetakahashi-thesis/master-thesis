@@ -1,29 +1,29 @@
 %#!platex main.tex
  \section{extremal value 付近での second solution の存在} \label{sec:exist}
  
- 本節では、定理~\ref{thm:second_solution_nonex}.1を証明する。
+ 本節では，定理~\ref{thm:second_solution_nonex}.1を証明する．
  
- $0 < \lambda \geq \bar{\lambda}$に対し、$\phi_\lambda$を
- \eqref{eq:lin_prob_min_sol}の第$1$固有関数とする。
- 補題~\ref{lem:lin_p}.1より、$\Omega$上正値であるものが
- 存在するので、$\phi_\lambda > 0 ~\tin \Omega$とする。また、
- $\left\| \phi_\lambda \right\|_{L^{p+1}(\Omega)} = 1$と正規化する。
- 次の命題を示せば、命題~\ref{prop:second_1}と合わせて、証明が完了する。
+ $0 < \lambda \geq \bar{\lambda}$に対し，$\phi_\lambda$を
+ \eqref{eq:lin_prob_min_sol}の第$1$固有関数とする．
+ 補題~\ref{lem:lin_p}.1より，$\Omega$上正値であるものが
+ 存在するので，$\phi_\lambda > 0 ~\tin \Omega$とする．また，
+ $\left\| \phi_\lambda \right\|_{L^{p+1}(\Omega)} = 1$と正規化する．
+ 次の命題を示せば，命題~\ref{prop:second_1}と合わせて，証明が完了する．
  
 \begin{prop} \label{prop:exist}
- 定理~\ref{thm:second_solution_nonex}.1の仮定のもとで、
- $0 < \lambda^* < \bar{\lambda}$が存在し、
- $\lambda^* \leq \lambda < \bar{\lambda}$に対し、
+ 定理~\ref{thm:second_solution_nonex}.1の仮定のもとで，
+ $0 < \lambda^* < \bar{\lambda}$が存在し，
+ $\lambda^* \leq \lambda < \bar{\lambda}$に対し，
  \begin{equation}
   \sup_{t > 0} I_\lambda(t \phi_\lambda) < \frac{1}{N \left\| b
                                                                                             \right\|_{L^\infty(\Omega)}^{(N-2)/2}}
   S^{N/2} \label{eq:exist_S}
  \end{equation}
- が成立する。
+ が成立する．
 \end{prop}
 
 \begin{proof}
- $v \in H^1_0(\Omega)$とする。
+ $v \in H^1_0(\Omega)$とする．
  \begin{equation}
   I_\lambda (v) = \frac{1}{2} \left( \int_\Omega \left( \lvert Dv
                                                   \rvert^2 + a v^2
@@ -33,41 +33,41 @@
   \underline{u}_\lambda ^{p-1} v^2 dx - \int_\Omega H^\prime (v,
   \underline{u}_\lambda) dx \label{eq:I_lambda_exist}
  \end{equation}
- である。ここで、$t, s \geq 0$、$x \in \Omega$とし、
+ である．ここで，$t, s \geq 0$，$x \in \Omega$とし，
  \[
  A = \frac{p}{2} b(x) s^{p-1} t^2 - H^\prime(t, s) = b(x) \left(
  \frac{p}{2} s^{p-1} t^2 - \left(\frac{1}{p+1} (t+s)^{p+1} -
  \frac{1}{p+1}t^p - \frac{1}{p+1} s^{p+1} - s^p t \right) \right)
  \]
- を考察する。ここで$0 < \epsilon < 1$を、
- 後述の\eqref{eq:epsilon_gutaiteki}をみたすよう定める。
- 補題~\ref{lem:ineq_naito_sato}より、
+ を考察する．ここで$0 < \epsilon < 1$を，
+ 後述の\eqref{eq:epsilon_gutaiteki}をみたすよう定める．
+ 補題~\ref{lem:ineq_naito_sato}より，
  \[
  A \leq b \left( \left( \frac{1}{p+1} - \frac{p}{2} \epsilon \right)
  t^{p+1} + \frac{p}{2}\epsilon s^{p-1} t^2 \right)
  \]
- が成立する。$p > 1$であるから、$p/2 > 1/(p+1)$である。ゆえに、
+ が成立する．$p > 1$であるから，$p/2 > 1/(p+1)$である．ゆえに，
  \[
  A \leq b \left( \frac{1 - \epsilon}{p+1} t^{p+1} +
  \frac{p\epsilon}{2} s^{p-1} t^2 \right)
  \]
- が得られる。したがって、
+ が得られる．したがって，
  \[
  \frac{p}{2} \int_\Omega b \underline{u}_\lambda^{p-1} v^2 dx -
  \int_\Omega H^\prime (v, \underline{u}_\lambda) dx \leq \int_\Omega b
  \left( \frac{1-\epsilon}{p+1} v^{p+1} + \frac{p \epsilon}{2}
  \underline{u}_\lambda ^{p-1} v^2 \right) dx
  \]
- である。\eqref{eq:I_lambda_exist}より、$I_\lambda$は
+ である．\eqref{eq:I_lambda_exist}より，$I_\lambda$は
  \[
  I_\lambda(v) \leq \frac{1}{2} \left( \int_\Omega \left( \lvert Dv
  \rvert^{2} + a v^2\right)dx - (1 -\epsilon)p \int_\Omega b
  \underline{u}_\lambda^{p-1} v^2 dx \right) - \frac{\epsilon}{p+1}
  \int_\Omega bv^{p+1} dx
 \]
- と評価される。
- ここで右辺の括弧の中を$P_\epsilon(v)$とおく。
- 補題~\ref{lem:lin_p}.2、補題~\ref{lem:lin_1}より、
+ と評価される．
+ ここで右辺の括弧の中を$P_\epsilon(v)$とおく．
+ 補題~\ref{lem:lin_p}.2，補題~\ref{lem:lin_1}より，
  \[
   P_\epsilon(v) \geq \left(\mu_1(\lambda) - (1 - \epsilon) \right) p
  \int_\Omega b
@@ -75,19 +75,19 @@
  \int_\Omega b
  \underline{u}_\lambda^{p-1} v^2 dx \geq 0
  \]
- とわかる。
- また、
+ とわかる．
+ また，
  \begin{equation}
   K = \int_\Omega b \phi_\lambda^{p+1} dx \label{eq:intbphi}
  \end{equation}
- とおく。$b \geq 0 ~\tin \Omega$、$b \not\equiv 0$、$\phi_\lambda > 0
- ~\tin \Omega$であるから、$K > 0$である。
- $t > 0$に対し、
+ とおく．$b \geq 0 ~\tin \Omega$，$b \not\equiv 0$，$\phi_\lambda > 0
+ ~\tin \Omega$であるから，$K > 0$である．
+ $t > 0$に対し，
  \[
  I_\lambda (t \phi_\lambda) \leq \frac{t^2}{2} P_\epsilon
  (\phi_\lambda) - \frac{\epsilon K t^{p+1}}{p+1}
  \]
- である。ゆえに、
+ である．ゆえに，
 \begin{equation}
  \sup_{t > 0} I_\lambda (t \phi_\lambda) \leq \sup_{t > 0} \left(
                                                             \frac{t^2}{2} P_\epsilon 
@@ -96,20 +96,20 @@
                                          \right)^{(N-2)/2}}
  \label{eq:supIlambdatphi1} 
 \end{equation}
-と抑えられる。最後の変形は、中辺の括弧の中を$t$の関数と見たとき、
+と抑えられる．最後の変形は，中辺の括弧の中を$t$の関数と見たとき，
 $t = ( P_\epsilon(\phi_\lambda) / \epsilon K )^{1/(p-1)}$において
-最大値をとることに注意した。ここで、補題~\ref{lem:lin_p}.2より、
+最大値をとることに注意した．ここで，補題~\ref{lem:lin_p}.2より，
 \[
  \int_\Omega \left( \lvert D\phi_\lambda \rvert + a \phi_\lambda^2
  \right) dx = \mu_1(\lambda) p \int_\Omega b
  \underline{u}_\lambda^{p-1} \phi_\lambda^2 dx
 \]
-が成立することを用いれば、$P_\epsilon(\phi_\lambda)$は
+が成立することを用いれば，$P_\epsilon(\phi_\lambda)$は
 \[
  P_\epsilon(\phi_\lambda) = \left( \mu_1(\lambda) - 1 + \epsilon
  \right) p \int_\Omega b \underline{u}_\lambda^{p-1} \phi_\lambda^2 dx
 \]
-と変形される。ヘルダーの不等式より、次式が成立する。
+と変形される．ヘルダーの不等式より，次式が成立する．
 \[
  \int_\Omega b \underline{u}_\lambda^{p-1} \phi_\lambda^2 dx \leq
  \left\| b \right\|_{L^\infty(\Omega)} \left\| \underline{u}_\lambda
@@ -118,30 +118,30 @@ $t = ( P_\epsilon(\phi_\lambda) / \epsilon K )^{1/(p-1)}$において
  \left\| \underline{u}_\lambda 
  \right\|_{L^{p+1}(\Omega)}^{p-1}.
 \]
-命題~\ref{prop:ext_exi}.2より、$\left\| \underline{u}_\lambda 
+命題~\ref{prop:ext_exi}.2より，$\left\| \underline{u}_\lambda 
  \right\|_{L^{p+1}(\Omega)} \leq \left\| \underline{u}_{\bar{\lambda}} 
- \right\|_{L^{p+1}(\Omega)}$が成立する。ゆえに、
-次式が成り立つ。
+ \right\|_{L^{p+1}(\Omega)}$が成立する．ゆえに，
+次式が成り立つ．
 \[
  P_\epsilon(\phi_\lambda) \leq (\mu_1(\lambda) - 1 + \epsilon) \left\|
  b \right\|_{L^{p+1}(\Omega)} p \left\| \underline{u}_{\bar{\lambda}}
  \right\|_{L^{p+1}(\Omega)}^{p-1}.
 \]
-補題~\ref{lem:mu_1_bar_lambda}より、$0 < \lambda^{*} < \bar{\lambda}$
-が存在し、$\lambda^{*} \leq \lambda < \bar{\lambda}$ならば、
-$\mu_1(\lambda) - 1 < \epsilon$となる。ゆえに、
+補題~\ref{lem:mu_1_bar_lambda}より，$0 < \lambda^{*} < \bar{\lambda}$
+が存在し，$\lambda^{*} \leq \lambda < \bar{\lambda}$ならば，
+$\mu_1(\lambda) - 1 < \epsilon$となる．ゆえに，
 \[
  P_\epsilon(\phi_\lambda) \leq 2\epsilon p \left\|
  b \right\|_{L^{p+1}(\Omega)} \left\| \underline{u}_{\bar{\lambda}}
  \right\|_{L^{p+1}(\Omega)}^{p-1}
 \]
-が従う。\eqref{eq:supIlambdatphi1}より、
+が従う．\eqref{eq:supIlambdatphi1}より，
 \[
  \sup_{t > 0} I_\lambda (t \phi_\lambda) \leq \frac{\left( 2p \left\|
  b \right\|_{L^{p+1}(\Omega)} \left\| \underline{u}_{\bar{\lambda}}
  \right\|_{L^{p+1}(\Omega)}^{p-1} \right)^{N/2} \epsilon}{K^{(N-2)/2}}
 \]
-と評価される。ゆえに、
+と評価される．ゆえに，
 \begin{equation}
  \epsilon < \frac{K^{(N-2)/2} S^{N/2}}{N
  \left( 2p \left\|
@@ -151,18 +151,18 @@ $\mu_1(\lambda) - 1 < \epsilon$となる。ゆえに、
   \right\|_{L^\infty(\Omega)} ^{(N-2)/2}}
  \label{eq:epsilon_gutaiteki}
 \end{equation}
-としておけば、\eqref{eq:exist_S}が成立する。 \qedhere
+としておけば，\eqref{eq:exist_S}が成立する． \qedhere
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:second_solution_nonex}.1]
- $\phi_\lambda > 0 ~\tin \Omega$であり、
+ $\phi_\lambda > 0 ~\tin \Omega$であり，
  \eqref{eq:intbphi}の$K$は$K > 0$をみた
- すことは、命題~\ref{prop:exist}の証明中確かめた。加えて
- 命題~\ref{prop:exist}の主張より、
- $v_0 = \phi_\lambda$とすると、命題~\ref{prop:second_1}の仮定をみたす。
- したがって、\ref{eq:prob_sec}は弱解$v$を持つ。
- これと補題~\ref{lem:rel_heart_spade}.2より、\ref{eq:prob_main}は
- minimal solution 以外の弱解を持つ。 \qedhere
+ すことは，命題~\ref{prop:exist}の証明中確かめた．加えて
+ 命題~\ref{prop:exist}の主張より，
+ $v_0 = \phi_\lambda$とすると，命題~\ref{prop:second_1}の仮定をみたす．
+ したがって，\ref{eq:prob_sec}は弱解$v$を持つ．
+ これと補題~\ref{lem:rel_heart_spade}.2より，\ref{eq:prob_main}は
+ minimal solution 以外の弱解を持つ． \qedhere
 \end{proof}
 
 
