@@ -11,7 +11,7 @@ $f^\prime$とも、$f_r$とも表す。
 解の正則性を検討し、以降球対称解のみ考慮すればよいことを証明する。
 正則性の検討において、次の補題を使用する。
 
-\begin{lem}[\cite{MR539217}~, \cite{MR709644}~LEMMA~1.5] 
+\begin{lem}[\cite{MR539217}] 
  \label{lem:regularity}
  $N \geq 3$とし、
  $K \in L^{N/2}(\Omega)$とする。$u \in H_0^1(\Omega)$は
@@ -21,6 +21,9 @@ $f^\prime$とも、$f_r$とも表す。
  の弱解であるとする。このとき、任意の$q < \infty$に対し、
  $u \in L^q(\Omega)$が成立する。
 \end{lem}
+
+補題~\ref{lem:regularity}の主張の書き方は、
+\cite{MR709644}~LEMMA~1.5を参考にした。
 
 \begin{lem} \label{lem:reg_rad}
  定理~\ref{thm:second_solution_nonex}.2の仮定の下で、
@@ -35,9 +38,9 @@ $f^\prime$とも、$f_r$とも表す。
   \item \ref{eq:prob_sec}の弱解$v$は
         球対称解に限り、
         $v = v(\lvert x \rvert)
-        \in C^{2+\alpha}([0, R])$
+        \in C^2([0, R])$
         をみたす。
-  \item $v = v(\lvert x \rvert) \in C^{2+\alpha}([0, R])$が
+  \item $v = v(\lvert x \rvert) \in C^2([0, R])$が
         \ref{eq:prob_sec}の解であることは、
         $v = v(r)$が
         次の常備分方程式の解であることと同値である。
@@ -75,7 +78,53 @@ $f^\prime$とも、$f_r$とも表す。
           \label{eq:under_u_r_prime}
         \end{align}
         が成立する。
-  \item $v \in C^{2+\alpha}(\bar{\Omega})$である。
+  \item $v \in H_0^1(\Omega)$は\ref{eq:prob_sec}の弱解であるとする。
+        $\Omega$上の関数$K \colon \Omega \to\R$を
+        \begin{equation}
+         K(x) = \begin{cases}
+                 \displaystyle \frac{(v(x) + \underline{u}_\lambda(x))^p -
+                 \underline{u}_\lambda(x)^p}{v} & ( v(x) \neq 0 ), \\
+                 p \underline{u}_\lambda(x)^{p-1} & ( v(x) = 0 )
+                \end{cases}
+        \end{equation}
+        とし、$K^\prime = b K - a$と定める。
+        $K, K^\prime$は、$\Omega$上ほとんど至るところ定義される。
+        ここで$v > 0 ~\tin \Omega$、$y \geq 0$に対し、$y \mapsto y^p$
+        は
+        下に凸であるから、
+        $(v + \underline{u}_\lambda)^p - \underline{u}_\lambda^p \leq
+        p(v+ \underline{u}_\lambda)^{p-1} v$が成立する。
+        \ref{eq:prob_sec}より、
+        $v \in H_0^1(\Omega)$は
+        $- \Delta v = K^\prime v ~\tin \Omega$をみたす。
+        ゆえに、$\Omega$上$\lvert K \rvert \leq p
+        (v+\underline{u}_\lambda)^{p-1}$とわかる。
+        $v + \underline{u}_\lambda \in H_0^1(\Omega) \subset
+        L^{p+1}(\Omega)$
+        より、$(v + \underline{u}_\lambda)^{p-1} \in L^{N/2}(\Omega)$
+        である。したがって、$K \in L^{N/2}(\Omega)$である。
+        $a, b \in C^1(\bar{\Omega})$であるから、
+        $K^\prime \in L^{N/2}(\Omega)$である。
+        \ref{eq:prob_sec}より、
+        $v \in H_0^1(\Omega)$は
+        $- \Delta v = K^\prime v ~\tin \Omega$をみたす。
+        ゆえに、補題~\ref{lem:regularity}より、
+        任意の$q < \infty$に対し、
+        $v \in L^q(\Omega)$が成立する。
+        したがって、$b \left( (v+ \underline{u}_\lambda)^p -
+        \underline{u}_\lambda^p \right) - av \in L^q(\Omega)$である。
+        また、$\partial \Omega$は$C^\infty$級であることに注意する。
+        $v$は\ref{eq:prob_sec}の弱解であるから、
+        $v \in W^{2, q}(\Omega)$である。$q > N$とすると、
+        $2 - N /q > 1$であるから、ソボレフ埋め込みにより、
+        $v \in W^{2, q}(\Omega) \subset C^1(\bar{\Omega}) \subset
+        C(\bar{\Omega})$である。$\underline{u}_\lambda \in C^{2 +
+        \alpha}(\bar{\Omega})$も考慮すると、
+        $b \left( (v+ \underline{u}_\lambda)^p -
+        \underline{u}_\lambda^p \right) - av \in C(\bar{\Omega})$であ
+        る。再び、$v$は\ref{eq:prob_sec}の弱解であるから、
+        $v \in C^2(\bar{\Omega})$である。
+        
         $a, b$は球対称であるから、$g = g(t, s, \lvert x \rvert)$とみな
         せる。$t \geq 0$、$r \in [0, R]$に対し、
         \begin{align}
