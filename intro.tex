@@ -287,7 +287,8 @@ extremal solution について，以下が成立する．
  $\{ \lvert x - x_0 \rvert < r_0 \}$上，$b$は連続であり$a$は
  \begin{equation}
   a(x) = m_1 + m_2 \lvert x-x_0 \rvert^{q} 
-  + o(\lvert x-x_0 \rvert^{q}) \label{eq:a_q}
+  + o(\lvert x-x_0 \rvert^{q}) \ \ \tin \{ \lvert x - x_0 \rvert < r_0
+  \} \label{eq:a_q}
  \end{equation}
  であると仮定する．ここで$q > 0$，
  $m_1 > \kappa$，$m_2 \neq 0$は
@@ -319,7 +320,7 @@ $\kappa$が非正から正へと変化すると，
 \ref{eq:prob_main}の second solution が存在する
 次元$N \geq 3$が，
 $N < \infty$から$N < 6$へと変化することを示している．
-この観点から本論文の定理~\ref{thm:second_solution}.4 を見ると，
+この観点から本論文の定理~\ref{thm:second_solution}~(iv) を見ると，
 $a = m_2 \lvert x - p \rvert^{q} + o(\lvert x-x_0
 \rvert^{q})$ ($m_2 > 0$)は，
 定数$a = \kappa$が非正から正へと変化する，いわば「中間部分」と見ることができる．
@@ -418,8 +419,8 @@ $I_\lambda$を定義する．
 $I_\lambda$に$(\mathrm{PS})$条件を課さない峠の定理を用いる
 ことを考える．
 具体的には，まず，峠における「エネルギー」$c$が
-$0 < c < S^{N/2} / N\left\| b \right\|_{L^\infty(\Omega)}
-^{(N-2)/2}$をみたすことを
+$0 < c < S^{N/2} / (N\left\| b \right\|_{L^\infty(\Omega)}
+^{(N-2)/2})$をみたすことを
 タレンティー関数を用いることで示す．
 ここで$S$は以下で定義されるソボレフ最良定数である．
 \[
@@ -429,7 +430,8 @@ $0 < c < S^{N/2} / N\left\| b \right\|_{L^\infty(\Omega)}
  \subset \R^N \text{は領域}).
 \]
 次に，この$c$について，
-$I_\lambda$が$(\mathrm{PS})_c$条件をみたすことを示す．
+$I_\lambda$が$(\mathrm{PS})_c$条件(後述の補題~\ref{lem:PS_c}参照)
+をみたすことを示す．
 その他の仮定も確かめ，$(\mathrm{PS})$条件を課さない
 峠の定理を用いると，$I_\lambda$の臨界点$v$が得られる．
 $v$が\ref{eq:prob_sec}の弱解である．
@@ -446,7 +448,7 @@ $\bar{u}_\lambda = v + \underline{u}_\lambda$と構成する．
 \ref{eq:prob_sec}の弱解も古典解になることを確かめる．
 すると\cite{MR544879}~より，球対称解のみ考慮すれば十分である．
 方程式\ref{eq:prob_sec}は，動径$r$についての常微分方程式に帰着する．
-その解$v$が存在するならば，ポホザエフ式の議論から分かるある等式をみたす
+その解$v$が存在するならば，ポホザエフの議論から分かるある等式をみたす
 必要がある．
 しかし$\lambda > 0$が十分小さい時は，$C^{2 + \alpha}(\Omega)$の
 原点付近にminimal solution $\underline{u}_\lambda$が存在すること，

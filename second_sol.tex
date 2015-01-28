@@ -419,9 +419,9 @@ $H_0^1(\Omega)$の有界列であることを証明する．
   \underline{u}_\lambda)  \right) dx - \epsilon \left\| v_k
   \right\|_{H^1_0(\Omega)}. \label{eq:alpha_M}
  \end{align}
- 右辺の積分の中身を考察する．$t, s \geq 0$に対し，
+ 右辺の積分の中身を考察する．$t \geq 0$，$s > 0$に対し，
  \[
-   g(t, s)t - \alpha G(t, s)
+   g(t, s, x)t - \alpha G(t, s, x)
   = b \left( (t+s)^p t - s^p t - \frac{\alpha}{p+1}(t+s)^{p+1} +
   \frac{\alpha}{p+1}s^{p+1} + \alpha s^p t \right) - a \left( t^2 -
   \frac{\alpha}{2} t^2 \right)
@@ -506,8 +506,8 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
 
 \begin{lem} \label{lem:PS_c}
  \begin{enumerate}[1.] \sage
-  \item  $0 < c < S^{N/2}/N\left\| b \right\|_{L^\infty(\Omega)}
-         ^{(N-2)/2}$とする．このとき，
+  \item  $0 < c < S^{N/2}/(N\left\| b \right\|_{L^\infty(\Omega)}
+         ^{(N-2)/2})$とする．このとき，
          $I_\lambda$は$(\mathrm{PS})_c$条件をみたす．すなわち，
          次の条件(i), (ii)をみたす$H_0^1(\Omega))$の点列
          $\{ v_k \}_{k = 0}^\infty$は，収束する部分列をもつ．
@@ -570,7 +570,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
    v dx - \int_\Omega G(v, \underline{u}_\lambda) dx \label{eq:Ilambda_v}
  \end{equation}
  と書けることがわかる．
- そこで，$t, s \geq 0$，$x \in \Omega$に対し，
+ そこで，$t \geq 0$，$s > 0$，$x \in \Omega$に対し，
  \begin{align*}
   \frac{1}{2} g(t, s, x) t - G(t, s, x) &= \frac{1}{2} \left(b \left(
   (t+s)^p - s^p \right) -at \right)t - \left( b \left(
@@ -633,7 +633,7 @@ $I_\lambda$の$(\mathrm{PS})_c$条件を調べる．
  ゆえに，ブレジス・リーブの補題~\cite{MR699419}より，次式が成立する．
  \begin{equation}
   \int_\Omega b(v_k)_{+}^{p+1} dx = \int_\Omega bv^{p+1} dx +
-   \int_\Omega \lvert b\tilde{w}_k \rvert^{p+1} dx + o(1).
+   \int_\Omega b \lvert \tilde{w}_k \rvert^{p+1} dx + o(1).
    \label{eq:bzlblem}
  \end{equation}
  \eqref{eq:bzlblem}と補題~\ref{lem:conv}，および，$k \to \infty$のとき
@@ -758,7 +758,7 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
   \right) dx -\int_\Omega pb\underline{u}_\lambda^{p-1} v^2 dx
   \right)
   - \int_\Omega b \left( \frac{1}{p+1}(v +
-  \underline{u}_\lambda)^{p-1} - \frac{1}{p+1}
+  \underline{u}_\lambda)^{p+1} - \frac{1}{p+1}
   \underline{u}_\lambda^{p+1} - \underline{u}_\lambda^p v -
   \frac{p}{2} \underline{u}_\lambda^{p-1} v^2 \right) dx.
  \end{align*}
@@ -769,13 +769,13 @@ $(\mathrm{PS})$条件を課さない峠の定理の仮定がみたされてい�
    \int_\Omega \left( \lvert Dv \rvert^2 + a v^2 \right) dx \label{eq:J1}
  \end{equation}
  と下から評価される．補題~\ref{lem:lin_1}より，この括弧の中は正である．
- 次に，$t, s \geq 0$に対し，$\alpha(t) = (t+s)^{p+1}/(p+1)$と定める．
+ 次に，$t \geq 0$，$s > 0$に対し，$\alpha(t) = (t+s)^{p+1}/(p+1)$と定める．
  ここで，$p$と$2$の大小で場合分けをして$J_2$を評価する．
 
  \underline{{$p > 2$}のとき}：
  $\alpha$の$t = 0$の周りの$2$次のテイラー多項式は，
  \[
- \frac{1}{p+1} (t+s)^{p+1} + s^p t + \frac{p}{2}s^{p-1}t^2
+ \frac{1}{p+1} s^{p+1} + s^p t + \frac{p}{2}s^{p-1}t^2
  \]
  である．$\alpha$の$3$階の導関数は
  $\alpha^{\prime\prime\prime}(t) = p(p-1)(t+s)^{p-2}$であるか

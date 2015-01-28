@@ -230,7 +230,7 @@ minimal solution が存在することを示す．
    + a u_{n+1}^2) dx 
  \geq \int_\Omega \left( \lvert Du_{n+1} \rvert^2 + \kappa
          u_{n+1} ^2 \right) dx = \left\| u_{n+1} 
-                                                \right\|_{\kappa}
+                                                \right\|_{\kappa}^2
   \label{eq:u_n+1_left}
  \end{equation}
  もわかる．$\dnorm_\kappa$は$\dnorm_{H_0^1(\Omega)}$
@@ -259,7 +259,7 @@ minimal solution が存在することを示す．
  また，$b \in L^\infty(\Omega)$，
  $\hat{u}, \psi \in H_0^1(\Omega) \subset L^{p+1}(\Omega)$より，
  \[
-  \left\lvert bu_n \psi \right\rvert \leq b \hat{u}^p \lvert\psi\rvert \ \ \ae
+  \left\lvert bu_n^p \psi \right\rvert \leq b \hat{u}^p \lvert\psi\rvert \ \ \ae
  \tin \Omega
  \]
  の右辺は可積分である．\eqref{eq:minimal_u_n_ae}より，
@@ -339,7 +339,7 @@ minimal solution が存在することを示す．
          -\Delta (\underline{u}_{\lambda_2} - \underline{u}_{\lambda_1}) + a
          (\underline{u}_{\lambda_2} - \underline{u}_{\lambda_1} )
          = b (\underline{u}_{\lambda_2}^p -
-        \underline{u}_{\lambda_2}) + (\lambda_2 - \lambda_1) f.
+        \underline{u}_{\lambda_1}^p) + (\lambda_2 - \lambda_1) f.
         \]
         右辺が$0$以上であること，および，
         $a > -\kappa_1$により，強最大値原理を用いると，
@@ -355,7 +355,7 @@ minimal solution が存在することを示す．
         \begin{equation}
          \int_\Omega \left( \lvert D\underline{u}_\lambda \rvert^2 + a
                       \underline{u}_\lambda^2 \right) dx 
-          = \int_\Omega b\underline{u}_\lambda^p dx 
+          = \int_\Omega b\underline{u}_\lambda^{p+1} dx 
           + \lambda \int_\Omega f \underline{u}_\lambda dx.
           \label{eq:minimal_inp_same_weak}
         \end{equation}
@@ -363,6 +363,7 @@ minimal solution が存在することを示す．
         minimal solution の
         $H_0^1(\Omega)$ノルムが，$\lambda \searrow
         0$のとき，$0$に収束することを示す．
+        \eqref{eq:minimal_inp_same_weak}の左辺は，
         \begin{align*}
          \int_\Omega \left( \lvert D\underline{u}_\lambda \rvert^2 + a
                       \underline{u}_\lambda^2 \right) dx 
@@ -384,7 +385,7 @@ minimal solution が存在することを示す．
         $\underline{u}_\lambda \leq u_\lambda ~\tin \Omega$より，
         次式が従う．
         \begin{align*}
-         \int_\Omega b\underline{u}_\lambda^p dx 
+         \int_\Omega b\underline{u}_\lambda^{p+1} dx 
           + \lambda \int_\Omega f \underline{u}_\lambda dx
          &\leq \int_\Omega b u_\lambda^{p+1}
          dx + \lambda \int_\Omega f u_\lambda dx \\
@@ -700,7 +701,7 @@ $\mu_1(\lambda)$についてより多くの情報を引き出す．
 \end{lem}
 
 \begin{proof}
- $\hat{\lambda}$を$0 < \lambda < \hat{\lambda} < \bar{\lambda}$を
+ $\hat{\lambda}$は$0 < \lambda < \hat{\lambda} < \bar{\lambda}$を
  みたすものとする．$z = \underline{u}_{\hat{\lambda}} -
  \underline{u}_\lambda$とおく．補題~\ref{lem:minimal_va}.3 より，
  $z > 0 ~\tin \Omega$である．

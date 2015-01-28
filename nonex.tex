@@ -38,9 +38,9 @@ $f^\prime$とも，$f_r$とも表す．
   \item \ref{eq:prob_sec}の弱解$v$は
         球対称解に限り，
         $v = v(\lvert x \rvert)
-        \in C^2([0, R])$
+        \in C^{2+\alpha}([0, R])$
         をみたす．
-  \item $v = v(\lvert x \rvert) \in C^2([0, R])$が
+  \item $v = v(\lvert x \rvert) \in C^{2+\alpha}([0, R])$が
         \ref{eq:prob_sec}の解であることは，
         $v = v(r)$が
         次の常微分方程式の解であることと同値である．
@@ -118,12 +118,13 @@ $f^\prime$とも，$f_r$とも表す．
         $v \in W^{2, q}(\Omega)$である．$q > N$とすると，
         $2 - N /q > 1$であるから，ソボレフ埋め込みにより，
         $v \in W^{2, q}(\Omega) \subset C^1(\bar{\Omega}) \subset
-        C(\bar{\Omega})$である．$\underline{u}_\lambda \in C^{2 +
+        C^\alpha(\bar{\Omega})$である．$\underline{u}_\lambda \in C^{2 +
         \alpha}(\bar{\Omega})$も考慮すると，
         $b \left( (v+ \underline{u}_\lambda)^p -
-        \underline{u}_\lambda^p \right) - av \in C(\bar{\Omega})$であ
+        \underline{u}_\lambda^p \right) - av \in C^\alpha
+        (\bar{\Omega})$であ
         る．再び，$v$は\ref{eq:prob_sec}の弱解であるから，
-        $v \in C^2(\bar{\Omega})$である．
+        $v \in C^{2+\alpha}(\bar{\Omega})$である．
         
         $a, b$は球対称であるから，$g = g(t, s, \lvert x \rvert)$とみな
         せる．$t \geq 0$，$r \in [0, R]$に対し，
@@ -156,7 +157,7 @@ $f^\prime$とも，$f_r$とも表す．
 \eqref{eq:prob_rad}の解がみたすべき等式を導出する．
 
 \begin{lem}
- \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は，以下の
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^{2+\alpha}([0, R])$は，以下の
  等式をみたす．
  \begin{multline}
   \int_0^R r^{N-1} \left( \frac{2N}{N-2} G(v, \underline{u}_\lambda,
@@ -208,28 +209,33 @@ $f^\prime$とも，$f_r$とも表す．
  と変形される．次に，第$2$項の計算をする．以下の式に注意する．
  \begin{align*}
   \frac{d}{dr} \left( r^N G(v(r), \underline{u}_\lambda(r), r )
-  \right) &= N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + r^N g(
-  v(r), \underline{u}_\lambda(r), r) + r^N G_s(v(r),
+  \right) =& N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + r^N g(
+  v(r), \underline{u}_\lambda(r), r) \\ &+ r^N G_s(v(r),
   \underline{u}_\lambda(r), r) (\underline{u}_\lambda)_r
   + r^N G_r(v(r), \underline{u}_\lambda(r),
   r), \\
-  R^N G(v(R), \underline{u}_\lambda(R), R) &= R^N G(0, 0, R) = 0. 
+  R^N G(v(R), \underline{u}_\lambda(R), R) =& R^N G(0, 0, R) = 0. 
  \end{align*}
- やはり部分積分により，以下の通り計算がなされる．
+ やはり部分積分により，以下の通り計算される．
  \begin{equation}
   \int_0^R r^N g(v, \underline{u}_\lambda, r) v_r dr
    = -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
-   (\underline{u}_\lambda)_r dr - \int_0^R r^N G_r(v,
-   \underline{u}_\lambda, r) dr. \label{eq:poh_times_rvr_2}
+   dr 
+   - \int_0^R r^N 
+   G_s(v, \underline{u}_\lambda, r)(\underline{u}_\lambda)_r dr
+   - \int_0^R r^N G_r(v,
+   \underline{u}_\lambda, r) dr
+   . \label{eq:poh_times_rvr_2}
  \end{equation}
  \eqref{eq:poh_times_rvr_1}，\eqref{eq:poh_times_rvr_2}より，
  次式が得られる．
- \begin{equation}
+ \begin{multline}
   \frac{1}{2} R^N v_r(R)^2 + \frac{N-2}{2}\int_0^R r^{N-1} (v_r)^2
    dr -N \int_0^R r^{N-1} G(v, \underline{u}_\lambda, r)
-   (\underline{u}_\lambda)_r dr - \int_0^R r^N G_r(v,
+   dr \\ - \int_0^R r^N G_s(v, \underline{u}_\lambda, r)
+  (\underline{u}_\lambda)_r    - \int_0^R r^N G_r(v,
    \underline{u}_\lambda, r) dr = 0. \label{eq:poh_times_rvr}
- \end{equation}
+ \end{multline}
  $\text{\eqref{eq:poh_times_v}} + \text{\eqref{eq:poh_times_rvr}} \times
  2/(N-2)$より，\eqref{eq:poh_eq}が証明される．\qedhere
 \end{proof}
@@ -237,7 +243,7 @@ $f^\prime$とも，$f_r$とも表す．
 \eqref{eq:poh_eq}から，不等式を導出する．
 
 \begin{lem}
- \eqref{eq:prob_rad}の解$v = v(r) \in C^2([0, R])$は，以下の
+ \eqref{eq:prob_rad}の解$v = v(r) \in C^{2+\alpha}([0, R])$は，以下の
  不等式をみたす．
  \begin{equation}
   \int_0^R r^{N-1} \left( p(2b(r) + b^\prime(r) r)
@@ -253,7 +259,7 @@ $f^\prime$とも，$f_r$とも表す．
   \frac{1}{N-2} R^N v_r(R)^2 \geq 0 \label{eq:poh_ineq_0}
  \end{equation}
  である．
- 次に，$G_s$を調べる．$t, s \geq 0$，$0 \leq r \leq R$に対し，
+ 次に，$G_s$を調べる．$t \geq 0 $，$s \geq 0$，$0 \leq r \leq R$に対し，
  \[
   G_s(t, s, r) = \pdif{}{s} \left( b(r) \left( \frac{1}{p+1}
  (t+s)^{p+1} - \frac{1}{p+1}s^{p+1} - s^pt \right)
@@ -270,7 +276,7 @@ $f^\prime$とも，$f_r$とも表す．
   \int_0^R r^N G_s(v, \underline{u}_\lambda, r)
    (\underline{u}_\lambda)_r dr \leq 0. \label{eq:poh_ineq_1}
  \end{equation}
- 続けて，$G_r$を調べる．$t, s \geq 0$，$0 \leq r \leq R$に対し，
+ 続けて，$G_r$を調べる．$t \geq 0 $，$s \geq 0$，$0 \leq r \leq R$に対し，
  \[
   G_r(t, s, r) = b^\prime(r) \left( \frac{1}{p+1} (t+s)^{p+1} -
  \frac{1}{p+1} s^{p+1} - s^{p} t \right) - \frac{1}{2} a^\prime(r) t^2
@@ -290,6 +296,7 @@ $f^\prime$とも，$f_r$とも表す．
     \frac{1}{2} a^\prime \right) v^2 dr \label{eq:poh_ineq_2} 
  \end{equation}
  と評価できる．最後に，
+ $t \geq 0 $，$s \geq 0$，$0 \leq r \leq R$に対し，
  \begin{align*}
   \frac{2N}{N-2}G(t, s, r) - g(t, s, r)t 
   &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t \right) -
@@ -308,7 +315,8 @@ $f^\prime$とも，$f_r$とも表す．
  $\alpha$の$t = 0$のまわりのテイラー多項式を考える．
  $3$次の剰余項を$R_3$とすると，
  \[
-  R_3 = s^{p+1} + p(t+s)^{p-1} s \frac{1}{2}p(p-1)s^{p-1}t^2
+  \alpha(t) = s^{p+1} + p(t+s)^{p-1} s +
+ \frac{1}{2}p(p-1)s^{p-2}t^2 + R_3
  \]
  である．テイラーの定理より，$R_3$は$0 < \theta < 1$を用いて
  \[
@@ -358,7 +366,7 @@ $f^\prime$とも，$f_r$とも表す．
  $a^\prime(r) \geq 0$，
  $b^\prime(r) \leq 0$，
  $a(0) \leq a(r)$，
- $b(0) \leq b(r)$である．以上より，
+ $b(0) \geq b(r)$である．以上より，
  $0 \leq r \leq R$に対し，次式が成立する．
  \[ 
  p(2b(r) + b^\prime(r) r)
@@ -370,7 +378,7 @@ $f^\prime$とも，$f_r$とも表す．
  \leq 2(a(r) - a(r))
  \leq 0.
  \]
- したがって，任意の$v = v(r) \in C^2([0, R])$に対し，
+ したがって，任意の$v = v(r) \in C^{2 + \alpha}([0, R])$に対し，
  \eqref{eq:poh_ineq}は成立しない．したがって，
  \eqref{eq:prob_rad}の解は存在しない．ゆえに，
  補題~\ref{lem:reg_rad}.3，補題~\ref{lem:reg_rad}.2，
