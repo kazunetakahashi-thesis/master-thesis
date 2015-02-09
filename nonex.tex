@@ -94,9 +94,6 @@ $f^\prime$とも，$f_r$とも表す．
         下に凸であるから，
         $(v + \underline{u}_\lambda)^p - \underline{u}_\lambda^p \leq
         p(v+ \underline{u}_\lambda)^{p-1} v$が成立する．
-        \ref{eq:prob_sec}より，
-        $v \in H_0^1(\Omega)$は
-        $- \Delta v = K^\prime v ~\tin \Omega$をみたす．
         ゆえに，$\Omega$上$\lvert K \rvert \leq p
         (v+\underline{u}_\lambda)^{p-1}$とわかる．
         $v + \underline{u}_\lambda \in H_0^1(\Omega) \subset
@@ -210,7 +207,7 @@ $f^\prime$とも，$f_r$とも表す．
  \begin{align*}
   \frac{d}{dr} \left( r^N G(v(r), \underline{u}_\lambda(r), r )
   \right) =& N r^{N-1} G( v(r), \underline{u}_\lambda(r), r) + r^N g(
-  v(r), \underline{u}_\lambda(r), r) \\ &+ r^N G_s(v(r),
+  v(r), \underline{u}_\lambda(r), r) v_r \\ &+ r^N G_s(v(r),
   \underline{u}_\lambda(r), r) (\underline{u}_\lambda)_r
   + r^N G_r(v(r), \underline{u}_\lambda(r),
   r), \\
@@ -299,7 +296,7 @@ $f^\prime$とも，$f_r$とも表す．
  $t \geq 0 $，$s > 0$，$0 \leq r \leq R$に対し，
  \begin{align*}
   \frac{2N}{N-2}G(t, s, r) - g(t, s, r)t 
-  &= \left( b \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t \right) -
+  &= \left( b(r) \left( (t+s)^{p+1} - s^{p+1} - (p+1)s^p t \right) -
   \frac{p+1}{2} a(r) t^2 \right) - \left( b(r) \left( (t+s)^p - s^p
   \right) - a(r) t \right) t \\
   &= b(r) \left( (t+s)^{p+1} - (t+s)^p t - s^{p+1} - (p+1)s^p t + s^p
@@ -315,8 +312,8 @@ $f^\prime$とも，$f_r$とも表す．
  $\alpha$の$t = 0$のまわりのテイラー多項式を考える．
  $3$次の剰余項を$R_3$とすると，
  \[
-  \alpha(t) = s^{p+1} + p(t+s)^{p-1} s +
- \frac{1}{2}p(p-1)s^{p-2}t^2 + R_3
+  \alpha(t) = s^{p+1} + ps^pt +
+ \frac{1}{2}p(p-1)s^{p-1}t^2 + R_3
  \]
  である．テイラーの定理より，$R_3$は$0 < \theta < 1$を用いて
  \[
@@ -375,7 +372,7 @@ $f^\prime$とも，$f_r$とも表す．
  2 p b(r) 
  \underline{u}_\lambda(r)^{p-1} 
  - 2a(r) < 2 \left( b(r) \frac{a(0)}{b(0)} - a(r) \right)
- \leq 2(a(r) - a(r))
+ \leq 2(a(0) - a(r))
  \leq 0.
  \]
  したがって，任意の$v = v(r) \in C^{2 + \alpha}([0, R])$に対し，

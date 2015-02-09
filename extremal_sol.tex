@@ -30,7 +30,7 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  すると，次式が成立する．
  \[
   -\Delta v_\lambda + a v_\lambda 
- = b(\underline{u}_\lambda - \lambda g_0)^p \ \ ~\tin \Omega.
+ = b(v_\lambda + \lambda g_0)^p \ \ ~\tin \Omega.
  \]
  ゆえに，$\psi \in H_0^1(\Omega)$とすると，次式が成立する．
  \[
@@ -68,7 +68,7 @@ $\lambda = \bar{\lambda}$における\ref{eq:prob_main}を考察する．
  \end{align*}
  任意の$\epsilon > 0$に対し，
  $\epsilon = \tilde{\epsilon} / (1 - \tilde{\epsilon})$となる
- $0 < \tilde{\epsilon} < 1$は存在する．この$\tilde{\epsilon}$に対し，
+ $0 < \tilde{\epsilon} < 1$が存在する．この$\tilde{\epsilon}$に対し，
  $C = \tilde{C}/ (1 - \tilde{\epsilon})$とすると，次式が成立する．
  \[
   (t+s)^{p-1} s \leq \epsilon (t+s)^{p-1} t + Cs^p.
@@ -278,8 +278,7 @@ $\lambda = \bar{\lambda}$において，この不等式が成立しなくなる�
  \Omega$であるから，
  \[
   \mu_1(\lambda_2) \leq 
-  \inf_{\phi_1 \in H_0^1(\Omega), \ \phi_1 \not\equiv
-  0} \frac{\displaystyle 
+  \frac{\displaystyle 
   \int_\Omega \left( \lvert D\phi_1 \rvert^2
   + a \phi_1^2 \right) dx}{\displaystyle \int_\Omega p b
   \underline{u}_{\lambda_2}^{p-1} \phi_1^2 dx} \leq
