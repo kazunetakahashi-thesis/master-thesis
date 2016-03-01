@@ -52,6 +52,21 @@ $\Omega$上の関数$u_\epsilon, v_\epsilon$を，
 と定める．
 \end{nota}
 
+$m_1 < 0$，または，$m_1 = 0$かつ$m_2 < 0$のとき，
+必要なら$r_0 > 0$を小さくすると，$a \leq 0 ~\tin
+~\{ \lvert x \rvert < 2r_0\}$が成立する．ゆえに，
+\begin{equation}
+ \int_\Omega av_\epsilon^2 dx \leq 0 \label{eq:intav^2_leq_0}
+\end{equation}
+が成立する．他方，
+$m_1 > 0$，または，$m_1 = 0$かつ$m_2 > 0$のとき，
+必要なら$r_0 > 0$を小さくすると，$a \geq 0 ~\tin
+~\{ \lvert x \rvert < 2r_0\}$が成立する．ゆえに，
+\begin{equation}
+ \int_\Omega av_\epsilon^2 dx \geq 0 \label{eq:intav^2_geq_0}
+\end{equation}
+が成立する．
+
 さて，\cite{MR709644}~の p.~444 より，次式が成立する．
 \begin{equation}
  \left\| Du_\epsilon \right\|_{L^2(\Omega)}^2 
@@ -550,23 +565,26 @@ $s$についての増加関数である．
 \end{proof}
 
 \begin{proof}[命題~\ref{prop:second_2}]
- \eqref{eq:t_epsilon}より，以下が成立する．
+ \ulinej{{$m_1 < 0$}，または，{$m_1 = 0$かつ$m_2 < 0$}のとき}：
+ \eqref{eq:intav^2_leq_0}より，以下が成立する．
  \begin{align*}
   \sup_{t > 0} I_\lambda (t v_\epsilon) & = I_\lambda (t_\epsilon
   v_\epsilon) \\ 
   & = \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2 -
   \frac{1}{p+1} t_\epsilon^{p+1} - \int_\Omega H^\prime(t_\epsilon
-  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
+  v_\epsilon, \underline{u}_\lambda) dx + t_\epsilon^2
+  \int_\Omega a v_\epsilon^2
   dx \\
+  & \leq \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2 -
+  \frac{1}{p+1} t_\epsilon^{p+1} - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx \\
   & \leq \sup_{t > 0} \left( \frac{1}{2} t^2 \left\| v_\epsilon
   \right\|^2 - \frac{1}{p+1} t^{p+1} \right)
   - \int_\Omega H^\prime(t_\epsilon
-  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
-  dx \\
+  v_\epsilon, \underline{u}_\lambda) dx \\
   & = \frac{1}{N} \left( \left\| v_\epsilon \right\|^2 \right)^{N/2}
   - \int_\Omega H^\prime(t_\epsilon
-  v_\epsilon, \underline{u}_\lambda) dx + \int_\Omega a v_\epsilon^2
-  dx. \\
+  v_\epsilon, \underline{u}_\lambda) dx.
  \end{align*}
  ここで，最後の変形では，$t > 0$の関数
  \[
@@ -574,55 +592,98 @@ $s$についての増加関数である．
  \frac{1}{p+1} t^{p+1}
  \]
  が，$t = \left\| v_\epsilon \right\|^{2/(p-1)}$に
- おいて最大値をとることに注意した．\eqref{eq:vepsilon}，
- \eqref{eq:av_epsilon}，補題~\ref{lem:tauepsilon}，補
- 題~\ref{lem:intHprime}により，$\epsilon_0 > 0$，$C, C^\prime > 0$が
+ おいて最大値をとることに注意した．
+ \eqref{eq:vepsilon}より，$\epsilon \searrow 0$のとき，次式が成立する．
+ \[
+ \frac{1}{N} \left( \left\| v_\epsilon
+ \right\|^2 \right)^{N/2} = \frac{1}{NM^{(N-2)/2}} S^{N/2}
+ + O(\epsilon^{(N-2)/2}).
+ \]
+ 補題~\ref{lem:intHprime}により，$\epsilon_0 > 0$，$C, C^\prime > 0$が
  存在し，$0 < \epsilon < \epsilon_0$に対し，
  \begin{equation}
   \sup_{t > 0} I_\lambda (tv_\epsilon) \leq \frac{1}{NM^{(N-2)/2}}
    S^{N/2} + \left( C \epsilon^{(N-2)/2} - C^\prime \epsilon^{(N-2)/4}
-             + m_1 I_1^\prime + m_2 I_2^\prime \right) \label{eq:sup_least}
+             \right) \label{eq:sup_least}
  \end{equation}
- が成立する．ここで$I_1^\prime$，$I_2^\prime$は，\eqref{eq:av_epsilon}
- のものである．以下の条件を考える．
- \begin{equation}
-  \text{\eqref{eq:sup_least}の右辺の括弧の中が負となる
-   $\epsilon > 0$が存在する．} \label{eq:condition}
- \end{equation}
- \eqref{eq:condition}が成立するならば，
- その$\epsilon$を用いて$v_0 = v_\epsilon$とすると，$v_0 \geq 0 ~\tin
+ が成立する．
+ 全ての$N \geq 3$に対し，$(N-2)/2 > (N-2)/4$であるから，
+ \eqref{eq:sup_least}の右辺の括弧の中が負となる
+ $\epsilon > 0$が存在する．
+ この$\epsilon$を用いて$v_0 = v_\epsilon$とすると，$v_0 \geq 0 ~\tin
  \Omega$，\eqref{eq:int_omega_bvp+1}，および，
  \eqref{eq:ineq_S}が成立する．すなわち，
- \eqref{eq:condition}は，命題~\ref{prop:second_2}の帰結の
- 十分条件である．
- 以下，$m_1, m_2$の正負で場合分けして検証する．
- すべての$N \geq 3$，$q > 0$に対し，$\epsilon \searrow 0$のとき
- $I_1^\prime \gg I_2^\prime$であることに注意されたい．
-
- \begin{enumerate}[(i)]
-  \item \ulinej{{$m_1 < 0$}のとき}：$\epsilon \searrow 0$のとき
-        $\epsilon^{(N-2)/2} \ll \epsilon^{(N-2)/4}$であるから，
-        すべての$N \geq 3$について，\eqref{eq:condition}はみたされる．
-  \item \ulinej{{$m_1 > 0$}のとき}：$\epsilon \searrow 0$のとき
-        $I_1^\prime \ll \epsilon^{(N-2)/4}$となれば，
-        \eqref{eq:condition}はみたされる．
-        \eqref{eq:av_epsilon}より，
-        $N = 3, 4, 5$であれば\eqref{eq:condition}はみたされる．
-  \item \ulinej{{$m_1 = 0$，$m_2 < 0$}のとき}：(i)と同様に，
-        すべての$N \geq 3$について，\eqref{eq:condition}はみたされる．
-  \item \ulinej{{$m_1 = 0$，$m_2 > 0$}のとき}：$\epsilon \searrow 0$のとき
-        $I_2^\prime \ll \epsilon^{(N-2)/4}$となれば，
-        \eqref{eq:condition}はみたされる．
-        \eqref{eq:av_epsilon}より，
-        $N \leq q + 4$のときは，この式は成立している．
-        $N > q + 4$のとき，この式が成立する条件は，
-        \[
-         1 + \frac{q}{2} > \frac{N-2}{4}
-        \]
-        である．これを変形して，$N < 2q + 6$が得られる．
-        以上により，$3 \leq N < 2q + 6$のとき，
-        \eqref{eq:condition}はみたされる． \qedhere
- \end{enumerate}
+ 命題~\ref{prop:second_2}の帰結は成立する．
+ 
+ \ulinej{{$m_1 > 0$}，または，{$m_1 = 0$かつ$m_2 > 0$}のとき}：
+ \eqref{eq:intav^2_geq_0}より，$\epsilon \searrow 0$のとき，
+ 以下が成立する．
+ \begin{align*}
+  \sup_{t > 0} I_\lambda (t v_\epsilon) & = I_\lambda (t_\epsilon
+  v_\epsilon) \\ 
+  & = \frac{1}{2} t_\epsilon^2 \left\| v_\epsilon \right\|^2 -
+  \frac{1}{p+1} t_\epsilon^{p+1} - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx + t_\epsilon^2
+  \int_\Omega a v_\epsilon^2
+  dx \\
+  & = \frac{1}{2} t_\epsilon^2 \left(
+  \left\| v_\epsilon \right\|^2 + 2 \int_\Omega av_\epsilon^2 dx \right) -
+  \frac{1}{p+1} t_\epsilon^{p+1} - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx \\
+  & \leq \sup_{t > 0} \left( \frac{1}{2} t^2 \left(\left\| v_\epsilon
+  \right\|^2 + 2 \int_\Omega av_\epsilon^2 dx \right)
+  - \frac{1}{p+1} t^{p+1} \right)
+  - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx \\
+  & = \frac{1}{N} \left( \left\| v_\epsilon \right\|^2
+  + 2 \int_\Omega av_\epsilon^2 dx \right)^{N/2}
+  - \int_\Omega H^\prime(t_\epsilon
+  v_\epsilon, \underline{u}_\lambda) dx.
+ \end{align*}
+ ここで，$A(\epsilon)$を，以下で定める．
+ \[
+  A(\epsilon) = \frac{1}{N}
+ \left( \left\| v_\epsilon \right\|^2
+ + 2 \int_\Omega av_\epsilon^2 dx \right)^{N/2} - 
+ \frac{1}{NM^{(N-2)/2}} S^{N/2}.
+ \]
+ \eqref{eq:vepsilon}，\eqref{eq:av_epsilon}より，次式が成立する．
+ \begin{equation}
+  \begin{aligned}
+   A(\epsilon) &=
+   \begin{cases}
+    O(\epsilon) & (m_1 > 0, N \geq 5), \\
+    O(\epsilon \lvert \log \epsilon \rvert) & (m_1 > 0, N = 4), \\
+    O(\epsilon^{1/2}) & (m_1 > 0, N = 3), \\
+    O(\epsilon^{1 + q/2 }) & (m_1 = 0, m_2 > 0,  N > q + 4), \\
+    O(\epsilon^{(N-2)/2} \lvert \log \epsilon \rvert) & (m_1 = 0, m_2 > 0,
+    N = q + 4), \\
+    O(\epsilon^{(N-2)/2}) & (m_1 = 0, m_2 > 0, N < q + 4).
+   \end{cases}
+  \end{aligned} \label{eq:Aepsilon}
+ \end{equation}
+ 補題~\ref{lem:intHprime}により，$\epsilon_0 > 0$，$C^\prime > 0$が
+ 存在し，$0 < \epsilon < \epsilon_0$に対し，
+ \begin{equation}
+  \sup_{t > 0} I_\lambda (tv_\epsilon) \leq \frac{1}{NM^{(N-2)/2}}
+   S^{N/2} + \left( A(\epsilon) - C^\prime \epsilon^{(N-2)/4}
+             \right) \label{eq:sup_least_2}
+ \end{equation}
+ が成立する．先ほどと同様に，
+ \eqref{eq:sup_least_2}の右辺の括弧の中を負とする
+ $\epsilon > 0$が存在するならば，
+ 命題~\ref{prop:second_2}の帰結は成立する．
+ $m_1 > 0$のとき，\eqref{eq:Aepsilon}より，$N = 3, 4, 5$ならば，
+ $A(\epsilon) \ll \epsilon^{(N-2)/4}$となるため，
+ 所望の$\epsilon > 0$が存在する．
+ また，$m_1 = 0$かつ$m_2 > 0$のとき，
+ \eqref{eq:Aepsilon}より，
+ $N \leq q+4$のときは，$A(\epsilon) \ll \epsilon^{(N-2)/4}$が成立する．
+ $N > q+4$のときは，
+ $A(\epsilon) \ll \epsilon^{(N-2)/4}$となるための条件は，
+ $1+q/2 > (N-2)/4$である．これを変形すると，$N < 2q+6$が得られる．
+ すなわち，$3 \leq N < 2q+6$のとき，
+ 所望の$\epsilon > 0$が存在する．\qedhere
 \end{proof}
 
 \begin{proof}[定理~\ref{thm:second_solution}]
