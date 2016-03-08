@@ -296,7 +296,8 @@ $(N-1)$次元球面の標準計量における$(N-1)$次元体積である．
 \begin{equation}
  \left\{ 
  \begin{aligned}
-  \int_\Omega a v_\epsilon^2 dx &= O(1) + m_1 I_1^\prime + m_2
+  \int_\Omega a v_\epsilon^2 dx &= O(\epsilon^{(N-2)/2})
+  + m_1 I_1^\prime + m_2
   I_2^\prime, \\
   I_1^\prime &= \begin{cases}
                  O(\epsilon) & (N \geq 5), \\
@@ -311,6 +312,17 @@ $(N-1)$次元球面の標準計量における$(N-1)$次元体積である．
                 \end{cases}
  \end{aligned} \right. \label{eq:av_epsilon}
 \end{equation}
+全ての$N, q$に対し，$i = 1, 2$それぞれ，
+$I^{\prime}_i \gg \epsilon^{(N-2)/2}$または
+$I^{\prime}_i = O(\epsilon^{(N-2)/2})$が成立していることに
+注意されたい．また，$I^\prime_1 \gg I^\prime_2$である．
+したがって，次式が成立する．
+\[
+ \int_\Omega av_\epsilon^2 dx = \begin{cases}
+                                 O(I_1^\prime) & (m_1 \neq 0), \\ 
+                                 O(I_2^\prime) & (m_1 = 0).
+                                \end{cases}
+\]
 
 \subsection{命題~\ref{prop:second_2}の証明}
 
@@ -424,7 +436,7 @@ $\sup_{t > 0} I_\lambda (tv_\epsilon)$を達成する$t > 0$が存在する．\q
   - \int_\Omega G^\prime(t_\epsilon v_\epsilon, \underline{u}_\lambda) dx \leq
   \frac{1}{2} t_\epsilon^2 
   \int_\Omega \left( \lvert Dv_\epsilon \rvert^2 + a v_\epsilon^2
-              \right) dx \lvert \leq  C t_\epsilon^2 \left\|
+              \right) dx \leq  C t_\epsilon^2 \left\|
               v_\epsilon \right\|^2 
  \end{equation}
  において，$\epsilon \searrow 0$における下極限をとると，
@@ -647,7 +659,8 @@ $s$についての増加関数である．
  + 2 \int_\Omega av_\epsilon^2 dx \right)^{N/2} - 
  \frac{1}{NM^{(N-2)/2}} S^{N/2}.
  \]
- \eqref{eq:vepsilon}，\eqref{eq:av_epsilon}より，次式が成立する．
+\eqref{eq:vepsilon}，\eqref{eq:av_epsilon}より，$\epsilon \searrow 0$
+のとき，次式が成立する．
  \begin{equation}
   \begin{aligned}
    A(\epsilon) &=
